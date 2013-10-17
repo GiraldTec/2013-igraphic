@@ -118,14 +118,16 @@ void key(unsigned char key, int x, int y){
   case '+' :
     xRight += 10.0;
 	xLeft += 10.0;
-	//glMatrixMode(GL_PROJECTION);
-	//glLoadIdentity();
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
 	gluOrtho2D(xLeft, xRight, yBot, yTop);
     break ;
 
   case '-' :
     xRight -= 10.0;
 	xLeft -= 10.0;
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
 	gluOrtho2D(xLeft, xRight, yBot, yTop);
     break ;
 
