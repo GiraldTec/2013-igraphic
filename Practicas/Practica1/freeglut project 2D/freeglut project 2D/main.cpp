@@ -16,10 +16,10 @@ using namespace std;
 int WIDTH= 500, HEIGHT= 250;
 
 // Scene visible area size
-GLdouble xLeft= 0.0, xRight= 500.0, yBot= 0.0, yTop= 250.0;
+GLdouble xLeft= 0.0, xRight= 50.0, yBot= 0.0, yTop= 25.0;
 
 // Scene variables
-GLdouble xTriangle= 100.0, yTriangle= 100.0;
+GLdouble xTriangle= 0.0, yTriangle= 0.0;
 GLdouble triangleWidth= 100.0, triangleHeight= 50.0;
 
 // Scene colors
@@ -59,6 +59,7 @@ void display(void){
   glEnd();
   // Scene rendering
   blue = 0.0;
+  glColor3f(red,blue,green);
   glBegin ( GL_TRIANGLES ) ;
        glVertex2d( xTriangle, yTriangle );
        glVertex2d( xTriangle + triangleWidth, yTriangle );
@@ -115,7 +116,9 @@ void key(unsigned char key, int x, int y){
 	glutLeaveMainLoop (); //Freeglut's sentence for stopping glut's main loop (*)
     break;
 
-  case '+' :
+// Movimientos de cámara : RIGHT / LEFT / UP / DOWN
+  case 'd' :
+  case 'D' :
     xRight += 10.0;
 	xLeft += 10.0;
 	glMatrixMode(GL_PROJECTION);
@@ -123,8 +126,54 @@ void key(unsigned char key, int x, int y){
 	gluOrtho2D(xLeft, xRight, yBot, yTop);
     break ;
 
-  case '-' :
+  case 'a' :
+  case 'A' :
     xRight -= 10.0;
+	xLeft -= 10.0;
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluOrtho2D(xLeft, xRight, yBot, yTop);
+    break ;
+
+  case 'w' :
+  case 'W' :
+    yTop += 10.0;
+	yBot += 10.0;
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluOrtho2D(xLeft, xRight, yBot, yTop);
+    break ;
+
+  case 's' :
+  case 'S' :
+    yTop -= 10.0;
+	yBot -= 10.0;
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluOrtho2D(xLeft, xRight, yBot, yTop);
+    break ;
+
+// Zoom de cámara : IN / OUT
+
+  case 'e' :
+  case 'E' :
+	if((yTop-yBot<10)||(xRight-xLeft<20)){}
+	else{
+		yTop -= 5.0;
+		yBot += 5.0;
+		xRight -= 10.0;
+		xLeft += 10.0;
+		glMatrixMode(GL_PROJECTION);
+		glLoadIdentity();
+		gluOrtho2D(xLeft, xRight, yBot, yTop);
+	}
+	break ;
+
+  case 'q' :
+  case 'Q' :
+    yTop += 5.0;
+	yBot -= 5.0;
+	xRight += 10.0;
 	xLeft -= 10.0;
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
