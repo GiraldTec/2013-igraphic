@@ -13,7 +13,7 @@ using namespace std;
 // bool continue_in_main_loop= true; //(**)
 
 // Viewport size
-int WIDTH= 500, HEIGHT= 250;
+int WIDTH= 1000, HEIGHT= 500;
 
 // Scene visible area size
 GLdouble xLeft= 0.0, xRight= 50.0, yBot= 0.0, yTop= 25.0;
@@ -189,7 +189,12 @@ void key(unsigned char key, int x, int y){
     glutPostRedisplay();
 }
 
-
+void mouse(int button, int state,int x, int y){
+	switch (button) {
+	case GLUT_LEFT_BUTTON:
+	   break;
+	}//switch
+}
 
 int main(int argc, char *argv[]){
   cout<< "Starting console..." << endl;
@@ -197,7 +202,7 @@ int main(int argc, char *argv[]){
   int my_window; //my window's identifier
 
   //Initialization
-  glutInitWindowSize(WIDTH, HEIGHT);
+  glutInitWindowSize(500, 250);
   glutInitWindowPosition (140, 140);
   glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE );
   glutInit(&argc, argv);
@@ -209,6 +214,7 @@ int main(int argc, char *argv[]){
   glutReshapeFunc(resize);
   glutKeyboardFunc(key);
   glutDisplayFunc(display);
+  glutMouseFunc(mouse);
 
   //OpenGL basic setting
   intitGL();
