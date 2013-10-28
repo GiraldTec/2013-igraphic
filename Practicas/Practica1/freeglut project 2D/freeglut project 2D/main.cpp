@@ -5,6 +5,8 @@
 #include <GL/freeglut.h>
 //#include <GL/glut.h>
 
+#include <Scene.h>
+
 #include <iostream>
 using namespace std;
 
@@ -24,6 +26,8 @@ GLdouble triangleWidth= 100.0, triangleHeight= 50.0;
 
 // Scene colors
 GLfloat red=1.0, blue=0.0, green=0.0;
+
+Scene* escena;
 
 void intitGL(){
 
@@ -51,12 +55,9 @@ void display(void){
   glClear( GL_COLOR_BUFFER_BIT );
   blue = 1.0;
   glColor3f(red,blue,green);
-  glBegin(GL_QUADS);
-	glVertex2d( xTriangle, yTriangle );
-    glVertex2d( xTriangle + triangleWidth, yTriangle );
-    glVertex2d( xTriangle + triangleWidth, yTriangle + triangleHeight );
-	glVertex2d( xTriangle, yTriangle + triangleHeight );
-  glEnd();
+
+  escena->render(xTriangle,yTriangle,triangleWidth,triangleHeight);
+
   // Scene rendering
   blue = 0.0;
   glColor3f(red,blue,green);
@@ -219,6 +220,7 @@ int main(int argc, char *argv[]){
   //OpenGL basic setting
   intitGL();
 
+  escena = new Scene();
 
   // Freeglut's main loop can be stopped executing (**)
   //while ( continue_in_main_loop )
