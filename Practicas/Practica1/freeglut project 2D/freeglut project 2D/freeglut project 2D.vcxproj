@@ -65,9 +65,7 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>../freeglut project 2D;$(IncludePath)</IncludePath>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -122,18 +120,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="pencil.cpp" />
-    <ClCompile Include="point.cpp" />
-    <ClCompile Include="scene.cpp" />
-    <ClCompile Include="square.cpp" />
-    <ClCompile Include="tree.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="pencil.h" />
-    <ClInclude Include="point.h" />
-    <ClInclude Include="scene.h" />
-    <ClInclude Include="square.h" />
-    <ClInclude Include="tree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
