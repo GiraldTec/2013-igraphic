@@ -41,6 +41,15 @@ GLdouble Square::getSide()
 	return side;
 }
 
+void Square::render()
+{
+	glBegin(GL_QUADS);
+		glVertex2d( ver1->GetX(), ver1->GetY() );
+		glVertex2d( ver2->GetX(), ver2->GetY() );
+		glVertex2d( ver3->GetX(), ver3->GetY() );
+		glVertex2d( ver4->GetX(), ver4->GetY() );
+    glEnd();
+}
 
 Square::~Square(void)
 {

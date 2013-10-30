@@ -168,6 +168,7 @@ void mouse(int button, int state,int x, int y){
 					y = HEIGHT - y;
 					GLdouble aux_x = ((escena->xRight - escena->xLeft)*x)/WIDTH;
 					GLdouble aux_y = ((escena->yTop - escena->yBot)*y)/HEIGHT;
+					cout << aux_x << " " << aux_y << " " << endl;
 
 					if (escena->mouse_input(aux_x,aux_y)) cout << "Se crea arbol en la escena" << endl;
 					else cout << "Ya existe arbol en la escena" << endl;}

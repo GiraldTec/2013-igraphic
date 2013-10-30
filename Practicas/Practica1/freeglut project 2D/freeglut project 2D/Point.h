@@ -20,5 +20,6 @@ public:
 	GLdouble GetY();
 	void setX(GLdouble x);
 	void setY(GLdouble y);
+	Point* clone();
 };
 

@@ -17,6 +17,8 @@ public:
 
 	~Square(void);
 
+	void render();
+
 	Point* getPoint1();
 	Point* getPoint2();
 	Point* getPoint3();

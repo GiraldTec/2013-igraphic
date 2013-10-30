@@ -7,6 +7,14 @@ Point::Point(void)
 	this->corY = 0;
 }
 
+Point* Point::clone()
+{
+	Point* aux = new Point();
+	aux->setX(this->GetX());
+	aux->setY(this->GetY());
+	return aux;
+}
+
 Point::Point(GLdouble x, GLdouble y)
 {
 	this->corX = x;
