@@ -41,7 +41,7 @@ public:
 	void cam_down(void);
 	void cam_in(void);
 	void cam_out(void);
-	bool mouse_tree(int x, int y);
+	bool mouse_input(GLdouble x, GLdouble y);
 	bool reset(void);
 	bool tree_grow(void);
 	bool tree_drecrease(void);

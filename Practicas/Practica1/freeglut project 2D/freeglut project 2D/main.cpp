@@ -165,7 +165,11 @@ void mouse(int button, int state,int x, int y){
 	case GLUT_LEFT_BUTTON:
 		switch (state){
 			case GLUT_DOWN:
-					if (escena->mouse_tree(x,y)) cout << "Se crea arbol en la escena" << endl;
+					y = HEIGHT - y;
+					GLdouble aux_x = ((escena->xRight - escena->xLeft)*x)/WIDTH;
+					GLdouble aux_y = ((escena->yTop - escena->yBot)*y)/HEIGHT;
+
+					if (escena->mouse_input(aux_x,aux_y)) cout << "Se crea arbol en la escena" << endl;
 					else cout << "Ya existe arbol en la escena" << endl;
 				break;
 			case GLUT_UP:

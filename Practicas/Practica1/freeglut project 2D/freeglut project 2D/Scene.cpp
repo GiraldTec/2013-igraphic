@@ -120,11 +120,13 @@ void Scene::cam_out(void)
 }
 
 
-bool Scene::mouse_tree(int x, int y)
+bool Scene::mouse_input(GLdouble x, GLdouble y)
 {
 	if (arbol != NULL) return false;
+	//TODO buscar si hay cuadrado cerca
+	//arbol.searchSquare(x, y);
 	else {
-		arbol = new Tree();
+		arbol = new Tree(x, y);
 		return true;
 	}
 }
