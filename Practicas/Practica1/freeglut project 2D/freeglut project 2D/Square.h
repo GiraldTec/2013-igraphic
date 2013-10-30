@@ -13,7 +13,7 @@ private:
 
 public:
 	Square(void);
-	Square(Point *p1, Point *p2, Point *p3, Point *p4);
+	Square(Point *p1, Point *p2, Point *p3, Point *p4, GLdouble d);
 
 	~Square(void);
 
@@ -21,5 +21,6 @@ public:
 	Point* getPoint2();
 	Point* getPoint3();
 	Point* getPoint4();
+	GLdouble getSide();
 };
 

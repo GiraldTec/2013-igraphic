@@ -9,12 +9,13 @@ Square::Square(void)
 	this->ver4 = new Point;
 }
 
-Square::Square(Point *p1, Point *p2, Point *p3, Point *p4)
+Square::Square(Point *p1, Point *p2, Point *p3, Point *p4, GLdouble d)
 {
 	this->ver1 = p1;
 	this->ver2 = p2;
 	this->ver3 = p3;
 	this->ver4 = p4;
+	this->side = d;
 }
 
 Point* Square::getPoint1()
@@ -34,6 +35,12 @@ Point* Square::getPoint4()
 {
 	return this->ver4;
 }
+
+GLdouble Square::getSide()
+{
+	return side;
+}
+
 
 Square::~Square(void)
 {
