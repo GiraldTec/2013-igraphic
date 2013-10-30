@@ -16,8 +16,6 @@ Scene::Scene(void)
 	red=1.0, blue=0.0, green=0.0;
 
 	// Whether there is a tree in the scene
-	has_tree = false;
-
 	arbol = NULL;
 }
 
@@ -32,6 +30,8 @@ Scene::~Scene(void)
 
 void Scene::render()
 {
+	//arbol->render();
+	
 	blue = 1.0;
 	glColor3f(red,blue,green);
 
@@ -49,7 +49,7 @@ void Scene::render()
 		glVertex2d( xTriangle, yTriangle );
 		glVertex2d( xTriangle + triangleWidth, yTriangle );
 		glVertex2d( xTriangle + triangleWidth, yTriangle + triangleHeight );
-	glEnd () ;
+	glEnd () ; 
 }
 
 

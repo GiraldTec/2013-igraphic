@@ -1,8 +1,8 @@
 #pragma once
 
 #include <vector>
-//#include <Square.h>
-#include <Level.h>
+
+#include <Square.h>
 
 #include <iostream>
 using namespace std;
@@ -10,7 +10,7 @@ using namespace std;
 class Tree
 {
 private:
-	//std::vector<Square*> open, archive;
+	std::vector<vector<Square*>*> *estructura;
 	//std::vector<Level*> niveles;
 
 public:

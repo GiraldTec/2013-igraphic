@@ -34,7 +34,7 @@ public:
 
 	Scene(void);
 	~Scene(void);
-	void render();
+	void render(void);
 	void cam_right(void);
 	void cam_left(void);
 	void cam_up(void);

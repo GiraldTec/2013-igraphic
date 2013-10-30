@@ -9,7 +9,7 @@ Tree::Tree(void)
 
 Tree::~Tree(void)
 {
-	cout << "Se berra el arbol" << endl;
+	cout << "Se borra el arbol" << endl;
 }
 
 bool Tree::grow(void){
@@ -18,4 +18,10 @@ bool Tree::grow(void){
 
 bool Tree::decrease(void){
 	return true;
+}
+
+void Tree::render(void){
+	if(estructura != NULL){
+		
+	}
 }

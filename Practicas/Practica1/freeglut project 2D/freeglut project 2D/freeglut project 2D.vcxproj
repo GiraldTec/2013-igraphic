@@ -121,7 +121,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Pencil.cpp" />
     <ClCompile Include="Point.cpp" />
@@ -130,7 +129,6 @@
     <ClCompile Include="Tree.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Level.h" />
     <ClInclude Include="Pencil.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Scene.h" />
