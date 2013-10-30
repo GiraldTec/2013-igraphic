@@ -17,22 +17,13 @@ using namespace std;
 // Viewport size
 int WIDTH= 500, HEIGHT= 500;
 
-// Scene visible area size
-GLdouble xLeft= 0.0, xRight= 500.0, yBot= 0.0, yTop= 500.0;
-
-// Scene variables
-GLdouble xTriangle= 0.0, yTriangle= 0.0;
-GLdouble triangleWidth= 100.0, triangleHeight= 50.0;
-
-// Scene colors
-GLfloat red=1.0, blue=0.0, green=0.0;
 
 Scene* escena;
 
 void intitGL(){
 
 	glClearColor(1.0,1.0,1.0,1.0);
-	glColor3f(red,green,blue); 
+	glColor3f(escena->red,escena->green,escena->blue); 
 
 	glPointSize(4.0);
 	glLineWidth(2.0);
@@ -47,25 +38,15 @@ void intitGL(){
     // Scene Visible Area
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluOrtho2D(xLeft, xRight, yBot, yTop); 
+    gluOrtho2D(escena->xLeft, escena->xRight, escena->yBot, escena->yTop); 
  }
 
 
 void display(void){
   glClear( GL_COLOR_BUFFER_BIT );
-  blue = 1.0;
-  glColor3f(red,blue,green);
-
-  escena->render(xTriangle,yTriangle,triangleWidth,triangleHeight);
-
+ 
   // Scene rendering
-  blue = 0.0;
-  glColor3f(red,blue,green);
-  glBegin ( GL_TRIANGLES ) ;
-       glVertex2d( xTriangle, yTriangle );
-       glVertex2d( xTriangle + triangleWidth, yTriangle );
-       glVertex2d( xTriangle + triangleWidth, yTriangle + triangleHeight );
-  glEnd () ;
+  escena->render();
 
   glFlush();
   glutSwapBuffers();
@@ -74,11 +55,11 @@ void display(void){
 
 void resize(int newWidth, int newHeight){
   //Resize Viewport
-  WIDTH= newWidth;
+ /* WIDTH= newWidth;
   HEIGHT= newHeight;
   GLdouble RatioViewPort= (float)WIDTH/(float)HEIGHT;
   glViewport ( 0, 0, WIDTH, HEIGHT ) ;
- /*
+ 
   //Resize Scene Visible Area 
   //Se actualiza el área visible de la escena
   //para que su ratio coincida con ratioViewPort
@@ -120,66 +101,55 @@ void key(unsigned char key, int x, int y){
 // Movimientos de cámara : RIGHT / LEFT / UP / DOWN
   case 'd' :
   case 'D' :
-    xRight += 10.0;
-	xLeft += 10.0;
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	gluOrtho2D(xLeft, xRight, yBot, yTop);
+    escena->cam_right();
     break ;
 
   case 'a' :
   case 'A' :
-    xRight -= 10.0;
-	xLeft -= 10.0;
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	gluOrtho2D(xLeft, xRight, yBot, yTop);
+    escena->cam_left();
     break ;
 
   case 'w' :
   case 'W' :
-    yTop += 10.0;
-	yBot += 10.0;
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	gluOrtho2D(xLeft, xRight, yBot, yTop);
+    escena->cam_up();
     break ;
 
   case 's' :
   case 'S' :
-    yTop -= 10.0;
-	yBot -= 10.0;
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	gluOrtho2D(xLeft, xRight, yBot, yTop);
+    escena->cam_down();
     break ;
 
 // Zoom de cámara : IN / OUT
 
   case 'e' :
   case 'E' :
-	if((yTop-yBot<10)||(xRight-xLeft<20)){}
-	else{
-		yTop -= 5.0;
-		yBot += 5.0;
-		xRight -= 10.0;
-		xLeft += 10.0;
-		glMatrixMode(GL_PROJECTION);
-		glLoadIdentity();
-		gluOrtho2D(xLeft, xRight, yBot, yTop);
-	}
+	escena->cam_in();
 	break ;
 
   case 'q' :
   case 'Q' :
-    yTop += 5.0;
-	yBot -= 5.0;
-	xRight += 10.0;
-	xLeft -= 10.0;
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	gluOrtho2D(xLeft, xRight, yBot, yTop);
+    escena->cam_out();
     break ;
+
+// Reset escene
+
+  case 'r' :
+  case 'R' :
+	if (escena->reset()) cout << "La escena ha sido reseteada" << endl;
+	else cout << "No había nada que resetear" << endl;
+	break;
+	
+// Crecimiento/Decrecimiento del árbol
+
+  case '+' :
+	if (escena->tree_grow()) cout << "El árbol existe y crece" << endl;
+	else cout << "El árbol no existe o no crece" << endl;
+	break;
+
+  case '-' :
+	if (escena->tree_drecrease()) cout << "El arbol existe y decrece" << endl;
+	else cout << "El arbol no existe o no decrece" << endl;
+	break;
 
   default:
     need_redisplay = false;
@@ -193,15 +163,15 @@ void key(unsigned char key, int x, int y){
 void mouse(int button, int state,int x, int y){
 	switch (button) {
 	case GLUT_LEFT_BUTTON:
-		
-		y = HEIGHT - y;
-		if (state == GLUT_DOWN) cout << "coord " << x << " " << y << endl;
-
-		GLdouble abs_x = ((xRight-xLeft)*x)/WIDTH;
-		GLdouble abs_y = ((yTop-yBot)*y)/HEIGHT;
-
-		if (state == GLUT_DOWN) cout << "coord " << abs_x << " " << abs_y << endl;
-	   break;
+		switch (state){
+			case GLUT_DOWN:
+					if (escena->mouse_tree(x,y)) cout << "Se crea arbol en la escena" << endl;
+					else cout << "Ya existe arbol en la escena" << endl;
+				break;
+			case GLUT_UP:
+				break; 
+		}// switch state
+		break;
 	}//switch
 }
 
@@ -224,11 +194,11 @@ int main(int argc, char *argv[]){
   glutKeyboardFunc(key);
   glutDisplayFunc(display);
   glutMouseFunc(mouse);
+    
+  escena = new Scene();
 
   //OpenGL basic setting
-  intitGL();
-
-  escena = new Scene();
+  intitGL(); 
 
   // Freeglut's main loop can be stopped executing (**)
   //while ( continue_in_main_loop )
@@ -237,10 +207,14 @@ int main(int argc, char *argv[]){
   // Classic glut's main loop can be stopped after X-closing the window,
   // using the following freeglut's setting (*)
   glutSetOption ( GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_CONTINUE_EXECUTION ) ;
-    
+    //GLUT_ACTION_GLUTMAINLOOP_RETURNS);
   // Classic glut's main loop can be stopped in freeglut using (*)
   glutMainLoop(); 
   
+  cout << "se sale del programa" << endl;
+  delete escena;
+  escena = NULL;
+
   // We would never reach this point using classic glut
   system("PAUSE"); 
    
