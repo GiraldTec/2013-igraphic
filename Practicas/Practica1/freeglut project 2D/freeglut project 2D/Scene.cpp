@@ -17,6 +17,7 @@ Scene::Scene(void)
 
 	// Whether there is a tree in the scene
 	arbol = NULL;
+
 }
 
 
@@ -126,7 +127,11 @@ bool Scene::mouse_input(GLdouble x, GLdouble y)
 	//TODO buscar si hay cuadrado cerca
 	//arbol.searchSquare(x, y);
 	else {
-		arbol = new Tree(x, y);
+		cout << "Introduce un tamaño para el cuadrado: ";
+		GLdouble lado;
+		//Console.Readline(lado);
+		cout << endl;
+		//arbol = new Tree(x, y);
 		return true;
 	}
 }

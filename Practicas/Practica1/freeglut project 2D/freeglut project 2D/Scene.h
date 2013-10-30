@@ -25,10 +25,7 @@ public:
 
 	// Scene colors
 	GLfloat red, blue, green;
-
-	// Whether there is a tree in the scene
-	bool has_tree;
-
+	
 	// Tree
 	Tree* arbol;
 
