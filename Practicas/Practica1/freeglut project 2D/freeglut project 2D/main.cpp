@@ -15,10 +15,10 @@ using namespace std;
 // bool continue_in_main_loop= true; //(**)
 
 // Viewport size
-int WIDTH= 1000, HEIGHT= 500;
+int WIDTH= 500, HEIGHT= 500;
 
 // Scene visible area size
-GLdouble xLeft= 0.0, xRight= 50.0, yBot= 0.0, yTop= 25.0;
+GLdouble xLeft= 0.0, xRight= 500.0, yBot= 0.0, yTop= 500.0;
 
 // Scene variables
 GLdouble xTriangle= 0.0, yTriangle= 0.0;
@@ -73,12 +73,12 @@ void display(void){
 
 
 void resize(int newWidth, int newHeight){
- /* //Resize Viewport
+  //Resize Viewport
   WIDTH= newWidth;
   HEIGHT= newHeight;
   GLdouble RatioViewPort= (float)WIDTH/(float)HEIGHT;
   glViewport ( 0, 0, WIDTH, HEIGHT ) ;
- 
+ /*
   //Resize Scene Visible Area 
   //Se actualiza el área visible de la escena
   //para que su ratio coincida con ratioViewPort
@@ -193,6 +193,14 @@ void key(unsigned char key, int x, int y){
 void mouse(int button, int state,int x, int y){
 	switch (button) {
 	case GLUT_LEFT_BUTTON:
+		
+		y = HEIGHT - y;
+		if (state == GLUT_DOWN) cout << "coord " << x << " " << y << endl;
+
+		GLdouble abs_x = ((xRight-xLeft)*x)/WIDTH;
+		GLdouble abs_y = ((yTop-yBot)*y)/HEIGHT;
+
+		if (state == GLUT_DOWN) cout << "coord " << abs_x << " " << abs_y << endl;
 	   break;
 	}//switch
 }
@@ -203,8 +211,8 @@ int main(int argc, char *argv[]){
   int my_window; //my window's identifier
 
   //Initialization
-  glutInitWindowSize(500, 250);
-  glutInitWindowPosition (140, 140);
+  glutInitWindowSize(500, 500);
+  glutInitWindowPosition (0,0);//140, 140);
   glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE );
   glutInit(&argc, argv);
 
