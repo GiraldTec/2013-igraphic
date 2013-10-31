@@ -15,7 +15,20 @@ Tree::~Tree(void)
 }
 
 bool Tree::grow(void){
-	return true;
+	if(estructura!=NULL){
+		if(estructura->size()>10) return false;
+		else{/*
+			vector<Square*> *aux_level = estructura->at(estructura->size()-1);  // Puntero al último nivel
+			vector<Square*> *new_level = new vector<Square*>();
+			
+			for (unsigned j=0; j<aux_level->size(); j++){
+
+			}
+
+			estructura->push_back(new_level);
+			aux_level = new_level = NULL;*/
+			return true;}
+	}else return false;
 }
 
 bool Tree::decrease(void){
@@ -24,12 +37,16 @@ bool Tree::decrease(void){
 
 void Tree::render(void){
 	if(estructura != NULL){
+		vector<Square*> *aux_level ;
+
 		for (unsigned i=0; i<estructura->size(); i++){
-			vector<Square*> *aux_level = estructura->at(i);
+			aux_level = estructura->at(i);
 			for (unsigned j=0; j<aux_level->size(); j++){
 				aux_level->at(j)->render();
 			}
 		}
+
+		aux_level = NULL;
 	}
 }
 
@@ -51,19 +68,23 @@ void Tree::firstSquare(GLdouble x, GLdouble y, GLdouble d)
 	pen->turn(pi/2);
 	pen->forward(d/2);
 	cout <<  pen->getPos()->GetX() << pen->getPos()->GetY() << endl;
+
 	//VERTICE 1
 	Point *ver1 = pen->getPos()->clone();
 	pen->setDir(0);
 	pen->forward(d);
 	cout << ver1->GetX() << " " << ver1->GetY() << endl;
+	
 	//VERTICE 2
 	Point *ver2 = pen->getPos()->clone();
 	pen->turn(pi/2);
 	pen->forward(d);
+	
 	//VERTICE 3
 	Point *ver3 = pen->getPos()->clone();
 	pen->turn(pi/2);
 	pen->forward(d);
+	
 	//VERTICE 4
 	Point *ver4 = pen->getPos()->clone();
 	cout << "Creados 4 vertices" << endl;
