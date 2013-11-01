@@ -38,13 +38,13 @@ bool Tree::grow(void){
 		if(estructura->size()>10) return false;
 		else{
 			//FIXME
-		/*	vector<Square*> *aux_level = estructura->at(estructura->size()-1);  // Puntero al último nivel
+			vector<Square*> *aux_level = estructura->at(estructura->size()-1);  // Puntero al último nivel
 			vector<Square*> *new_level = new vector<Square*>();
 			
 			for (unsigned j=0; j<aux_level->size(); j++){
 				Square *aux_sq = aux_level->at(j);
-				Square *right_sq = rightSquare(aux_sq);
-				Square *left_sq = leftSquare(aux_sq);
+				Square *right_sq = rightSquare(aux_sq,angle);
+				Square *left_sq = leftSquare(aux_sq,angle);
 
 				new_level->push_back(right_sq);
 				new_level->push_back(left_sq);
@@ -53,7 +53,7 @@ bool Tree::grow(void){
 			}
 
 			estructura->push_back(new_level);
-			aux_level = new_level = NULL;*/
+			aux_level = new_level = NULL;
 			return true;
 		}
 	}else return false;
@@ -94,15 +94,59 @@ void Tree::render(void){
 
 Square* Tree::rightSquare(Square *base, GLdouble angle)
 {
-	Square *res_sq;
-	//TODO
+	GLdouble pi = M_PI;
+	//Calculo del tamaño del lado
+	GLdouble alto = base->getSide()/2;
+	GLdouble lado = alto/sin(angle);
+	//Calculo de los vertices
+	pen->setDir(angle);
+	pen->setPos(base->getPoint4()->clone());
+	Point *ver1 = pen->getPos()->clone();
+	pen->forward(lado);
+	Point *ver2 = pen->getPos()->clone();
+	pen->turn(pi/2);
+	pen->forward(lado);
+	Point *ver3 = pen->getPos()->clone();
+	pen->turn(pi/2);
+	pen->forward(lado);
+	Point *ver4 = pen->getPos()->clone();
+	cout << "Creados 4 vertices" << endl;
+	cout << ver1->GetX() << " " << ver2->GetX() << " " << ver3->GetX() << " " << ver4->GetX() <<endl;
+	cout << ver1->GetY() << " " << ver2->GetY() << " " << ver3->GetY() << " " << ver4->GetY() <<endl;
+	Square *res_sq = new Square(ver1,ver2,ver3,ver4,lado);
 	return res_sq;
 }
 
 Square* Tree::leftSquare(Square *base, GLdouble angle)
 {
-	Square *res_sq;
-	//TODO
+	GLdouble pi = M_PI;
+	//Calculo del tamaño del lado
+	GLdouble alto = base->getSide()/2;
+	cout<< "EL ALTO ES: " << alto << endl;
+	GLdouble lado = alto/cos(angle);
+	cout<< "EL LADO ES: " << lado << endl;
+	//Calculo de los vertices
+	GLdouble aux_angle = pi/2 + angle;
+	pen->setDir(aux_angle);
+	pen->setPos(base->getPoint3()->clone());
+	//Estamos situados en el vertice3,que sería el 2 del nuevo cuadrado
+	//Avanzamos hasta el vertice 1, y luego volvemos
+	pen->forward(lado);
+	Point *ver1 = pen->getPos()->clone();
+	pen->turn(pi);
+	pen->forward(lado);
+	Point *ver2 = pen->getPos()->clone();
+	pen->turn(pi/2);
+	pen->forward(lado);
+	Point *ver3 = pen->getPos()->clone();
+	pen->turn(pi/2);
+	pen->forward(lado);
+	Point *ver4 = pen->getPos()->clone();
+	cout << "Creados 4 vertices" << endl;
+	cout << ver1->GetX() << " " << ver2->GetX() << " " << ver3->GetX() << " " << ver4->GetX() <<endl;
+	cout << ver1->GetY() << " " << ver2->GetY() << " " << ver3->GetY() << " " << ver4->GetY() <<endl;
+	Square *res_sq = new Square(ver1,ver2,ver3,ver4,lado);
+
 	return res_sq;
 }
 
