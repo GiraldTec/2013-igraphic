@@ -196,6 +196,13 @@ void Tree::firstSquare(GLdouble x, GLdouble y, GLdouble d)
 }
 
 void Tree::recalculate(void){
+	int size = estructura->size();
+
+	while(decrease()){}
+
+	for(int i=0; i<size; i++){
+		grow();
+	}
+	
 	cout << "Se recalcula el árbol para: " << angle << " radianes" << endl;
-	// TODO
 }
