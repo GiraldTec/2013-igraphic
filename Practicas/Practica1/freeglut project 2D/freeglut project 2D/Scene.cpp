@@ -32,7 +32,7 @@ Scene::~Scene(void)
 void Scene::render()
 {
 	if (arbol != NULL)
-		//arbol->render();
+		arbol->render();
 	
 	blue = 1.0;
 	glColor3f(red,blue,green);
@@ -97,12 +97,16 @@ void Scene::cam_down(void)
 
 void Scene::cam_in(void)
 {
+	GLdouble ratio = (xRight-xLeft)/(yTop-yBot);
+	GLdouble x_des = 3;
+	GLdouble y_des = x_des/ratio;
+
 	if((yTop-yBot<10)||(xRight-xLeft<20)){}
 	else{
-		yTop -= 5.0;
-		yBot += 5.0;
-		xRight -= 10.0;
-		xLeft += 10.0;
+		yTop -= y_des;
+		yBot += y_des;
+		xRight -= x_des;
+		xLeft += x_des;
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
 		gluOrtho2D(xLeft, xRight, yBot, yTop);
@@ -112,10 +116,14 @@ void Scene::cam_in(void)
 
 void Scene::cam_out(void)
 {
-	yTop += 5.0;
-	yBot -= 5.0;
-	xRight += 10.0;
-	xLeft -= 10.0;
+	GLdouble ratio = (xRight-xLeft)/(yTop-yBot);
+	GLdouble x_des = 3;
+	GLdouble y_des = x_des/ratio;
+	
+	yTop += y_des;
+	yBot -= y_des;
+	xRight += x_des;
+	xLeft -= x_des;
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluOrtho2D(xLeft, xRight, yBot, yTop);
