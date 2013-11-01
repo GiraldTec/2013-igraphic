@@ -1,8 +1,10 @@
 #include "Tree.h"
 
 
+
 Tree::Tree(GLdouble x, GLdouble y, GLdouble d)
 {
+	angle=M_PI/4;
 	firstSquare(x,y,d);
 }
 
@@ -12,6 +14,23 @@ Tree::~Tree(void)
 	estructura = NULL;
 	pen = NULL;
 	cout << "Se borra el arbol" << endl;
+}
+
+bool Tree::set_angle(GLdouble a){ // angulo en grados
+
+	GLdouble aux = std::floor(a / 360);
+	cout << aux << endl;
+	aux = a - (360*aux);
+	cout << aux << endl;
+	angle = aux * (2 * M_PI) / 360;
+
+	recalculate();
+
+	return true;
+}
+
+GLdouble Tree::get_angle(void){
+	return angle;
 }
 
 bool Tree::grow(void){
@@ -132,4 +151,7 @@ void Tree::firstSquare(GLdouble x, GLdouble y, GLdouble d)
 
 }
 
-
+void Tree::recalculate(void){
+	cout << "Se recalcula el árbol para: " << angle << " radianes" << endl;
+	// TODO
+}

@@ -139,9 +139,8 @@ bool Scene::mouse_input(GLdouble x, GLdouble y)
 
 		cout << "Introduce un tamaño para el cuadrado: ";
 		GLdouble lado;
-		//Console.Readline(lado);
-		cout << endl;
-		arbol = new Tree(x, y, 20);
+		cin >> lado;
+		arbol = new Tree(x, y, lado);
 		return true;
 	}
 }
@@ -164,4 +163,15 @@ bool Scene::tree_grow(void){
 bool Scene::tree_drecrease(void){
 	if (arbol == NULL) return false;
 	return arbol->decrease();
+}
+
+void Scene::read_angle(void){
+	bool got_angle=false;
+	GLdouble angle;  // en grados
+	while(!got_angle){
+		cout << "Inserte el ángulo deseado en grados (formato [XX.XX])" << endl;
+		cin >> angle;
+		got_angle = arbol->set_angle(angle);
+		cout << "Este es su angulo en radianes: " << arbol->get_angle() << endl;
+	}
 }

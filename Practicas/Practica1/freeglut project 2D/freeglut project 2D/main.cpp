@@ -139,6 +139,15 @@ void key(unsigned char key, int x, int y){
 	if (escena->reset()) cout << "La escena ha sido reseteada" << endl;
 	else cout << "No había nada que resetear" << endl;
 	break;
+
+// Angle setting
+
+  case 'k':
+  case 'K':
+	  escena->read_angle();
+	break;
+
+
 	
 // Crecimiento/Decrecimiento del árbol
 

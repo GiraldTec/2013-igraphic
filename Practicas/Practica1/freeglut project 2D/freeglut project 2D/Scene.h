@@ -42,5 +42,6 @@ public:
 	bool reset(void);
 	bool tree_grow(void);
 	bool tree_drecrease(void);
+	void read_angle(void);
 };
 
