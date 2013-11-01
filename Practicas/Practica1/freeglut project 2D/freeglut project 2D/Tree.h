@@ -25,5 +25,7 @@ public:
 	void init(void);
 	void render(void);
 	void firstSquare(GLdouble x, GLdouble y, GLdouble d);
+	Square* rightSquare(Square *base, GLdouble angle);
+	Square* leftSquare(Square *base, GLdouble angle);
 };
 

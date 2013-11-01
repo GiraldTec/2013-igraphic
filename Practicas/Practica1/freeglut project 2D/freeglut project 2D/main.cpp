@@ -47,6 +47,7 @@ void display(void){
  
   // Scene rendering
   escena->render();
+  cout<<"se renderiza"<<endl;
 
   glFlush();
   glutSwapBuffers();
@@ -55,7 +56,7 @@ void display(void){
 
 void resize(int newWidth, int newHeight){
   //Resize Viewport
- /* WIDTH= newWidth;
+  WIDTH= newWidth;
   HEIGHT= newHeight;
   GLdouble RatioViewPort= (float)WIDTH/(float)HEIGHT;
   glViewport ( 0, 0, WIDTH, HEIGHT ) ;
@@ -63,28 +64,28 @@ void resize(int newWidth, int newHeight){
   //Resize Scene Visible Area 
   //Se actualiza el área visible de la escena
   //para que su ratio coincida con ratioViewPort
-  GLdouble SVAWidth= xRight-xLeft;
-  GLdouble SVAHeight= yTop-yBot;
+  GLdouble SVAWidth= escena->xRight-escena->xLeft;
+  GLdouble SVAHeight= escena->yTop-escena->yBot;
   GLdouble SVARatio= SVAWidth/SVAHeight;
   if (SVARatio >= RatioViewPort) {
 	 // Increase SVAHeight
      GLdouble newHeight= SVAWidth/RatioViewPort;
-	 GLdouble yMiddle= ( yBot+yTop )/2.0;
-     yTop= yMiddle + newHeight/2.0;
-     yBot= yMiddle - newHeight/2.0;
+	 GLdouble yMiddle= ( escena->yBot+escena->yTop )/2.0;
+     escena->yTop= yMiddle + newHeight/2.0;
+     escena->yBot= yMiddle - newHeight/2.0;
      }
   else {
      //Increase SVAWidth
      GLdouble newWidth= SVAHeight*RatioViewPort;
-     GLdouble xMiddle= ( xLeft+xRight )/2.0;
-	 xRight= xMiddle + newWidth/2.0;
-     xLeft=  xMiddle - newWidth/2.0;
+     GLdouble xMiddle= ( escena->xLeft+escena->xRight )/2.0;
+	 escena->xRight= xMiddle + newWidth/2.0;
+     escena->xLeft=  xMiddle - newWidth/2.0;
   }
   
 
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
-  gluOrtho2D(xLeft, xRight, yBot, yTop); */
+  gluOrtho2D(escena->xLeft, escena->xRight, escena->yBot, escena->yTop); 
 }
 
 

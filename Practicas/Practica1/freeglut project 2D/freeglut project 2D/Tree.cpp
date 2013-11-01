@@ -17,22 +17,45 @@ Tree::~Tree(void)
 bool Tree::grow(void){
 	if(estructura!=NULL){
 		if(estructura->size()>10) return false;
-		else{/*
-			vector<Square*> *aux_level = estructura->at(estructura->size()-1);  // Puntero al último nivel
+		else{
+			//FIXME
+		/*	vector<Square*> *aux_level = estructura->at(estructura->size()-1);  // Puntero al último nivel
 			vector<Square*> *new_level = new vector<Square*>();
 			
 			for (unsigned j=0; j<aux_level->size(); j++){
+				Square *aux_sq = aux_level->at(j);
+				Square *right_sq = rightSquare(aux_sq);
+				Square *left_sq = leftSquare(aux_sq);
 
+				new_level->push_back(right_sq);
+				new_level->push_back(left_sq);
+
+				aux_sq = right_sq = left_sq = NULL;
 			}
 
 			estructura->push_back(new_level);
 			aux_level = new_level = NULL;*/
-			return true;}
+			return true;
+		}
 	}else return false;
 }
 
 bool Tree::decrease(void){
-	return true;
+	if (estructura!=NULL){
+		if(estructura->size()==1) return false;
+		else{
+			estructura->pop_back(); // llama al destructor del vector que llama a la destructora de los contenedores... 
+									//igual no hay que romperse el coco
+
+			/* // sino...
+				// TODO
+			*/
+
+			return true;
+		}
+	}else{
+		return false;
+	}
 }
 
 void Tree::render(void){
@@ -50,13 +73,19 @@ void Tree::render(void){
 	}
 }
 
-//void Tree::rightSquare()
-//{
-//}
+Square* Tree::rightSquare(Square *base, GLdouble angle)
+{
+	Square *res_sq;
+	//TODO
+	return res_sq;
+}
 
-//void Tree::leftSquare()
-//{
-//}
+Square* Tree::leftSquare(Square *base, GLdouble angle)
+{
+	Square *res_sq;
+	//TODO
+	return res_sq;
+}
 
 void Tree::firstSquare(GLdouble x, GLdouble y, GLdouble d)
 {

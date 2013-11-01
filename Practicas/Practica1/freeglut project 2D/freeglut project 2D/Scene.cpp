@@ -32,7 +32,7 @@ Scene::~Scene(void)
 void Scene::render()
 {
 	if (arbol != NULL)
-		arbol->render();
+		//arbol->render();
 	
 	blue = 1.0;
 	glColor3f(red,blue,green);
