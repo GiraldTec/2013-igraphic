@@ -98,54 +98,63 @@ Square* Tree::rightSquare(Square *base, GLdouble angle)
 	//Calculo del tamaño del lado
 	GLdouble alto = base->getSide()/2;
 	GLdouble lado = alto/sin(angle);
+	//Calculo de la dirección del lapiz
+	GLdouble difX = base->getPoint3()->GetX() - base->getPoint4()->GetX();
+	GLdouble difY = base->getPoint3()->GetY() - base->getPoint4()->GetY();
+	GLdouble aux_ang = atan2(difY,difX) + angle;
 	//Calculo de los vertices
-	pen->setDir(angle);
+	pen->setDir(aux_ang);
 	pen->setPos(base->getPoint4()->clone());
 	Point *ver1 = pen->getPos()->clone();
 	pen->forward(lado);
 	Point *ver2 = pen->getPos()->clone();
-	pen->turn(pi/2);
+	pen->turn(M_PI/2);
 	pen->forward(lado);
 	Point *ver3 = pen->getPos()->clone();
-	pen->turn(pi/2);
+	pen->turn(M_PI/2);
 	pen->forward(lado);
 	Point *ver4 = pen->getPos()->clone();
 	cout << "Creados 4 vertices" << endl;
 	cout << ver1->GetX() << " " << ver2->GetX() << " " << ver3->GetX() << " " << ver4->GetX() <<endl;
 	cout << ver1->GetY() << " " << ver2->GetY() << " " << ver3->GetY() << " " << ver4->GetY() <<endl;
 	Square *res_sq = new Square(ver1,ver2,ver3,ver4,lado);
+	ver1 = ver2 = ver3 = ver4 = NULL;
 	return res_sq;
 }
 
 Square* Tree::leftSquare(Square *base, GLdouble angle)
 {
-	GLdouble pi = M_PI;
 	//Calculo del tamaño del lado
 	GLdouble alto = base->getSide()/2;
 	cout<< "EL ALTO ES: " << alto << endl;
 	GLdouble lado = alto/cos(angle);
 	cout<< "EL LADO ES: " << lado << endl;
+	//Calculo de la dirección del lapiz
+	GLdouble difX = base->getPoint3()->GetX() - base->getPoint4()->GetX();
+	GLdouble difY = base->getPoint3()->GetY() - base->getPoint4()->GetY();
+	GLdouble aux_ang = atan2(difY,difX) + angle;
 	//Calculo de los vertices
-	GLdouble aux_angle = pi/2 + angle;
+	GLdouble aux_angle = M_PI/2 + aux_ang;
 	pen->setDir(aux_angle);
 	pen->setPos(base->getPoint3()->clone());
 	//Estamos situados en el vertice3,que sería el 2 del nuevo cuadrado
 	//Avanzamos hasta el vertice 1, y luego volvemos
 	pen->forward(lado);
 	Point *ver1 = pen->getPos()->clone();
-	pen->turn(pi);
+	pen->turn(M_PI);
 	pen->forward(lado);
 	Point *ver2 = pen->getPos()->clone();
-	pen->turn(pi/2);
+	pen->turn(M_PI/2);
 	pen->forward(lado);
 	Point *ver3 = pen->getPos()->clone();
-	pen->turn(pi/2);
+	pen->turn(M_PI/2);
 	pen->forward(lado);
 	Point *ver4 = pen->getPos()->clone();
 	cout << "Creados 4 vertices" << endl;
 	cout << ver1->GetX() << " " << ver2->GetX() << " " << ver3->GetX() << " " << ver4->GetX() <<endl;
 	cout << ver1->GetY() << " " << ver2->GetY() << " " << ver3->GetY() << " " << ver4->GetY() <<endl;
 	Square *res_sq = new Square(ver1,ver2,ver3,ver4,lado);
+	ver1 = ver2 = ver3 = ver4 = NULL;
 
 	return res_sq;
 }
