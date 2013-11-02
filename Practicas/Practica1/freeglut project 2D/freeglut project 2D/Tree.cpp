@@ -104,6 +104,8 @@ Square* Tree::rightSquare(Square *base, GLdouble angle)
 	//GLdouble lado = alto/sin(angle);
 	GLdouble lado = cos(angle)*base->getSide();
 	cout<< "EL LADO ES: " << lado << endl;
+	GLdouble alto = base->getSide()/2; // solo sirve para el caso 45º
+	GLdouble lado = alto/sin(angle);
 	//Calculo de la dirección del lapiz
 	GLdouble difX = base->getPoint3()->GetX() - base->getPoint4()->GetX();
 	GLdouble difY = base->getPoint3()->GetY() - base->getPoint4()->GetY();
@@ -216,9 +218,45 @@ void Tree::recalculate(void){
 
 	while(decrease()){}
 
-	for(int i=0; i<size; i++){
+	for(int i=1; i<size; i++){
 		grow();
 	}
 	
 	cout << "Se recalcula el árbol para: " << angle << " radianes" << endl;
+}
+
+void Tree::searchSquare(GLdouble x, GLdouble y){
+	vector<Square*> *aux_level ;
+	Square *aux_sq = NULL;
+	GLdouble aux_dist=0;
+	Point *point = new Point(x,y);
+
+	cout << "testing 1" <<endl;
+
+	for (unsigned i=0; i<estructura->size(); i++){
+		aux_level = estructura->at(i);
+		for (unsigned j=0; j<aux_level->size(); j++){
+			if(aux_sq==NULL) {
+				aux_sq = aux_level->at(j);
+				aux_dist = point->distance(aux_sq->getClosestCorner(point));
+			}
+			else{
+				Point *aux_point = aux_level->at(j)->getClosestCorner(point);
+				if(point->distance(aux_point)<aux_dist){
+					aux_sq = aux_level->at(j);
+					aux_dist = point->distance(aux_point);
+					cout << "ahora me gusta el cuadrado " << i << " " << j << endl;
+				}
+				aux_point = NULL;
+			}
+		}
+	}
+
+	// TODO
+	//aux_sq->setColor();
+
+	delete point;
+	point =NULL;
+	aux_level = NULL;
+	aux_sq = NULL;
 }
