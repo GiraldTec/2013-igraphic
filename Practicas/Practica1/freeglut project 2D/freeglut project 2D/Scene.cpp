@@ -132,14 +132,16 @@ void Scene::cam_out(void)
 
 bool Scene::mouse_input(GLdouble x, GLdouble y)
 {
-if (arbol != NULL) 
-		arbol->searchSquare(x, y);	else {
-		cout << "Introduce un tamaño para el cuadrado: ";
-		GLdouble lado;
-		cin >> lado;
-		arbol = new Tree(x, y, lado);
+	if (arbol != NULL){
+		arbol->searchSquare(x, y);	
 		return true;
-	}
+	}else {
+			cout << "Introduce un tamaño para el cuadrado: ";
+			GLdouble lado;
+			cin >> lado;
+			arbol = new Tree(x, y, lado);
+			return true;
+		}
 }
 
 bool Scene::reset(void)
@@ -165,11 +167,12 @@ bool Scene::tree_drecrease(void){
 bool Scene::read_angle(void){
 	bool got_angle=false;
 	GLdouble angle;  // en grados
-	if(arbol!=NULL)		while(!got_angle){
-							cout << "Inserte el ángulo deseado en grados (formato [XX.XX])" << endl;
-							cin >> angle;
-							got_angle = arbol->set_angle(angle);
-							cout << "Este es su angulo en radianes: " << arbol->get_angle() << endl;
-						}
+	if(arbol!=NULL){
+		while(!got_angle){
+			cout << "Inserte el ángulo deseado en grados (formato [XX.XX])" << endl;
+			cin >> angle;
+			got_angle = arbol->set_angle(angle);
+		}
+	}
 	return got_angle;
 }

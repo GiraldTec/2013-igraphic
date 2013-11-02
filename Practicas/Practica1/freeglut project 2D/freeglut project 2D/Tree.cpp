@@ -18,12 +18,12 @@ Tree::~Tree(void)
 
 bool Tree::set_angle(GLdouble a){ // angulo en grados
 
-	GLdouble aux = std::floor(a / 360);
-	cout << aux << endl;
-	aux = a - (360*aux);
-	cout << aux << endl;
-	angle = aux * (2 * M_PI) / 360;
 
+	GLdouble aux = std::floor(a / 360);
+	aux = a - (360*aux);
+	if (aux > 170 || aux < 10) return false; // es un angulo muy feo
+	
+	angle = aux * (2 * M_PI) / 360; // a radianes
 	recalculate();
 
 	return true;
@@ -234,7 +234,7 @@ void Tree::searchSquare(GLdouble x, GLdouble y){
 	for (unsigned i=0; i<estructura->size(); i++){
 		aux_level = estructura->at(i);
 		for (unsigned j=0; j<aux_level->size(); j++){
-			aux_sq = aux_level->at(j);
+			/*aux_sq = aux_level->at(j);
 			cout<< "probando cuadrado " << i <<" "<< j<< endl;
 			aux_dist = point->distance(aux_sq->getClosestCorner(point));
 			cout<< "distancia al cuadrado " << i <<" "<< j<< "= "<< aux_dist << endl;
@@ -244,8 +244,8 @@ void Tree::searchSquare(GLdouble x, GLdouble y){
 			}
 			else{
 				aux_sq->setSelec(false);
-			}
-			/*if(aux_sq==NULL) {
+			}*/
+			if(aux_sq==NULL) {
 				aux_sq = aux_level->at(j);
 				aux_dist = point->distance(aux_sq->getClosestCorner(point));
 			}
@@ -254,16 +254,15 @@ void Tree::searchSquare(GLdouble x, GLdouble y){
 				if(point->distance(aux_point)<aux_dist){
 					aux_sq = aux_level->at(j);
 					aux_dist = point->distance(aux_point);
-					cout << "ahora me gusta el cuadrado " << i << " " << j << endl;
-					aux_sq->setSelec(true);
 				}
 				aux_point = NULL;
-			}*/
+			}
+			aux_level->at(j)->setSelec(false);
+
 		}
 	}
 
-	// TODO
-	//aux_sq->setColor();
+	aux_sq->setSelec(true);
 
 	delete point;
 	point =NULL;
