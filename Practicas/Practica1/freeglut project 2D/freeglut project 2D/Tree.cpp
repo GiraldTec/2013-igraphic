@@ -235,9 +235,7 @@ void Tree::searchSquare(GLdouble x, GLdouble y){
 		aux_level = estructura->at(i);
 		for (unsigned j=0; j<aux_level->size(); j++){
 			/*aux_sq = aux_level->at(j);
-			cout<< "probando cuadrado " << i <<" "<< j<< endl;
 			aux_dist = point->distance(aux_sq->getClosestCorner(point));
-			cout<< "distancia al cuadrado " << i <<" "<< j<< "= "<< aux_dist << endl;
 			if (aux_dist<20){
 				cout<< "me gusta el cuadrado " << i <<" "<< j<< endl;
 				aux_sq->setSelec(true);
@@ -258,11 +256,10 @@ void Tree::searchSquare(GLdouble x, GLdouble y){
 				aux_point = NULL;
 			}
 			aux_level->at(j)->setSelec(false);
-
+			
 		}
 	}
-
-	aux_sq->setSelec(true);
+	if (aux_dist < 20)	aux_sq->setSelec(true);
 
 	delete point;
 	point =NULL;
