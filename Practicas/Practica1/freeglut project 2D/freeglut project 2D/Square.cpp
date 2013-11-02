@@ -7,6 +7,10 @@ Square::Square(void)
 	this->ver2 = new Point;
 	this->ver3 = new Point;
 	this->ver4 = new Point;
+	selec = false;
+	red = 1.0;
+	blue = 0.0;
+	green = 0.0;
 }
 
 Square::Square(Point *p1, Point *p2, Point *p3, Point *p4, GLdouble d)
@@ -16,6 +20,10 @@ Square::Square(Point *p1, Point *p2, Point *p3, Point *p4, GLdouble d)
 	this->ver3 = p3;
 	this->ver4 = p4;
 	this->side = d;
+	selec = false;
+	red = 1.0;
+	blue = 0.0;
+	green = 0.0;
 }
 
 Point* Square::getPoint1()
@@ -41,8 +49,15 @@ GLdouble Square::getSide()
 	return side;
 }
 
+void Square::setSelec(bool b)
+{
+	this->selec = b;
+}
+
 void Square::render()
 {
+	if (selec) glColor3f(0.0,0.0,1.0);
+	else glColor3f(red,blue,green);
 	glBegin(GL_QUADS);
 		glVertex2d( ver1->GetX(), ver1->GetY() );
 		glVertex2d( ver2->GetX(), ver2->GetY() );

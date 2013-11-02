@@ -10,6 +10,8 @@ private:
 		Point *ver3;
 		Point *ver4;
 		GLdouble side;
+		bool selec;
+		GLfloat red, blue, green;
 
 public:
 	Square(void);
@@ -19,6 +21,7 @@ public:
 
 	void render();
 
+	void setSelec(bool b);
 	Point* getPoint1();
 	Point* getPoint2();
 	Point* getPoint3();

@@ -36,7 +36,7 @@ void Scene::render()
 	
 	blue = 1.0;
 	glColor3f(red,blue,green);
-
+	/*
 	glBegin(GL_QUADS);
 		glVertex2d( xTriangle, yTriangle );
 		glVertex2d( xTriangle + triangleWidth, yTriangle );
@@ -51,7 +51,7 @@ void Scene::render()
 		glVertex2d( xTriangle, yTriangle );
 		glVertex2d( xTriangle + triangleWidth, yTriangle );
 		glVertex2d( xTriangle + triangleWidth, yTriangle + triangleHeight );
-	glEnd () ; 
+	glEnd () ; */
 }
 
 
@@ -132,9 +132,8 @@ void Scene::cam_out(void)
 
 bool Scene::mouse_input(GLdouble x, GLdouble y)
 {
-	if (arbol != NULL) 
-		arbol->searchSquare(x, y);
-	else {
+if (arbol != NULL) 
+		arbol->searchSquare(x, y);	else {
 		cout << "Introduce un tamaño para el cuadrado: ";
 		GLdouble lado;
 		cin >> lado;

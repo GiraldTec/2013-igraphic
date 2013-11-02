@@ -104,8 +104,6 @@ Square* Tree::rightSquare(Square *base, GLdouble angle)
 	//GLdouble lado = alto/sin(angle);
 	GLdouble lado = cos(angle)*base->getSide();
 	cout<< "EL LADO ES: " << lado << endl;
-	GLdouble alto = base->getSide()/2; // solo sirve para el caso 45º
-	GLdouble lado = alto/sin(angle);
 	//Calculo de la dirección del lapiz
 	GLdouble difX = base->getPoint3()->GetX() - base->getPoint4()->GetX();
 	GLdouble difY = base->getPoint3()->GetY() - base->getPoint4()->GetY();
@@ -246,6 +244,7 @@ void Tree::searchSquare(GLdouble x, GLdouble y){
 					aux_sq = aux_level->at(j);
 					aux_dist = point->distance(aux_point);
 					cout << "ahora me gusta el cuadrado " << i << " " << j << endl;
+					aux_sq->setSelec(true);
 				}
 				aux_point = NULL;
 			}

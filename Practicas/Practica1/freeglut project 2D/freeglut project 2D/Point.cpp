@@ -47,6 +47,7 @@ Point::~Point(void)
 
 GLdouble Point::distance(Point* p){
 	if(p!=NULL){
+		//Teorema pitagoras: hipotenusa = raiz de suma cuadrados de los catetos
 		return sqrt (pow(GetX()-p->GetX(),2)+pow(GetY()-p->GetY(),2));
 	}else return 0;
 }
