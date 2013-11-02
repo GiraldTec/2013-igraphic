@@ -36,6 +36,7 @@ GLdouble Tree::get_angle(void){
 bool Tree::grow(void){
 	if(estructura!=NULL){
 		if(estructura->size()>10) return false;
+		//else if (estructura->size()>nivel) nivel++;
 		else{
 			//FIXME
 			vector<Square*> *aux_level = estructura->at(estructura->size()-1);  // Puntero al último nivel
@@ -70,6 +71,8 @@ bool Tree::decrease(void){
 				// TODO
 			*/
 
+			//La idea es solo pintar los cuadrados hasta el nivel que se ha desanidado aunque ya estén calculados
+
 			return true;
 		}
 	}else{
@@ -96,8 +99,11 @@ Square* Tree::rightSquare(Square *base, GLdouble angle)
 {
 	GLdouble pi = M_PI;
 	//Calculo del tamaño del lado
-	GLdouble alto = base->getSide()/2;
-	GLdouble lado = alto/sin(angle);
+	//GLdouble alto = base->getSide()/2;
+	//cout<< "EL ALTO ES: " << alto << endl;
+	//GLdouble lado = alto/sin(angle);
+	GLdouble lado = cos(angle)*base->getSide();
+	cout<< "EL LADO ES: " << lado << endl;
 	//Calculo de la dirección del lapiz
 	GLdouble difX = base->getPoint3()->GetX() - base->getPoint4()->GetX();
 	GLdouble difY = base->getPoint3()->GetY() - base->getPoint4()->GetY();
@@ -125,9 +131,10 @@ Square* Tree::rightSquare(Square *base, GLdouble angle)
 Square* Tree::leftSquare(Square *base, GLdouble angle)
 {
 	//Calculo del tamaño del lado
-	GLdouble alto = base->getSide()/2;
-	cout<< "EL ALTO ES: " << alto << endl;
-	GLdouble lado = alto/cos(angle);
+	//GLdouble alto = base->getSide()/2;
+	//cout<< "EL ALTO ES: " << alto << endl;
+	//GLdouble lado = alto/cos(angle);
+	GLdouble lado = sin(angle)*base->getSide();
 	cout<< "EL LADO ES: " << lado << endl;
 	//Calculo de la dirección del lapiz
 	GLdouble difX = base->getPoint3()->GetX() - base->getPoint4()->GetX();

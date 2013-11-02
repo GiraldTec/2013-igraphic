@@ -16,6 +16,7 @@ private:
 	std::vector<vector<Square*>*> *estructura;
 	Pencil *pen;
 	GLdouble angle;
+	//int nivel;
 	//std::vector<Level*> niveles;
 
 public:
