@@ -24,5 +24,6 @@ public:
 	Point* getPoint3();
 	Point* getPoint4();
 	GLdouble getSide();
+	Point* getClosestCorner(Point* p);
 };
 

@@ -5,6 +5,12 @@
 #include <gl/GLU.h>
 #include <GL/freeglut.h>
 
+
+#define _USE_MATH_DEFINES
+#include <math.h>
+#include <iostream>
+using namespace std;
+
 class Point
 {
 
@@ -20,6 +26,7 @@ public:
 	GLdouble GetY();
 	void setX(GLdouble x);
 	void setY(GLdouble y);
+	GLdouble distance(Point* p);
 	Point* clone();
 };
 

@@ -30,6 +30,7 @@ public:
 	void render(void);
 	void recalculate(void);
 	void firstSquare(GLdouble x, GLdouble y, GLdouble d);
+	void searchSquare(GLdouble x, GLdouble y);
 	Square* rightSquare(Square *base, GLdouble angle);
 	Square* leftSquare(Square *base, GLdouble angle);
 };

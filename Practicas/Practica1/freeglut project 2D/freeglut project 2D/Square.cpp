@@ -54,3 +54,23 @@ void Square::render()
 Square::~Square(void)
 {
 }
+
+Point* Square::getClosestCorner(Point* p){
+	Point* aux_p = getPoint1();
+	GLdouble aux_dist = p->distance(aux_p);
+	if(p->distance(getPoint2())<aux_dist) {
+		aux_p = getPoint2();
+		aux_dist = p->distance(aux_p);
+	}
+	if(p->distance(getPoint3())<aux_dist) {
+		aux_p = getPoint3();
+		aux_dist = p->distance(aux_p);
+	}
+	if(p->distance(getPoint4())<aux_dist) {
+		aux_p = getPoint4();
+		aux_dist = p->distance(aux_p);
+	}
+
+	return aux_p;
+}
+

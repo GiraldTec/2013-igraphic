@@ -144,7 +144,8 @@ void key(unsigned char key, int x, int y){
 
   case 'k':
   case 'K':
-	  escena->read_angle();
+	if (escena->read_angle()) cout << "El angulo ha sido impuesto" << endl;
+	else cout << "No hay arbol" << endl;
 	break;
 
 
@@ -180,8 +181,8 @@ void mouse(int button, int state,int x, int y){
 					GLdouble aux_y = (((escena->yTop - escena->yBot)*y)/HEIGHT)+escena->yBot;
 					cout << aux_x << " " << aux_y << " " << endl;
 
-					if (escena->mouse_input(aux_x,aux_y)) cout << "Se crea arbol en la escena" << endl;
-					else cout << "Ya existe arbol en la escena" << endl;}
+					escena->mouse_input(aux_x,aux_y);
+					}
 				break;
 			case GLUT_UP:
 				break; 
