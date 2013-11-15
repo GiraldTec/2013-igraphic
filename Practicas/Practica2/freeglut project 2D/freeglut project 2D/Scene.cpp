@@ -1,7 +1,5 @@
 #include "Scene.h"
 
-
-
 Scene::Scene(void)
 {
 	
@@ -42,6 +40,10 @@ void Scene::render()
 		glVertex2d( xTriangle + triangleWidth, yTriangle );
 		glVertex2d( xTriangle + triangleWidth, yTriangle + triangleHeight );
 	glEnd () ; 
+}
+
+void Scene::step(void){
+	//ball->step();
 }
 
 

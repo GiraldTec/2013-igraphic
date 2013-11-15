@@ -9,8 +9,6 @@
 #include <iostream>
 using namespace std;
 
-#include <Tree.h>
-
 class Scene
 {
 public:
@@ -26,6 +24,10 @@ public:
 	// Scene colors
 	GLfloat red, blue, green;
 
+	// Pelota
+
+//	Pelota ball;
+
 	Scene(void);
 	~Scene(void);
 	void render(void);
@@ -35,6 +37,7 @@ public:
 	void cam_down(void);
 	void cam_in(void);
 	void cam_out(void);
+	void step(void);
 	bool reset(void);
 };
 

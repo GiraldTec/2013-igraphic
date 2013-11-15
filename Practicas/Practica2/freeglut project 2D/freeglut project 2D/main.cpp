@@ -99,6 +99,11 @@ void key(unsigned char key, int x, int y){
 	glutLeaveMainLoop (); //Freeglut's sentence for stopping glut's main loop (*)
     break;
 
+  case 13:
+	  // escena->step();
+	  cout << "has pulsado enter" << endl;
+	  break;
+
 // Movimientos de cámara : RIGHT / LEFT / UP / DOWN
   case 'd' :
   case 'D' :
@@ -142,6 +147,7 @@ void key(unsigned char key, int x, int y){
 
   default:
     need_redisplay = false;
+	cout << key-1 << " es la tecla" << endl;
     break;
   }//switch
 
