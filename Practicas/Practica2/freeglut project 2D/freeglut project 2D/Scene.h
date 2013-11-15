@@ -25,9 +25,6 @@ public:
 
 	// Scene colors
 	GLfloat red, blue, green;
-	
-	// Tree
-	Tree* arbol;
 
 	Scene(void);
 	~Scene(void);
@@ -38,10 +35,6 @@ public:
 	void cam_down(void);
 	void cam_in(void);
 	void cam_out(void);
-	bool mouse_input(GLdouble x, GLdouble y);
 	bool reset(void);
-	bool tree_grow(void);
-	bool tree_drecrease(void);
-	bool read_angle(void);
 };
 

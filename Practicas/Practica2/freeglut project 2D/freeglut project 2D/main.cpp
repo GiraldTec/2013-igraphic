@@ -140,28 +140,6 @@ void key(unsigned char key, int x, int y){
 	else cout << "No había nada que resetear" << endl;
 	break;
 
-// Angle setting
-
-  case 'k':
-  case 'K':
-	if (escena->read_angle()) cout << "El angulo ha sido impuesto" << endl;
-	else cout << "No hay arbol" << endl;
-	break;
-
-
-	
-// Crecimiento/Decrecimiento del árbol
-
-  case '+' :
-	if (escena->tree_grow()) cout << "El árbol existe y crece" << endl;
-	else cout << "El árbol no existe o no crece" << endl;
-	break;
-
-  case '-' :
-	if (escena->tree_drecrease()) cout << "El arbol existe y decrece" << endl;
-	else cout << "El arbol no existe o no decrece" << endl;
-	break;
-
   default:
     need_redisplay = false;
     break;
@@ -175,14 +153,8 @@ void mouse(int button, int state,int x, int y){
 	switch (button) {
 	case GLUT_LEFT_BUTTON:
 		switch (state){
-			case GLUT_DOWN:{
-					y = HEIGHT - y;
-					GLdouble aux_x = (((escena->xRight - escena->xLeft)*x)/WIDTH) + escena->xLeft;
-					GLdouble aux_y = (((escena->yTop - escena->yBot)*y)/HEIGHT)+escena->yBot;
-					cout << aux_x << " " << aux_y << " " << endl;
-
-					escena->mouse_input(aux_x,aux_y);
-					}
+			case GLUT_DOWN:
+				// TODO
 				break;
 			case GLUT_UP:
 				break; 
