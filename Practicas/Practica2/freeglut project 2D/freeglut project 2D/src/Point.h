@@ -29,4 +29,3 @@ public:
 	GLdouble distance(Point* p);
 	Point* clone();
 };
-

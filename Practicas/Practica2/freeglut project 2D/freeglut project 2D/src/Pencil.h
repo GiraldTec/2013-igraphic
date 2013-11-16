@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Point.h"
+#include <src/Point.h>
 #include <iostream>
 using namespace std;
 

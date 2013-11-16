@@ -5,7 +5,7 @@
 #include <GL/freeglut.h>
 //#include <GL/glut.h>
 
-#include <Scene.h>
+#include <src/Scene.h>
 
 #include <iostream>
 using namespace std;
@@ -147,7 +147,7 @@ void key(unsigned char key, int x, int y){
 
   default:
     need_redisplay = false;
-	cout << key-1 << " es la tecla" << endl;
+	cout << (int)key << " es la tecla" << endl;
     break;
   }//switch
 
