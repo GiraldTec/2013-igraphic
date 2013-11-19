@@ -1,6 +1,6 @@
 #pragma once
 
-#include <vector>
+
 #include <src/Point.h>
 
 class Drawable
