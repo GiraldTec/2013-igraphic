@@ -29,7 +29,7 @@ Scene::~Scene(void)
 
 void Scene::render()
 {
-	for (int i=0;i<objectsToDraw->size(); i++){
+	for (unsigned i=0;i<objectsToDraw->size(); i++){
 		objectsToDraw->at(i)->render();
 	}
 
