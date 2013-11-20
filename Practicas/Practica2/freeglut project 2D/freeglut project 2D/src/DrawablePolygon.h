@@ -18,7 +18,19 @@ private:
 public:
 	DrawablePolygon(void);
 	~DrawablePolygon(void);
-	DrawablePolygon(PV2D *c,int n, GLdouble r, bool d);
+	DrawablePolygon(PV2D *c,int n, GLdouble r);
+
+	// Getters
+	vector<PV2D*> * getVertex(void);  //TODO
+	PV2D * getCenter(void); //TODO
+	GLdouble getRadius(void); //TODO
+
+	// Setters
+	void setVertex(vector<PV2D*> *v);
+	void setCenter(PV2D *p);
+	void setRadius(GLdouble r);
+
+	// Methods
 	void calcula_vertices(void);
 	void render(void);
 };

@@ -7,7 +7,7 @@ private:
 public:
 	Ball(void);
 	~Ball(void);
-	Ball(PV2D* c, PV2D* v, GLdouble radius);	
+	Ball(PV2D *c,int n, GLdouble r);
 
 	void forward(GLdouble t);
 	void bounce(PV2D* n);

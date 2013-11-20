@@ -9,9 +9,5 @@ private:
 public:
 	Circle(void);
 	~Circle(void);
-
-	
-	void render(void);
-	void collide(Ball *ball);
 };
 

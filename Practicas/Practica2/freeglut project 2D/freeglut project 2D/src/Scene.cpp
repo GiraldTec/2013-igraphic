@@ -30,7 +30,7 @@ Scene::~Scene(void)
 void Scene::render()
 {
 	for (int i=0;i<objectsToDraw->size(); i++){
-		objectsToDraw->at(i)->render;
+		objectsToDraw->at(i)->render();
 	}
 
 	/*
@@ -51,9 +51,6 @@ void Scene::render()
 	glEnd () ; */
 }
 
-void Scene::step(void){
-	//ball->step();
-}
 
 
 void Scene::cam_right(void)
@@ -139,13 +136,13 @@ bool Scene::reset(void)
 void Scene::initScene(){
 
 	objectsToDraw = new vector<DrawablePolygon*>();
-
+/*
 	//Primero añadimo los triangulos que forman los bordes
 	objectsToDraw->push_back(new Triangle(new PV2D(xRight, yTop), new PV2D(xLeft, yTop), new PV2D(xRight, yTop-50)); //Arriba
 	objectsToDraw->push_back(new Triangle(new PV2D(xRight, yTop), new PV2D(xRight, yBot), new PV2D(xRight-50, yTop)); //Derecha
 	objectsToDraw->push_back(new Triangle(new PV2D(xLeft, yBot), new PV2D(xRight, yBot), new PV2D(xLeft, yBot+50)); //Abajo
 	objectsToDraw->push_back(new Triangle(new PV2D(xLeft, yTop), new PV2D(xLeft, yBot), new PV2D(xLeft+50, yTop)); //Izquierda
-
+	*/
 	//Añadimos los obstaculos
 	//Cuatro de cada, radio random, centro defininido
 	/*randomize();
@@ -162,7 +159,10 @@ void Scene::initScene(){
 	//Creamos la pelota
 	//myBall = new Ball(new PV2D(random(10),random(10)),new PV2D(random(10),random(10)),random(20));
 }
-
+/*
+void Scene::step(void){
+	//ball->step();
+}
 void Scene::step(void){
 	//TODO
 	//eliminar pelota!!!! (NO ES NECESARIO REPINTAR LA ESCENA ENTERA, NO??)
@@ -174,3 +174,4 @@ void Scene::step(void){
 		//myBall->bounce();
 	//Dibujar la pelota de nuevo
 }
+*/

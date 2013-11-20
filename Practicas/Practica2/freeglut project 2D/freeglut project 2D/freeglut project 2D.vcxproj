@@ -128,6 +128,7 @@
     <ClCompile Include="src\DrawablePolygon.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\PV2D.cpp" />
+    <ClCompile Include="src\PV2D.cpp" />
     <ClCompile Include="src\Scene.cpp" />
     <ClCompile Include="src\Triangle.cpp" />
   </ItemGroup>
@@ -137,6 +138,7 @@
     <ClInclude Include="src\Ball.h" />
     <ClInclude Include="src\Pencil.h" />
     <ClInclude Include="src\DrawablePolygon.h" />
+    <ClInclude Include="src\PV2D.h" />
     <ClInclude Include="src\PV2D.h" />
     <ClInclude Include="src\Scene.h" />
     <ClInclude Include="src\Triangle.h" />
