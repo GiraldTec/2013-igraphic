@@ -13,6 +13,10 @@ Scene::Scene(void)
 	// Scene colors
 	red=1.0, blue=0.0, green=0.0;
 
+	//Inicializar la escena
+	initScene();
+
+
 
 }
 
@@ -25,6 +29,11 @@ Scene::~Scene(void)
 
 void Scene::render()
 {
+	for (int i=0;i<obstacles->size(); i++){
+		obstacles->at(i)->render;
+	}
+
+	/*
 	glBegin(GL_QUADS);
 		glVertex2d( xTriangle, yTriangle );
 		glVertex2d( xTriangle + triangleWidth, yTriangle );
@@ -39,7 +48,7 @@ void Scene::render()
 		glVertex2d( xTriangle, yTriangle );
 		glVertex2d( xTriangle + triangleWidth, yTriangle );
 		glVertex2d( xTriangle + triangleWidth, yTriangle + triangleHeight );
-	glEnd () ; 
+	glEnd () ; */
 }
 
 void Scene::step(void){
@@ -123,6 +132,34 @@ void Scene::cam_out(void)
 
 bool Scene::reset(void)
 {
-	// TODO 
+	// TODO
 	return false;
+}
+
+void Scene::initScene(){
+
+	obstacles = new vector<Obstacle*>();
+
+	//Primero añadimo los triangulos que forman los bordes
+	obstacles->push_back(new Triangle(new PV2D(xRight, yTop), new PV2D(xLeft, yTop), new PV2D(xRight, yTop-50)); //Arriba
+	obstacles->push_back(new Triangle(new PV2D(xRight, yTop), new PV2D(xRight, yBot), new PV2D(xRight-50, yTop)); //Derecha
+	obstacles->push_back(new Triangle(new PV2D(xLeft, yBot), new PV2D(xRight, yBot), new PV2D(xLeft, yBot+50)); //Abajo
+	obstacles->push_back(new Triangle(new PV2D(xLeft, yTop), new PV2D(xLeft, yBot), new PV2D(xLeft+50, yTop)); //Izquierda
+
+	//Añadimos los obstaculos
+
+	//Creamos la pelota
+	myBall = new Ball()
+}
+
+void Scene::step(void){
+	//TODO
+	//eliminar pelota!!!! (NO ES NECESARIO REPINTAR LA ESCENA ENTERA, NO??)
+	//Comprobar si la pelota golpea
+	//if no golpea => myBall->forward(1);
+	//if golpea
+		//Calcular distancia que puede recorrer
+		//myBall->forward(x);
+		//myBall->bounce();
+	//Dibujar la pelota de nuevo
 }

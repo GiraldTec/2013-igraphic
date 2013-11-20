@@ -3,17 +3,17 @@
 
 Pencil::Pencil(void)
 {
-	this->pos = new Point;
+	this->pos = new PV2D();
 	dir = 0;
 }
 
-Pencil::Pencil(Point *p, GLdouble d)
+Pencil::Pencil(PV2D *p, GLdouble d)
 {
 	this->pos = p;
 	this->dir = d;
 }
 
-void Pencil::setPos(Point *p)
+void Pencil::setPos(PV2D *p)
 {
 	this->pos = p;
 }
@@ -28,7 +28,7 @@ GLdouble Pencil::getDir()
 	return this->dir;
 }
 
-Point* Pencil::getPos()
+PV2D* Pencil::getPos()
 {
 	return this->pos;
 }

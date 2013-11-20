@@ -1,17 +1,23 @@
 #pragma once
-#include "DrawablePolygon.h"
+
 #include "Obstacle.h"
-class Triangle : public DrawablePolygon , public Obstacle
+class Triangle : public Obstacle
 {
 private:
-	std::vector<Point*> *vertices;
+	std::vector<PV2D*> *vertex;
+	std::vector<PV2D*> *normal;
+	Pencil* pencil;
+	PV2D* center;
+
 public:
 	Triangle(void);
 	~Triangle(void);
-	Triangle(vector<Point*> *v);
+	Triangle(vector<PV2D*> *v);
+	Triangle(PV2D* p1, PV2D* p2, PV2D* p3);
 	
-
 	void render(void){ cout << "hago un render de mi triangulo" << endl;}
 	void collide(Ball *ball) {}
+	void doNormals(void);
+	void doVertex(void);
 };
 

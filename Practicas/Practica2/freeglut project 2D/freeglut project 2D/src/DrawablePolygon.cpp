@@ -12,6 +12,6 @@ DrawablePolygon::~DrawablePolygon(void)
 
 
 
-DrawablePolygon::DrawablePolygon(Point *c, int n, GLdouble a)
+DrawablePolygon::DrawablePolygon(PV2D *c, int n, GLdouble a)
 {
 }

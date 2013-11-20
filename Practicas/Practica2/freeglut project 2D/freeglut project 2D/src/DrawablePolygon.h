@@ -6,15 +6,16 @@
 class DrawablePolygon
 {
 private:
-	int num_faces;
-	std::vector<Point*> *vertices;
+	int num_sides;
+	std::vector<PV2D*> *vertex;
 	GLdouble orientation;
-	Point *centro;
-	Pencil *lapiz;
+	PV2D *center;
+	Pencil *pencil;
+
 public:
 	DrawablePolygon(void);
 	~DrawablePolygon(void);
-	DrawablePolygon(Point *c,int n, GLdouble a);
+	DrawablePolygon(PV2D *c,int n, GLdouble a);
 	virtual void calcula_vertices(void)=0;
 	virtual void render(void) = 0;
 };

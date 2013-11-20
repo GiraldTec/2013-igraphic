@@ -3,8 +3,13 @@
 #include <Windows.h>
 #include <gl/GL.h>
 #include <gl/GLU.h>
-
 #include <GL/freeglut.h>
+#include <vector>
+ 
+#include "Obstacle.h"
+#include "Triangle.h"
+#include "Circle.h"
+#include "Ball.h"
 
 #include <iostream>
 using namespace std;
@@ -24,7 +29,10 @@ public:
 	// Scene colors
 	GLfloat red, blue, green;
 
+	//Vector con todos los obstaculos (incluidos los bordes de la pantalla)
+	vector<Obstacle*> *obstacles;
 	// Pelota
+	Ball* myball;
 
 //	Pelota ball;
 
@@ -39,5 +47,7 @@ public:
 	void cam_out(void);
 	void step(void);
 	bool reset(void);
+
+	void initScene(void);
 };
 
