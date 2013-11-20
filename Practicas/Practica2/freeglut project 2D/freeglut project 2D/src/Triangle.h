@@ -6,11 +6,6 @@
 class Triangle : public Obstacle, public DrawablePolygon
 {
 private:
-	std::vector<PV2D*> *vertex;
-	std::vector<PV2D*> *normal;
-	Pencil* pencil;
-	PV2D* center;
-	GLdouble radius;
 
 public:
 	Triangle(void);

@@ -11,7 +11,7 @@
 #include <iostream>
 using namespace std;
 
-class Point
+class PV2D
 {
 
 private:
@@ -19,13 +19,13 @@ private:
 	GLdouble corY;
 
 public:
-	Point(void);
-	~Point(void);
-	Point(GLdouble x, GLdouble y);
+	PV2D(void);
+	~PV2D(void);
+	PV2D(GLdouble x, GLdouble y);
 	GLdouble GetX();
 	GLdouble GetY();
 	void setX(GLdouble x);
 	void setY(GLdouble y);
-	GLdouble distance(Point* p);
-	Point* clone();
+	GLdouble distance(PV2D* p);
+	PV2D* clone();
 };

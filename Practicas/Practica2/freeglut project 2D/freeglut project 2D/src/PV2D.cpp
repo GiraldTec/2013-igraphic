@@ -1,51 +1,51 @@
-#include "Point.h"
+#include "PV2D.h"
 
 
-Point::Point(void)
+PV2D::PV2D(void)
 {
 	this->corX = 0;
 	this->corY = 0;
 }
 
-Point* Point::clone()
+PV2D* PV2D::clone()
 {
-	Point* aux = new Point();
+	PV2D* aux = new PV2D();
 	aux->setX(this->GetX());
 	aux->setY(this->GetY());
 	return aux;
 }
 
-Point::Point(GLdouble x, GLdouble y)
+PV2D::PV2D(GLdouble x, GLdouble y)
 {
 	this->corX = x;
 	this->corY = y;
 }
 
-GLdouble Point::GetX()
+GLdouble PV2D::GetX()
 {
 	return this->corX;
 }
 
-GLdouble Point::GetY()
+GLdouble PV2D::GetY()
 {
 	return this->corY;
 }
 
-void Point::setX(GLdouble x)
+void PV2D::setX(GLdouble x)
 {
 	this->corX = x;
 }
 
-void Point::setY(GLdouble y)
+void PV2D::setY(GLdouble y)
 {
 	this->corY = y;
 }
 
-Point::~Point(void)
+PV2D::~PV2D(void)
 {
 }
 
-GLdouble Point::distance(Point* p){
+GLdouble PV2D::distance(PV2D* p){
 	if(p!=NULL){
 		//Teorema pitagoras: hipotenusa = raiz de suma cuadrados de los catetos
 		return sqrt (pow(GetX()-p->GetX(),2)+pow(GetY()-p->GetY(),2));

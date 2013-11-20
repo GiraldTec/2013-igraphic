@@ -3,13 +3,7 @@
 class Ball : public DrawablePolygon
 {
 private:
-	PV2D* center;
-	PV2D* vector;
-	GLdouble radius;
-	int nSides;
-	Pencil* pencil;
-	std::vector<PV2D*> *vertex;
-
+	
 public:
 	Ball(void);
 	~Ball(void);
