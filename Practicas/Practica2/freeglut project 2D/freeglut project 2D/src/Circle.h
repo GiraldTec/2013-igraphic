@@ -14,7 +14,7 @@ public:
 	~Circle(void);
 
 	
-	void render(void){ cout << "hago un render de mi triangulo" << endl;}
-	void collide(Ball *ball) {}
+	void render(void);
+	void collide(Ball *ball);
 };
 

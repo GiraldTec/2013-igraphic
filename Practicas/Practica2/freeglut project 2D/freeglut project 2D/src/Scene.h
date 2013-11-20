@@ -30,7 +30,7 @@ public:
 	GLfloat red, blue, green;
 
 	//Vector con todos los obstaculos (incluidos los bordes de la pantalla)
-	vector<Obstacle*> *obstacles;
+	vector<DrawablePolygon*> *objectsToDraw;
 	// Pelota
 	Ball* myball;
 

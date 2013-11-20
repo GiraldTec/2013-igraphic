@@ -29,8 +29,8 @@ Scene::~Scene(void)
 
 void Scene::render()
 {
-	for (int i=0;i<obstacles->size(); i++){
-		obstacles->at(i)->render;
+	for (int i=0;i<objectsToDraw->size(); i++){
+		objectsToDraw->at(i)->render;
 	}
 
 	/*
@@ -138,18 +138,29 @@ bool Scene::reset(void)
 
 void Scene::initScene(){
 
-	obstacles = new vector<Obstacle*>();
+	objectsToDraw = new vector<DrawablePolygon*>();
 
 	//Primero añadimo los triangulos que forman los bordes
-	obstacles->push_back(new Triangle(new PV2D(xRight, yTop), new PV2D(xLeft, yTop), new PV2D(xRight, yTop-50)); //Arriba
-	obstacles->push_back(new Triangle(new PV2D(xRight, yTop), new PV2D(xRight, yBot), new PV2D(xRight-50, yTop)); //Derecha
-	obstacles->push_back(new Triangle(new PV2D(xLeft, yBot), new PV2D(xRight, yBot), new PV2D(xLeft, yBot+50)); //Abajo
-	obstacles->push_back(new Triangle(new PV2D(xLeft, yTop), new PV2D(xLeft, yBot), new PV2D(xLeft+50, yTop)); //Izquierda
+	objectsToDraw->push_back(new Triangle(new PV2D(xRight, yTop), new PV2D(xLeft, yTop), new PV2D(xRight, yTop-50)); //Arriba
+	objectsToDraw->push_back(new Triangle(new PV2D(xRight, yTop), new PV2D(xRight, yBot), new PV2D(xRight-50, yTop)); //Derecha
+	objectsToDraw->push_back(new Triangle(new PV2D(xLeft, yBot), new PV2D(xRight, yBot), new PV2D(xLeft, yBot+50)); //Abajo
+	objectsToDraw->push_back(new Triangle(new PV2D(xLeft, yTop), new PV2D(xLeft, yBot), new PV2D(xLeft+50, yTop)); //Izquierda
 
 	//Añadimos los obstaculos
+	//Cuatro de cada, radio random, centro defininido
+	/*randomize();
 
+	objectsToDraw->push_back(new Triangle(new PV2D(50,43),random(10));
+	objectsToDraw->push_back(new Triangle(new PV2D(100,12),random(10));
+	objectsToDraw->push_back(new Triangle(new PV2D(30,100),random(10));
+	objectsToDraw->push_back(new Triangle(new PV2D(300,20),random(10));
+	objectsToDraw->push_back(new Circle(new PV2D(245,45),random(10));
+	objectsToDraw->push_back(new Circle(new PV2D(45,300),random(10));
+	objectsToDraw->push_back(new Circle(new PV2D(90,150),random(10));
+	objectsToDraw->push_back(new Circle(new PV2D(180,20),random(10));
+	*/
 	//Creamos la pelota
-	myBall = new Ball()
+	//myBall = new Ball(new PV2D(random(10),random(10)),new PV2D(random(10),random(10)),random(20));
 }
 
 void Scene::step(void){
