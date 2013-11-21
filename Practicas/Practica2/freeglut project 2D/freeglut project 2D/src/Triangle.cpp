@@ -6,12 +6,12 @@ Triangle::Triangle(void)
 }
 
 
-Triangle::~Triangle(void)
+Triangle::Triangle(PV2D *c, GLdouble r):DrawablePolygon(c,3,r)
 {
 }
 
-void Triangle::collide(Ball *ball) {
-
+Triangle::~Triangle(void)
+{
 }
 
 void Triangle::doNormals(){
