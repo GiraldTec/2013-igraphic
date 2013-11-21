@@ -8,6 +8,8 @@ private:
 public:
 	Obstacle(void);
 	~Obstacle(void);
-	virtual void collide(Ball *ball, GLdouble& tin, PV2D*& normalIn)=0;
+
+	virtual bool collide(Ball* ball, GLdouble& tIn, PV2D*& normalIn)=0;
+
 };
 

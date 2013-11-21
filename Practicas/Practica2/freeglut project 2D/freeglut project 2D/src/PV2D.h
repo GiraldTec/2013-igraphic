@@ -22,10 +22,12 @@ public:
 	PV2D(void);
 	~PV2D(void);
 	PV2D(GLdouble x, GLdouble y);
-	GLdouble GetX();
-	GLdouble GetY();
+	GLdouble getX();
+	GLdouble getY();
 	void setX(GLdouble x);
 	void setY(GLdouble y);
 	GLdouble distance(PV2D* p);
 	PV2D* clone();
+	void reflection();
+	PV2D* doNormal();
 };

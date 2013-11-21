@@ -43,10 +43,10 @@ void Pencil::turn(GLdouble d)
 void Pencil::forward(GLdouble d)
 {
 	//Seno(a)=opuesto/hipotenusa => opuesto = seno(a)*hipotenusa
-	GLdouble y = this->pos->GetY() + (sin(this->dir)*d);
+	GLdouble y = this->pos->getY() + (sin(this->dir)*d);
 
 	//Coseno(a)=contiguo/hipotenusa => contiguo = coseno(a)*hipotenusa
-	GLdouble x = this->pos->GetX() + (cos(this->dir)*d);
+	GLdouble x = this->pos->getX() + (cos(this->dir)*d);
 
 	this->pos->setX(x);
 	this->pos->setY(y);

@@ -3,6 +3,7 @@
 class Ball : public DrawablePolygon
 {
 private:
+	PV2D* vector;
 	
 public:
 	Ball(void);

@@ -31,7 +31,7 @@ void DrawablePolygon::render(void){
 	if(vertex!=NULL){
 		glBegin(GL_POLYGON);
 			for(unsigned i=0;i<vertex->size();i++){
-				glVertex2d( vertex->at(i)->GetX(), vertex->at(i)->GetY() );
+				glVertex2d( vertex->at(i)->getX(), vertex->at(i)->getY() );
 			}
 		glEnd();
 	}
