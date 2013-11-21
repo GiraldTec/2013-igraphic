@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <src/Pencil.h>
+#include <src/PV2D.h>
 
 class DrawablePolygon
 {
@@ -21,14 +22,16 @@ public:
 	DrawablePolygon(PV2D *c,int n, GLdouble r);
 
 	// Getters
-	vector<PV2D*> * getVertex(void);  //TODO
-	PV2D * getCenter(void); //TODO
-	GLdouble getRadius(void); //TODO
+	vector<PV2D*> * getVertex(void);  
+	PV2D * getCenter(void); 
+	GLdouble getRadius(void); 
+	GLdouble getOrientation(void);
 
 	// Setters
 	void setVertex(vector<PV2D*> *v);
 	void setCenter(PV2D *p);
 	void setRadius(GLdouble r);
+	void setOrientation(GLdouble o);
 
 	// Methods
 	void calcula_vertices(void);
