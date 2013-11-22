@@ -12,7 +12,9 @@ public:
 	Triangle(PV2D *c, GLdouble r);
 	~Triangle(void);
 	
-	void collide(Ball *ball, GLdouble& tin, PV2D*& normalIn);
+	bool collide(Ball *ball, GLdouble& tin, PV2D*& normalIn){
+		return false;
+	};
 	void doNormals(void);
 	void doVertex(void);
 };

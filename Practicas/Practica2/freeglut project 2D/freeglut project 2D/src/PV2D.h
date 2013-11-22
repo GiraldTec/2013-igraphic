@@ -28,6 +28,6 @@ public:
 	void setY(GLdouble y);
 	GLdouble distance(PV2D* p);
 	PV2D* clone();
-	void reflection();
+	void reflection(PV2D* normal);
 	PV2D* doNormal();
 };

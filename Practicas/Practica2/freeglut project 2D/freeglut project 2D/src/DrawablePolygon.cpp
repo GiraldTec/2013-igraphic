@@ -50,14 +50,17 @@ void DrawablePolygon::calcula_vertices(void){
 	p->forward(radius);
 	p->turn(M_PI-beta);
 
+	PV2D *aux_p;
 	//CALCULO DE LOS VERTICES DEL POLIGONO;
 	this->vertex = new vector<PV2D*>();
 	for (int i=0; i<n_sides; i++){
-		PV2D *aux_p = p->getPos()->clone();
+		aux_p = p->getPos()->clone();
 		vertex->push_back(aux_p);
+		cout << "punto "<<i<<" esta en:("<<p->getPos()->getX()<<","<<p->getPos()->getY()<<") con dir:"<<p->getDir()<< endl; 
 		p->forward(tam);
-		p->turn(beta);	
+		p->turn(M_PI-2*beta);	
 	}
+	aux_p = NULL;
 }
 
 void DrawablePolygon::setVertex(vector<PV2D*> *v){

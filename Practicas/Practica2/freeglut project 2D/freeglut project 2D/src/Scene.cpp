@@ -1,4 +1,6 @@
-#include "Scene.h"
+#include "src/Scene.h"
+#include "src/Triangle.h"
+#include "src/Ball.h"
 
 Scene::Scene(void)
 {
@@ -136,6 +138,10 @@ bool Scene::reset(void)
 void Scene::initScene(){
 
 	objectsToDraw = new vector<DrawablePolygon*>();
+
+	objectsToDraw->push_back(new Ball(new PV2D(50.0,50.0),13, 30.0)); //Arriba
+
+	objectsToDraw->push_back(new Triangle(new PV2D(0.0,0.0), 30.0)); //Arriba
 /*
 	//Primero añadimo los triangulos que forman los bordes
 	objectsToDraw->push_back(new Triangle(new PV2D(xRight, yTop), new PV2D(xLeft, yTop), new PV2D(xRight, yTop-50)); //Arriba
