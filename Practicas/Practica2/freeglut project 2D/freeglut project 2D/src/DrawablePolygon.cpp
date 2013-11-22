@@ -15,12 +15,12 @@ DrawablePolygon::~DrawablePolygon(void)
 
 
 
-DrawablePolygon::DrawablePolygon(PV2D *c, int n, GLdouble r)
+DrawablePolygon::DrawablePolygon(PV2D *c, int n, GLdouble r, GLdouble o)
 {
 	this->center = c;
 	this->n_sides = n;
 	this->radius = r;
-	this->orientation = 0.0;
+	this->orientation = o;
 	this->draw_normals = false;
 
 	this->calcula_vertices();
@@ -76,6 +76,7 @@ void DrawablePolygon::setRadius(GLdouble r){
 }
 void DrawablePolygon::setOrientation(GLdouble o){
 	this->orientation = o;
+	this->calcula_vertices();
 }
 
 vector<PV2D*>* DrawablePolygon::getVertex(void){

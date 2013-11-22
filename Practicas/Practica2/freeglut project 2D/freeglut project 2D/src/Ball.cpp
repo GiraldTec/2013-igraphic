@@ -10,7 +10,7 @@ Ball::~Ball(void)
 {
 }
 
-Ball::Ball(PV2D *c,int n, GLdouble r):DrawablePolygon(c,n,r){
+Ball::Ball(PV2D *c, GLdouble r):DrawablePolygon(c,20,r,0){
 	// TODO ¿qué más le metemos a la pelota?
 	this->vector = new PV2D(10,0);
 }

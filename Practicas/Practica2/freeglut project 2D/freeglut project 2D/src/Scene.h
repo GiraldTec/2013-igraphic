@@ -22,6 +22,8 @@ public:
 	// Scene visible area size
 	GLdouble xLeft, xRight, yBot, yTop;
 
+	GLdouble tam_triang_border;
+
 	// Scene variables
 	GLdouble xTriangle, yTriangle;
 	GLdouble triangleWidth, triangleHeight;

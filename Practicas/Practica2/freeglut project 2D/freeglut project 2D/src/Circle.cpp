@@ -5,7 +5,7 @@ Circle::Circle(void)
 {
 }
 
-Circle::Circle(PV2D *c,int n, GLdouble r):DrawablePolygon(c,n,r)
+Circle::Circle(PV2D *c,GLdouble r):DrawablePolygon(c,20,r,0)
 {
 }
 

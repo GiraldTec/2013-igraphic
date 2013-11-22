@@ -15,7 +15,7 @@ using namespace std;
 // bool continue_in_main_loop= true; //(**)
 
 // Viewport size
-int WIDTH= 500, HEIGHT= 500;
+int WIDTH= 600, HEIGHT= 600;
 
 
 Scene* escena;
@@ -29,7 +29,7 @@ void intitGL(){
 	glLineWidth(2.0);
 
 	// Viewport
-    glViewport(0, 0, WIDTH, HEIGHT);
+    glViewport(0, 0,WIDTH, HEIGHT);
     
 	// Model transformation
     glMatrixMode(GL_MODELVIEW);
@@ -86,6 +86,8 @@ void resize(int newWidth, int newHeight){
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
   gluOrtho2D(escena->xLeft, escena->xRight, escena->yBot, escena->yTop); 
+
+  
 }
 
 
@@ -175,8 +177,8 @@ int main(int argc, char *argv[]){
   int my_window; //my window's identifier
 
   //Initialization
-  glutInitWindowSize(500, 500);
-  glutInitWindowPosition (0,0);//140, 140);
+  glutInitWindowSize(600, 600);
+  glutInitWindowPosition (140, 140);
   glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE );
   glutInit(&argc, argv);
 

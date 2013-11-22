@@ -9,7 +9,7 @@ private:
 
 public:
 	Triangle(void);
-	Triangle(PV2D *c, GLdouble r);
+	Triangle(PV2D *c, GLdouble r, GLdouble o);
 	~Triangle(void);
 	
 	bool collide(Ball *ball, GLdouble& tin, PV2D*& normalIn){

@@ -19,7 +19,7 @@ private:
 public:
 	DrawablePolygon(void);
 	~DrawablePolygon(void);
-	DrawablePolygon(PV2D *c,int n, GLdouble r);
+	DrawablePolygon(PV2D *c,int n, GLdouble r, GLdouble o);
 
 	// Getters
 	vector<PV2D*> * getVertex(void);  

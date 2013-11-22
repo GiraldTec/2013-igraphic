@@ -6,12 +6,11 @@ Scene::Scene(void)
 {
 	
 	// Scene visible area size
-	xLeft= 0.0, xRight= 500.0, yBot= 0.0, yTop= 500.0;
+	xLeft= 0.0, xRight= 930.0, yBot= -250.0, yTop= 750.0;
 
-	// Scene variables
-	xTriangle= 0.0, yTriangle= 0.0;
-	triangleWidth= 100.0, triangleHeight= 50.0;
-
+	// Tamaños estandar
+	tam_triang_border = 260.0;
+	
 	// Scene colors
 	red=1.0, blue=0.0, green=0.0;
 
@@ -36,6 +35,9 @@ void Scene::render()
 	}
 
 	/*
+	blue = 1.0;
+	glColor3f(red,blue,green);
+
 	glBegin(GL_QUADS);
 		glVertex2d( xTriangle, yTriangle );
 		glVertex2d( xTriangle + triangleWidth, yTriangle );
@@ -139,9 +141,19 @@ void Scene::initScene(){
 
 	objectsToDraw = new vector<DrawablePolygon*>();
 
-	objectsToDraw->push_back(new Ball(new PV2D(50.0,50.0),13, 30.0)); //Arriba
+	//objectsToDraw->push_back(new Ball(new PV2D(0.0,0.0), 30.0)); //Arriba
+	//objectsToDraw->push_back(new Ball(new PV2D(0.0,500.0), 30.0)); //Arriba
+	//objectsToDraw->push_back(new Ball(new PV2D(500.0,0.0), 30.0)); //Arriba
+	//objectsToDraw->push_back(new Ball(new PV2D(500.0,500.0), 30.0)); //Arriba
 
-	objectsToDraw->push_back(new Triangle(new PV2D(0.0,0.0), 30.0)); //Arriba
+	objectsToDraw->push_back(new Triangle(new PV2D(0.0,5.0), tam_triang_border,M_PI*0.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(0.0,495.0), tam_triang_border,M_PI*1.5)); 
+
+	objectsToDraw->push_back(new Triangle(new PV2D(860.0,5.0), tam_triang_border,M_PI*0.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(860.0,495.0), tam_triang_border,M_PI*1.5)); 
+
+	objectsToDraw->push_back(new Triangle(new PV2D(430.0,740.0), tam_triang_border,M_PI*0.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(430.0,-240.0), tam_triang_border,M_PI*1.5)); 
 /*
 	//Primero añadimo los triangulos que forman los bordes
 	objectsToDraw->push_back(new Triangle(new PV2D(xRight, yTop), new PV2D(xLeft, yTop), new PV2D(xRight, yTop-50)); //Arriba

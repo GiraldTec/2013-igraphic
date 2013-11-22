@@ -8,7 +8,7 @@ private:
 
 public:
 	Circle(void);
-	Circle(PV2D *c,int n, GLdouble r);
+	Circle(PV2D *c,GLdouble r);
 	~Circle(void);
 };
 
