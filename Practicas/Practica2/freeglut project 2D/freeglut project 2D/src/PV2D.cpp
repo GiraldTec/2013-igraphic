@@ -57,5 +57,30 @@ PV2D* PV2D::doNormal(){
 }
 
 void PV2D::reflection(PV2D* normal){
-	
+	GLdouble a =calculateA(normal);
+	PV2D* an = normal->factor(2*a);
+	PV2D* auxVector = substract(an);
+
+	this->setX(auxVector->getX());
+	this->setY(auxVector->getY());
 }
+
+PV2D* PV2D::factor(GLdouble g){
+	return new PV2D(corX*f, corY*f);
+}
+
+PV2D* PV2D::substract(PV2D* vector){
+	return new PV2D(corX-v->getX(),corY-v->getY());
+}
+
+GLdouble PV2D::scalarProduct(PV2D* vector){
+	return ((corX*vector->getX())+(corY*vector->getY()));
+}
+
+GLdouble PV2D::calculateA(PV2D* normal){
+	GLdouble vn = scalarProduct(normal);
+	GLdouble vv = normal->scalarProduct(normal);
+	return vn/vv;
+}
+
+

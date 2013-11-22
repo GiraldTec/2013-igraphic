@@ -29,5 +29,9 @@ public:
 	GLdouble distance(PV2D* p);
 	PV2D* clone();
 	void reflection(PV2D* normal);
+	GLdouble scalarProduct(PV2D* vector);
+	GLdouble calculateA(PV2D* normal);
+	PV2D* factor(GLdouble f);
+	PV2D* substract(PV2D* v);
 	PV2D* doNormal();
 };
