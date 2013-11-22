@@ -15,11 +15,14 @@ private:
 	std::vector<PV2D*> *vertex;
 	std::vector<PV2D*> *normales;
 	bool draw_normals;
+
+	// Polygon colors
+	GLdouble red, blue, green;
 	
 public:
 	DrawablePolygon(void);
 	~DrawablePolygon(void);
-	DrawablePolygon(PV2D *c,int n, GLdouble r, GLdouble o);
+	DrawablePolygon(PV2D *c,int n, GLdouble radius, GLdouble o,GLdouble r, GLdouble g, GLdouble b);
 
 	// Getters
 	vector<PV2D*> * getVertex(void);  

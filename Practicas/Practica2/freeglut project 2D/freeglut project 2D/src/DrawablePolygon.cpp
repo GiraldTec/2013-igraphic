@@ -15,20 +15,24 @@ DrawablePolygon::~DrawablePolygon(void)
 
 
 
-DrawablePolygon::DrawablePolygon(PV2D *c, int n, GLdouble r, GLdouble o)
+DrawablePolygon::DrawablePolygon(PV2D *c, int n, GLdouble radius, GLdouble o, GLdouble r, GLdouble g, GLdouble b)
 {
 	this->center = c;
 	this->n_sides = n;
-	this->radius = r;
+	this->radius = radius;
 	this->orientation = o;
 	this->draw_normals = false;
-
+	this->red = r;
+	this->green = g;
+	this->blue = b;
 	this->calcula_vertices();
 }
 
 
 void DrawablePolygon::render(void){
 	if(vertex!=NULL){
+
+		glColor3f(red,blue,green);
 		glBegin(GL_POLYGON);
 			for(unsigned i=0;i<vertex->size();i++){
 				glVertex2d( vertex->at(i)->getX(), vertex->at(i)->getY() );

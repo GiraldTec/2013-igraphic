@@ -6,7 +6,7 @@ Triangle::Triangle(void)
 }
 
 
-Triangle::Triangle(PV2D *c, GLdouble r,GLdouble o):DrawablePolygon(c,3,r,o)
+Triangle::Triangle(PV2D *c, GLdouble r,GLdouble o):DrawablePolygon(c,3,r,o,0,0,1)
 {
 }
 

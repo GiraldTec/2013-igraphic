@@ -141,11 +141,6 @@ void Scene::initScene(){
 
 	objectsToDraw = new vector<DrawablePolygon*>();
 
-	//objectsToDraw->push_back(new Ball(new PV2D(0.0,0.0), 30.0)); //Arriba
-	//objectsToDraw->push_back(new Ball(new PV2D(0.0,500.0), 30.0)); //Arriba
-	//objectsToDraw->push_back(new Ball(new PV2D(500.0,0.0), 30.0)); //Arriba
-	//objectsToDraw->push_back(new Ball(new PV2D(500.0,500.0), 30.0)); //Arriba
-
 	objectsToDraw->push_back(new Triangle(new PV2D(0.0,5.0), tam_triang_border,M_PI*0.5)); 
 	objectsToDraw->push_back(new Triangle(new PV2D(0.0,495.0), tam_triang_border,M_PI*1.5)); 
 
