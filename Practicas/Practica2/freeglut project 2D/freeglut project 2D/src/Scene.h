@@ -33,6 +33,7 @@ public:
 
 	//Vector con todos los obstaculos (incluidos los bordes de la pantalla)
 	vector<DrawablePolygon*> *objectsToDraw;
+	vector<Obstacle*> *objectsToColl;
 	// Pelota
 	Ball* myball;
 

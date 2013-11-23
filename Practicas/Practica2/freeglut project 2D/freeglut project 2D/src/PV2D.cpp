@@ -21,6 +21,12 @@ PV2D::PV2D(GLdouble x, GLdouble y)
 	this->corY = y;
 }
 
+PV2D::PV2D(PV2D* a,PV2D* b)
+{
+	this->corX = b->getX() - a->getX();
+	this->corY = b->getY() - a->getY();
+}
+
 GLdouble PV2D::getX()
 {
 	return this->corX;
@@ -81,6 +87,14 @@ GLdouble PV2D::calculateA(PV2D* normal){
 	GLdouble vn = scalarProduct(normal);
 	GLdouble vv = normal->scalarProduct(normal);
 	return vn/vv;
+}
+
+GLdouble PV2D::calculateMod(void){
+	return sqrt (pow(this->corX,2) + pow(this->corY,2));
+}
+PV2D* PV2D::normalize(void){
+	GLdouble mod=this->calculateMod();
+	return new PV2D(this->corX/mod,this->corY/mod);
 }
 
 

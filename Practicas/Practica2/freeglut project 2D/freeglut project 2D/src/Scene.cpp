@@ -169,13 +169,36 @@ void Scene::initScene(){
 	objectsToDraw->push_back(new Circle(new PV2D(90,150),random(10));
 	objectsToDraw->push_back(new Circle(new PV2D(180,20),random(10));
 	*/
+/*	objectsToColl = new vector<Obstacle*>(objectsToDraw->size());
+	for(unsigned i=0;i<objectsToDraw->size();i++){
+		objectsToColl->at(i)=reinterpret_cast<Obstacle*> (objectsToDraw->at(i));
+	}
+	cout << objectsToColl->size() << endl;*/
 	//Creamos la pelota
-	myball = new Ball(new PV2D(50.0,50.0),20.0);
+	myball = new Ball(new PV2D(350.0,50.0),20.0);
 	objectsToDraw->push_back(myball);
 }
 
 void Scene::step(void){
-	myball->forward(1);
+	GLdouble tInGlobal, tInLocal;
+	PV2D *nGlobal=NULL, *nLocal=NULL;
+	bool b =((Obstacle*)objectsToDraw->at(0))->collide(myball,tInGlobal,nGlobal);
+	for(unsigned i=1;i<objectsToDraw->size();i++){
+		if(objectsToDraw->at(i)!=myball){
+			if(((Obstacle*)objectsToDraw->at(i))->collide(myball,tInLocal,nLocal)){
+				if(tInLocal<tInGlobal){
+					tInGlobal = tInLocal;
+					nGlobal = nLocal;
+				}
+			}
+		}
+	}
+	if(tInGlobal<1){
+		myball->forward(tInGlobal);
+		myball->bounce(nGlobal);
+	}else{
+		myball->forward(1);
+	}
 }
 /*
 void Scene::step(void){
