@@ -12,7 +12,7 @@ Ball::~Ball(void)
 
 Ball::Ball(PV2D *c, GLdouble r):DrawablePolygon(c,20,r,0,1,0,0){
 	// TODO ¿qué más le metemos a la pelota?
-	this->vector = new PV2D(10,0);
+	this->vector = new PV2D(10,0); // velocidad por defecto
 }
 
 void Ball::forward(GLdouble t){

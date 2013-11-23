@@ -170,12 +170,14 @@ void Scene::initScene(){
 	objectsToDraw->push_back(new Circle(new PV2D(180,20),random(10));
 	*/
 	//Creamos la pelota
-	//myBall = new Ball(new PV2D(random(10),random(10)),new PV2D(random(10),random(10)),random(20));
+	myball = new Ball(new PV2D(50.0,50.0),20.0);
+	objectsToDraw->push_back(myball);
+}
+
+void Scene::step(void){
+	myball->forward(1);
 }
 /*
-void Scene::step(void){
-	//ball->step();
-}
 void Scene::step(void){
 	//TODO
 	//eliminar pelota!!!! (NO ES NECESARIO REPINTAR LA ESCENA ENTERA, NO??)

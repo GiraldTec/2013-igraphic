@@ -36,8 +36,6 @@ public:
 	// Pelota
 	Ball* myball;
 
-//	Pelota ball;
-
 	Scene(void);
 	~Scene(void);
 	void render(void);
@@ -47,7 +45,7 @@ public:
 	void cam_down(void);
 	void cam_in(void);
 	void cam_out(void);
-	//void step(void); 
+	void step(void); 
 	bool reset(void);
 
 	void initScene(void);

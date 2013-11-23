@@ -13,6 +13,7 @@ public:
 	~Triangle(void);
 	
 	bool collide(Ball *ball, GLdouble& tin, PV2D*& normalIn){
+
 		return false;
 	};
 	void doNormals(void);

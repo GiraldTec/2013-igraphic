@@ -102,8 +102,9 @@ void key(unsigned char key, int x, int y){
     break;
 
   case 13:
-	  // escena->step();
-	  cout << "has pulsado enter" << endl;
+	  escena->step();
+	  display();
+	  //cout << "has pulsado enter" << endl;
 	  break;
 
 // Movimientos de cámara : RIGHT / LEFT / UP / DOWN
