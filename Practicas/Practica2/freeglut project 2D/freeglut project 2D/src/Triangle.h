@@ -14,7 +14,7 @@ public:
 	
 	bool collide(Ball *ball, GLdouble& tIn, PV2D*& normalIn){
 		int sign[3];	GLdouble proj[3];	GLdouble dist[3];
-		PV2D *auxVp = ball->getCenter()->doNormal();
+		PV2D *auxVp = ball->getVector()->doNormal();
 		
 		for(int i=0;i<3;i++){
 			PV2D *auxPPi = new PV2D(ball->getCenter(),this->getVertex()->at(i));

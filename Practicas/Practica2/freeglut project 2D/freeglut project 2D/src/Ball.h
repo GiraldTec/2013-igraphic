@@ -16,6 +16,7 @@ public:
 		cout << "hago un render de mi pelotita" << endl;
 
 	}
+	PV2D* getVector(void);
 	void initBall();
 };
 

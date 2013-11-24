@@ -33,7 +33,11 @@ void Ball::bounce(PV2D* normal){
 	vector->reflection(normal);
 }
 
-void Ball::initBall(){
+void Ball::initBall(void){
+}
+
+PV2D* Ball::getVector(void){
+	return this->vector;
 }
 
 

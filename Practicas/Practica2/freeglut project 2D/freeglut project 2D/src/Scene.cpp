@@ -141,14 +141,18 @@ void Scene::initScene(){
 
 	objectsToDraw = new vector<DrawablePolygon*>();
 
-	objectsToDraw->push_back(new Triangle(new PV2D(0.0,5.0), tam_triang_border,M_PI*0.5)); 
-	objectsToDraw->push_back(new Triangle(new PV2D(0.0,495.0), tam_triang_border,M_PI*1.5)); 
+	// Izquierda down/up
+	//objectsToDraw->push_back(new Triangle(new PV2D(0.0,5.0), tam_triang_border,M_PI*0.5)); 
+//	objectsToDraw->push_back(new Triangle(new PV2D(0.0,495.0), tam_triang_border,M_PI*1.5)); 
 
+	// Derecha down/up
 	objectsToDraw->push_back(new Triangle(new PV2D(860.0,5.0), tam_triang_border,M_PI*0.5)); 
-	objectsToDraw->push_back(new Triangle(new PV2D(860.0,495.0), tam_triang_border,M_PI*1.5)); 
+//	objectsToDraw->push_back(new Triangle(new PV2D(860.0,495.0), tam_triang_border,M_PI*1.5)); 
 
-	objectsToDraw->push_back(new Triangle(new PV2D(430.0,740.0), tam_triang_border,M_PI*0.5)); 
-	objectsToDraw->push_back(new Triangle(new PV2D(430.0,-240.0), tam_triang_border,M_PI*1.5)); 
+	//Centro down/up
+//	objectsToDraw->push_back(new Triangle(new PV2D(430.0,-240.0), tam_triang_border,M_PI*1.5)); 
+//	objectsToDraw->push_back(new Triangle(new PV2D(430.0,740.0), tam_triang_border,M_PI*0.5)); 
+	
 /*
 	//Primero añadimo los triangulos que forman los bordes
 	objectsToDraw->push_back(new Triangle(new PV2D(xRight, yTop), new PV2D(xLeft, yTop), new PV2D(xRight, yTop-50)); //Arriba
@@ -180,10 +184,10 @@ void Scene::initScene(){
 }
 
 void Scene::step(void){
-	GLdouble tInGlobal, tInLocal;
+	GLdouble tInGlobal = 1000.0, tInLocal;
 	PV2D *nGlobal=NULL, *nLocal=NULL;
-	bool b =((Obstacle*)objectsToDraw->at(0))->collide(myball,tInGlobal,nGlobal);
-	for(unsigned i=1;i<objectsToDraw->size();i++){
+	//bool b =((Obstacle*)objectsToDraw->at(0))->collide(myball,tInGlobal,nGlobal);
+	for(unsigned i=0;i<objectsToDraw->size();i++){
 		if(objectsToDraw->at(i)!=myball){
 			if(((Obstacle*)objectsToDraw->at(i))->collide(myball,tInLocal,nLocal)){
 				if(tInLocal<tInGlobal){
