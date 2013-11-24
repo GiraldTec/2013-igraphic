@@ -47,7 +47,7 @@ void display(void){
  
   // Scene rendering
   escena->render();
-  cout<<"se renderiza"<<endl;
+ // cout<<"se renderiza"<<endl;
 
   glFlush();
   glutSwapBuffers();
@@ -162,9 +162,14 @@ void mouse(int button, int state,int x, int y){
 	switch (button) {
 	case GLUT_LEFT_BUTTON:
 		switch (state){
-			case GLUT_DOWN:
-				// TODO
-				break;
+			case GLUT_DOWN:{
+				y = HEIGHT - y;
+				GLdouble aux_x = (((escena->xRight - escena->xLeft)*x)/WIDTH) + escena->xLeft;
+				GLdouble aux_y = (((escena->yTop - escena->yBot)*y)/HEIGHT)+escena->yBot;
+				cout << aux_x << " " << aux_y << " " << endl;
+
+				escena->mouse_input(aux_x,aux_y);
+				}break;
 			case GLUT_UP:
 				break; 
 		}// switch state

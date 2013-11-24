@@ -22,9 +22,9 @@ public:
 			dist[i] = auxPPi->scalarProduct(auxVp);
 			proj[i] = auxPPi->scalarProduct(ball->getCenter());
 			
-			if(dist[i]>0) sign[i] = 1;
-			if(dist[i]==0) sign[i] = 0;
-			if(dist[i]<0) sign[i] = -1;
+			if(dist[i]>0.1) sign[i] = 1;
+			if(dist[i]<=0.1) sign[i] = 0;
+			if(dist[i]<-0.1) sign[i] = -1;
 
 			delete auxPPi;
 			auxPPi = NULL;
@@ -32,7 +32,7 @@ public:
 		delete auxVp;	auxVp= NULL;
 
 		int sum = sign[0]+sign[1]+sign[2];
-		if(sum == 3) return false;
+		if(abs(sum) == 3) return false;
 
 		int nHits = 0;	double hit[3];	PV2D* n[3];
 		for(int i=0;i<3;i++){

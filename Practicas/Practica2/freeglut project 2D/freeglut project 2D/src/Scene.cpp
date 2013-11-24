@@ -179,8 +179,9 @@ void Scene::initScene(){
 	}
 	cout << objectsToColl->size() << endl;*/
 	//Creamos la pelota
-	myball = new Ball(new PV2D(350.0,50.0),20.0);
-	objectsToDraw->push_back(myball);
+	//myball = new Ball(new PV2D(350.0,50.0),20.0);
+	//objectsToDraw->push_back(myball);
+	myball = NULL;
 }
 
 void Scene::step(void){
@@ -204,16 +205,13 @@ void Scene::step(void){
 		myball->forward(1);
 	}
 }
-/*
-void Scene::step(void){
-	//TODO
-	//eliminar pelota!!!! (NO ES NECESARIO REPINTAR LA ESCENA ENTERA, NO??)
-	//Comprobar si la pelota golpea
-	//if no golpea => myBall->forward(1);
-	//if golpea
-		//Calcular distancia que puede recorrer
-		//myBall->forward(x);
-		//myBall->bounce();
-	//Dibujar la pelota de nuevo
+
+
+bool Scene::mouse_input(GLdouble x, GLdouble y)
+{
+	if (myball == NULL){
+		myball = new Ball(new PV2D(x,y),50.0);
+		objectsToDraw->push_back(myball);
+		return true;
+	}else return false;
 }
-*/
