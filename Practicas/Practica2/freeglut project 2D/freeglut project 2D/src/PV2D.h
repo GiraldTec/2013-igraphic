@@ -34,6 +34,7 @@ public:
 	GLdouble calculateA(PV2D* normal);
 	PV2D* factor(GLdouble f);
 	PV2D* substract(PV2D* v);
+	PV2D* add(PV2D* v);
 	PV2D* doNormal();
 	GLdouble calculateMod(void);
 	PV2D* normalize(void);

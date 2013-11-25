@@ -79,6 +79,10 @@ PV2D* PV2D::substract(PV2D* vector){
 	return new PV2D(corX - vector->getX(),corY - vector->getY());
 }
 
+PV2D* PV2D::add(PV2D* vector){
+	return new PV2D(corX+vector->getX(),corY+vector->getY());
+}
+
 GLdouble PV2D::scalarProduct(PV2D* vector){
 	return ((corX*vector->getX())+(corY*vector->getY()));
 }
