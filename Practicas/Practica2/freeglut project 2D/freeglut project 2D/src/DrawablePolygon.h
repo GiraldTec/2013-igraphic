@@ -13,7 +13,6 @@ private:
 	GLdouble radius;
 
 	std::vector<PV2D*> *vertex;
-	std::vector<PV2D*> *normales;
 	bool draw_normals;
 
 	// Polygon colors

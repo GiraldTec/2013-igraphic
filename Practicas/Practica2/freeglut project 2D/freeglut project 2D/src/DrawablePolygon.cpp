@@ -60,7 +60,7 @@ void DrawablePolygon::calcula_vertices(void){
 	for (int i=0; i<n_sides; i++){
 		aux_p = p->getPos()->clone();
 		vertex->push_back(aux_p);
-		cout << "punto "<<i<<" esta en:("<<p->getPos()->getX()<<","<<p->getPos()->getY()<<") con dir:"<<p->getDir()<< endl; 
+		//cout << "punto "<<i<<" esta en:("<<p->getPos()->getX()<<","<<p->getPos()->getY()<<") con dir:"<<p->getDir()<< endl; 
 		p->forward(tam);
 		p->turn(M_PI-2*beta);	
 	}

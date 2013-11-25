@@ -6,7 +6,7 @@
 class Triangle : public Obstacle
 {
 private:
-
+	std::vector<PV2D*> *normales;
 public:
 	Triangle(void);
 	Triangle(PV2D *c, GLdouble r, GLdouble o);
@@ -20,7 +20,7 @@ public:
 			PV2D *auxPPi = new PV2D(ball->getCenter(),this->getVertex()->at(i));
 			
 			dist[i] = auxPPi->scalarProduct(auxVp);
-			proj[i] = auxPPi->scalarProduct(ball->getCenter());
+			proj[i] = auxPPi->scalarProduct(ball->getVector());
 			
 			if(dist[i]>0.1) sign[i] = 1;
 			if(dist[i]<=0.1) sign[i] = 0;
@@ -38,12 +38,12 @@ public:
 		for(int i=0;i<3;i++){
 			int j=(i+1)%3;
 			if((sign[i]*sign[j])<0 ){
-				GLdouble numerator = proj[i]*dist[j] - proj[j]*dist[i];
+				GLdouble numerator = (proj[i]*dist[j]) - (proj[j]*dist[i]);
 				GLdouble denominator = dist[j] - dist[i];
 
 				hit[nHits] = numerator/denominator;
 
-				PV2D *auxNi = (new PV2D(this->getVertex()->at(i),this->getVertex()->at(j)))->doNormal();
+				PV2D *auxNi = (new PV2D(this->getVertex()->at(j),this->getVertex()->at(i)))->doNormal();
 				n[nHits]=auxNi->normalize();
 				delete auxNi;	auxNi = NULL;
 
@@ -74,6 +74,5 @@ public:
 		return true;
 	};
 	void doNormals(void);
-	void doVertex(void);
 };
 

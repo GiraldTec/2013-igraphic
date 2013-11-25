@@ -191,15 +191,18 @@ void Scene::step(void){
 	for(unsigned i=0;i<objectsToDraw->size();i++){
 		if(objectsToDraw->at(i)!=myball){
 			if(((Obstacle*)objectsToDraw->at(i))->collide(myball,tInLocal,nLocal)){
-				if(tInLocal<tInGlobal){
+				if((tInLocal>0)&&(tInLocal<tInGlobal)){
 					tInGlobal = tInLocal;
 					nGlobal = nLocal;
 				}
 			}
 		}
 	}
-	if(tInGlobal<1){
+	cout << tInGlobal << endl;
+	if((tInGlobal>0)&&(tInGlobal < myball->getVector()->calculateMod())){
+		tInGlobal /= myball->getVector()->calculateMod();
 		myball->forward(tInGlobal);
+		cout << tInGlobal << endl;
 		myball->bounce(nGlobal);
 	}else{
 		myball->forward(1);
