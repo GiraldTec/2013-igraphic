@@ -17,6 +17,9 @@ using namespace std;
 // Viewport size
 int WIDTH= 600, HEIGHT= 600;
 
+// Estado
+enum Estado {VACIO,MANUAL,VIDEO};
+Estado glState;
 
 Scene* escena;
 
@@ -90,6 +93,14 @@ void resize(int newWidth, int newHeight){
   
 }
 
+void timer(int value){
+	if(glState==VIDEO){
+		 cout << "en video" << endl;
+		escena->step();
+		display();
+		glutTimerFunc(10,timer,0);
+	}
+}
 
 void key(unsigned char key, int x, int y){
  
@@ -101,11 +112,21 @@ void key(unsigned char key, int x, int y){
 	glutLeaveMainLoop (); //Freeglut's sentence for stopping glut's main loop (*)
     break;
 
-  case 13:
-	  escena->step();
-	  display();
-	  //cout << "has pulsado enter" << endl;
-	  break;
+// Step
+  case 13:{
+	if(glState==MANUAL){
+		if(escena->step()) display();
+		
+	}
+	cout << glState << endl;}
+	break;
+
+// Start/Pause
+  case 32:
+	 
+	  if(glState==MANUAL){  cout << "espacio" << endl; glState=VIDEO; glutTimerFunc(0,timer,0);}
+	  if(glState==VIDEO){glState=MANUAL;}
+	break;
 
 // Movimientos de cámara : RIGHT / LEFT / UP / DOWN
   case 'd' :
@@ -144,7 +165,7 @@ void key(unsigned char key, int x, int y){
 
   case 'r' :
   case 'R' :
-	if (escena->reset()) cout << "La escena ha sido reseteada" << endl;
+	  if (escena->reset()) {cout << "La escena ha sido reseteada" << endl; glState = VACIO;}
 	else cout << "No había nada que resetear" << endl;
 	break;
 
@@ -167,8 +188,7 @@ void mouse(int button, int state,int x, int y){
 				GLdouble aux_x = (((escena->xRight - escena->xLeft)*x)/WIDTH) + escena->xLeft;
 				GLdouble aux_y = (((escena->yTop - escena->yBot)*y)/HEIGHT)+escena->yBot;
 				cout << aux_x << " " << aux_y << " " << endl;
-
-				escena->mouse_input(aux_x,aux_y);
+				if(escena->mouse_input(aux_x,aux_y)){ glState = MANUAL; cout << "manual" << endl;}
 				}break;
 			case GLUT_UP:
 				break; 
@@ -176,6 +196,8 @@ void mouse(int button, int state,int x, int y){
 		break;
 	}//switch
 }
+
+
 
 int main(int argc, char *argv[]){
   cout<< "Starting console..." << endl;
@@ -196,6 +218,7 @@ int main(int argc, char *argv[]){
   glutKeyboardFunc(key);
   glutDisplayFunc(display);
   glutMouseFunc(mouse);
+  
     
   escena = new Scene();
 
@@ -216,9 +239,11 @@ int main(int argc, char *argv[]){
   cout << "se sale del programa" << endl;
   delete escena;
   escena = NULL;
-
+  glState = VACIO;
   // We would never reach this point using classic glut
   system("PAUSE"); 
    
   return 0;
 }
+
+

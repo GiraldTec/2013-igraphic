@@ -46,7 +46,7 @@ public:
 	void cam_down(void);
 	void cam_in(void);
 	void cam_out(void);
-	void step(void); 
+	bool step(void); 
 	bool reset(void);
 	bool mouse_input(GLdouble x, GLdouble y);
 	void initScene(void);

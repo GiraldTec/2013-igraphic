@@ -156,64 +156,41 @@ void Scene::initScene(){
 	//estrella centro
 	objectsToDraw->push_back(new Triangle(new PV2D(440.0,250.0), 80,M_PI*0.5)); 
 	objectsToDraw->push_back(new Triangle(new PV2D(440.0,250.0), 80,M_PI*1.5)); 
-/*
-	//Primero añadimo los triangulos que forman los bordes
-	objectsToDraw->push_back(new Triangle(new PV2D(xRight, yTop), new PV2D(xLeft, yTop), new PV2D(xRight, yTop-50)); //Arriba
-	objectsToDraw->push_back(new Triangle(new PV2D(xRight, yTop), new PV2D(xRight, yBot), new PV2D(xRight-50, yTop)); //Derecha
-	objectsToDraw->push_back(new Triangle(new PV2D(xLeft, yBot), new PV2D(xRight, yBot), new PV2D(xLeft, yBot+50)); //Abajo
-	objectsToDraw->push_back(new Triangle(new PV2D(xLeft, yTop), new PV2D(xLeft, yBot), new PV2D(xLeft+50, yTop)); //Izquierda
-	*/
-	//Añadimos los obstaculos
-	//Cuatro de cada, radio random, centro defininido
-	/*randomize();
 
-	objectsToDraw->push_back(new Triangle(new PV2D(50,43),random(10));
-	objectsToDraw->push_back(new Triangle(new PV2D(100,12),random(10));
-	objectsToDraw->push_back(new Triangle(new PV2D(30,100),random(10));
-	objectsToDraw->push_back(new Triangle(new PV2D(300,20),random(10));
-	objectsToDraw->push_back(new Circle(new PV2D(245,45),random(10));
-	objectsToDraw->push_back(new Circle(new PV2D(45,300),random(10));
-	objectsToDraw->push_back(new Circle(new PV2D(90,150),random(10));
-	objectsToDraw->push_back(new Circle(new PV2D(180,20),random(10));
-	*/
-/*	objectsToColl = new vector<Obstacle*>(objectsToDraw->size());
-	for(unsigned i=0;i<objectsToDraw->size();i++){
-		objectsToColl->at(i)=reinterpret_cast<Obstacle*> (objectsToDraw->at(i));
-	}
-	cout << objectsToColl->size() << endl;*/
-	//Creamos la pelota
-	//myball = new Ball(new PV2D(350.0,50.0),20.0);
-	//objectsToDraw->push_back(myball);
 	myball = NULL;
 }
 
-void Scene::step(void){
-	GLdouble tInGlobal = 1000.0, tInLocal;
-	PV2D *nGlobal=NULL, *nLocal=NULL;
-	//bool b =((Obstacle*)objectsToDraw->at(0))->collide(myball,tInGlobal,nGlobal);
-	for(unsigned i=0;i<objectsToDraw->size();i++){
-		if(objectsToDraw->at(i)!=myball){
-			if(((Obstacle*)objectsToDraw->at(i))->collide(myball,tInLocal,nLocal)){
-				if((tInLocal>0)&&(tInLocal<tInGlobal)){
-					tInGlobal = tInLocal;
-					nGlobal = nLocal;
+bool Scene::step(void){
+	if(myball!=NULL){
+		GLdouble tInGlobal = 1000.0, tInLocal;
+		PV2D *nGlobal=NULL, *nLocal=NULL;
+		//bool b =((Obstacle*)objectsToDraw->at(0))->collide(myball,tInGlobal,nGlobal);
+		for(unsigned i=0;i<objectsToDraw->size();i++){
+			if(objectsToDraw->at(i)!=myball){
+				if(((Obstacle*)objectsToDraw->at(i))->collide(myball,tInLocal,nLocal)){
+					if((tInLocal>0)&&(tInLocal<tInGlobal)){
+						tInGlobal = tInLocal;
+						nGlobal = nLocal;
+					}
 				}
 			}
 		}
-	}
-	cout << tInGlobal << endl;
-	if((tInGlobal>0.01)&&(tInGlobal < myball->getVector()->calculateMod())){
-		tInGlobal /= myball->getVector()->calculateMod();
-		myball->forward(tInGlobal);
 		cout << tInGlobal << endl;
-		cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
-		cout << nGlobal->getX() << "  " << nGlobal->getY() << endl;
-		myball->bounce(nGlobal);
-		cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
-	}else{
-		myball->forward(1);
+		if((tInGlobal>0.01)&&(tInGlobal < myball->getVector()->calculateMod())){
+			tInGlobal /= myball->getVector()->calculateMod();
+			myball->forward(tInGlobal);
+			cout << tInGlobal << endl;
+			cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
+			cout << nGlobal->getX() << "  " << nGlobal->getY() << endl;
+			myball->bounce(nGlobal);
+			cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
+		}else{
+			myball->forward(1);
+		}
+		//cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
+		return true;
 	}
-	cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
+	return false;
 }
 
 
