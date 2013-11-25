@@ -5,7 +5,7 @@ DrawablePolygon::DrawablePolygon(void)
 {
 	center = NULL;
 	vertex = NULL;
-	normales = NULL;
+	//normales = NULL;
 }
 
 
@@ -15,7 +15,7 @@ DrawablePolygon::~DrawablePolygon(void)
 
 
 
-DrawablePolygon::DrawablePolygon(PV2D *c, int n, GLdouble radius, GLdouble o, GLdouble r, GLdouble g, GLdouble b)
+DrawablePolygon::DrawablePolygon(PV2D *c, int n, GLdouble radius, GLdouble o, GLfloat r, GLfloat g, GLfloat b)
 {
 	this->center = c;
 	this->n_sides = n;

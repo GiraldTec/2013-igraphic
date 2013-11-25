@@ -76,7 +76,7 @@ PV2D* PV2D::factor(GLdouble g){
 }
 
 PV2D* PV2D::substract(PV2D* vector){
-	return new PV2D(vector->getX(),vector->getY());//(corX-v->getX(),corY-v->getY());
+	return new PV2D(corX - vector->getX(),corY - vector->getY());
 }
 
 GLdouble PV2D::scalarProduct(PV2D* vector){
@@ -85,8 +85,8 @@ GLdouble PV2D::scalarProduct(PV2D* vector){
 
 GLdouble PV2D::calculateA(PV2D* normal){
 	GLdouble vn = scalarProduct(normal);
-	GLdouble vv = normal->scalarProduct(normal);
-	return vn/vv;
+	GLdouble nn = normal->scalarProduct(normal);
+	return vn/nn;
 }
 
 GLdouble PV2D::calculateMod(void){

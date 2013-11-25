@@ -19,7 +19,7 @@ void Ball::forward(GLdouble t){
 	//Metodo para avanzar una pelota, el incremento de t veces el vector de la pelota
 	GLdouble incX = t*vector->getX();
 	GLdouble incY = t*vector->getY();
-	for (int i=0; i<getVertex()->size(); i++){
+	for (unsigned i=0; i<getVertex()->size(); i++){
 		getVertex()->at(i)->setX(getVertex()->at(i)->getX() + incX);
 		getVertex()->at(i)->setY(getVertex()->at(i)->getY() + incY);
 	}

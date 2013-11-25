@@ -14,13 +14,13 @@ public:
 	
 	bool collide(Ball *ball, GLdouble& tIn, PV2D*& normalIn){
 		int sign[3];	GLdouble proj[3];	GLdouble dist[3];
-		PV2D *auxVp = ball->getVector()->doNormal();
+		PV2D *auxVp = ball->getVector()->normalize()->doNormal();
 		
 		for(int i=0;i<3;i++){
 			PV2D *auxPPi = new PV2D(ball->getCenter(),this->getVertex()->at(i));
 			
 			dist[i] = auxPPi->scalarProduct(auxVp);
-			proj[i] = auxPPi->scalarProduct(ball->getVector());
+			proj[i] = auxPPi->scalarProduct(ball->getVector()->normalize());
 			
 			if(dist[i]>0.1) sign[i] = 1;
 			if(dist[i]<=0.1) sign[i] = 0;

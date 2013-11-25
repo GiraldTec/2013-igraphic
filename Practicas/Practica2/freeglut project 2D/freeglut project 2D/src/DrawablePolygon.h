@@ -16,12 +16,12 @@ private:
 	bool draw_normals;
 
 	// Polygon colors
-	GLdouble red, blue, green;
+	GLfloat red, blue, green;
 	
 public:
 	DrawablePolygon(void);
 	~DrawablePolygon(void);
-	DrawablePolygon(PV2D *c,int n, GLdouble radius, GLdouble o,GLdouble r, GLdouble g, GLdouble b);
+	DrawablePolygon(PV2D *c,int n, GLdouble radius, GLdouble o,GLfloat r, GLfloat g, GLfloat b);
 
 	// Getters
 	vector<PV2D*> * getVertex(void);  

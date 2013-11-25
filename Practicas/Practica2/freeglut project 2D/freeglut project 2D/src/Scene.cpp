@@ -142,17 +142,20 @@ void Scene::initScene(){
 	objectsToDraw = new vector<DrawablePolygon*>();
 
 	// Izquierda down/up
-	//objectsToDraw->push_back(new Triangle(new PV2D(0.0,5.0), tam_triang_border,M_PI*0.5)); 
-//	objectsToDraw->push_back(new Triangle(new PV2D(0.0,495.0), tam_triang_border,M_PI*1.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(0.0,5.0), tam_triang_border,M_PI*0.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(0.0,495.0), tam_triang_border,M_PI*1.5)); 
 
 	// Derecha down/up
 	objectsToDraw->push_back(new Triangle(new PV2D(860.0,5.0), tam_triang_border,M_PI*0.5)); 
-//	objectsToDraw->push_back(new Triangle(new PV2D(860.0,495.0), tam_triang_border,M_PI*1.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(860.0,495.0), tam_triang_border,M_PI*1.5)); 
 
 	//Centro down/up
-//	objectsToDraw->push_back(new Triangle(new PV2D(430.0,-240.0), tam_triang_border,M_PI*1.5)); 
-//	objectsToDraw->push_back(new Triangle(new PV2D(430.0,740.0), tam_triang_border,M_PI*0.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(430.0,-240.0), tam_triang_border,M_PI*1.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(430.0,740.0), tam_triang_border,M_PI*0.5)); 
 	
+	//estrella centro
+	objectsToDraw->push_back(new Triangle(new PV2D(440.0,250.0), 80,M_PI*0.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(440.0,250.0), 80,M_PI*1.5)); 
 /*
 	//Primero añadimo los triangulos que forman los bordes
 	objectsToDraw->push_back(new Triangle(new PV2D(xRight, yTop), new PV2D(xLeft, yTop), new PV2D(xRight, yTop-50)); //Arriba
@@ -199,14 +202,18 @@ void Scene::step(void){
 		}
 	}
 	cout << tInGlobal << endl;
-	if((tInGlobal>0)&&(tInGlobal < myball->getVector()->calculateMod())){
+	if((tInGlobal>0.01)&&(tInGlobal < myball->getVector()->calculateMod())){
 		tInGlobal /= myball->getVector()->calculateMod();
 		myball->forward(tInGlobal);
 		cout << tInGlobal << endl;
+		cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
+		cout << nGlobal->getX() << "  " << nGlobal->getY() << endl;
 		myball->bounce(nGlobal);
+		cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
 	}else{
 		myball->forward(1);
 	}
+	cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
 }
 
 
