@@ -22,9 +22,9 @@ public:
 			dist[i] = auxPPi->scalarProduct(auxVp);
 			proj[i] = auxPPi->scalarProduct(ball->getVector()->normalize());
 			
-			if(dist[i]>0.1) sign[i] = 1;
-			if(dist[i]<=0.1) sign[i] = 0;
-			if(dist[i]<-0.1) sign[i] = -1;
+			if(dist[i]>0.01) sign[i] = 1;
+			if(dist[i]<=0.01) sign[i] = 0;
+			if(dist[i]<-0.01) sign[i] = -1;
 
 			delete auxPPi;
 			auxPPi = NULL;

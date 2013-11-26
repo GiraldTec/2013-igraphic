@@ -9,7 +9,7 @@ private:
 public:
 	Obstacle(void);
 	~Obstacle(void);
-	Obstacle(PV2D *c,int n, GLdouble radius, GLdouble o,GLdouble r, GLdouble g, GLdouble b);
+	Obstacle(PV2D *c,int n, GLdouble radius, GLdouble o,GLfloat r, GLfloat g, GLfloat b);
 	virtual bool collide(Ball* ball, GLdouble& tIn, PV2D*& normalIn)=0;
 
 };

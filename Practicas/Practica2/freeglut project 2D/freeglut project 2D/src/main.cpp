@@ -95,10 +95,11 @@ void resize(int newWidth, int newHeight){
 
 void timer(int value){
 	if(glState==VIDEO){
-		 cout << "en video" << endl;
+
+		 //cout << "en video" << endl;
 		escena->step();
 		display();
-		glutTimerFunc(10,timer,0);
+		glutTimerFunc(40,timer,0);
 	}
 }
 

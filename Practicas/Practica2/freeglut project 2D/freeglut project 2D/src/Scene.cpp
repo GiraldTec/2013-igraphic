@@ -190,7 +190,7 @@ bool Scene::step(void){
 				}
 			}
 		}
-		cout << tInGlobal << endl;
+		//cout << tInGlobal << endl;
 		if((tInGlobal>0.01)&&(tInGlobal < 1)){
 			//tInGlobal /= myball->getVector()->calculateMod();
 			myball->forward(tInGlobal);
