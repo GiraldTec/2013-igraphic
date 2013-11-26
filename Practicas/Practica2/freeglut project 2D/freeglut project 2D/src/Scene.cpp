@@ -133,8 +133,12 @@ void Scene::cam_out(void)
 
 bool Scene::reset(void)
 {
-	// TODO
-	return false;
+	int i=0;
+	while(objectsToDraw->at(i)!=myball){i++;}
+	objectsToDraw->erase(objectsToDraw->begin()+i);
+	delete myball;
+	myball = NULL;
+	return true;
 }
 
 void Scene::initScene(){

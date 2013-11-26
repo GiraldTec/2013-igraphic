@@ -123,9 +123,13 @@ void key(unsigned char key, int x, int y){
 
 // Start/Pause
   case 32:
-	 
-	  if(glState==MANUAL){  cout << "espacio" << endl; glState=VIDEO; glutTimerFunc(0,timer,0);}
-	  if(glState==VIDEO){glState=MANUAL;}
+	  if(glState==MANUAL){
+		  cout << "espacio" << endl; 
+		  glState = VIDEO; 
+		  glutTimerFunc(0,timer,0);
+	  }else{
+		if(glState==VIDEO){glState=MANUAL;}
+	  }
 	break;
 
 // Movimientos de cámara : RIGHT / LEFT / UP / DOWN
