@@ -70,7 +70,7 @@ public:
 				normalIn = n[m];
 			}
 		}
-		
+		tIn /= ball->getVector()->calculateMod();
 		return true;
 	};
 	void doNormals(void);
