@@ -1,3 +1,5 @@
+//Carlos Giraldo
+//Raquel Peces
 #include "src/Scene.h"
 #include "src/Triangle.h"
 #include "src/Ball.h"

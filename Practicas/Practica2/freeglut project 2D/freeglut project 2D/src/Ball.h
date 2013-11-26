@@ -1,3 +1,5 @@
+//Carlos Giraldo
+//Raquel Peces
 #pragma once
 #include "DrawablePolygon.h"
 class Ball : public DrawablePolygon
