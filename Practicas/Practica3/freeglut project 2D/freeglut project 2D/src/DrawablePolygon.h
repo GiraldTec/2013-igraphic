@@ -39,6 +39,7 @@ public:
 
 	// Methods
 	void calcula_vertices(void);
-	void render(void);
+	virtual void render(void)=0;
+	void renderX(void);
 };
 

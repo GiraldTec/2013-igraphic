@@ -69,12 +69,11 @@ public:
               delete pelaux;
               return true;
         }
-
-
          return false;
-
-
  }
+	void render(void){
+		renderX();
+	}
 
 };
 

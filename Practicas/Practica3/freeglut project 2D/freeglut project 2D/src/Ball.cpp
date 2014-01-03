@@ -15,6 +15,7 @@ Ball::~Ball(void)
 Ball::Ball(PV2D *c, GLdouble r):DrawablePolygon(c,20,r,0,1,0,0){
 	// TODO ¿qué más le metemos a la pelota?
 	this->vector = new PV2D(10,0); // velocidad por defecto
+	this->dir = 0;
 }
 
 void Ball::forward(GLdouble t){
@@ -33,6 +34,16 @@ void Ball::bounce(PV2D* normal){
 	//Metodo que calcula el rebote de la pelota, hay que hacer la reflexion del vector
 	//Se calcula a partir de la normal
 	vector->reflection(normal);
+	dir = vector->getAngle();
+	calculateDir();
+}
+
+void Ball::calculateDir(void){
+	Pencil* aux = new Pencil(getCenter(),dir);
+	aux->forward(getRadius());
+	v_dir = aux->getPos();
+	aux = NULL;
+	
 }
 
 void Ball::initBall(void){

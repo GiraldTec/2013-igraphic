@@ -6,6 +6,8 @@ class Ball : public DrawablePolygon
 {
 private:
 	PV2D* vector;
+	GLdouble dir;
+	PV2D* v_dir;
 	
 public:
 	Ball(void);
@@ -16,9 +18,16 @@ public:
 	void bounce(PV2D* n);
 	void render(void){ 
 		cout << "hago un render de mi pelotita" << endl;
+		renderX();
+		glColor3f(0,0,0);
+		glBegin(GL_LINE);
+			glVertex2d(getCenter()->getX(), getCenter()->getY());
+			glVertex2d(v_dir->getX(), v_dir->getY());
+		glEnd();
 
 	}
 	PV2D* getVector(void);
 	void initBall();
+	void calculateDir();
 };
 

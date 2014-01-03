@@ -40,4 +40,5 @@ public:
 	PV2D* doNormal();
 	GLdouble calculateMod(void);
 	PV2D* normalize(void);
+	GLdouble getAngle();
 };

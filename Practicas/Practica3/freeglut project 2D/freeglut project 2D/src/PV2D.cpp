@@ -103,4 +103,10 @@ PV2D* PV2D::normalize(void){
 	return new PV2D(this->corX/mod,this->corY/mod);
 }
 
-
+GLdouble PV2D::getAngle(void){
+	PV2D* hor = new PV2D(1,0);
+	GLdouble a = (hor->getX()*this->corX)+(hor->getY()*this->corY);
+	GLdouble b = sqrt(pow(hor->getX(),2)+pow(hor->getY(),2)*sqrt(pow(this->corX,2)+pow(this->corY,2)));
+	GLdouble resul = a/b;
+	return acos(resul);
+}

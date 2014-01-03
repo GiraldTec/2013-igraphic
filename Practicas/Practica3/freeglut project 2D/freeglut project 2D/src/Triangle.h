@@ -75,6 +75,11 @@ public:
 		tIn /= ball->getVector()->calculateMod();
 		return true;
 	};
+
 	void doNormals(void);
+
+	void render(void){
+		renderX();
+	}
 };
 
