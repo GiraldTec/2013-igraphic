@@ -53,7 +53,7 @@ void display(void){
   // Scene rendering
   escena->render();
  // cout<<"se renderiza"<<endl;
-
+ 
   glFlush();
   glutSwapBuffers();
 }
