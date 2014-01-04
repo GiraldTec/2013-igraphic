@@ -72,7 +72,11 @@ public:
          return false;
  }
 	void render(void){
+
+
 		renderX();
+	
+	
 	}
 
 };

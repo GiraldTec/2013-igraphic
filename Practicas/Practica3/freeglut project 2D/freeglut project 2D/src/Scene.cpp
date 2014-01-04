@@ -128,6 +128,7 @@ void Scene::cam_out(void)
 	yBot -= y_des;
 	xRight += x_des;
 	xLeft -= x_des;
+
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluOrtho2D(xLeft, xRight, yBot, yTop);
