@@ -10,7 +10,7 @@ private:
 
 public:
 	Elipse(void);
-	Elipse(PV2D *c,GLdouble r);
+	Elipse(PV2D *c);
 	~Elipse(void);
 	bool collide(Ball *ball, GLdouble& tin, PV2D*& normalIn){
 

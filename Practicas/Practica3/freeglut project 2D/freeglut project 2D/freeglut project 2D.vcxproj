@@ -122,6 +122,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Circle.cpp" />
+    <ClCompile Include="src\Elipse.cpp" />
     <ClCompile Include="src\Obstacle.cpp" />
     <ClCompile Include="src\Ball.cpp" />
     <ClCompile Include="src\Pencil.cpp" />
@@ -133,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Circle.h" />
+    <ClInclude Include="src\Elipse.h" />
     <ClInclude Include="src\Obstacle.h" />
     <ClInclude Include="src\Ball.h" />
     <ClInclude Include="src\Pencil.h" />
