@@ -76,5 +76,8 @@ public:
 		return true;
 	};
 	void doNormals(void);
+	void draw(void){
+		render();
+	};
 };
 

@@ -75,6 +75,9 @@ public:
 
 
  }
+	void draw(void){
+		render();
+	}
 
 };
 

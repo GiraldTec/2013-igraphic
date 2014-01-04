@@ -40,5 +40,6 @@ public:
 	// Methods
 	void calcula_vertices(void);
 	void render(void);
+	virtual void draw(void)=0;
 };
 

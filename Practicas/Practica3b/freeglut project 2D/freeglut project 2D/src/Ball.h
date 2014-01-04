@@ -14,9 +14,8 @@ public:
 
 	void forward(GLdouble t);
 	void bounce(PV2D* n);
-	void render(void){ 
-		cout << "hago un render de mi pelotita" << endl;
-
+	void draw(void){
+		render();
 	}
 	PV2D* getVector(void);
 	void initBall();
