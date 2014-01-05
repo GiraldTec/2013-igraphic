@@ -24,6 +24,8 @@ void Ball::forward(GLdouble t){
 	GLdouble incX = t*vector->getX();
 	GLdouble incY = t*vector->getY();
 	PV2D *aux_point = new PV2D(getCenter()->getX() + incX, getCenter()->getY() + incY);
+	angulo += 5;
+	if(angulo>360)angulo -= 360;
 	setCenter(aux_point);
 }
 
