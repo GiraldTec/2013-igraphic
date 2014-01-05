@@ -7,18 +7,18 @@ Elipse::Elipse(void)
 {
 }
 
-Elipse::Elipse(PV2D *c):Obstacle(new PV2D(),20,100,0,1,1,0)
+Elipse::Elipse(PV2D *c):Obstacle(new PV2D(),20,1,0,1,1,0)
 {
 	glPushMatrix();
 		glTranslatef(c->getX(),c->getY(),0);
 		//glRotatef(angle,ax,ay,az);
-		glScalef(1,0.5,0);
+		glScalef(100,50,0);
 		glGetFloatv(GL_MODELVIEW_MATRIX, matrix);
 	glPopMatrix();
 	glPushMatrix();
 		glTranslatef(-c->getX(), -c->getY(), 0);
 		//glRotatef(-angle, ax, ay, az);
-		//glScalef(1,1/0.5,0);
+		glScalef(1/100,1/50,0);
 		glGetFloatv(GL_MODELVIEW_MATRIX, inv_matrix);
 	glPopMatrix();
 }
@@ -35,9 +35,9 @@ PV2D* Elipse::multMatriz(GLfloat* matriz, PV2D* punt, int tipo){
 	//corY = corY+punt->getY();
 	aux->setX(corX);
 	aux->setY(corY);
-	//cout << *(matriz+0) << " " << *(matriz+4) << " " << *(matriz+8) << " " << *(matriz+12) << " "  << *(matriz+1) << " " << *(matriz+5) << " " << *(matriz+9) << " " << *(matriz+13) <<  endl;
-	//cout << "Cordenadas viejas: " << punt->getX() << "   " << punt->getY() << endl;
-	//cout << "Cordenadas nuevas: " << corX << "   " << corY << endl;
+	cout << *(matriz+0) << " " << *(matriz+4) << " " << *(matriz+8) << " " << *(matriz+12) << " "  << *(matriz+1) << " " << *(matriz+5) << " " << *(matriz+9) << " " << *(matriz+13) <<  endl;
+	cout << "Cordenadas viejas: " << punt->getX() << "   " << punt->getY() << endl;
+	cout << "Cordenadas nuevas: " << corX << "   " << corY << endl;
 	return aux;
 }
 
