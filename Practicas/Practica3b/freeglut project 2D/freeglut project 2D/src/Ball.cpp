@@ -12,8 +12,10 @@ Ball::~Ball(void)
 {
 }
 
-Ball::Ball(PV2D *c, GLdouble r):DrawablePolygon(c,20,r,0,1,0,0){
+Ball::Ball(PV2D *c, GLdouble r):DrawablePolygon(c,20,1,0,1,0,0){
 	// TODO ¿qué más le metemos a la pelota?
+	// con la bola centrada en el origen para seguir el enunciado
+	this->calcula_vertices(new PV2D(0.0,0.0));
 	this->vector = new PV2D(10,0); // velocidad por defecto
 }
 
@@ -21,10 +23,6 @@ void Ball::forward(GLdouble t){
 	//Metodo para avanzar una pelota, el incremento de t veces el vector de la pelota
 	GLdouble incX = t*vector->getX();
 	GLdouble incY = t*vector->getY();
-	for (unsigned i=0; i<getVertex()->size(); i++){
-		getVertex()->at(i)->setX(getVertex()->at(i)->getX() + incX);
-		getVertex()->at(i)->setY(getVertex()->at(i)->getY() + incY);
-	}
 	PV2D *aux_point = new PV2D(getCenter()->getX() + incX, getCenter()->getY() + incY);
 	setCenter(aux_point);
 }

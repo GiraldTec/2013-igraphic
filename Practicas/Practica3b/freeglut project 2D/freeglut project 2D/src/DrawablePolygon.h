@@ -38,7 +38,7 @@ public:
 	void setOrientation(GLdouble o);
 
 	// Methods
-	void calcula_vertices(void);
+	void calcula_vertices(PV2D* centroTemp);
 	void renderX(void);
 	virtual void render(void)=0;
 };

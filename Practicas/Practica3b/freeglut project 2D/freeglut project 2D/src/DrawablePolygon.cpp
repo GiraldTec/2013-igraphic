@@ -27,7 +27,7 @@ DrawablePolygon::DrawablePolygon(PV2D *c, int n, GLdouble radius, GLdouble o, GL
 	this->red = r;
 	this->green = g;
 	this->blue = b;
-	this->calcula_vertices();
+	this->calcula_vertices(this->center);
 }
 
 
@@ -43,8 +43,8 @@ void DrawablePolygon::renderX(void){
 	}
 }
 
-void DrawablePolygon::calcula_vertices(void){
-	Pencil *p = new Pencil(this->center->clone(),this->orientation);
+void DrawablePolygon::calcula_vertices(PV2D* centroTemp){
+	Pencil *p = new Pencil(centroTemp->clone(),this->orientation);
 	
 	//CaLculo del angulo en el que se divide la circunferencia
 	GLdouble alfa=2*M_PI/n_sides;
@@ -82,7 +82,7 @@ void DrawablePolygon::setRadius(GLdouble r){
 }
 void DrawablePolygon::setOrientation(GLdouble o){
 	this->orientation = o;
-	this->calcula_vertices();
+	this->calcula_vertices(this->center);
 }
 
 vector<PV2D*>* DrawablePolygon::getVertex(void){

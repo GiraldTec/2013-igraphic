@@ -6,6 +6,7 @@ class Ball : public DrawablePolygon
 {
 private:
 	PV2D* vector;
+	GLfloat mTraslación[16];
 	
 public:
 	Ball(void);
@@ -20,7 +21,8 @@ public:
 		glPushMatrix();
 
 		// Aplicamos las transformaciones necesarias de la pelota
-
+		glTranslatef(this->getCenter()->getX(),this->getCenter()->getY(),0);
+		glScalef(20,20,0);
 		renderX();
 		glColor3f(0,0,0);
 		glBegin(GL_LINE);
