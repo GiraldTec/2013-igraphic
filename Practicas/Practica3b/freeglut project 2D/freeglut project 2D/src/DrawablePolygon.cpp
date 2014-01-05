@@ -31,7 +31,7 @@ DrawablePolygon::DrawablePolygon(PV2D *c, int n, GLdouble radius, GLdouble o, GL
 }
 
 
-void DrawablePolygon::render(void){
+void DrawablePolygon::renderX(void){
 	if(vertex!=NULL){
 
 		glColor3f(red,blue,green);

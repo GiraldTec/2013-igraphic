@@ -12,6 +12,7 @@
 #include "Triangle.h"
 #include "Circle.h"
 #include "Ball.h"
+#include "Elipse.h"
 
 #include <iostream>
 using namespace std;

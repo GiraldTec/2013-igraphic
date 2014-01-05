@@ -76,8 +76,11 @@ public:
 		return true;
 	};
 	void doNormals(void);
-	void draw(void){
-		render();
-	};
+	void render(void){
+		//glPushMatrix();
+		//glRotatef(45,0,0,1);
+		renderX();
+		//glPopMatrix();
+	}
 };
 

@@ -4,6 +4,7 @@
 #include "src/Triangle.h"
 #include "src/Ball.h"
 
+
 Scene::Scene(void)
 {
 	
@@ -33,7 +34,7 @@ Scene::~Scene(void)
 void Scene::render()
 {
 	for (unsigned i=0;i<objectsToDraw->size(); i++){
-		objectsToDraw->at(i)->draw();
+		objectsToDraw->at(i)->render();
 	}
 
 	/*
@@ -148,31 +149,34 @@ void Scene::initScene(){
 	objectsToDraw = new vector<DrawablePolygon*>();
 
 	// Izquierda down/up
-	objectsToDraw->push_back(new Triangle(new PV2D(0.0,5.0), tam_triang_border,M_PI*0.5)); 
-	objectsToDraw->push_back(new Triangle(new PV2D(0.0,495.0), tam_triang_border,M_PI*1.5)); 
+	//objectsToDraw->push_back(new Triangle(new PV2D(0.0,5.0), tam_triang_border,M_PI*0.5)); 
+	//objectsToDraw->push_back(new Triangle(new PV2D(0.0,495.0), tam_triang_border,M_PI*1.5)); 
 
 	// Derecha down/up
-	objectsToDraw->push_back(new Triangle(new PV2D(860.0,5.0), tam_triang_border,M_PI*0.5)); 
-	objectsToDraw->push_back(new Triangle(new PV2D(860.0,495.0), tam_triang_border,M_PI*1.5)); 
+	//objectsToDraw->push_back(new Triangle(new PV2D(860.0,5.0), tam_triang_border,M_PI*0.5)); 
+	//objectsToDraw->push_back(new Triangle(new PV2D(860.0,495.0), tam_triang_border,M_PI*1.5)); 
 
 	//Centro down/up
-	objectsToDraw->push_back(new Triangle(new PV2D(430.0,-240.0), tam_triang_border,M_PI*1.5)); 
-	objectsToDraw->push_back(new Triangle(new PV2D(430.0,740.0), tam_triang_border,M_PI*0.5)); 
+	//objectsToDraw->push_back(new Triangle(new PV2D(430.0,-240.0), tam_triang_border,M_PI*1.5)); 
+	//objectsToDraw->push_back(new Triangle(new PV2D(430.0,740.0), tam_triang_border,M_PI*0.5)); 
 	
 	//estrella centro
-	objectsToDraw->push_back(new Triangle(new PV2D(440.0,250.0), 80,M_PI*0.5)); 
-	objectsToDraw->push_back(new Triangle(new PV2D(440.0,250.0), 80,M_PI*1.5)); 
+	//objectsToDraw->push_back(new Triangle(new PV2D(440.0,250.0), 80,M_PI*0.5)); 
+	//objectsToDraw->push_back(new Triangle(new PV2D(440.0,250.0), 80,M_PI*1.5)); 
 
 	// 3 Circulos 
-	objectsToDraw->push_back(new Circle(new PV2D(660.0,250.0), 60));
-	objectsToDraw->push_back(new Circle(new PV2D(240.0,150.0), 50));
-	objectsToDraw->push_back(new Circle(new PV2D(500.0,400.0), 70));
+	//objectsToDraw->push_back(new Circle(new PV2D(660.0,250.0), 60));
+	//objectsToDraw->push_back(new Circle(new PV2D(240.0,150.0), 50));
+	//objectsToDraw->push_back(new Circle(new PV2D(500.0,400.0), 70));
 
 	//3 triangulos
-	objectsToDraw->push_back(new Triangle(new PV2D(100.0,250.0), 50,M_PI*1)); 
-	objectsToDraw->push_back(new Triangle(new PV2D(240.0,550.0), 60,M_PI*1.2)); 
-	objectsToDraw->push_back(new Triangle(new PV2D(300.0,100.0), 80,M_PI*1.5)); 
+	//objectsToDraw->push_back(new Triangle(new PV2D(100.0,250.0), 50,M_PI*1)); 
+	//objectsToDraw->push_back(new Triangle(new PV2D(240.0,550.0), 60,M_PI*1.2)); 
+	//objectsToDraw->push_back(new Triangle(new PV2D(300.0,100.0), 80,M_PI*1.5)); 
 
+	//elipse
+	objectsToDraw->push_back(new Elipse(new PV2D(660.0,250.0))); 
+	
 
 	myball = NULL;
 }
@@ -214,7 +218,7 @@ bool Scene::step(void){
 bool Scene::mouse_input(GLdouble x, GLdouble y)
 {
 	if (myball == NULL){
-		myball = new Ball(new PV2D(x,y),50.0);
+		myball = new Ball(new PV2D(x,y),20.0);
 		objectsToDraw->push_back(myball);
 		return true;
 	}else return false;
