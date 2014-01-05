@@ -79,7 +79,7 @@ public:
 		
 		glPushMatrix();
 		//Aplicamos las transformaciones parar las elipses
-		glRotatef(45,0,0,1);
+		//glRotatef(45,0,0,1);
 		//glScalef(1,1,0); lo deja igual
 		glScalef(1,0.5,0);
 		renderX();

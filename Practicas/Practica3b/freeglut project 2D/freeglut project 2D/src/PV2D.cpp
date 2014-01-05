@@ -98,9 +98,12 @@ GLdouble PV2D::calculateA(PV2D* normal){
 GLdouble PV2D::calculateMod(void){
 	return sqrt (pow(this->corX,2) + pow(this->corY,2));
 }
+
 PV2D* PV2D::normalize(void){
 	GLdouble mod=this->calculateMod();
 	return new PV2D(this->corX/mod,this->corY/mod);
 }
+
+
 
 

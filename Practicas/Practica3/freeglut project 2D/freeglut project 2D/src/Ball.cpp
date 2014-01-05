@@ -47,6 +47,7 @@ void Ball::calculateDir(void){
 }
 
 void Ball::initBall(void){
+
 }
 
 PV2D* Ball::getVector(void){

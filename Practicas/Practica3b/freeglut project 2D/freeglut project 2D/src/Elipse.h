@@ -11,26 +11,25 @@
 class Elipse :	public Obstacle
 {
 private:
+	GLfloat matrix[16];
+	GLfloat inv_matrix[16];
 
 
 public:
 	Elipse(void);
 	Elipse(PV2D *c);
 	~Elipse(void);
-	PV2D* multMatriz(GLfloat* matriz, PV2D* punt);
+	PV2D* multMatriz(GLfloat* matrix, PV2D* punt, int tipo);
+	PV2D* multMatrizT(GLfloat* matrix, PV2D* punt, int tipo);
 	bool collide(Ball *ball, GLdouble& tin, PV2D*& normalIn){
 
 		// De alguna forma hay que recoger la matriz que se le aplica a la elipse y aplicarsela al centro y la velocidad de la pelota
 		//Aplicar M a la pelota (centro y vector)
 
-		GLfloat matrizActual[16];
-		glGetFloatv(GL_MODELVIEW_MATRIX, matrizActual);
 		//Sacar el centro transformado
-		PV2D* aux_center = multMatriz(matrizActual,ball->getCenter());
-		//matrizactual*centro (x,y,0,0)
+		PV2D* aux_center = multMatriz(inv_matrix,ball->getCenter(),1);
 		//Sacar el vector transformado
-		//matrizactual*vector(x,y,0,1)
-		PV2D* aux_vector = multMatriz(matrizActual,ball->getVector());
+		PV2D* aux_vector = multMatriz(inv_matrix,ball->getVector(),0);
 		
 		GLdouble a=aux_vector->scalarProduct(aux_vector);
 		//GLdouble a=ball->getVector()->scalarProduct(ball->getVector());
@@ -97,10 +96,11 @@ public:
 
               PV2D* paux=ball->getVector()->factor(tin);
               PV2D* pelaux=ball->getCenter()->add(paux);
-
-			  normalIn=this->getCenter()->substract(pelaux);
-              delete paux;
+			  PV2D* aux_normal = this->getCenter()->substract(pelaux);
+			  normalIn=multMatrizT(inv_matrix,aux_normal,0);
+			  delete paux;
               delete pelaux;
+			  delete aux_normal;
               return true;
         }
 
@@ -112,13 +112,11 @@ public:
 		
 		glPushMatrix();
 		//Aplicamos las transformaciones parar las elipses
-		//glRotatef(45,0,0,1);
-		//glScalef(1,1,0); lo deja igual
-		glScalef(1,0.2,0);
+		//glLoadMatrixf(matriz);
+		glMultMatrixf(matrix);
 		renderX();
-	
 		glPopMatrix();
-		renderX();
+		//renderX();
 	
 	}
 

@@ -214,7 +214,7 @@ bool Scene::step(void){
 bool Scene::mouse_input(GLdouble x, GLdouble y)
 {
 	if (myball == NULL){
-		myball = new Ball(new PV2D(x,y),50.0);
+		myball = new Ball(new PV2D(x,y),20.0);
 		objectsToDraw->push_back(myball);
 		return true;
 	}else return false;

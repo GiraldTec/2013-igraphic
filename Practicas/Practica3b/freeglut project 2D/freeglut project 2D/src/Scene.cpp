@@ -149,16 +149,16 @@ void Scene::initScene(){
 	objectsToDraw = new vector<DrawablePolygon*>();
 
 	// Izquierda down/up
-	//objectsToDraw->push_back(new Triangle(new PV2D(0.0,5.0), tam_triang_border,M_PI*0.5)); 
-	//objectsToDraw->push_back(new Triangle(new PV2D(0.0,495.0), tam_triang_border,M_PI*1.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(0.0,5.0), tam_triang_border,M_PI*0.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(0.0,495.0), tam_triang_border,M_PI*1.5)); 
 
 	// Derecha down/up
-	//objectsToDraw->push_back(new Triangle(new PV2D(860.0,5.0), tam_triang_border,M_PI*0.5)); 
-	//objectsToDraw->push_back(new Triangle(new PV2D(860.0,495.0), tam_triang_border,M_PI*1.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(860.0,5.0), tam_triang_border,M_PI*0.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(860.0,495.0), tam_triang_border,M_PI*1.5)); 
 
 	//Centro down/up
-	//objectsToDraw->push_back(new Triangle(new PV2D(430.0,-240.0), tam_triang_border,M_PI*1.5)); 
-	//objectsToDraw->push_back(new Triangle(new PV2D(430.0,740.0), tam_triang_border,M_PI*0.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(430.0,-240.0), tam_triang_border,M_PI*1.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(430.0,740.0), tam_triang_border,M_PI*0.5)); 
 	
 	//estrella centro
 	//objectsToDraw->push_back(new Triangle(new PV2D(440.0,250.0), 80,M_PI*0.5)); 
@@ -175,7 +175,9 @@ void Scene::initScene(){
 	//objectsToDraw->push_back(new Triangle(new PV2D(300.0,100.0), 80,M_PI*1.5)); 
 
 	//elipse
-	objectsToDraw->push_back(new Elipse(new PV2D(660.0,250.0))); 
+	objectsToDraw->push_back(new Elipse(new PV2D(660.0,250.0)));
+	//objectsToDraw->push_back(new Elipse(new PV2D(240.0,150.0)));
+	//objectsToDraw->push_back(new Elipse(new PV2D(500.0,400.0)));
 	
 
 	myball = NULL;
