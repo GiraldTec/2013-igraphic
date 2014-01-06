@@ -7,9 +7,11 @@ Elipse::Elipse(void)
 {
 }
 
-Elipse::Elipse(PV2D *c):Obstacle(new PV2D(),20,1,0,1,1,0)
+Elipse::Elipse(PV2D *c):Obstacle(c,20,1,0,1,1,0)
 {
-	glPushMatrix();
+
+	calcula_vertices(new PV2D());
+	/*glPushMatrix();
 		glTranslatef(c->getX(),c->getY(),0);
 		//glRotatef(angle,ax,ay,az);
 		glScalef(100,50,0);
@@ -20,7 +22,7 @@ Elipse::Elipse(PV2D *c):Obstacle(new PV2D(),20,1,0,1,1,0)
 		//glRotatef(-angle, ax, ay, az);
 		glScalef(1/100,1/50,0);
 		glGetFloatv(GL_MODELVIEW_MATRIX, inv_matrix);
-	glPopMatrix();
+	glPopMatrix();*/
 }
 
 
