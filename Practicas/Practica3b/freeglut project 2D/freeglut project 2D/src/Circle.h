@@ -21,17 +21,17 @@ public:
         GLdouble discriminante=pow(b,2)-4*(a*c);
         delete cp;
 
-		cout <<"discriminante="<<discriminante<<endl;
+	//	cout <<"discriminante="<<discriminante<<endl;
 
         if(discriminante<0)
         {
-		 cout <<"discriminante<0"<<endl;
+	//	 cout <<"discriminante<0"<<endl;
          return false;
         }
 
         if(discriminante==0)
         {
-			  cout <<"discriminante=0"<<endl;
+	//		  cout <<"discriminante=0"<<endl;
               tin=(-b)/(2*a);
 
 			  PV2D* velaux=ball->getVector()->factor(tin);
@@ -43,7 +43,7 @@ public:
 
         if(discriminante>0)
         {
-			  cout <<"discriminante>0"<<endl;
+		//	  cout <<"discriminante>0"<<endl;
               GLdouble t1=((-b)-sqrt(discriminante))/(2*a);
               GLdouble t2=((-b)+sqrt(discriminante))/(2*a);
 

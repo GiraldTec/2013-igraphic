@@ -161,23 +161,23 @@ void Scene::initScene(){
 	objectsToDraw->push_back(new Triangle(new PV2D(430.0,740.0), tam_triang_border,M_PI*0.5)); 
 	
 	//estrella centro
-	//objectsToDraw->push_back(new Triangle(new PV2D(440.0,250.0), 80,M_PI*0.5)); 
-	//objectsToDraw->push_back(new Triangle(new PV2D(440.0,250.0), 80,M_PI*1.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(440.0,250.0), 80,M_PI*0.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(440.0,250.0), 80,M_PI*1.5)); 
 
 	// 3 Circulos 
-	//objectsToDraw->push_back(new Circle(new PV2D(660.0,250.0), 60));
-	//objectsToDraw->push_back(new Circle(new PV2D(240.0,150.0), 50));
-	//objectsToDraw->push_back(new Circle(new PV2D(500.0,400.0), 70));
+	objectsToDraw->push_back(new Circle(new PV2D(660.0,250.0), 60));
+	objectsToDraw->push_back(new Circle(new PV2D(240.0,150.0), 50));
+	objectsToDraw->push_back(new Circle(new PV2D(500.0,400.0), 70));
 
 	//3 triangulos
-	//objectsToDraw->push_back(new Triangle(new PV2D(100.0,250.0), 50,M_PI*1)); 
-	//objectsToDraw->push_back(new Triangle(new PV2D(240.0,550.0), 60,M_PI*1.2)); 
-	//objectsToDraw->push_back(new Triangle(new PV2D(300.0,100.0), 80,M_PI*1.5)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(100.0,250.0), 50,M_PI*1)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(240.0,550.0), 60,M_PI*1.2)); 
+	objectsToDraw->push_back(new Triangle(new PV2D(300.0,100.0), 80,M_PI*1.5)); 
 
 	//elipse
-	objectsToDraw->push_back(new Elipse(new PV2D(660.0,250.0)));
-	//objectsToDraw->push_back(new Elipse(new PV2D(240.0,150.0)));
-	//objectsToDraw->push_back(new Elipse(new PV2D(500.0,400.0)));
+	objectsToDraw->push_back(new Elipse(new PV2D(660.0,250.0),200,100));
+	//objectsToDraw->push_back(new Elipse(new PV2D(240.0,150.0),100,200));
+	objectsToDraw->push_back(new Elipse(new PV2D(500.0,400.0),10,30));
 	
 
 	myball = NULL;
@@ -206,7 +206,7 @@ bool Scene::step(void){
 			//cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
 			//cout << nGlobal->getX() << "  " << nGlobal->getY() << endl;
 			myball->bounce(nGlobal);
-			cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
+			//cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
 		}else{
 			myball->forward(1);
 		}
