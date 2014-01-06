@@ -17,6 +17,8 @@ Ball::Ball(PV2D *c, GLdouble r):DrawablePolygon(c,20,1,0,1,0,0){
 	// con la bola centrada en el origen para seguir el enunciado
 	this->calcula_vertices(new PV2D(0.0,0.0));
 	this->vector = new PV2D(0,10); // velocidad por defecto
+	angulo =0;
+	sHorario = false;
 }
 
 void Ball::forward(GLdouble t){
@@ -24,8 +26,11 @@ void Ball::forward(GLdouble t){
 	GLdouble incX = t*vector->getX();
 	GLdouble incY = t*vector->getY();
 	PV2D *aux_point = new PV2D(getCenter()->getX() + incX, getCenter()->getY() + incY);
-	angulo += 5;
-	if(angulo>360)angulo -= 360;
+	if(t<1) sHorario = !sHorario;
+	if(!sHorario) {angulo += 5; if(angulo>360)angulo -= 360;}
+	else {angulo -= 5; if(angulo<0)angulo += 360;}
+	
+	
 	setCenter(aux_point);
 }
 

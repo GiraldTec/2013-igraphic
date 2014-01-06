@@ -202,9 +202,9 @@ bool Scene::step(void){
 		if((tInGlobal>0.01)&&(tInGlobal < 1)){
 			//tInGlobal /= myball->getVector()->calculateMod();
 			myball->forward(tInGlobal);
-			cout << tInGlobal << endl;
-			cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
-			cout << nGlobal->getX() << "  " << nGlobal->getY() << endl;
+			//cout << tInGlobal << endl;
+			//cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
+			//cout << nGlobal->getX() << "  " << nGlobal->getY() << endl;
 			myball->bounce(nGlobal);
 			cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
 		}else{
