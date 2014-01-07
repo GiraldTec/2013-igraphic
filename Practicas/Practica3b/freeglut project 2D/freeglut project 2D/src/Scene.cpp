@@ -175,9 +175,9 @@ void Scene::initScene(){
 	objectsToDraw->push_back(new Triangle(new PV2D(300.0,100.0), 80,M_PI*1.5)); 
 
 	//elipse
-	objectsToDraw->push_back(new Elipse(new PV2D(660.0,250.0),200,100));
-	//objectsToDraw->push_back(new Elipse(new PV2D(240.0,150.0),100,200));
-	objectsToDraw->push_back(new Elipse(new PV2D(500.0,400.0),10,30));
+	objectsToDraw->push_back(new Elipse(new PV2D(660.0,100.0),80,50));
+	objectsToDraw->push_back(new Elipse(new PV2D(450.0,25.0),60,20));
+	objectsToDraw->push_back(new Elipse(new PV2D(300.0,400.0),10,30));
 	
 
 	myball = NULL;
