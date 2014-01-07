@@ -62,7 +62,6 @@ void DrawablePolygon::calcula_vertices(PV2D* centroTemp){
 	for (int i=0; i<n_sides; i++){
 		aux_p = p->getPos()->clone();
 		vertex->push_back(aux_p);
-		//cout << "punto "<<i<<" esta en:("<<p->getPos()->getX()<<","<<p->getPos()->getY()<<") con dir:"<<p->getDir()<< endl; 
 		p->forward(tam);
 		p->turn(M_PI-2*beta);	
 	}

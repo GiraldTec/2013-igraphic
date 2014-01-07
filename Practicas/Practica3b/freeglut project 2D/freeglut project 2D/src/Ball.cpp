@@ -13,8 +13,7 @@ Ball::~Ball(void)
 }
 
 Ball::Ball(PV2D *c, GLdouble r):DrawablePolygon(c,20,1,0,1,0,0){
-	// TODO ¿qué más le metemos a la pelota?
-	// con la bola centrada en el origen para seguir el enunciado
+	// bola centrada en el origen
 	this->calcula_vertices(new PV2D(0.0,0.0));
 	this->vector = new PV2D(0,10); // velocidad por defecto
 	angulo =0;

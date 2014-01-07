@@ -16,9 +16,5 @@ Triangle::~Triangle(void)
 {
 }
 
-void Triangle::doNormals(){
-	//Calculo de las normales de mi triangulo
-
-}
 
 

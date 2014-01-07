@@ -75,12 +75,8 @@ public:
 		tIn /= ball->getVector()->calculateMod();
 		return true;
 	};
-	void doNormals(void);
 	void render(void){
-		//glPushMatrix();
-		//glRotatef(45,0,0,1);
 		renderX();
-		//glPopMatrix();
 	}
 };
 

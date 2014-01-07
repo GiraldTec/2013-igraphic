@@ -37,25 +37,6 @@ void Scene::render()
 		objectsToDraw->at(i)->render();
 	}
 
-	/*
-	blue = 1.0;
-	glColor3f(red,blue,green);
-
-	glBegin(GL_QUADS);
-		glVertex2d( xTriangle, yTriangle );
-		glVertex2d( xTriangle + triangleWidth, yTriangle );
-		glVertex2d( xTriangle + triangleWidth, yTriangle + triangleHeight );
-		glVertex2d( xTriangle, yTriangle + triangleHeight );
-    glEnd();
-
-	blue = 0.0;
-	glColor3f(red,blue,green);
-
-	glBegin ( GL_TRIANGLES ) ;
-		glVertex2d( xTriangle, yTriangle );
-		glVertex2d( xTriangle + triangleWidth, yTriangle );
-		glVertex2d( xTriangle + triangleWidth, yTriangle + triangleHeight );
-	glEnd () ; */
 }
 
 
@@ -187,7 +168,6 @@ bool Scene::step(void){
 	if(myball!=NULL){
 		GLdouble tInGlobal = 1000.0, tInLocal;
 		PV2D *nGlobal=NULL, *nLocal=NULL;
-		//bool b =((Obstacle*)objectsToDraw->at(0))->collide(myball,tInGlobal,nGlobal);
 		for(unsigned i=0;i<objectsToDraw->size();i++){
 			if(objectsToDraw->at(i)!=myball){
 				if(((Obstacle*)objectsToDraw->at(i))->collide(myball,tInLocal,nLocal)){
@@ -198,19 +178,12 @@ bool Scene::step(void){
 				}
 			}
 		}
-		//cout << tInGlobal << endl;
 		if((tInGlobal>0.01)&&(tInGlobal < 1)){
-			//tInGlobal /= myball->getVector()->calculateMod();
 			myball->forward(tInGlobal);
-			//cout << tInGlobal << endl;
-			//cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
-			//cout << nGlobal->getX() << "  " << nGlobal->getY() << endl;
 			myball->bounce(nGlobal);
-			//cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
 		}else{
 			myball->forward(1);
 		}
-		//cout << myball->getVector()->getX() << "  " << myball->getVector()->getY() << endl;
 		return true;
 	}
 	return false;

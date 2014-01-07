@@ -52,8 +52,6 @@ void display(void){
  
   // Scene rendering
   escena->render();
- // cout<<"se renderiza"<<endl;
-
   glFlush();
   glutSwapBuffers();
 }
@@ -98,7 +96,6 @@ void resize(int newWidth, int newHeight){
 void timer(int value){
 	if(glState==VIDEO){
 
-		 //cout << "en video" << endl;
 		escena->step();
 		display();
 		glutTimerFunc(40,timer,0);

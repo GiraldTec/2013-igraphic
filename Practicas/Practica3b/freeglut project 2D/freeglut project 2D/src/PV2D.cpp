@@ -74,7 +74,7 @@ void PV2D::reflection(PV2D* normal){
 }
 
 PV2D* PV2D::factor(GLdouble g){
-	return new PV2D(corX*g, corY*g);//(corX*f, corY*f);
+	return new PV2D(corX*g, corY*g);
 }
 
 PV2D* PV2D::substract(PV2D* vector){

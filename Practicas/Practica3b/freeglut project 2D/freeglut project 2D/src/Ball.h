@@ -18,8 +18,7 @@ public:
 	void forward(GLdouble t);
 	void bounce(PV2D* n);
 	void render(void){ 
-		//cout << "angulo: "<< angulo << endl;
-
+		
 		glPushMatrix();
 
 		// Aplicamos las transformaciones necesarias de la pelota
