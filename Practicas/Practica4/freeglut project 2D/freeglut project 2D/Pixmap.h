@@ -1,9 +1,10 @@
 #pragma once
+
 #include <gl/GL.h>
-#include <GL/gl.h>
 #include <gl/GLU.h>
 
 #include <GL/freeglut.h>
+#include <iostream>
 
 
 typedef GLubyte colorRGBA[3];
@@ -18,11 +19,13 @@ class Pixmap
 		unsigned int nRows;
 		colorRGBA* rgbMap;
 		colorY* bwMap;
-		bool isbw = false;
+		bool isbw;
 
     GLdouble matrizGauss[9];
 public:
 	Pixmap(void);
 	~Pixmap(void);
+	bool loadFromBufer(int width, int height, GLfloat x, GLfloat y);
+	bool drawMatrix(void);
 };
 

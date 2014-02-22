@@ -7,6 +7,7 @@
 
 #include <Scene.h>
 #include <Lectora/TextureLoader.h>
+#include <Pixmap.h>
 
 #include <iostream>
 using namespace std;
@@ -20,6 +21,8 @@ int WIDTH= 500, HEIGHT= 500;
 
 
 Scene* escena;
+Pixmap *pixMap1,*pixMap2;
+
 
 void intitGL(){
 
@@ -163,7 +166,14 @@ void key(unsigned char key, int x, int y){
   case 'm':
   case 'M':{
 	  // TODO  Coger el bufer y asignarlo a una de nuestras estructuras pixMap
-		   }
+	  int pmID;  // PixMap Identifier
+	  cout << "Elija el pixMap que recibirá el contenido del Buffer";
+	  cin >> pmID;
+	  
+	  switch (pmID) {
+	  case 1: buferToPixMap(&pixMap1); break;
+	  case 2: buferToPixMap(&pixMap2); break;
+
 	  break;
 	
 // Crecimiento/Decrecimiento del árbol
@@ -205,6 +215,12 @@ void mouse(int button, int state,int x, int y){
 		}// switch state
 		break;
 	}//switch
+}
+
+bool buferToPixMap(Pixmap *pm){
+	if (pm!=NULL) {delete(pm);pm=NULL;}
+	pm = new Pixmap();
+	return pm->loadFromBufer();
 }
 
 int main(int argc, char *argv[]){
