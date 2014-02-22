@@ -1,7 +1,7 @@
 #include "Pixmap.h"
 
 Pixmap::Pixmap(void)
-{
+{rgbMap =NULL;
 }
 
 
@@ -11,7 +11,7 @@ Pixmap::~Pixmap(void)
 
 
 bool Pixmap::loadFromBufer(int width, int height, GLfloat x, GLfloat y){
-	delete[] rgbMap;
+	//if(rgbMap==NULL) delete[] rgbMap; // esta linea no tiene mucho sentido
     rgbMap = new colorRGBA[height*width];
     nRows = height;
     nCols = width;
@@ -21,12 +21,21 @@ bool Pixmap::loadFromBufer(int width, int height, GLfloat x, GLfloat y){
 		nCols, nRows, // tamaño del bloque
 		GL_RGB,  //datos a leer
 		GL_UNSIGNED_BYTE, //tipo de los datos
-		arbol); //destino
+		rgbMap); //destino
 	
 	return true;
 }
 
-bool Pixmap::drawMatrix(void){
+bool Pixmap::drawMatrix(GLfloat x, GLfloat y){  // tal cual de las traspas
+	glPixelStorei(GL_UNPACK_ALIGNMENT, //como escribir los pixeles 
+		1); //sin padding entre filas
+	glRasterPos2i(x, y); //esquina inferior-izquerda donde escribiremos el bloque, usando coordenadas OpenGL de la ventana
+	glDrawPixels(nCols, nRows, //tamaño del bloque
+		GL_RGB, //datos a escribir: buffer de color, de profundidad, componente alpha...
+		GL_UNSIGNED_BYTE, //tipo de los datos
+		rgbMap); //origen
+
+
 
 	return true;
 }

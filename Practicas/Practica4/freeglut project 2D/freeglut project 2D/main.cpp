@@ -49,6 +49,8 @@ void intitGL(){
 void display(void){
   glClear( GL_COLOR_BUFFER_BIT );
  
+
+  if(pixMap1!=NULL)pixMap1->drawMatrix(0,0);  // esto es con propósitos de debug unicamente
   // Scene rendering
   escena->render();
   cout<<"se renderiza"<<endl;
@@ -92,10 +94,10 @@ void resize(int newWidth, int newHeight){
   gluOrtho2D(escena->xLeft, escena->xRight, escena->yBot, escena->yTop); 
 }
 
-bool buferToPixMap(Pixmap *pm){
+bool buferToPixMap(Pixmap *&pm){  // borra el "pixmap" entero cuando toca "sobreescribir"
 	if (pm!=NULL) {delete(pm);pm=NULL;}
 	pm = new Pixmap();
-	return pm->loadFromBufer();
+	return pm->loadFromBufer(WIDTH,HEIGHT,0,0); // se supone que (0,0) es la esquina inferior izquierda de la ventana
 }
 
 void key(unsigned char key, int x, int y){
@@ -160,27 +162,28 @@ void key(unsigned char key, int x, int y){
 //  Load BMP
 
   case 'l':
-  case 'L':{
+  case 'L':
 	  // Hay que elegir a cual de los dos pixMaps disponibles se asigna el bmp que se carga
 			
-		   }
+		   
 	  break;
 
 //	Asignar lo que se muestra a un pixMap
 
   case 'm':
-  case 'M':{
+  case 'M':
 	  // TODO  Coger el bufer y asignarlo a una de nuestras estructuras pixMap
 	  int pmID;  // PixMap Identifier
 	  cout << "Elija el pixMap que recibirá el contenido del Buffer";
 	  cin >> pmID;
 	  
 	  switch (pmID) {
-	  case 1: buferToPixMap(&pixMap1); break;
-	  case 2: buferToPixMap(&pixMap2); break;
-
+	  case 1: buferToPixMap(pixMap1); break;
+	  case 2: buferToPixMap(pixMap2); break;
+	  default: break;
+	  }
 	  break;
-	
+	  
 // Crecimiento/Decrecimiento del árbol
 
   case '+' :
@@ -245,6 +248,7 @@ int main(int argc, char *argv[]){
   glutMouseFunc(mouse);
     
   escena = new Scene();
+  pixMap1 = pixMap2 = NULL;
 
   //OpenGL basic setting
   intitGL(); 

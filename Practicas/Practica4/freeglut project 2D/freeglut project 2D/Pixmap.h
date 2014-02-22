@@ -1,5 +1,6 @@
 #pragma once
 
+#include <Windows.h>
 #include <gl/GL.h>
 #include <gl/GLU.h>
 
@@ -26,6 +27,6 @@ public:
 	Pixmap(void);
 	~Pixmap(void);
 	bool loadFromBufer(int width, int height, GLfloat x, GLfloat y);
-	bool drawMatrix(void);
+	bool drawMatrix(GLfloat x, GLfloat y);
 };
 
