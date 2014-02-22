@@ -92,6 +92,11 @@ void resize(int newWidth, int newHeight){
   gluOrtho2D(escena->xLeft, escena->xRight, escena->yBot, escena->yTop); 
 }
 
+bool buferToPixMap(Pixmap *pm){
+	if (pm!=NULL) {delete(pm);pm=NULL;}
+	pm = new Pixmap();
+	return pm->loadFromBufer();
+}
 
 void key(unsigned char key, int x, int y){
  
@@ -217,11 +222,7 @@ void mouse(int button, int state,int x, int y){
 	}//switch
 }
 
-bool buferToPixMap(Pixmap *pm){
-	if (pm!=NULL) {delete(pm);pm=NULL;}
-	pm = new Pixmap();
-	return pm->loadFromBufer();
-}
+
 
 int main(int argc, char *argv[]){
   cout<< "Starting console..." << endl;
