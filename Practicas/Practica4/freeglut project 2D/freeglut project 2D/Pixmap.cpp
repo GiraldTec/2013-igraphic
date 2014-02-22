@@ -1,6 +1,5 @@
 #include "Pixmap.h"
 
-
 Pixmap::Pixmap(void)
 {
 }

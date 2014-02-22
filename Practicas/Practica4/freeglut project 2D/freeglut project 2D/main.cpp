@@ -151,20 +151,18 @@ void key(unsigned char key, int x, int y){
 
 //  Load BMP
 
-  case 'o':
-  case 'O':{
-	  unsigned int width, height;
-	unsigned char * data = loadBMPRaw("images/star.bmp",  width, height);
-	// Create one OpenGL texture
-	GLuint textureID;
-	glGenTextures(1, &textureID);
+  case 'l':
+  case 'L':{
+	  // Hay que elegir a cual de los dos pixMaps disponibles se asigna el bmp que se carga
+			
+		   }
+	  break;
 
-	// "Bind" the newly created texture : all future texture functions will modify this texture
-	glBindTexture(GL_TEXTURE_2D, textureID);
+//	Asignar lo que se muestra a un pixMap
 
-	// Give the image to OpenGL
-	glTexImage2D(GL_TEXTURE_2D, 0,GL_RGB,  width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-	glGenerateMipmap(GL_TEXTURE_2D);
+  case 'm':
+  case 'M':{
+	  // TODO  Coger el bufer y asignarlo a una de nuestras estructuras pixMap
 		   }
 	  break;
 	
