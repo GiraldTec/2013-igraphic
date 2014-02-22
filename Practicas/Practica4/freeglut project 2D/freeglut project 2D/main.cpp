@@ -6,6 +6,7 @@
 //#include <GL/glut.h>
 
 #include <Scene.h>
+#include <Lectora/TextureLoader.h>
 
 #include <iostream>
 using namespace std;
@@ -148,7 +149,24 @@ void key(unsigned char key, int x, int y){
 	else cout << "No hay arbol" << endl;
 	break;
 
+//  Load BMP
 
+  case 'o':
+  case 'O':{
+	  unsigned int width, height;
+	unsigned char * data = loadBMPRaw("images/star.bmp",  width, height);
+	// Create one OpenGL texture
+	GLuint textureID;
+	glGenTextures(1, &textureID);
+
+	// "Bind" the newly created texture : all future texture functions will modify this texture
+	glBindTexture(GL_TEXTURE_2D, textureID);
+
+	// Give the image to OpenGL
+	glTexImage2D(GL_TEXTURE_2D, 0,GL_RGB,  width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+	glGenerateMipmap(GL_TEXTURE_2D);
+		   }
+	  break;
 	
 // Crecimiento/Decrecimiento del árbol
 

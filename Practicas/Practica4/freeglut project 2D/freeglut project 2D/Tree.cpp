@@ -21,7 +21,7 @@ bool Tree::set_angle(GLdouble a){ // angulo en grados
 
 	GLdouble aux = std::floor(a / 360);
 	aux = a - (360*aux);
-	if (aux > 170 || aux < 10) return false; // es un angulo muy feo
+	if (aux > 170 || aux < 10 || aux == 90) return false; // es un angulo muy feo
 	
 	angle = aux * (2 * M_PI) / 360; // a radianes
 	recalculate();
@@ -103,7 +103,7 @@ Square* Tree::rightSquare(Square *base, GLdouble angle)
 	//cout<< "EL ALTO ES: " << alto << endl;
 	//GLdouble lado = alto/sin(angle);
 	GLdouble lado = cos(angle)*base->getSide();
-	cout<< "EL LADO ES: " << lado << endl;
+	//cout<< "EL LADO ES: " << lado << endl;
 	//Calculo de la dirección del lapiz
 	GLdouble difX = base->getPoint3()->GetX() - base->getPoint4()->GetX();
 	GLdouble difY = base->getPoint3()->GetY() - base->getPoint4()->GetY();
@@ -120,9 +120,9 @@ Square* Tree::rightSquare(Square *base, GLdouble angle)
 	pen->turn(M_PI/2);
 	pen->forward(lado);
 	Point *ver4 = pen->getPos()->clone();
-	cout << "Creados 4 vertices" << endl;
-	cout << ver1->GetX() << " " << ver2->GetX() << " " << ver3->GetX() << " " << ver4->GetX() <<endl;
-	cout << ver1->GetY() << " " << ver2->GetY() << " " << ver3->GetY() << " " << ver4->GetY() <<endl;
+	//cout << "Creados 4 vertices" << endl;
+	//cout << ver1->GetX() << " " << ver2->GetX() << " " << ver3->GetX() << " " << ver4->GetX() <<endl;
+	//cout << ver1->GetY() << " " << ver2->GetY() << " " << ver3->GetY() << " " << ver4->GetY() <<endl;
 	Square *res_sq = new Square(ver1,ver2,ver3,ver4,lado);
 	ver1 = ver2 = ver3 = ver4 = NULL;
 	return res_sq;
@@ -135,7 +135,7 @@ Square* Tree::leftSquare(Square *base, GLdouble angle)
 	//cout<< "EL ALTO ES: " << alto << endl;
 	//GLdouble lado = alto/cos(angle);
 	GLdouble lado = sin(angle)*base->getSide();
-	cout<< "EL LADO ES: " << lado << endl;
+	//cout<< "EL LADO ES: " << lado << endl;
 	//Calculo de la dirección del lapiz
 	GLdouble difX = base->getPoint3()->GetX() - base->getPoint4()->GetX();
 	GLdouble difY = base->getPoint3()->GetY() - base->getPoint4()->GetY();
@@ -157,9 +157,9 @@ Square* Tree::leftSquare(Square *base, GLdouble angle)
 	pen->turn(M_PI/2);
 	pen->forward(lado);
 	Point *ver4 = pen->getPos()->clone();
-	cout << "Creados 4 vertices" << endl;
-	cout << ver1->GetX() << " " << ver2->GetX() << " " << ver3->GetX() << " " << ver4->GetX() <<endl;
-	cout << ver1->GetY() << " " << ver2->GetY() << " " << ver3->GetY() << " " << ver4->GetY() <<endl;
+	//cout << "Creados 4 vertices" << endl;
+	//cout << ver1->GetX() << " " << ver2->GetX() << " " << ver3->GetX() << " " << ver4->GetX() <<endl;
+	//cout << ver1->GetY() << " " << ver2->GetY() << " " << ver3->GetY() << " " << ver4->GetY() <<endl;
 	Square *res_sq = new Square(ver1,ver2,ver3,ver4,lado);
 	ver1 = ver2 = ver3 = ver4 = NULL;
 
@@ -172,16 +172,16 @@ void Tree::firstSquare(GLdouble x, GLdouble y, GLdouble d)
 	GLdouble pi = M_PI;
 	pen = new Pencil(aux_p,pi);
 	pen->forward(d/2);
-	cout << pen->getPos()->GetX() << pen->getPos()->GetY() << endl;
+//	cout << pen->getPos()->GetX() << pen->getPos()->GetY() << endl;
 	pen->turn(pi/2);
 	pen->forward(d/2);
-	cout <<  pen->getPos()->GetX() << pen->getPos()->GetY() << endl;
+//	cout <<  pen->getPos()->GetX() << pen->getPos()->GetY() << endl;
 
 	//VERTICE 1
 	Point *ver1 = pen->getPos()->clone();
 	pen->setDir(0);
 	pen->forward(d);
-	cout << ver1->GetX() << " " << ver1->GetY() << endl;
+//	cout << ver1->GetX() << " " << ver1->GetY() << endl;
 	
 	//VERTICE 2
 	Point *ver2 = pen->getPos()->clone();
@@ -195,9 +195,9 @@ void Tree::firstSquare(GLdouble x, GLdouble y, GLdouble d)
 	
 	//VERTICE 4
 	Point *ver4 = pen->getPos()->clone();
-	cout << "Creados 4 vertices" << endl;
-	cout << ver1->GetX() << " " << ver2->GetX() << " " << ver3->GetX() << " " << ver4->GetX() <<endl;
-	cout << ver1->GetY() << " " << ver2->GetY() << " " << ver3->GetY() << " " << ver4->GetY() <<endl;
+//	cout << "Creados 4 vertices" << endl;
+//	cout << ver1->GetX() << " " << ver2->GetX() << " " << ver3->GetX() << " " << ver4->GetX() <<endl;
+//	cout << ver1->GetY() << " " << ver2->GetY() << " " << ver3->GetY() << " " << ver4->GetY() <<endl;
 	Square *s = new Square(ver1,ver2,ver3,ver4,d);
 
 	estructura = new vector<vector<Square*>*>();
@@ -229,7 +229,7 @@ void Tree::searchSquare(GLdouble x, GLdouble y){
 	GLdouble aux_dist=0;
 	Point *point = new Point(x,y);
 
-	cout << "testing 1" <<endl;
+	//cout << "testing 1" <<endl;
 
 	for (unsigned i=0; i<estructura->size(); i++){
 		aux_level = estructura->at(i);

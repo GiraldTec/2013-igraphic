@@ -36,22 +36,7 @@ void Scene::render()
 	
 	blue = 1.0;
 	glColor3f(red,blue,green);
-	/*
-	glBegin(GL_QUADS);
-		glVertex2d( xTriangle, yTriangle );
-		glVertex2d( xTriangle + triangleWidth, yTriangle );
-		glVertex2d( xTriangle + triangleWidth, yTriangle + triangleHeight );
-		glVertex2d( xTriangle, yTriangle + triangleHeight );
-    glEnd();
 
-	blue = 0.0;
-	glColor3f(red,blue,green);
-
-	glBegin ( GL_TRIANGLES ) ;
-		glVertex2d( xTriangle, yTriangle );
-		glVertex2d( xTriangle + triangleWidth, yTriangle );
-		glVertex2d( xTriangle + triangleWidth, yTriangle + triangleHeight );
-	glEnd () ; */
 }
 
 
