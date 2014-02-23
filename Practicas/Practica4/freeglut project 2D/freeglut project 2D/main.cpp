@@ -169,7 +169,7 @@ void key(unsigned char key, int x, int y){
 
   case 'l':
   case 'L':{
-	  char imagepath[] = "C:/star.bmp";
+	  char imagepath[] = "./images/star.bmp";
 	  //cout << "Escriba la ruta de la imagen";
 	  //cin >> imagepath;
 	  fileToPixMap(pixMap1);

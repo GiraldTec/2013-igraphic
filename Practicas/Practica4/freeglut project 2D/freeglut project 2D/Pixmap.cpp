@@ -13,12 +13,28 @@ Pixmap::~Pixmap(void)
 
 bool Pixmap::loadFromFile(char * imagepath){
 	unsigned char * data = loadBMPRaw(imagepath,nRows,nCols);
-	rgbMap = new colorRGBA[nRows*nCols];
-	GLuint textureID;
-	glGenTextures(1, &textureID);
-	glBindTexture(GL_TEXTURE_2D, textureID);
-	glTexImage2D(GL_TEXTURE_2D, 0,GL_RGB, nCols, nRows, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+	fillRGBMap(data);
+	//if(rgbMap!=NULL)delete(rgbMap);
+	//rgbMap = new colorRGBA[nRows*nCols];
+	//GLuint textureID;
+	//glGenTextures(1, &textureID);
+	//glBindTexture(GL_TEXTURE_2D, textureID);
+	//glTexImage2D(GL_TEXTURE_2D, 0,GL_RGB, nCols, nRows, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, data);
+	delete[] data;
 	return true;
+}
+
+void Pixmap::fillRGBMap(unsigned char *data){
+	if(rgbMap!=NULL)delete(rgbMap);
+	rgbMap = new colorRGBA[nRows*nCols];
+	int i,j;
+	for (i=0; i < nRows; i++){
+		for (j=0; j < nCols; j++) {
+			rgbMap[i*j][0]=data[i*j*3+0]; //R
+			rgbMap[i*j][1]=data[i*j*3+1]; //G
+			rgbMap[i*j][2]=data[i*j*3+2]; //B
+		}	
+	}
 }
 
 bool Pixmap::loadFromBufer(int width, int height, GLfloat x, GLfloat y){
@@ -45,9 +61,6 @@ bool Pixmap::drawMatrix(GLfloat x, GLfloat y){  // tal cual de las traspas
 		GL_RGB, //datos a escribir: buffer de color, de profundidad, componente alpha...
 		GL_UNSIGNED_BYTE, //tipo de los datos
 		rgbMap); //origen
-
-
-
 	return true;
 }
 

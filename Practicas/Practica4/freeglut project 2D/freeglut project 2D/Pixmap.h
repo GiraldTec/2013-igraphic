@@ -30,10 +30,11 @@ public:
 	Pixmap(void);
 	~Pixmap(void);
 	bool loadFromFile(char* filepath);
+	void fillRGBMap(unsigned char *data);
 	bool loadFromBufer(int width, int height, GLfloat x, GLfloat y);
 	bool drawMatrix(GLfloat x, GLfloat y);
 	void rotate(GLdouble angle);
 	void difference(Pixmap* pm);
-	void weightedAverage(Pixmap*pm)
+	void weightedAverage(Pixmap*pm);
 };
 
