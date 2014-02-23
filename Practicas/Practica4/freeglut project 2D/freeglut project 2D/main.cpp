@@ -22,6 +22,7 @@ int WIDTH= 500, HEIGHT= 500;
 
 Scene* escena;
 Pixmap *pixMap1,*pixMap2;
+boolean seleccionado1 = true;
 
 
 void intitGL(){
@@ -49,8 +50,14 @@ void intitGL(){
 void display(void){
   glClear( GL_COLOR_BUFFER_BIT );
  
-
-  if(pixMap1!=NULL)pixMap1->drawMatrix(0,0);  // esto es con propósitos de debug unicamente
+  switch(seleccionado1){
+  case true:
+	  if(pixMap1!=NULL)pixMap1->drawMatrix(0,0);  // esto es con propósitos de debug unicamente
+	  break;
+  case false:
+	  if(pixMap2!=NULL)pixMap2->drawMatrix(0,0);  // esto es con propósitos de debug unicamente
+	  break;
+  }
   // Scene rendering
   escena->render();
   cout<<"se renderiza"<<endl;
@@ -103,7 +110,11 @@ bool buferToPixMap(Pixmap *&pm){  // borra el "pixmap" entero cuando toca "sobre
 bool fileToPixMap(Pixmap *&pm,char* imagepath){
 	if (pm!=NULL) {delete(pm);pm=NULL;}
 	pm = new Pixmap();
-	return pm->loadFromFile(imagepath);;
+	return pm->loadFromFile(imagepath);
+}
+
+void desenfoqueGauss(Pixmap *&pm){
+
 }
 
 void key(unsigned char key, int x, int y){
@@ -199,7 +210,7 @@ void key(unsigned char key, int x, int y){
 	case 'v':
 	case 'V':
 		
-		cout << "Elija el pixMap que recibirá el contenido del Buffer";
+		cout << "Elija el pixMap que recibirá el contenido del Buffer: ";
 		cin >> pmID;
 	  
 		switch (pmID) {
@@ -208,6 +219,72 @@ void key(unsigned char key, int x, int y){
 		default: break;
 		}
 	break;
+
+// Media Ponderada de BitMaps
+	case 'z':
+	case 'Z':
+		if(pixMap1==NULL||pixMap2==NULL){
+		cout << "Debe tener los dos pixMaps cargados" << endl;}
+		else{
+			double factor;
+			cout << "Introduzca el valor del factor con el que realizar la operación: ";
+			cin >> factor;
+			cout << "Elija el pixMap que recibirá el resultado de la operación: " ;
+			cin >> pmID;
+	  
+			switch (pmID) {
+			case 1: pixMap1->weightedAverage(factor,pixMap2);break;
+			case 2: pixMap2->weightedAverage(factor,pixMap1); break;
+			default: break;
+			}
+		}
+		break;
+
+// Diferencia de BitMaps
+
+	case 'x':
+	case 'X':
+		if(pixMap1==NULL||pixMap2==NULL){
+		cout << "Debe tener los dos pixMaps cargados" << endl;}
+		else{
+			cout << "Elija el pixMap que recibirá el resultado de la operación: " ;
+			cin >> pmID;
+	  
+			switch (pmID) {
+			case 1: pixMap1->difference(pixMap2);break;
+			case 2: pixMap2->difference(pixMap1); break;
+			default: break;
+			}
+		}
+		break;
+
+// Gaussian Blur
+
+	case 'b':
+	case 'B':
+		
+		cout << "Elija el pixMap que recibirá el resultado de la operación: " ;
+		cin >> pmID;
+
+		double factor;
+		cout << "Introduzca el valor del factor con el que realizar la operación: ";
+		cin >> factor;
+		switch (pmID) {
+		case 1: desenfoqueGauss(pixMap1); break;
+		case 2: desenfoqueGauss(pixMap2); break;
+		default: break;
+		}
+		break;
+
+// Selección del pixMap
+
+	case 49:
+		seleccionado1 = true;
+		break;
+
+	case 50:
+		seleccionado1 = false;
+		break;
 
 // Crecimiento/Decrecimiento del árbol
 
@@ -223,6 +300,7 @@ void key(unsigned char key, int x, int y){
 
   default:
     need_redisplay = false;
+	cout << "la tecla es: " << (int) key << endl;
     break;
   }//switch
 

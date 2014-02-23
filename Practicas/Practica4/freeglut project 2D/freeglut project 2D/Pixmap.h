@@ -35,6 +35,6 @@ public:
 	bool drawMatrix(GLfloat x, GLfloat y);
 	void rotate(GLdouble angle);
 	void difference(Pixmap* pm);
-	void weightedAverage(Pixmap*pm);
+	void weightedAverage(double k, Pixmap*pm);
 };
 

@@ -133,6 +133,6 @@ void Pixmap::difference(Pixmap* pm){
 
 }
 
-void Pixmap::weightedAverage(Pixmap* pm){
+void Pixmap::weightedAverage(double k,Pixmap* pm){
 
 }
