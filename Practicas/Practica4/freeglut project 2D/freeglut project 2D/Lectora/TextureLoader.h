@@ -56,6 +56,6 @@
 ///	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR); 
 ///	glGenerateMipmap(GL_TEXTURE_2D);
 /// delete[] data;
-unsigned char * loadBMPRaw(const char * imagepath, unsigned int& outWidth, unsigned int& outHeight, bool flipY = true);
+unsigned char * loadBMPRaw(const char * imagepath, unsigned int& outWidth, unsigned int& outHeight, int &dpos, bool flipY = true);
 
 #endif

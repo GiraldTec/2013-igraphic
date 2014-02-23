@@ -30,7 +30,7 @@ public:
 	Pixmap(void);
 	~Pixmap(void);
 	bool loadFromFile(char* filepath);
-	void fillRGBMap(unsigned char *data);
+	void fillRGBMap(unsigned char *data, int dp);
 	bool loadFromBufer(int width, int height, GLfloat x, GLfloat y);
 	bool drawMatrix(GLfloat x, GLfloat y);
 	void rotate(GLdouble angle);

@@ -30,7 +30,7 @@
 #include <string.h>
 #include <memory.h>
 
-unsigned char * loadBMPRaw(const char * imagepath, unsigned int& outWidth, unsigned int& outHeight, bool flipY){
+unsigned char * loadBMPRaw(const char * imagepath, unsigned int& outWidth, unsigned int& outHeight, int &dpos, bool flipY){
 	printf("Reading image %s\n", imagepath);
 	outWidth = -1;
 	outHeight = -1;
@@ -94,6 +94,8 @@ unsigned char * loadBMPRaw(const char * imagepath, unsigned int& outWidth, unsig
 		}
 		delete [] tmpBuffer;
 	}
+
+	dpos = dataPos;
 
 	return data;
 }

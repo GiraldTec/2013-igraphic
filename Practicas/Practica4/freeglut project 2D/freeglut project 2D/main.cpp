@@ -100,14 +100,15 @@ bool buferToPixMap(Pixmap *&pm){  // borra el "pixmap" entero cuando toca "sobre
 	return pm->loadFromBufer(WIDTH,HEIGHT,0,0); // se supone que (0,0) es la esquina inferior izquierda de la ventana
 }
 
-bool fileToPixMap(Pixmap *&pm){
+bool fileToPixMap(Pixmap *&pm,char* imagepath){
 	if (pm!=NULL) {delete(pm);pm=NULL;}
 	pm = new Pixmap();
-	return pm;
+	return pm->loadFromFile(imagepath);;
 }
 
 void key(unsigned char key, int x, int y){
  
+	int pmID;  // PixMap Identifier
   bool need_redisplay = true;
 
   switch (key) {
@@ -172,28 +173,42 @@ void key(unsigned char key, int x, int y){
 	  char imagepath[] = "./images/star.bmp";
 	  //cout << "Escriba la ruta de la imagen";
 	  //cin >> imagepath;
-	  fileToPixMap(pixMap1);
-	  pixMap1->loadFromFile(imagepath);
+	  fileToPixMap(pixMap1,imagepath);
+	  
 	  // Hay que elegir a cual de los dos pixMaps disponibles se asigna el bmp que se carga
 		   }
 	  break;
 
 //	Asignar lo que se muestra a un pixMap
+	
+	case 'm':
+	case 'M':
+		// TODO  Coger el bufer y asignarlo a una de nuestras estructuras pixMap
+		
+		cout << "Elija el pixMap que recibirá el contenido del Buffer";
+		cin >> pmID;
+	  
+		switch (pmID) {
+		case 1: buferToPixMap(pixMap1); break;
+		case 2: buferToPixMap(pixMap2); break;
+		default: break;
+		}
+	break;
+	  
+// Rotación de un angulo
+	case 'v':
+	case 'V':
+		
+		cout << "Elija el pixMap que recibirá el contenido del Buffer";
+		cin >> pmID;
+	  
+		switch (pmID) {
+		case 1: pixMap1->rotate(90);break;
+		case 2: pixMap2->rotate(90); break;
+		default: break;
+		}
+	break;
 
-  case 'm':
-  case 'M':
-	  // TODO  Coger el bufer y asignarlo a una de nuestras estructuras pixMap
-	  int pmID;  // PixMap Identifier
-	  cout << "Elija el pixMap que recibirá el contenido del Buffer";
-	  cin >> pmID;
-	  
-	  switch (pmID) {
-	  case 1: buferToPixMap(pixMap1); break;
-	  case 2: buferToPixMap(pixMap2); break;
-	  default: break;
-	  }
-	  break;
-	  
 // Crecimiento/Decrecimiento del árbol
 
   case '+' :
