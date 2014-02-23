@@ -5,7 +5,10 @@
 #include <gl/GLU.h>
 
 #include <GL/freeglut.h>
+#include <GL/glut.h>
 #include <iostream>
+
+#include <Lectora/TextureLoader.h>
 
 
 typedef GLubyte colorRGBA[3];
@@ -26,7 +29,11 @@ class Pixmap
 public:
 	Pixmap(void);
 	~Pixmap(void);
+	bool loadFromFile(char* filepath);
 	bool loadFromBufer(int width, int height, GLfloat x, GLfloat y);
 	bool drawMatrix(GLfloat x, GLfloat y);
+	void rotate(GLdouble angle);
+	void difference(Pixmap* pm);
+	void weightedAverage(Pixmap*pm)
 };
 

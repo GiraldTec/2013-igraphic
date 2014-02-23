@@ -10,6 +10,17 @@ Pixmap::~Pixmap(void)
 }
 
 
+
+bool Pixmap::loadFromFile(char * imagepath){
+	unsigned char * data = loadBMPRaw(imagepath,nRows,nCols);
+	rgbMap = new colorRGBA[nRows*nCols];
+	GLuint textureID;
+	glGenTextures(1, &textureID);
+	glBindTexture(GL_TEXTURE_2D, textureID);
+	glTexImage2D(GL_TEXTURE_2D, 0,GL_RGB, nCols, nRows, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+	return true;
+}
+
 bool Pixmap::loadFromBufer(int width, int height, GLfloat x, GLfloat y){
 	//if(rgbMap==NULL) delete[] rgbMap; // esta linea no tiene mucho sentido
     rgbMap = new colorRGBA[height*width];
@@ -38,4 +49,16 @@ bool Pixmap::drawMatrix(GLfloat x, GLfloat y){  // tal cual de las traspas
 
 
 	return true;
+}
+
+void Pixmap::rotate(GLdouble angle){
+
+}
+
+void Pixmap::difference(Pixmap* pm){
+
+}
+
+void Pixmap::weightedAverage(Pixmap* pm){
+
 }

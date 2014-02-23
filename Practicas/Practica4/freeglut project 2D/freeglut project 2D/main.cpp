@@ -100,6 +100,12 @@ bool buferToPixMap(Pixmap *&pm){  // borra el "pixmap" entero cuando toca "sobre
 	return pm->loadFromBufer(WIDTH,HEIGHT,0,0); // se supone que (0,0) es la esquina inferior izquierda de la ventana
 }
 
+bool fileToPixMap(Pixmap *&pm){
+	if (pm!=NULL) {delete(pm);pm=NULL;}
+	pm = new Pixmap();
+	return pm;
+}
+
 void key(unsigned char key, int x, int y){
  
   bool need_redisplay = true;
@@ -162,10 +168,14 @@ void key(unsigned char key, int x, int y){
 //  Load BMP
 
   case 'l':
-  case 'L':
+  case 'L':{
+	  char imagepath[] = "C:/star.bmp";
+	  //cout << "Escriba la ruta de la imagen";
+	  //cin >> imagepath;
+	  fileToPixMap(pixMap1);
+	  pixMap1->loadFromFile(imagepath);
 	  // Hay que elegir a cual de los dos pixMaps disponibles se asigna el bmp que se carga
-			
-		   
+		   }
 	  break;
 
 //	Asignar lo que se muestra a un pixMap
