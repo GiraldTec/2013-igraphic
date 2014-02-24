@@ -13,7 +13,7 @@ Pixmap::~Pixmap(void)
 
 bool Pixmap::loadFromFile(const char * imagepath){
 	int dp;
-	unsigned char * data = loadBMPRaw(imagepath,nRows,nCols,dp,false);
+	unsigned char * data = loadBMPRaw(imagepath,nCols,nRows,dp,false);
 	if(data == NULL) return false;
 	fillRGBMap(data,dp);
 	delete[] data;
@@ -26,9 +26,9 @@ void Pixmap::fillRGBMap(unsigned char *data, int dp){
 	int i,j;
 	for (i=0; i < nRows; i++){
 		for (j=0; j < nCols; j++) {
-			rgbMap[i*nCols+j][0]=data[(i*nCols+j)*3+2]; //R
-			rgbMap[i*nCols+j][1]=data[(i*nCols+j)*3+1]; //G
-			rgbMap[i*nCols+j][2]=data[(i*nCols+j)*3]; //B
+			rgbMap[i*nCols+j][0]=data[dp+(i*nCols+j)*3+2]; //R
+			rgbMap[i*nCols+j][1]=data[dp+(i*nCols+j)*3+1]; //G
+			rgbMap[i*nCols+j][2]=data[dp+(i*nCols+j)*3]; //B
 		}	
 	}
 }

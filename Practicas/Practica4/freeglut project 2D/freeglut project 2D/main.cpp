@@ -10,6 +10,8 @@
 #include <Pixmap.h>
 
 #include <iostream>
+#include <string>
+#include <sstream>
 using namespace std;
 
 // Freeglut parameters
@@ -163,14 +165,22 @@ void key(unsigned char key, int x, int y){
     escena->cam_out();
     break ;
 
-// Reset escene
+// Resetear el programa
 
   case 'r' :
   case 'R' :
 	if (escena->reset()) cout << "La escena ha sido reseteada" << endl;
 	else cout << "No había nada que resetear" << endl;
-	delete pixMap1,pixMap2;
+	delete pixMap1; pixMap1= NULL;
+	delete pixMap2; pixMap2=NULL;
 	cout << "Pixmaps vaciados" << endl;
+	break;
+
+// Borrar solo el árbol
+  case 't' :
+  case 'T' :
+	if (escena->reset()) cout << "La escena ha sido reseteada" << endl;
+	else cout << "No había nada que resetear" << endl;
 	break;
 
 // Angle setting
@@ -185,9 +195,9 @@ void key(unsigned char key, int x, int y){
 
   case 'l':
   case 'L':{
-		fileToPixMap(pixMap1,"./images/huevo.bmp");
-		fileToPixMap(pixMap2,"./images/paisaje.bmp");
-		/*char name[] = "";
+		//fileToPixMap(pixMap1,"./images/huevo.bmp");
+		//fileToPixMap(pixMap2,"./images/paisaje.bmp");
+		string name = "";
 		cout << "Escriba el nombre de la imagen: ";
 		cin >> name;
 		std::string fullName = std::string("./images/").append(name);
@@ -199,7 +209,7 @@ void key(unsigned char key, int x, int y){
 			case 2: succesful=fileToPixMap(pixMap2,fullName.c_str()); break;
 			default: break;
 			}
-		if(!succesful) cout << "Repita la operacion correctamente.";*/
+		if(!succesful) cout << "Repita la operacion correctamente.";
 		}
 	  break;
 
@@ -225,8 +235,6 @@ void key(unsigned char key, int x, int y){
 		cout << "Elija el ángulo para la rotacion: ";
 		cin >> angleRotate;
 		angleRotate = (angleRotate*M_PI)/180;
-		cout << "Elija el pixMap que recibirá el contenido del Buffer: ";
-		cin >> pmID;
 		cout << "Click en el centro de rotación.";
 		makeRotate=true;
 	break;
@@ -329,11 +337,11 @@ void mouse(int button, int state,int x, int y){
 					GLdouble aux_y = (((escena->yTop - escena->yBot)*y)/HEIGHT)+escena->yBot;
 					cout << aux_x << " " << aux_y << " " << endl;
 					if (makeRotate){	  
-					switch (pmID) {
-					case 1: pixMap1->rotate(angleRotate,aux_x,aux_y);break;
-					case 2: pixMap2->rotate(angleRotate,aux_x,aux_y); break;
-					default: break;
-					}
+						switch (seleccionado1) {
+							case true: pixMap1->rotate(angleRotate,aux_x,aux_y);break;
+							case false: pixMap2->rotate(angleRotate,aux_x,aux_y); break;
+							default: break;
+						}
 						makeRotate = false;
 					}
 					else{
