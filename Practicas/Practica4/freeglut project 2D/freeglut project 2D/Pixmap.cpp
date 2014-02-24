@@ -66,7 +66,9 @@ void Pixmap::rotate(GLdouble angle, GLdouble centerX, GLdouble centerY){
 	GLdouble auxX, auxY;
 	int count, newPos;
     unsigned int i, j;
-    for (i=1; i < nRows; i++)
+	centerX = 55;
+	centerY = 40;
+	for (i=1; i < nRows; i++)
 		for (j=1; j < nCols; j++) {
 			count=i*nCols + j;
 			//Auxiliar point to rotate
@@ -74,25 +76,24 @@ void Pixmap::rotate(GLdouble angle, GLdouble centerX, GLdouble centerY){
 			auxY = j-centerY;
 
 			if(auxX != 0 && auxY != 0){
-				//Get the length to current point to aux point
-				GLdouble dist = sqrt (pow (auxX, 2) +  pow(auxY, 2) );
+				//Get the length to current point to rotation center point
+				GLdouble dist = sqrt (pow (i-centerX, 2) +  pow(j-centerY, 2) );
                 //Get angle
 				GLdouble dir = atan2(auxY, auxX)-angle;
 				//Calculate new point with rotation
                 int newX = centerX + dist * cos(dir);
                 int newY = centerY + dist * sin(dir);
 				//If new point out
-                if(newX < 0 || newX >= nRows || newY < 0 || newY >= nCols){
-                    rotation[count][0] = 0;
-                    rotation[count][1] = 0;
-                    rotation[count][2] = 0;
-                }
-				else{
-					newPos = newX*nCols+newY;
+                if(newX < nRows && newX >= 0 && newY < nCols && newY >= 0){
+                    newPos = newX*nCols+newY;
 					rotation[count][0] = rgbMap[newPos][0];
 					rotation[count][1] = rgbMap[newPos][1];
                     rotation[count][2] = rgbMap[newPos][2];
-				}
+                }
+				else{
+					rotation[count][0] = 255;
+                    rotation[count][1] = 255;
+                    rotation[count][2] = 255;				}
             }
     }
 

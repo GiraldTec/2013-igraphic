@@ -185,8 +185,8 @@ void key(unsigned char key, int x, int y){
 
   case 'l':
   case 'L':{
-		fileToPixMap(pixMap1,"./images/ball.bmp");
-		fileToPixMap(pixMap2,"./images/candy.bmp");
+		fileToPixMap(pixMap1,"./images/huevo.bmp");
+		fileToPixMap(pixMap2,"./images/paisaje.bmp");
 		/*char name[] = "";
 		cout << "Escriba el nombre de la imagen: ";
 		cin >> name;
@@ -224,6 +224,7 @@ void key(unsigned char key, int x, int y){
 	case 'V':
 		cout << "Elija el ángulo para la rotacion: ";
 		cin >> angleRotate;
+		angleRotate = (angleRotate*M_PI)/180;
 		cout << "Elija el pixMap que recibirá el contenido del Buffer: ";
 		cin >> pmID;
 		cout << "Click en el centro de rotación.";
