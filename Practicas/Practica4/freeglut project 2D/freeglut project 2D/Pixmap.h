@@ -34,6 +34,7 @@ public:
 	bool loadFromBufer(int width, int height, GLfloat x, GLfloat y);
 	bool drawMatrix(GLfloat x, GLfloat y);
 	void rotate(GLdouble angle, GLdouble cX, GLdouble cY);
+	GLdouble bilinearInterpolation(GLdouble x, GLdouble y, int channel);
 	void difference(Pixmap* pm);
 	void weightedAverage(double k, Pixmap*pm);
 	bool gaussianBlur(void);

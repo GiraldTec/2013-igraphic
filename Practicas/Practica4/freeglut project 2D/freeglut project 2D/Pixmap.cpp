@@ -66,39 +66,66 @@ void Pixmap::rotate(GLdouble angle, GLdouble centerX, GLdouble centerY){
 	GLdouble auxX, auxY;
 	int count, newPos;
     unsigned int i, j;
-	centerX = 55;
-	centerY = 40;
-	for (i=1; i < nRows; i++)
-		for (j=1; j < nCols; j++) {
+	//centerX = 197;
+	//centerY = 305;
+	for (i=0; i < nRows; i++)
+		for (j=0; j < nCols; j++) {
 			count=i*nCols + j;
 			//Auxiliar point to rotate
 			auxX = i-centerX;
 			auxY = j-centerY;
 
-			if(auxX != 0 && auxY != 0){
+			if(auxX != 0 || auxY != 0){
 				//Get the length to current point to rotation center point
-				GLdouble dist = sqrt (pow (i-centerX, 2) +  pow(j-centerY, 2) );
+				GLdouble dist = sqrt (pow (auxX, 2) +  pow(auxY, 2));
                 //Get angle
-				GLdouble dir = atan2(auxY, auxX)-angle;
+				GLdouble dir = atan2(auxY, auxX)+angle;
 				//Calculate new point with rotation
                 int newX = centerX + dist * cos(dir);
                 int newY = centerY + dist * sin(dir);
 				//If new point out
                 if(newX < nRows && newX >= 0 && newY < nCols && newY >= 0){
-                    newPos = newX*nCols+newY;
+                    /*newPos = newX*nCols+newY;
 					rotation[count][0] = rgbMap[newPos][0];
 					rotation[count][1] = rgbMap[newPos][1];
                     rotation[count][2] = rgbMap[newPos][2];
+					*/
+					rotation[count][0] = bilinearInterpolation(newX,newY,0);
+					rotation[count][1] = bilinearInterpolation(newX,newY,1);
+                    rotation[count][2] = bilinearInterpolation(newX,newY,2);
                 }
 				else{
 					rotation[count][0] = 255;
                     rotation[count][1] = 255;
-                    rotation[count][2] = 255;				}
-            }
+                    rotation[count][2] = 255;				
+				}
+			}
+			else{
+				rotation[count][0] = rgbMap[count][0];
+				rotation[count][1] = rgbMap[count][1];
+				rotation[count][2] = rgbMap[count][2];
+			}
     }
 
     delete [] rgbMap;
     rgbMap = rotation;
+}
+
+GLdouble Pixmap::bilinearInterpolation(GLdouble x, GLdouble y, int channel){
+	GLdouble difX = x - (int)x;
+	GLdouble difY = y - (int)y;
+	int newPos = x * nCols + y;
+	GLdouble color = (1-difX) * (1-difY) * rgbMap[newPos][channel];
+
+	if (y < nCols)
+		color += (1-difX) * difY * rgbMap[newPos+1][channel];
+	if (x < nRows+1)
+		color += difX * (1-difY) * rgbMap[newPos+nCols][channel];
+	if (y < nCols && x < nRows+1)
+		color += difX * difY * rgbMap[newPos+nCols+1][channel];
+
+	return color;
+
 }
 
 void Pixmap::difference(Pixmap* pm){
