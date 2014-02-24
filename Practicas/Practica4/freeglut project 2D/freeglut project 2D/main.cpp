@@ -23,7 +23,9 @@ int WIDTH= 500, HEIGHT= 500;
 Scene* escena;
 Pixmap *pixMap1,*pixMap2;
 boolean seleccionado1 = true;
-
+int pmID;  // PixMap Identifier
+boolean makeRotate = false; //Flag to mouse input for rotate
+GLdouble angleRotate;
 
 void intitGL(){
 
@@ -119,7 +121,6 @@ void desenfoqueGauss(Pixmap *&pm){
 
 void key(unsigned char key, int x, int y){
  
-	int pmID;  // PixMap Identifier
   bool need_redisplay = true;
 
   switch (key) {
@@ -220,15 +221,12 @@ void key(unsigned char key, int x, int y){
 // Rotación de un angulo
 	case 'v':
 	case 'V':
-		
+		cout << "Elija el ángulo para la rotacion: ";
+		cin >> angleRotate;
 		cout << "Elija el pixMap que recibirá el contenido del Buffer: ";
 		cin >> pmID;
-	  
-		switch (pmID) {
-		case 1: pixMap1->rotate(90);break;
-		case 2: pixMap2->rotate(90); break;
-		default: break;
-		}
+		cout << "Click en el centro de rotación.";
+		makeRotate=true;
 	break;
 
 // Media Ponderada de BitMaps
@@ -331,8 +329,17 @@ void mouse(int button, int state,int x, int y){
 					GLdouble aux_x = (((escena->xRight - escena->xLeft)*x)/WIDTH) + escena->xLeft;
 					GLdouble aux_y = (((escena->yTop - escena->yBot)*y)/HEIGHT)+escena->yBot;
 					cout << aux_x << " " << aux_y << " " << endl;
-
-					escena->mouse_input(aux_x,aux_y);
+					if (makeRotate){	  
+					switch (pmID) {
+					case 1: pixMap1->rotate(angleRotate,aux_x,aux_y);break;
+					case 2: pixMap2->rotate(angleRotate,aux_x,aux_y); break;
+					default: break;
+					}
+						makeRotate = false;
+					}
+					else{
+						escena->mouse_input(aux_x,aux_y);
+					}
 					}
 				break;
 			case GLUT_UP:

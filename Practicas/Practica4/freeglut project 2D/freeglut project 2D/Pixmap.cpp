@@ -61,67 +61,43 @@ bool Pixmap::drawMatrix(GLfloat x, GLfloat y){  // tal cual de las traspas
 	return true;
 }
 
-void Pixmap::rotate(GLdouble angle){
-	  colorRGBA* rotacion = new colorRGBA[nCols * nRows];
+void Pixmap::rotate(GLdouble angle, GLdouble centerX, GLdouble centerY){
+	colorRGBA* rotation = new colorRGBA[nCols * nRows];
+	GLdouble auxX, auxY;
+	int count, newPos;
+    unsigned int i, j;
+    for (i=1; i < nRows; i++)
+		for (j=1; j < nCols; j++) {
+			count=i*nCols + j;
+			//Auxiliar point to rotate
+			auxX = i-centerX;
+			auxY = j-centerY;
 
-        //int puntoOrigenX = nCols / 2;
-        //int puntoOrigenY = nRows / 2;
-
-        GLdouble puntoOrigenX = 50;
-        GLdouble puntoOrigenY = 50;
-
-        //int puntoOrigenX = 10 + nCols / 2;
-        //int puntoOrigenY = (10 + nRows / 2) * -1;
-
-        GLdouble auxX, auxY;
-        int count;
-        unsigned int i, j;
-        for (i=1; i < nRows; i++)
-                for (j=1; j < nCols; j++) {
-                        count=i*nCols + j;
-
-                        auxX = i-puntoOrigenX;
-                        auxY = j-puntoOrigenY;
-
-                        //Hallamos la distancia desde el punto actual al ogigen
-                        GLdouble dist = sqrt (pow (auxX, 2) +  pow(auxY, 2) );
-
-                        //Hallamos el angulo nuevo
-                        if(auxX != 0 && auxY != 0){
-                        GLdouble dir = atan2(auxY, auxX);
-                        dir +=angle;
-
-                        int puntoNuevoX = puntoOrigenX + dist * cos(dir);
-                        int puntoNuevoY = puntoOrigenY + dist * sin(dir);
-
-                        if(puntoNuevoX < 0 || puntoNuevoX >= nRows || puntoNuevoY < 0 || puntoNuevoY >= nCols){
-
-                             rotacion[count][0] = 255;
-                             rotacion[count][1] = 255;
-                             rotacion[count][2] = 255;
-                        }
-
-
-                        if(puntoNuevoX < nRows && puntoNuevoY < nCols && puntoNuevoX >= 0 && puntoNuevoY >=0 ){
-
-                                rotacion[count][0] = rgbMap[puntoNuevoX * nCols + puntoNuevoY][0];
-                                rotacion[count][1] = rgbMap[puntoNuevoX * nCols + puntoNuevoY][1];
-                                rotacion[count][2] = rgbMap[puntoNuevoX * nCols + puntoNuevoY][2];
-
-                                //rotacion[puntoNuevoX * nCols + puntoNuevoY][0] = pixmap[count][0];
-                                //rotacion[puntoNuevoX * nCols + puntoNuevoY][1] = pixmap[count][1];
-                                //rotacion[puntoNuevoX * nCols + puntoNuevoY][2] = pixmap[count][2];
-                        }
-
-                        //rotacion[count][0] = pixmap[puntoNuevoX * nCols + puntoNuevoY][0];
-                        //rotacion[count][1] = pixmap[puntoNuevoX * nCols + puntoNuevoY][1];
-                        //rotacion[count][2] = pixmap[puntoNuevoX * nCols + puntoNuevoY][2];
-
+			if(auxX != 0 && auxY != 0){
+				//Get the length to current point to aux point
+				GLdouble dist = sqrt (pow (auxX, 2) +  pow(auxY, 2) );
+                //Get angle
+				GLdouble dir = atan2(auxY, auxX)-angle;
+				//Calculate new point with rotation
+                int newX = centerX + dist * cos(dir);
+                int newY = centerY + dist * sin(dir);
+				//If new point out
+                if(newX < 0 || newX >= nRows || newY < 0 || newY >= nCols){
+                    rotation[count][0] = 0;
+                    rotation[count][1] = 0;
+                    rotation[count][2] = 0;
                 }
-        }
+				else{
+					newPos = newX*nCols+newY;
+					rotation[count][0] = rgbMap[newPos][0];
+					rotation[count][1] = rgbMap[newPos][1];
+                    rotation[count][2] = rgbMap[newPos][2];
+				}
+            }
+    }
 
-        delete [] rgbMap;
-        rgbMap = rotacion;
+    delete [] rgbMap;
+    rgbMap = rotation;
 }
 
 void Pixmap::difference(Pixmap* pm){

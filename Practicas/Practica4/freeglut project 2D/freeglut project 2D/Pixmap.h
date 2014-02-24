@@ -34,7 +34,7 @@ public:
 	void fillRGBMap(unsigned char *data, int dp);
 	bool loadFromBufer(int width, int height, GLfloat x, GLfloat y);
 	bool drawMatrix(GLfloat x, GLfloat y);
-	void rotate(GLdouble angle);
+	void rotate(GLdouble angle, GLdouble cX, GLdouble cY);
 	void difference(Pixmap* pm);
 	void weightedAverage(double k, Pixmap*pm);
 };
