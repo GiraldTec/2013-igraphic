@@ -198,15 +198,13 @@ void key(unsigned char key, int x, int y){
 		//fileToPixMap(pixMap1,"./images/huevo.bmp");
 		//fileToPixMap(pixMap2,"./images/paisaje.bmp");
 		string name = "";
-		cout << "Escriba el nombre de la imagen: ";
+		cout << "Escriba el nombre del fichero .BMP: ";
 		cin >> name;
 		std::string fullName = std::string("./images/").append(name);
-		cout << "Elija el pixMap que recibirá la imagen: ";
-		cin >> pmID;
 		bool succesful=false;
-		switch (pmID) {
-			case 1: succesful=fileToPixMap(pixMap1,fullName.c_str()); break;
-			case 2: succesful=fileToPixMap(pixMap2,fullName.c_str()); break;
+		switch (seleccionado1) {
+			case true: succesful=fileToPixMap(pixMap1,fullName.c_str()); break;
+			case false: succesful=fileToPixMap(pixMap2,fullName.c_str()); break;
 			default: break;
 			}
 		if(!succesful) cout << "Repita la operacion correctamente.";
@@ -219,9 +217,8 @@ void key(unsigned char key, int x, int y){
 	case 'M':
 		// TODO  Coger el bufer y asignarlo a una de nuestras estructuras pixMap
 		
-		cout << "Elija el pixMap que recibirá el contenido del Buffer";
+		cout << "Elija el pixMap que recibirá el contenido del Buffer: ";
 		cin >> pmID;
-	  
 		switch (pmID) {
 		case 1: buferToPixMap(pixMap1); break;
 		case 2: buferToPixMap(pixMap2); break;
@@ -246,14 +243,12 @@ void key(unsigned char key, int x, int y){
 		cout << "Debe tener los dos pixMaps cargados" << endl;}
 		else{
 			double factor;
-			cout << "Elija el pixMap que recibirá el resultado de la operación: " ;
-			cin >> pmID;
 			cout << "Introduzca el valor del factor que corresponderá al pixMap seleccionado (entre 0 y 1): ";
 			cin >> factor;
 			if(factor>0&&factor<1){
-				switch (pmID) {
-				case 1: pixMap1->weightedAverage(factor,pixMap2);break;
-				case 2: pixMap2->weightedAverage(factor,pixMap1); break;
+				switch (seleccionado1) {
+				case true: pixMap1->weightedAverage(factor,pixMap2);break;
+				case false: pixMap2->weightedAverage(factor,pixMap1); break;
 				default: break;
 				}
 			}else{
@@ -269,12 +264,9 @@ void key(unsigned char key, int x, int y){
 		if(pixMap1==NULL||pixMap2==NULL){
 		cout << "Debe tener los dos pixMaps cargados" << endl;}
 		else{
-			cout << "Elija el pixMap que recibirá el resultado de la operación: " ;
-			cin >> pmID;
-
-			switch (pmID) {
-			case 1: pixMap1->difference(pixMap2);break;
-			case 2: pixMap2->difference(pixMap1); break;
+			switch (seleccionado1) {
+			case true: pixMap1->difference(pixMap2);break;
+			case false: pixMap2->difference(pixMap1); break;
 			default: break;
 			}
 		}

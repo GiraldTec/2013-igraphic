@@ -31,8 +31,8 @@ public:
 	~Pixmap(void);
 	bool loadFromFile(const char* filepath);
 	void fillRGBMap(unsigned char *data, int dp);
-	bool loadFromBufer(int width, int height, GLfloat x, GLfloat y);
-	bool drawMatrix(GLfloat x, GLfloat y);
+	bool loadFromBufer(const int width,const int height, GLint x, GLint y);
+	bool drawMatrix(GLint x, GLint y);
 	void rotate(GLdouble angle, GLdouble cX, GLdouble cY);
 	GLdouble bilinearInterpolation(GLdouble x, GLdouble y, int channel);
 	void difference(Pixmap* pm);

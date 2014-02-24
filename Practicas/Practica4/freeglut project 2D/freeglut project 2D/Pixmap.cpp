@@ -25,17 +25,18 @@ void Pixmap::fillRGBMap(unsigned char *data, int dp){
 	rgbMap = new colorRGBA[nRows*nCols];
 	int i,j;
 	for (i=0; i < nRows; i++){
-		for (j=0; j < nCols; j++) {
-			rgbMap[i*nCols+j][0]=data[dp+(i*nCols+j)*3+2]; //R
-			rgbMap[i*nCols+j][1]=data[dp+(i*nCols+j)*3+1]; //G
-			rgbMap[i*nCols+j][2]=data[dp+(i*nCols+j)*3]; //B
+		for (j=0; j <= nCols; j++) {
+			int count = i*nCols+j;
+			rgbMap[count][0]=data[count*3+2]; //R
+			rgbMap[count][1]=data[count*3+1]; //G
+			rgbMap[count][2]=data[count*3]; //B
 		}	
 	}
 }
 
-bool Pixmap::loadFromBufer(int width, int height, GLfloat x, GLfloat y){
-	//if(rgbMap==NULL) delete[] rgbMap; // esta linea no tiene mucho sentido
-    rgbMap = new colorRGBA[height*width];
+bool Pixmap::loadFromBufer(const int width,const int height, GLint x, GLint y){
+	if(rgbMap!=NULL) delete[] rgbMap; rgbMap=NULL;
+	rgbMap = new colorRGBA[height*width];
     nRows = height;
     nCols = width;
 	glPixelStorei(GL_PACK_ALIGNMENT, //Cómo se leen los pixeles
@@ -45,11 +46,10 @@ bool Pixmap::loadFromBufer(int width, int height, GLfloat x, GLfloat y){
 		GL_RGB,  //datos a leer
 		GL_UNSIGNED_BYTE, //tipo de los datos
 		rgbMap); //destino
-	
 	return true;
 }
 
-bool Pixmap::drawMatrix(GLfloat x, GLfloat y){  // tal cual de las traspas
+bool Pixmap::drawMatrix(GLint x, GLint y){  // tal cual de las traspas
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glPixelStorei(GL_UNPACK_ALIGNMENT, //como escribir los pixeles 
 		1); //sin padding entre filas
