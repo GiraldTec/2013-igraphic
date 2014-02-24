@@ -66,8 +66,6 @@ void Pixmap::rotate(GLdouble angle, GLdouble centerX, GLdouble centerY){
 	GLdouble auxX, auxY;
 	int count, newPos;
     unsigned int i, j;
-	//centerX = 197;
-	//centerY = 305;
 	for (i=0; i < nRows; i++)
 		for (j=0; j < nCols; j++) {
 			count=i*nCols + j;
@@ -79,17 +77,12 @@ void Pixmap::rotate(GLdouble angle, GLdouble centerX, GLdouble centerY){
 				//Get the length to current point to rotation center point
 				GLdouble dist = sqrt (pow (auxX, 2) +  pow(auxY, 2));
                 //Get angle
-				GLdouble dir = atan2(auxY, auxX)+angle;
+				GLdouble dir = atan2(auxY, auxX)-angle;
 				//Calculate new point with rotation
                 int newX = centerX + dist * cos(dir);
                 int newY = centerY + dist * sin(dir);
-				//If new point out
+
                 if(newX < nRows && newX >= 0 && newY < nCols && newY >= 0){
-                    /*newPos = newX*nCols+newY;
-					rotation[count][0] = rgbMap[newPos][0];
-					rotation[count][1] = rgbMap[newPos][1];
-                    rotation[count][2] = rgbMap[newPos][2];
-					*/
 					rotation[count][0] = bilinearInterpolation(newX,newY,0);
 					rotation[count][1] = bilinearInterpolation(newX,newY,1);
                     rotation[count][2] = bilinearInterpolation(newX,newY,2);

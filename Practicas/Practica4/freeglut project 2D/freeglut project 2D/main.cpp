@@ -329,11 +329,9 @@ void mouse(int button, int state,int x, int y){
 					GLdouble aux_y = (((escena->yTop - escena->yBot)*y)/HEIGHT)+escena->yBot;
 					cout << aux_x << " " << aux_y << " " << endl;
 					if (makeRotate){	  
-						switch (seleccionado1) {
-							case true: pixMap1->rotate(angleRotate,aux_x,aux_y);break;
-							case false: pixMap2->rotate(angleRotate,aux_x,aux_y); break;
-							default: break;
-						}
+						int clickX = WIDTH - x;
+						int clickY = HEIGHT - y;
+						pixMap1->rotate(angleRotate,clickX,clickY);
 						makeRotate = false;
 					}
 					else{
