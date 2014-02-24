@@ -122,37 +122,43 @@ GLdouble Pixmap::bilinearInterpolation(GLdouble x, GLdouble y, int channel){
 }
 
 void Pixmap::difference(Pixmap* pm){
-	if(pm->nCols<nCols) nCols = pm->nCols;
-	if(pm->nRows<nRows) nRows = pm->nRows;
+	int newCols=nCols,newRows=nRows;
+	if(pm->nCols<nCols) newCols = pm->nCols;
+	if(pm->nRows<nRows) newRows = pm->nRows;
 	colorRGBA *tmpMap = new colorRGBA[nCols*nRows];
 
 	int i,j;
-	for (i=0; i < nRows; i++){
-        for (j=0; j < nCols; j++) {
-			tmpMap[i*nCols+j][0] = abs(rgbMap[i*nCols+j][0]-pm->rgbMap[i*nCols+j][0]);
-			tmpMap[i*nCols+j][1] = abs(rgbMap[i*nCols+j][1]-pm->rgbMap[i*nCols+j][1]);
-			tmpMap[i*nCols+j][2] = abs(rgbMap[i*nCols+j][2]-pm->rgbMap[i*nCols+j][2]);
+	for (i=0; i < newRows; i++){
+        for (j=0; j < newCols; j++) {
+			tmpMap[i*newCols+j][0] = abs(rgbMap[i*(nCols)+j][0]-pm->rgbMap[i*pm->nCols+j][0]);
+			tmpMap[i*newCols+j][1] = abs(rgbMap[i*(nCols)+j][1]-pm->rgbMap[i*pm->nCols+j][1]);
+			tmpMap[i*newCols+j][2] = abs(rgbMap[i*(nCols)+j][2]-pm->rgbMap[i*pm->nCols+j][2]);
 		}
 	}
 	delete [] rgbMap;
     rgbMap = tmpMap;
+	nCols = newCols;
+	nRows = newRows;
 }
 
 void Pixmap::weightedAverage(double k,Pixmap* pm){
-	if(pm->nCols<nCols) nCols = pm->nCols;
-	if(pm->nRows<nRows) nRows = pm->nRows;
+	int newCols=nCols,newRows=nRows;
+	if(pm->nCols<nCols) newCols = pm->nCols;
+	if(pm->nRows<nRows) newRows = pm->nRows;
 	colorRGBA *tmpMap = new colorRGBA[nCols*nRows];
 
 	int i,j;
-	for (i=0; i < nRows; i++){
-        for (j=0; j < nCols; j++) {
-			tmpMap[i*nCols+j][0] = (rgbMap[i*nCols+j][0]*k)+(pm->rgbMap[i*nCols+j][0]*(1-k));
-			tmpMap[i*nCols+j][1] = (rgbMap[i*nCols+j][1]*k)+(pm->rgbMap[i*nCols+j][1]*(1-k));
-			tmpMap[i*nCols+j][2] = (rgbMap[i*nCols+j][2]*k)+(pm->rgbMap[i*nCols+j][2]*(1-k));
+	for (i=0; i < newRows; i++){
+        for (j=0; j < newCols; j++) {
+			tmpMap[i*newCols+j][0] = (rgbMap[i*nCols+j][0]*k)+(pm->rgbMap[i*nCols+j][0]*(1-k));
+			tmpMap[i*newCols+j][1] = (rgbMap[i*nCols+j][1]*k)+(pm->rgbMap[i*nCols+j][1]*(1-k));
+			tmpMap[i*newCols+j][2] = (rgbMap[i*nCols+j][2]*k)+(pm->rgbMap[i*nCols+j][2]*(1-k));
 		}
 	}
 	delete [] rgbMap;
     rgbMap = tmpMap;
+	nCols = newCols;
+	nRows = newRows;
 }
 
 bool Pixmap::gaussianBlur(void){
