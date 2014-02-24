@@ -26,7 +26,6 @@ class Pixmap
 		colorY* bwMap;
 		bool isbw;
 
-    GLdouble matrizGauss[9];
 public:
 	Pixmap(void);
 	~Pixmap(void);
@@ -37,5 +36,6 @@ public:
 	void rotate(GLdouble angle, GLdouble cX, GLdouble cY);
 	void difference(Pixmap* pm);
 	void weightedAverage(double k, Pixmap*pm);
+	bool gaussianBlur(void);
 };
 

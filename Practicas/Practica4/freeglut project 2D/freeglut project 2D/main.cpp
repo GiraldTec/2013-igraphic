@@ -115,8 +115,9 @@ bool fileToPixMap(Pixmap *&pm,const char* imagepath){
 	return pm->loadFromFile(imagepath);
 }
 
-void desenfoqueGauss(Pixmap *&pm){
-
+bool desenfoqueGauss(Pixmap *&pm){
+	if(pm==NULL) return false;
+	else return pm->gaussianBlur();
 }
 
 void key(unsigned char key, int x, int y){
@@ -275,15 +276,12 @@ void key(unsigned char key, int x, int y){
 	case 'b':
 	case 'B':
 		
-		cout << "Elija el pixMap que recibirá el resultado de la operación: " ;
-		cin >> pmID;
-
-		double factor;
+		/*double factor;
 		cout << "Introduzca el valor del factor con el que realizar la operación: ";
-		cin >> factor;
-		switch (pmID) {
-		case 1: desenfoqueGauss(pixMap1); break;
-		case 2: desenfoqueGauss(pixMap2); break;
+		cin >> factor;*/
+		switch (seleccionado1) {
+		case true: desenfoqueGauss(pixMap1); break;
+		case false: desenfoqueGauss(pixMap2); break;
 		default: break;
 		}
 		break;

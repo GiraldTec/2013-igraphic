@@ -106,8 +106,8 @@ void Pixmap::difference(Pixmap* pm){
 	colorRGBA *tmpMap = new colorRGBA[nCols*nRows];
 
 	int i,j;
-	for (i=1; i < nRows; i++){
-        for (j=1; j < nCols; j++) {
+	for (i=0; i < nRows; i++){
+        for (j=0; j < nCols; j++) {
 			tmpMap[i*nCols+j][0] = abs(rgbMap[i*nCols+j][0]-pm->rgbMap[i*nCols+j][0]);
 			tmpMap[i*nCols+j][1] = abs(rgbMap[i*nCols+j][1]-pm->rgbMap[i*nCols+j][1]);
 			tmpMap[i*nCols+j][2] = abs(rgbMap[i*nCols+j][2]-pm->rgbMap[i*nCols+j][2]);
@@ -123,8 +123,8 @@ void Pixmap::weightedAverage(double k,Pixmap* pm){
 	colorRGBA *tmpMap = new colorRGBA[nCols*nRows];
 
 	int i,j;
-	for (i=1; i < nRows; i++){
-        for (j=1; j < nCols; j++) {
+	for (i=0; i < nRows; i++){
+        for (j=0; j < nCols; j++) {
 			tmpMap[i*nCols+j][0] = (rgbMap[i*nCols+j][0]*k)+(pm->rgbMap[i*nCols+j][0]*(1-k));
 			tmpMap[i*nCols+j][1] = (rgbMap[i*nCols+j][1]*k)+(pm->rgbMap[i*nCols+j][1]*(1-k));
 			tmpMap[i*nCols+j][2] = (rgbMap[i*nCols+j][2]*k)+(pm->rgbMap[i*nCols+j][2]*(1-k));
@@ -132,4 +132,40 @@ void Pixmap::weightedAverage(double k,Pixmap* pm){
 	}
 	delete [] rgbMap;
     rgbMap = tmpMap;
+}
+
+bool Pixmap::gaussianBlur(void){
+	double matrixG[9];
+	matrixG[0] = 0.0947416;	matrixG[1] = 0.118318;	matrixG[2] = 0.0947416;
+	matrixG[3] = 0.118318;	matrixG[4] = 0.147761;	matrixG[5] = 0.118318;
+	matrixG[6] = 0.0947416;	matrixG[7] = 0.118318;	matrixG[8] = 0.0947416;
+	
+	colorRGBA *tmpMap = new colorRGBA[nCols*nRows];
+	
+	int i,j,color;
+	for (i=0; i < nRows; i++){
+        for (j=0; j < nCols; j++) {
+			for (color=0; color < 3; color ++){
+				int prevR,prevC,postR,postC;
+				prevR = (i-1) % nRows; 
+				prevC = (j-1) % nCols; 
+				postR = (i+1) % nRows; 
+				postC = (j+1) % nCols; 
+				tmpMap[i*nCols+j][color]= 
+					matrixG[0]*rgbMap[prevR*nCols+prevC][color]+	
+					matrixG[1]*rgbMap[prevR*nCols+j][color]+	
+					matrixG[2]*rgbMap[prevR*nCols+postC][color]+
+					matrixG[3]*rgbMap[i*nCols+prevC][color]+	
+					matrixG[4]*rgbMap[i*nCols+j][color]+	
+					matrixG[5]*rgbMap[i*nCols+postC][color]+
+					matrixG[6]*rgbMap[postR*nCols+prevC][color]+	
+					matrixG[7]*rgbMap[postR*nCols+j][color]+	
+					matrixG[8]*rgbMap[postR*nCols+postC][color];
+
+			}
+		}
+	}
+	delete [] rgbMap;
+    rgbMap = tmpMap;
+	return true;
 }
