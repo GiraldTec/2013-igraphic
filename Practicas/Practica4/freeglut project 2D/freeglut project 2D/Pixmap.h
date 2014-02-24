@@ -7,7 +7,8 @@
 #include <GL/freeglut.h>
 #include <GL/glut.h>
 #include <iostream>
-
+#define _USE_MATH_DEFINES
+#include <math.h>
 #include <Lectora/TextureLoader.h>
 
 
@@ -17,7 +18,7 @@ typedef GLubyte colorY[3];
 
 class Pixmap
 {
-	 private:
+	 public:
 
 		unsigned int nCols;
 		unsigned int nRows;
@@ -29,7 +30,7 @@ class Pixmap
 public:
 	Pixmap(void);
 	~Pixmap(void);
-	bool loadFromFile(char* filepath);
+	bool loadFromFile(const char* filepath);
 	void fillRGBMap(unsigned char *data, int dp);
 	bool loadFromBufer(int width, int height, GLfloat x, GLfloat y);
 	bool drawMatrix(GLfloat x, GLfloat y);

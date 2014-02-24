@@ -107,7 +107,7 @@ bool buferToPixMap(Pixmap *&pm){  // borra el "pixmap" entero cuando toca "sobre
 	return pm->loadFromBufer(WIDTH,HEIGHT,0,0); // se supone que (0,0) es la esquina inferior izquierda de la ventana
 }
 
-bool fileToPixMap(Pixmap *&pm,char* imagepath){
+bool fileToPixMap(Pixmap *&pm,const char* imagepath){
 	if (pm!=NULL) {delete(pm);pm=NULL;}
 	pm = new Pixmap();
 	return pm->loadFromFile(imagepath);
@@ -167,6 +167,8 @@ void key(unsigned char key, int x, int y){
   case 'R' :
 	if (escena->reset()) cout << "La escena ha sido reseteada" << endl;
 	else cout << "No había nada que resetear" << endl;
+	delete pixMap1,pixMap2;
+	cout << "Pixmaps vaciados" << endl;
 	break;
 
 // Angle setting
@@ -181,13 +183,22 @@ void key(unsigned char key, int x, int y){
 
   case 'l':
   case 'L':{
-	  char imagepath[] = "./images/star.bmp";
-	  //cout << "Escriba la ruta de la imagen";
-	  //cin >> imagepath;
-	  fileToPixMap(pixMap1,imagepath);
-	  
-	  // Hay que elegir a cual de los dos pixMaps disponibles se asigna el bmp que se carga
-		   }
+		fileToPixMap(pixMap1,"./images/ball.bmp");
+		fileToPixMap(pixMap2,"./images/candy.bmp");
+		/*char name[] = "";
+		cout << "Escriba el nombre de la imagen: ";
+		cin >> name;
+		std::string fullName = std::string("./images/").append(name);
+		cout << "Elija el pixMap que recibirá la imagen: ";
+		cin >> pmID;
+		bool succesful=false;
+		switch (pmID) {
+			case 1: succesful=fileToPixMap(pixMap1,fullName.c_str()); break;
+			case 2: succesful=fileToPixMap(pixMap2,fullName.c_str()); break;
+			default: break;
+			}
+		if(!succesful) cout << "Repita la operacion correctamente.";*/
+		}
 	  break;
 
 //	Asignar lo que se muestra a un pixMap
@@ -227,15 +238,18 @@ void key(unsigned char key, int x, int y){
 		cout << "Debe tener los dos pixMaps cargados" << endl;}
 		else{
 			double factor;
-			cout << "Introduzca el valor del factor con el que realizar la operación: ";
-			cin >> factor;
 			cout << "Elija el pixMap que recibirá el resultado de la operación: " ;
 			cin >> pmID;
-	  
-			switch (pmID) {
-			case 1: pixMap1->weightedAverage(factor,pixMap2);break;
-			case 2: pixMap2->weightedAverage(factor,pixMap1); break;
-			default: break;
+			cout << "Introduzca el valor del factor que corresponderá al pixMap seleccionado (entre 0 y 1): ";
+			cin >> factor;
+			if(factor>0&&factor<1){
+				switch (pmID) {
+				case 1: pixMap1->weightedAverage(factor,pixMap2);break;
+				case 2: pixMap2->weightedAverage(factor,pixMap1); break;
+				default: break;
+				}
+			}else{
+				cout << "Repita la operación siguiendo las instrucciones." << endl;
 			}
 		}
 		break;
@@ -249,7 +263,7 @@ void key(unsigned char key, int x, int y){
 		else{
 			cout << "Elija el pixMap que recibirá el resultado de la operación: " ;
 			cin >> pmID;
-	  
+
 			switch (pmID) {
 			case 1: pixMap1->difference(pixMap2);break;
 			case 2: pixMap2->difference(pixMap1); break;
