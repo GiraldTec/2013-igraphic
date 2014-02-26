@@ -24,9 +24,9 @@ void Pixmap::fillRGBMap(unsigned char *data, int dp){
 	if(rgbMap!=NULL)delete(rgbMap);
 	rgbMap = new colorRGBA[nRows*nCols];
 	int i,j;
-	for (i=0; i < nRows; i++){
-		for (j=0; j <= nCols; j++) {
-			int count = i*nCols+j;
+	for (i=0; i < nCols; i++){
+		for (j=0; j < nRows; j++) {
+			int count = i*nRows+j;
 			rgbMap[count][0]=data[count*3+2]; //R
 			rgbMap[count][1]=data[count*3+1]; //G
 			rgbMap[count][2]=data[count*3]; //B
@@ -39,6 +39,7 @@ bool Pixmap::loadFromBufer(const int width,const int height, GLint x, GLint y){
 	rgbMap = new colorRGBA[height*width];
     nRows = height;
     nCols = width;
+	glutSwapBuffers();
 	glPixelStorei(GL_PACK_ALIGNMENT, //Cómo se leen los pixeles
         1); //sin padding entre filas
 	glReadPixels(x, y, //esquina inferior-izquierda del bloque,
@@ -46,6 +47,7 @@ bool Pixmap::loadFromBufer(const int width,const int height, GLint x, GLint y){
 		GL_RGB,  //datos a leer
 		GL_UNSIGNED_BYTE, //tipo de los datos
 		rgbMap); //destino
+	glutSwapBuffers();
 	return true;
 }
 
@@ -77,7 +79,7 @@ void Pixmap::rotate(GLdouble angle, GLdouble centerX, GLdouble centerY){
 				//Get the length to current point to rotation center point
 				GLdouble dist = sqrt (pow (auxX, 2) +  pow(auxY, 2));
                 //Get angle
-				GLdouble dir = atan2(auxY, auxX)-angle;
+				GLdouble dir = atan2(auxY, auxX)+angle;
 				//Calculate new point with rotation
                 int newX = centerX + dist * cos(dir);
                 int newY = centerY + dist * sin(dir);
@@ -150,9 +152,9 @@ void Pixmap::weightedAverage(double k,Pixmap* pm){
 	int i,j;
 	for (i=0; i < newRows; i++){
         for (j=0; j < newCols; j++) {
-			tmpMap[i*newCols+j][0] = (rgbMap[i*nCols+j][0]*k)+(pm->rgbMap[i*nCols+j][0]*(1-k));
-			tmpMap[i*newCols+j][1] = (rgbMap[i*nCols+j][1]*k)+(pm->rgbMap[i*nCols+j][1]*(1-k));
-			tmpMap[i*newCols+j][2] = (rgbMap[i*nCols+j][2]*k)+(pm->rgbMap[i*nCols+j][2]*(1-k));
+			tmpMap[i*newCols+j][0] = (rgbMap[i*nCols+j][0]*k)+(pm->rgbMap[i*pm->nCols+j][0]*(1-k));
+			tmpMap[i*newCols+j][1] = (rgbMap[i*nCols+j][1]*k)+(pm->rgbMap[i*pm->nCols+j][1]*(1-k));
+			tmpMap[i*newCols+j][2] = (rgbMap[i*nCols+j][2]*k)+(pm->rgbMap[i*pm->nCols+j][2]*(1-k));
 		}
 	}
 	delete [] rgbMap;

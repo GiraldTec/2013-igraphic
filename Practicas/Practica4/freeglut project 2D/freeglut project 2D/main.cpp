@@ -108,7 +108,10 @@ void resize(int newWidth, int newHeight){
 bool buferToPixMap(Pixmap *&pm){  // borra el "pixmap" entero cuando toca "sobreescribir"
 	if (pm!=NULL) {delete(pm);pm=NULL;}
 	pm = new Pixmap();
-	return pm->loadFromBufer(WIDTH,HEIGHT,0,0); // se supone que (0,0) es la esquina inferior izquierda de la ventana
+	glutSwapBuffers();
+	bool ret = pm->loadFromBufer(WIDTH,HEIGHT,0,0); // se supone que (0,0) es la esquina inferior izquierda de la ventana
+	glutSwapBuffers();
+	return ret;
 }
 
 bool fileToPixMap(Pixmap *&pm,const char* imagepath){
@@ -331,7 +334,11 @@ void mouse(int button, int state,int x, int y){
 					if (makeRotate){	  
 						int clickX = WIDTH - x;
 						int clickY = HEIGHT - y;
-						pixMap1->rotate(angleRotate,clickX,clickY);
+						switch (seleccionado1) {
+							case true: pixMap1->rotate(angleRotate,clickX,clickY); break;
+							case false: pixMap2->rotate(angleRotate,clickX,clickY); break;
+							default: break;
+						}
 						makeRotate = false;
 					}
 					else{
