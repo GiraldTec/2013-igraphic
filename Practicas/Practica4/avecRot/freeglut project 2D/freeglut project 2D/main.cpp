@@ -338,13 +338,13 @@ void mouse(int button, int state,int x, int y){
 						switch (seleccionado1) {
 							case true: 
 								if(x<pixMap1->nCols&&y<pixMap1->nRows){
-									pixMap1->rotate(angleRotate,x,y); 
+									pixMap1->rotate(angleRotate,y,x); 
 									makeRotate = false;
 								}
 								break;
 							case false: 
 								if(x<pixMap2->nCols&&y<pixMap2->nRows){
-									pixMap2->rotate(angleRotate,x,y); 
+									pixMap2->rotate(angleRotate,y,x); 
 									makeRotate = false;
 								}
 								break;
