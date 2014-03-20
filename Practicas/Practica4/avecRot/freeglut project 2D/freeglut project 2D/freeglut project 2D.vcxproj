@@ -123,6 +123,7 @@
   <ItemGroup>
     <ClCompile Include="Lectora\TextureLoader.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Matriz.cpp" />
     <ClCompile Include="Pencil.cpp" />
     <ClCompile Include="Pixmap.cpp" />
     <ClCompile Include="Point.cpp" />
@@ -132,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lectora\TextureLoader.h" />
+    <ClInclude Include="Matriz.h" />
     <ClInclude Include="Pencil.h" />
     <ClInclude Include="Pixmap.h" />
     <ClInclude Include="Point.h" />
