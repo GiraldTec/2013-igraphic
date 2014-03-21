@@ -8,39 +8,39 @@ PV3D::PV3D(void)
 	this->coorZ = 0;
 }
 
-PV3D::PV3D(GLdouble x, GLdouble y, GLdouble z)
+PV3D::PV3D(double x, double y, double z)
 {
 	this->coorX = x;
 	this->coorY = y;
 	this->coorZ = z;
 }
 
-GLdouble PV3D::getX()
+double PV3D::getX()
 {
 	return coorX;
 }
 
-GLdouble PV3D::getY()
+double PV3D::getY()
 {
 	return coorY;
 }
 
-GLdouble PV3D::getZ()
+double PV3D::getZ()
 {
 	return coorZ;
 }
 
-void PV3D::setX(GLdouble x)
+void PV3D::setX(double x)
 {
 	this->coorX = x;
 }
 
-void PV3D::setY(GLdouble y)
+void PV3D::setY(double y)
 {
 	this->coorY = y;
 }
 
-void PV3D::setZ(GLdouble z)
+void PV3D::setZ(double z)
 {
 	this->coorZ = z;
 }
