@@ -1,13 +1,499 @@
-﻿Compilación iniciada a las 19/03/2014 18:24:10.
-     1>Proyecto "C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
+﻿Compilación iniciada a las 21/03/2014 1:56:13.
+     1>Proyecto "C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         main.cpp
-       Link:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\main.obj
-         freeglut project 3D.vcxproj -> C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\Debug\freeglut project 3D.exe
-     1>Compilación del proyecto terminada "C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Malla.cpp MontanaRusa.cpp PV3D.cpp
+         PV3D.cpp
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1157): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1157): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1157): error C2146: error de sintaxis : falta ';' delante del identificador 'glAccum'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1157): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C2146: error de sintaxis : falta ';' delante del identificador 'glAlphaFunc'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1159): error C2146: error de sintaxis : falta ';' delante del identificador 'GLboolean'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1159): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1159): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1159): error C2146: error de sintaxis : falta ';' delante del identificador 'glAreTexturesResident'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1159): error C2371: 'APIENTRY' : nueva definición; tipos básicos distintos
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C2146: error de sintaxis : falta ';' delante del identificador 'glArrayElement'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C2146: error de sintaxis : falta ';' delante del identificador 'glBegin'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C2146: error de sintaxis : falta ';' delante del identificador 'glBindTexture'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C2146: error de sintaxis : falta ';' delante del identificador 'glBitmap'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C2146: error de sintaxis : falta ';' delante del identificador 'glBlendFunc'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C2146: error de sintaxis : falta ';' delante del identificador 'glCallList'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C2146: error de sintaxis : falta ';' delante del identificador 'glCallLists'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C2146: error de sintaxis : falta ';' delante del identificador 'glClear'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C2146: error de sintaxis : falta ';' delante del identificador 'glClearAccum'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C2146: error de sintaxis : falta ';' delante del identificador 'glClearColor'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C2146: error de sintaxis : falta ';' delante del identificador 'glClearDepth'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C2146: error de sintaxis : falta ';' delante del identificador 'glClearIndex'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C2146: error de sintaxis : falta ';' delante del identificador 'glClearStencil'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C2146: error de sintaxis : falta ';' delante del identificador 'glClipPlane'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C2146: error de sintaxis : falta ';' delante del identificador 'glColor3b'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C2146: error de sintaxis : falta ';' delante del identificador 'glColor3bv'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C2146: error de sintaxis : falta ';' delante del identificador 'glColor3d'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): error C2146: error de sintaxis : falta ';' delante del identificador 'glColor3dv'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): fatal error C1003: el recuento de errores supera 100; se detiene la compilación
+         MontanaRusa.cpp
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1157): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1157): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1157): error C2146: error de sintaxis : falta ';' delante del identificador 'glAccum'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1157): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C2146: error de sintaxis : falta ';' delante del identificador 'glAlphaFunc'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1159): error C2146: error de sintaxis : falta ';' delante del identificador 'GLboolean'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1159): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1159): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1159): error C2146: error de sintaxis : falta ';' delante del identificador 'glAreTexturesResident'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1159): error C2371: 'APIENTRY' : nueva definición; tipos básicos distintos
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C2146: error de sintaxis : falta ';' delante del identificador 'glArrayElement'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C2146: error de sintaxis : falta ';' delante del identificador 'glBegin'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C2146: error de sintaxis : falta ';' delante del identificador 'glBindTexture'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C2146: error de sintaxis : falta ';' delante del identificador 'glBitmap'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C2146: error de sintaxis : falta ';' delante del identificador 'glBlendFunc'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C2146: error de sintaxis : falta ';' delante del identificador 'glCallList'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C2146: error de sintaxis : falta ';' delante del identificador 'glCallLists'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C2146: error de sintaxis : falta ';' delante del identificador 'glClear'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C2146: error de sintaxis : falta ';' delante del identificador 'glClearAccum'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C2146: error de sintaxis : falta ';' delante del identificador 'glClearColor'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C2146: error de sintaxis : falta ';' delante del identificador 'glClearDepth'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C2146: error de sintaxis : falta ';' delante del identificador 'glClearIndex'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C2146: error de sintaxis : falta ';' delante del identificador 'glClearStencil'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C2146: error de sintaxis : falta ';' delante del identificador 'glClipPlane'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C2146: error de sintaxis : falta ';' delante del identificador 'glColor3b'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C2146: error de sintaxis : falta ';' delante del identificador 'glColor3bv'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C2146: error de sintaxis : falta ';' delante del identificador 'glColor3d'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): error C2146: error de sintaxis : falta ';' delante del identificador 'glColor3dv'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): fatal error C1003: el recuento de errores supera 100; se detiene la compilación
+         Malla.cpp
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1157): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1157): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1157): error C2146: error de sintaxis : falta ';' delante del identificador 'glAccum'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1157): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C2146: error de sintaxis : falta ';' delante del identificador 'glAlphaFunc'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1158): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1159): error C2146: error de sintaxis : falta ';' delante del identificador 'GLboolean'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1159): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1159): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1159): error C2146: error de sintaxis : falta ';' delante del identificador 'glAreTexturesResident'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1159): error C2371: 'APIENTRY' : nueva definición; tipos básicos distintos
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C2146: error de sintaxis : falta ';' delante del identificador 'glArrayElement'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1160): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C2146: error de sintaxis : falta ';' delante del identificador 'glBegin'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1161): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C2146: error de sintaxis : falta ';' delante del identificador 'glBindTexture'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1162): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C2146: error de sintaxis : falta ';' delante del identificador 'glBitmap'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1163): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C2146: error de sintaxis : falta ';' delante del identificador 'glBlendFunc'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1164): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C2146: error de sintaxis : falta ';' delante del identificador 'glCallList'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1165): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C2146: error de sintaxis : falta ';' delante del identificador 'glCallLists'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1166): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C2146: error de sintaxis : falta ';' delante del identificador 'glClear'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1167): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C2146: error de sintaxis : falta ';' delante del identificador 'glClearAccum'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1168): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C2146: error de sintaxis : falta ';' delante del identificador 'glClearColor'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1169): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C2146: error de sintaxis : falta ';' delante del identificador 'glClearDepth'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1170): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C2146: error de sintaxis : falta ';' delante del identificador 'glClearIndex'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1171): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C2146: error de sintaxis : falta ';' delante del identificador 'glClearStencil'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1172): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C2146: error de sintaxis : falta ';' delante del identificador 'glClipPlane'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1173): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C2146: error de sintaxis : falta ';' delante del identificador 'glColor3b'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1174): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C2146: error de sintaxis : falta ';' delante del identificador 'glColor3bv'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1175): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C2146: error de sintaxis : falta ';' delante del identificador 'glColor3d'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1176): error C2086: 'int APIENTRY' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'APIENTRY'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): error C2144: error de sintaxis : 'void' debe estar precedido de ';'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): error C2086: 'int WINGDIAPI' : nueva definición
+                 c:\program files\windows kits\8.0\include\um\gl\gl.h(1157) : vea la declaración de 'WINGDIAPI'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): error C2146: error de sintaxis : falta ';' delante del identificador 'glColor3dv'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): error C2182: 'APIENTRY' : uso no válido del tipo 'void'
+     1>c:\program files\windows kits\8.0\include\um\gl\gl.h(1177): fatal error C1003: el recuento de errores supera 100; se detiene la compilación
+         Generando código...
+     1>Compilación del proyecto terminada "C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos) -- ERROR.
 
-Compilación correcta.
+ERROR al compilar.
 
-Tiempo transcurrido 00:00:09.08
+Tiempo transcurrido 00:00:09.14
