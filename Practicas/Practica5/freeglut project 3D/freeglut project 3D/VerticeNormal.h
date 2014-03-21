@@ -1,11 +1,15 @@
 #pragma once
 class VerticeNormal
 {
-public:
-	int indiceV;
-	int indiceN;
+private:
+	int indexV;
+	int indexN;
 
-	VerticeNormal(void);
+public:
+
+	VerticeNormal(int v, int n);
+	int getNormal();
+	int getVertex();
 	~VerticeNormal(void);
 };
 

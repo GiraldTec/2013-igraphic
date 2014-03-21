@@ -7,16 +7,18 @@
 
 class Malla
 {
-public:
-	int numVertices;
-	int numCaras;
-	int numNormales;
+private:
+	int numVertex;
+	int numFaces;
+	int numNormals;
 	
-	std::vector<PV3D*> *vertices;
-	std::vector<PV3D*> *normales;
-	std::vector<Cara*> *caras;
+	std::vector<PV3D*> *vertex;
+	std::vector<PV3D*> *normals;
+	std::vector<Cara*> *faces;
+	
+public:
 
-	Malla(void);
+	Malla(int nV, int nF, int nN);
 	~Malla(void);
 };
 

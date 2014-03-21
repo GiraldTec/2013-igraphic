@@ -1,8 +1,11 @@
 #include "Malla.h"
 
 
-Malla::Malla(void)
+Malla::Malla(int nV, int nF, int nN)
 {
+	this->numVertex = nV;
+	this->numFaces = nF;
+	this->numNormals = nN;
 }
 
 
