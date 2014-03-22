@@ -6,27 +6,34 @@
 ************************************/
 #pragma once
 
+#define _USE_MATH_DEFINES
 
+#include <Windows.h>
+#include <gl/GL.h>
+#include <gl/GLU.h>
+#include <GL/freeglut.h>
+
+#include <iostream>
 #include <math.h>
 
 class PV3D
 {
 private:
-	double coorX;
-	double coorY;
-	double coorZ;
+	GLdouble coorX;
+	GLdouble coorY;
+	GLdouble coorZ;
 
 public:
 	
 	PV3D(void);
 	~PV3D(void);
-	PV3D(double x, double y, double z);
-	double getX();
-	void setX(double x);
-	double getY();
-	void setY(double y);
-	double getZ();
-	void setZ (double z);
+	PV3D(GLdouble x, GLdouble y, GLdouble z);
+	GLdouble getX();
+	void setX(GLdouble x);
+	GLdouble getY();
+	void setY(GLdouble y);
+	GLdouble getZ();
+	void setZ (GLdouble z);
 
 	PV3D* clone();
 	PV3D* addition(PV3D* v);
