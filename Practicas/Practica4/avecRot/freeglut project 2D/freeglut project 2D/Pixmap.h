@@ -10,6 +10,7 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 #include <Lectora/TextureLoader.h>
+#include <Matriz.h>
 
 
 typedef GLubyte colorRGBA[3];

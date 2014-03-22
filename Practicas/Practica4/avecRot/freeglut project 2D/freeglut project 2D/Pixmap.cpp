@@ -66,15 +66,18 @@ bool Pixmap::drawMatrix(GLint x, GLint y){  // tal cual de las traspas
 void Pixmap::rotate(GLdouble angle, GLdouble centerX, GLdouble centerY){
 	colorRGBA* rotation = new colorRGBA[nCols * nRows];
 	GLdouble auxX, auxY;
-	int count, newPos;
+	int count;
     unsigned int i, j;
 	for (i=0; i < nRows; i++)
 		for (j=0; j < nCols; j++) {
 			count=i*nCols + j;
+
 			//Auxiliar point to rotate
 			auxX = i-centerX;
 			auxY = j-centerY;
 
+
+			/*
 			if(auxX != 0 || auxY != 0){
 				//Get the length to current point to rotation center point
 				GLdouble dist = sqrt (pow (auxX, 2) +  pow(auxY, 2));
@@ -99,8 +102,53 @@ void Pixmap::rotate(GLdouble angle, GLdouble centerX, GLdouble centerY){
 				rotation[count][0] = rgbMap[count][0];
 				rotation[count][1] = rgbMap[count][1];
 				rotation[count][2] = rgbMap[count][2];
+			}*/
+
+	
+			if(auxX != 0 || auxY != 0){
+
+				GLdouble dir = atan2(auxY, auxX)+angle;
+				GLdouble dist = sqrt (pow (auxX, 2) +  pow(auxY, 2));
+
+				Matriz *auxM = new Matriz(2,1);
+				double *auxV = new double[2];
+					auxV[0]=cos(dir);
+					auxV[1]=sin(dir);
+				auxM->setData(auxV,2);
+
+				auxM->producto(dist);  // dist*cons(dir) dist*sin(dir)
+
+				Matriz *centerM = new Matriz(2,1);
+				auxV = new double[2];
+					auxV[0]=centerX;
+					auxV[1]=centerY;
+				centerM->setData(auxV,2);
+
+				centerM->suma(auxM);
+			
+				int newX = centerM->data[0];	
+				int newY = centerM->data[1];
+
+				if(newX < nRows && newX >= 0 && newY < nCols && newY >= 0){
+					rotation[count][0] = bilinearInterpolation(newX,newY,0);
+					rotation[count][1] = bilinearInterpolation(newX,newY,1);
+					rotation[count][2] = bilinearInterpolation(newX,newY,2);
+				}
+				else{
+					rotation[count][0] = 255;
+					rotation[count][1] = 255;
+					rotation[count][2] = 255;				
+				}
 			}
-    }
+			else{
+				rotation[count][0] = rgbMap[count][0];
+				rotation[count][1] = rgbMap[count][1];
+				rotation[count][2] = rgbMap[count][2];
+			}
+			
+
+
+	  }
 
     delete [] rgbMap;
     rgbMap = rotation;
