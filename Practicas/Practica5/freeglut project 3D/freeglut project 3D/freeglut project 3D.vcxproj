@@ -74,7 +74,7 @@
     <ClCompile Include="Malla.cpp" />
     <ClCompile Include="MontanaRusa.cpp" />
     <ClCompile Include="Pencil.cpp" />
-    <ClCompile Include="Polygon.cpp" />
+    <ClCompile Include="Poligon.cpp" />
     <ClCompile Include="PV3D.cpp" />
     <ClCompile Include="VerticeNormal.cpp" />
   </ItemGroup>
@@ -86,7 +86,7 @@
     <ClInclude Include="Malla.h" />
     <ClInclude Include="MontanaRusa.h" />
     <ClInclude Include="Pencil.h" />
-    <ClInclude Include="Polygon.h" />
+    <ClInclude Include="Poligon.h" />
     <ClInclude Include="PV3D.h" />
     <ClInclude Include="VerticeNormal.h" />
   </ItemGroup>

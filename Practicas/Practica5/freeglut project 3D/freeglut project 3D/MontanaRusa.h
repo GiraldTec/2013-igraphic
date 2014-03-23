@@ -1,7 +1,7 @@
 #pragma once
 #include "Malla.h"
 #include "Car.h"
-#include "./Polygon.h"
+#include "Poligon.h"
 
 class MontanaRusa : public Malla{
 private:

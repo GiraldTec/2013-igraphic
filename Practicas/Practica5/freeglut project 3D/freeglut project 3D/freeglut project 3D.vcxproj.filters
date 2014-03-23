@@ -42,10 +42,10 @@
     <ClCompile Include="Cube.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Polygon.cpp">
+    <ClCompile Include="Pencil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Pencil.cpp">
+    <ClCompile Include="Poligon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -74,10 +74,10 @@
     <ClInclude Include="Cube.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Polygon.h">
+    <ClInclude Include="Pencil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Pencil.h">
+    <ClInclude Include="Poligon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

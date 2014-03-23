@@ -81,8 +81,8 @@ void MontanaRusa::construye(){
 	//construimos un objeto con el lapiz
 
     PV3D* centro = new PV3D();
-	Polygon *poli = Polygon(centro,tam,NP);
-    PV3D** puntos= poli->getVertices();
+	Poligon *poli = new Poligon(centro,tam,NP);
+    PV3D** puntos= poli->getVertex();  // TODO cambiar a vector
         
     for(int i=0;i<NQ;i++)
     {
