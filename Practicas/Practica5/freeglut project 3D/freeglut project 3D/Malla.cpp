@@ -34,5 +34,4 @@ PV3D* Malla::doVectorNormalNewell(Cara* c)
 	}
 	PV3D* aux = new PV3D(x,y,z);
 	return aux->normalize();
-
 }
