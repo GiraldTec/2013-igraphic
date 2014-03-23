@@ -35,7 +35,8 @@ void Cube::build()
            {
               int numcara= j;
               faces->at(numcara)= new Cara(nVerticesPorCara);
-              VerticeNormal** arrayParcial= new VerticeNormal*[nVerticesPorCara];
+              vector<VerticeNormal*> *arrayParcial = new vector<VerticeNormal*>();
+			  //VerticeNormal** arrayParcial= new VerticeNormal*[nVerticesPorCara];
 
               int base=j;
               int suc=(j+1)%nVerticesPorCara;
@@ -45,41 +46,33 @@ void Cube::build()
               int c= suc+nVerticesPorCara;
               int d= base+nVerticesPorCara;
 
+              arrayParcial->at(0) = new VerticeNormal(a,numcara);
+              arrayParcial->at(1) = new VerticeNormal(b,numcara);
+              arrayParcial->at(2) = new VerticeNormal(c,numcara);
+              arrayParcial->at(3) =	new VerticeNormal(d,numcara);
 
-              arrayParcial[0]=new VerticeNormal(a,numcara);
-              arrayParcial[1]=new VerticeNormal(b,numcara);
-              arrayParcial[2]=new VerticeNormal(c,numcara);
-              arrayParcial[3]=new VerticeNormal(d,numcara);
-
-
-              faces->at(numcara)->  addVerticeNormal(arrayParcial);
-
+              faces->at(numcara)->setIndicesVN(arrayParcial);
            }
+		//Tapa 1
+        faces->at(4) = new Cara(nVerticesPorCara);
+		vector<VerticeNormal*> *arrayCara4 = new vector<VerticeNormal*>();
+		arrayCara4->at(0) = new VerticeNormal(0,4);
+		arrayCara4->at(1) = new VerticeNormal(3,4);
+		arrayCara4->at(2) = new VerticeNormal(2,4);
+		arrayCara4->at(3) = new VerticeNormal(1,4);
+		faces->at(4)->setIndicesVN(arrayCara4);
+		//Tapa 2
+		faces->at(5) = new Cara(nVerticesPorCara);
+		vector<VerticeNormal*> *arrayCara5 = new vector<VerticeNormal*>();
+		arrayCara5->at(0) = new VerticeNormal(4,5);
+		arrayCara5->at(1) = new VerticeNormal(5,5);
+		arrayCara5->at(2) = new VerticeNormal(6,5);
+		arrayCara5->at(3) = new VerticeNormal(7,5);
+		faces->at(5)->setIndicesVN(arrayCara5);
 
-        
-
-        //tapa 1
-        caras[4]=new Cara(nVerticesPorCara);
-        VerticeNormal** arrayCara4= new VerticeNormal*[nVerticesPorCara];
-        arrayCara4[0]=new VerticeNormal(0,4);
-        arrayCara4[1]=new VerticeNormal(3,4);
-        arrayCara4[2]=new VerticeNormal(2,4);
-        arrayCara4[3]=new VerticeNormal(1,4);
-        caras[4]->addVerticeNormal(arrayCara4);
-
-        //tapa 2
-        caras[5]=new Cara(nVerticesPorCara);
-        VerticeNormal** arrayCara5= new VerticeNormal*[nVerticesPorCara];
-        arrayCara5[0]=new VerticeNormal(4,5);
-        arrayCara5[1]=new VerticeNormal(5,5);
-        arrayCara5[2]=new VerticeNormal(6,5);
-        arrayCara5[3]=new VerticeNormal(7,5);
-        caras[5]->addVerticeNormal(arrayCara5);
-
-
-        for(int i=0; i<this->numeroCaras;i++)
+		for(int i=0; i<this->numFaces;i++)
         {
-            PV3D* normal=this->CalculoVectorNormalPorNewell(caras[i]);
-            normales[i]= normal;
+            PV3D* normal=this->doVectorNormalNewell(faces->at(i));
+            normals->at(i) = normal;
         }
 }

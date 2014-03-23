@@ -2,6 +2,11 @@
 
 #include "Malla.h"
 
+#include <vector>
+#include <iostream>
+
+using namespace std;
+
 class Cube : public Malla
 {
 private:
