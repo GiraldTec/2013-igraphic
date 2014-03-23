@@ -1,11 +1,39 @@
-﻿Compilación iniciada a las 23/03/2014 19:31:23.
+﻿Compilación iniciada a las 23/03/2014 21:35:32.
      1>Proyecto "C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt MontanaRusa.cpp
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Car.cpp Cube.cpp Malla.cpp MontanaRusa.cpp Pencil.cpp Polygon.cpp
+         Cube.cpp
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\cube.cpp(55): error C2039: 'addVerticeNormal' : no es un miembro de 'Cara'
+                 c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\cara.h(8) : vea la declaración de 'Cara'
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\cube.cpp(62): error C2065: 'caras' : identificador no declarado
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\cube.cpp(68): error C2065: 'caras' : identificador no declarado
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\cube.cpp(68): error C2227: el operando izquierdo de '->addVerticeNormal' debe señalar al tipo class/struct/union/generic
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\cube.cpp(71): error C2065: 'caras' : identificador no declarado
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\cube.cpp(77): error C2065: 'caras' : identificador no declarado
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\cube.cpp(77): error C2227: el operando izquierdo de '->addVerticeNormal' debe señalar al tipo class/struct/union/generic
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\cube.cpp(80): error C2039: 'numeroCaras' : no es un miembro de 'Cube'
+                 c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\cube.h(5) : vea la declaración de 'Cube'
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\cube.cpp(82): error C2039: 'CalculoVectorNormalPorNewell' : no es un miembro de 'Cube'
+                 c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\cube.h(5) : vea la declaración de 'Cube'
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\cube.cpp(82): error C2065: 'caras' : identificador no declarado
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\cube.cpp(83): error C2065: 'normales' : identificador no declarado
+         Generando código...
+         Compilando...
+         Car.cpp
+         Generando código...
+         Compilando...
+         Malla.cpp
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\malla.cpp(57): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\malla.cpp(60): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\malla.cpp(90): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\malla.cpp(91): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+         Generando código...
+         Omitiendo... (no se detectaron cambios relevantes)
+         Polygon.cpp
+         Pencil.cpp
          MontanaRusa.cpp
-     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(4): error C2512: 'Malla' : no hay disponible un constructor predeterminado adecuado
      1>Compilación del proyecto terminada "C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos) -- ERROR.
 
 ERROR al compilar.
 
-Tiempo transcurrido 00:00:22.57
+Tiempo transcurrido 00:00:39.52

@@ -9,7 +9,7 @@ using namespace std;
 
 class Malla
 {
-private:
+protected:
 	int numVertex;
 	int numFaces;
 	int numNormals;
