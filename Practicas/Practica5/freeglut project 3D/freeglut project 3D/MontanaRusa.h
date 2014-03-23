@@ -1,7 +1,7 @@
 #pragma once
 #include "Malla.h"
 
-class MontanaRusa : Malla
+class MontanaRusa : public Malla
 {
 private:
 	int NP;

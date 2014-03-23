@@ -7,8 +7,8 @@ Malla::Malla(int nV, int nF, int nN)
 	this->numFaces = nF;
 	this->numNormals = nN;
 
-	this->vertex = new vector<PV3D*>();
-	this->faces = new vector<PV3D*>();
+	this->vertex = new vector<PV3D*>();  
+	this->faces = new vector<Cara*>();
 	this->normals = new vector<PV3D*>();
 }
 
