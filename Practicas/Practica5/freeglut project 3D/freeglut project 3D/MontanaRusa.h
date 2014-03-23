@@ -1,7 +1,7 @@
 #pragma once
 #include "Malla.h"
-//#include "Coche.h"
-#include "Polygon.h"
+#include "Car.h"
+#include "./Polygon.h"
 
 class MontanaRusa : public Malla{
 private:
@@ -12,7 +12,7 @@ private:
     int NQ;
     GLfloat tam;
     GLfloat nVueltas;
-    //Coche* coche;
+    Car* car;
     GLfloat acumCoche;
 
 public:
@@ -26,9 +26,11 @@ public:
     GLfloat funcionZ(GLfloat val);
 
     GLfloat primeraDerivadaX(GLfloat val);
-    GLfloat primeraDerivadaZ(GLfloat val);
+    GLfloat primeraDerivadaY(GLfloat val);
+	GLfloat primeraDerivadaZ(GLfloat val);
 
     GLfloat segundaDerivadaX(GLfloat val);
+    GLfloat segundaDerivadaY(GLfloat val);
     GLfloat segundaDerivadaZ(GLfloat val);
 
     PV3D* funcion(GLfloat val);
