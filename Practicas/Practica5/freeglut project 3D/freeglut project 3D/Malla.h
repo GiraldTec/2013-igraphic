@@ -20,5 +20,7 @@ public:
 
 	Malla(int nV, int nF, int nN);
 	~Malla(void);
+
+	PV3D* doVectorNormalNewell(Cara* c);
 };
 

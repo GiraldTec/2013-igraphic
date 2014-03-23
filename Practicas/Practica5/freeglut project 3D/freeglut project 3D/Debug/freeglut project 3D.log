@@ -1,14 +1,16 @@
-﻿Compilación iniciada a las 22/03/2014 19:45:57.
+﻿Compilación iniciada a las 23/03/2014 11:32:53.
      1>Proyecto "C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt MontanaRusa.cpp Pencil.cpp Polygon.cpp
-         Polygon.cpp
-         Pencil.cpp
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Malla.cpp MontanaRusa.cpp
          MontanaRusa.cpp
      1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(5): error C2512: 'Malla' : no hay disponible un constructor predeterminado adecuado
+         Malla.cpp
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\malla.cpp(10): error C2061: error de sintaxis : identificador 'vector'
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\malla.cpp(11): error C2061: error de sintaxis : identificador 'vector'
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\malla.cpp(12): error C2061: error de sintaxis : identificador 'vector'
          Generando código...
      1>Compilación del proyecto terminada "C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos) -- ERROR.
 
 ERROR al compilar.
 
-Tiempo transcurrido 00:00:23.70
+Tiempo transcurrido 00:00:23.07

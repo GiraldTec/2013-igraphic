@@ -19,9 +19,9 @@
 class PV3D
 {
 private:
-	GLdouble coorX;
-	GLdouble coorY;
-	GLdouble coorZ;
+	GLdouble corX;
+	GLdouble corY;
+	GLdouble corZ;
 
 public:
 	
@@ -38,6 +38,8 @@ public:
 	PV3D* clone();
 	PV3D* addition(PV3D* v);
 	PV3D* subtraction(PV3D* v);
+	PV3D* normalize();
+	GLdouble magnitude();
 	
 };
 
