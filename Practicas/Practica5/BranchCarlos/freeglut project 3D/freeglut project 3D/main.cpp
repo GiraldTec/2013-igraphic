@@ -1,9 +1,12 @@
-#include <Windows.h>
+/*#include <Windows.h>
 #include <gl/GL.h>
 #include <gl/GLU.h>
 
 #include <GL/freeglut.h>
 //#include <GL/glut.h>
+*/
+
+#include "RusianMountain.h"
 
 #include <iostream>
 using namespace std;
@@ -22,6 +25,9 @@ GLdouble xRight=10, xLeft=-xRight, yTop=10, yBot=-yTop, N=1, F=1000;
 GLdouble eyeX=100.0, eyeY=100.0, eyeZ=100.0;
 GLdouble lookX=0.0, lookY=0.0, lookZ=0.0;
 GLdouble upX=0, upY=1, upZ=0;
+
+//Montaña
+RusianMountain *montana;
 
 void initGL() {	 		 
 	glClearColor(0.6f,0.7f,0.8f,1.0);
@@ -76,8 +82,10 @@ void display(void) {
 		glVertex3f(0, 0, 20);	     
 	glEnd();
 
-	glColor3f(1.0, 1.0, 1.0);
-	glutSolidSphere(3, 30, 30);
+	montana->dibuja();
+
+//	glColor3f(1.0, 1.0, 1.0);
+//	glutSolidSphere(3, 30, 30);
 
 	glFlush();
 	glutSwapBuffers();
@@ -149,6 +157,8 @@ int main(int argc, char *argv[]){
 
 	// OpenGL basic setting
 	initGL();
+
+	montana = new RusianMountain();
 
 	// Freeglut's main loop can be stopped executing (**)
 	// while (continue_in_main_loop) glutMainLoopEvent();
