@@ -19,7 +19,7 @@ private:
 	std::vector<Cara*> *faces;
 	
 public:
-
+	Malla();
 	Malla(int nV, int nF, int nN);
 	~Malla(void);
 	virtual void draw(bool fill, bool drawN);

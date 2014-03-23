@@ -1,6 +1,9 @@
 #include "Malla.h"
 
 
+Malla::Malla(){
+}
+
 Malla::Malla(int nV, int nF, int nN)
 {
 	this->numVertex = nV;
