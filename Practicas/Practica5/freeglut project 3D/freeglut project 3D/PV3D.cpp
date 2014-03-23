@@ -59,7 +59,7 @@ PV3D* PV3D::subtraction(PV3D* p)
 	return new PV3D(this->corX-p->getX(),this->corY-p->getY(),this->corZ-p->getZ());
 }
 
-PV3D* PV3D::normalize()
+void PV3D::normalize()
 {
 	GLdouble magnitude = this->magnitude();
 	this->corX = this->corX/magnitude;

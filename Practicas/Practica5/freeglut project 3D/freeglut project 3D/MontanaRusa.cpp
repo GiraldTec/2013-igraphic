@@ -9,17 +9,17 @@ MontanaRusa::~MontanaRusa(void)
 {
 }
 
-GLfloat MontanaRusa::functionX(GLfloat t)
+GLdouble MontanaRusa::functionX(GLdouble t)
 {
 	return 3*cos(t);
 }
 
-GLfloat MontanaRusa::functionY(GLfloat t)
+GLdouble MontanaRusa::functionY(GLdouble t)
 {
 	return 2*cos(t*1.5);
 }
 
-GLfloat MontanaRusa::functionZ(GLfloat t)
+GLdouble MontanaRusa::functionZ(GLdouble t)
 {
 	return 3*sin(t);
 }

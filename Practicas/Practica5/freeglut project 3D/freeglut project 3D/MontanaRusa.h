@@ -11,8 +11,8 @@ public:
 	MontanaRusa(void);
 	~MontanaRusa(void);
 
-	GLfloat functionX(GLfloat t);
-	GLfloat functionY(GLfloat t);
-	GLfloat functionZ(GLfloat t);
+	GLdouble functionX(GLdouble t);
+	GLdouble functionY(GLdouble t);
+	GLdouble functionZ(GLdouble t);
 };
 

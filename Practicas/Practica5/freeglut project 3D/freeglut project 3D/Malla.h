@@ -22,7 +22,8 @@ public:
 
 	Malla(int nV, int nF, int nN);
 	~Malla(void);
-
+	virtual void draw(bool fill, bool drawN);
+	virtual void build() = 0;
 	PV3D* doVectorNormalNewell(Cara* c);
 };
 

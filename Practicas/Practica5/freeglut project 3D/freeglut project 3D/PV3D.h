@@ -38,7 +38,7 @@ public:
 	PV3D* clone();
 	PV3D* addition(PV3D* v);
 	PV3D* subtraction(PV3D* v);
-	PV3D* normalize();
+	void normalize();
 	GLdouble magnitude();
 	
 };
