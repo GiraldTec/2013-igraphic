@@ -4,7 +4,7 @@
 Cara::Cara(int nV)
 {
 	this->numV = nV;
-	this->indicesVN = new vector<VerticeNormal*>();
+	this->indicesVN = new vector<VerticeNormal*>(numV);
 }
 
 int Cara::getNumV()

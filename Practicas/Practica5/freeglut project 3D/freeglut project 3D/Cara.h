@@ -9,7 +9,7 @@ using namespace std;
 class Cara
 {
 private:
-	int numV; // numero de vertices (Por defecto 4)
+	int numV;// Numero de Vertices de la cara
 
 	std::vector<VerticeNormal*> *indicesVN;
 

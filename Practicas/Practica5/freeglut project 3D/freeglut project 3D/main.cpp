@@ -8,6 +8,8 @@
 #include <iostream>
 using namespace std;
 
+#include "MontanaRusa.h"
+
 // Freeglut parameters
 // Flag telling us to keep processing events
 // bool continue_in_main_loop= true; //(**)
@@ -25,6 +27,10 @@ GLdouble upX=0, upY=1, upZ=0;
 
 // Axis angles
 GLfloat angleX=0,angleY=0,angleZ=0;
+
+// MontanaRusa
+
+MontanaRusa *montana;
 
 
 void initGL() {	 		 
@@ -65,14 +71,38 @@ void initGL() {
 void display(void) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);  
 
+	
+
 	glMatrixMode(GL_MODELVIEW);
     glPushMatrix();
-        
-        glRotated(angleX,1,0,0);
-        glRotated(angleY,0,1,0);
-        glRotated(angleZ,0,0,1);
+    
+		glRotatef(angleX,1,0,0);
+        glRotatef(angleY,0,1,0);
+        glRotatef(angleZ,0,0,1);	
 
-		// Drawing axes
+		glColor3f(1.0, 1.0, 1.0);
+		
+		glBegin( GL_LINES );
+			glColor3f(1.0,0.0,0.0); 
+			glVertex3f(0, 0, 0);
+			glVertex3f(20, 0, 0);	     
+	 
+			glColor3f(0.0,1.0,0.0); 
+			glVertex3f(0, 0, 0);
+			glVertex3f(0, 20, 0);	 
+	 
+			glColor3f(0.0,0.0,1.0); 
+			glVertex3f(0, 0, 0);
+			glVertex3f(0, 0, 20);	     
+		glEnd();
+		
+		glutSolidCube(3);
+
+		montana->dibuja(true,true);
+
+	glPopMatrix();
+
+			// Drawing axes
 		glBegin( GL_LINES );
 			glColor3f(1.0,0.0,0.0); 
 			glVertex3f(0, 0, 0);
@@ -87,10 +117,6 @@ void display(void) {
 			glVertex3f(0, 0, 20);	     
 		glEnd();
 
-		glColor3f(1.0, 1.0, 1.0);
-		glutSolidSphere(3, 30, 30);
-
-	glPopMatrix();   
 
 	glFlush();
 	glutSwapBuffers();
@@ -124,6 +150,11 @@ void resize(int newWidth, int newHeight) {
 	glOrtho(xLeft, xRight, yBot, yTop, N, F);
 }
 
+GLfloat mod360(GLfloat a){
+	if(a>=360) return a-360;
+	return a;
+}
+
 void key(unsigned char key, int x, int y){
 	bool need_redisplay = true;
 	switch (key) {
@@ -133,12 +164,24 @@ void key(unsigned char key, int x, int y){
 			glutLeaveMainLoop (); 
 		break;		 			 
 
-		case 'a': angleX=angleX+5;break;
-		case 'z': angleX=angleX-5;break;
-		case 's': angleY=angleY+5;break;
-		case 'x': angleY=angleY-5;break;
-		case 'd': angleZ=angleZ+5;break;
-		case 'c': angleZ=angleZ-5;break;
+		case 'a': 
+			angleX=mod360(angleX+5);
+			break;
+		case 'z': 
+			angleX=mod360(angleX-5);
+			break;
+		case 's': 
+			angleY=mod360(angleY+5);
+			break;
+		case 'x': 
+			angleY=mod360(angleY-5);
+			break;
+		case 'd': 
+			angleZ=mod360(angleZ+5);
+			break;
+		case 'c': 
+			angleZ=mod360(angleZ-5);
+			break;
 
 		default:
 			need_redisplay = false;
@@ -188,6 +231,14 @@ int main(int argc, char *argv[]){
 
 	// OpenGL basic setting
 	initGL();
+
+	// Montana
+	cout << "inicializa" << endl;
+	montana = new MontanaRusa(3,1,5,30,40,0.9);
+	cout << "construye" << endl;
+	montana->build();
+
+	cout << "construye" << endl;
 
 	// Freeglut's main loop can be stopped executing (**)
 	// while (continue_in_main_loop) glutMainLoopEvent();

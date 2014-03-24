@@ -19,7 +19,7 @@ public:
 	MontanaRusa(GLfloat R,GLfloat r,GLfloat d,int NP,int NQ,GLfloat tam);
 	~MontanaRusa(void);
 
-    void construye();
+    void build();
 
     GLfloat functionX(GLfloat val);
 	GLfloat functionY(GLfloat val);

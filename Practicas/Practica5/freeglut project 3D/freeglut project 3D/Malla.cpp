@@ -10,9 +10,9 @@ Malla::Malla(int nV, int nF, int nN)
 	this->numFaces = nF;
 	this->numNormals = nN;
 
-	this->vertex = new vector<PV3D*>();
-	this->faces = new vector<Cara*>();
-	this->normals = new vector<PV3D*>();
+	this->vertex = new vector<PV3D*>(numVertex);
+	this->faces = new vector<Cara*>(numFaces);
+	this->normals = new vector<PV3D*>(numNormals);
 }
 
 
@@ -42,6 +42,8 @@ PV3D* Malla::doVectorNormalNewell(Cara* c)
 
 void Malla::draw(bool fill, bool drawN)
 {
+
+	cout << "a dibujar la malla" << endl;
 	for (int i=0; i<this->numFaces; i++){
            glLineWidth(1.0);
            glColor3f(0,0,0);

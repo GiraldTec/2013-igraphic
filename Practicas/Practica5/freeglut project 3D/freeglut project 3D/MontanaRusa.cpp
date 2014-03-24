@@ -12,7 +12,7 @@ MontanaRusa::MontanaRusa(GLfloat R,GLfloat r,GLfloat d,int NP,int NQ,GLfloat tam
     this->NQ=NQ;
     this->tam=tam;
     this->nVueltas=calculaVueltas();
-    car=new Car(tam*0.9,tam*0.9,tam*0.9);
+    car=NULL;//new Car(tam*0.9,tam*0.9,tam*0.9);
     acumCoche=0;
 }
 MontanaRusa::~MontanaRusa()
@@ -91,7 +91,7 @@ PV3D* MontanaRusa::sDerivate(GLfloat val)
 		return new PV3D(x,y,z);
 }
 
-void MontanaRusa::construye(){
+void MontanaRusa::build(){
      
 	GLfloat intervaloToma =(GLfloat)(360.0*this->nVueltas/NQ);
 	
@@ -99,7 +99,7 @@ void MontanaRusa::construye(){
 
     PV3D* centro = new PV3D();
 	Poligon *poli = new Poligon(centro,tam,NP);
-    vector<PV3D*>* puntos= poli->getVertex();  // TODO cambiar a vector
+    vector<PV3D*>* puntos= poli->getVertex();  
         
     for(int i=0;i<NQ;i++)
     {
@@ -158,7 +158,7 @@ void MontanaRusa::construye(){
                 arrayParcial->at(3)=new VerticeNormal(d,numcara);
                     
 
-                faces->at(numcara)->setIndicesVN(arrayParcial);  // TODO cambiar a vector
+                faces->at(numcara)->setIndicesVN(arrayParcial); 
             }
 
 
@@ -262,7 +262,7 @@ void MontanaRusa::dibuja(bool relleno,bool dibujaNormales)
 
 void MontanaRusa::dibujaCoche()
 {
-      car->draw(acumCoche); 
+     // car->draw(acumCoche); 
 }
 
 void MontanaRusa::addAcum(GLfloat cantidad)
