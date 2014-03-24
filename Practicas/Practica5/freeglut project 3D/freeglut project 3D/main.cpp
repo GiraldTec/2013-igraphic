@@ -124,6 +124,23 @@ void key(unsigned char key, int x, int y){
 			break;
 	}
 
+	/*
+        switch(Key)
+        {
+                case 'a': anguloX=anguloX+10; GLScene();break;
+                case 'z': anguloX=anguloX-10;GLScene();break;
+                case 's': anguloY=anguloY+10;  GLScene();break;
+                case 'x': anguloY=anguloY-10; GLScene();break;
+                case 'd': anguloZ=anguloZ+10;  GLScene();break;
+                case 'c': anguloZ=anguloZ-10;  GLScene();break;
+                case 'r': relleno=!relleno;GLScene();break;
+                case 'q': h3d->addAcum(10);GLScene();break;
+                case 'w': h3d->addAcum(-10);GLScene();break;
+                case 'n': dibujaNormales=!dibujaNormales;GLScene();break;
+
+        }
+	*/
+
 	if (need_redisplay)
 		glutPostRedisplay();
 }

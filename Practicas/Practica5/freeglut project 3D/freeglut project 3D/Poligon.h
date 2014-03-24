@@ -5,7 +5,7 @@
 
 #include <vector>
 
-class Polygon
+class Poligon
 {
 private:
 	int n_sides;
@@ -14,9 +14,9 @@ private:
 	std::vector<PV3D*> *vertex;
 
 public:
-	Polygon(void);
-	Polygon(PV3D *c,int n, GLdouble radius);
-	~Polygon(void);
+	Poligon(void);
+	Poligon(PV3D *c,int n, GLdouble radius);
+	~Poligon(void);
 
 	vector<PV3D*> * getVertex(void);  
 	void setVertex(vector<PV3D*> *v);

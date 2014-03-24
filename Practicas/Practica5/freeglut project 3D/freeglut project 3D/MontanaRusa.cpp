@@ -90,8 +90,8 @@ void MontanaRusa::construye(){
             PV3D* Tt=primeraDerivada(toma); Tt->normalize();
             PV3D* segundaderivada=segundaDerivada(toma);
             PV3D* primeraderivada=primeraDerivada(toma);
-            PV3D* Bt=primeraderivada->productoVectorial(segundaderivada); Bt->normalize();
-            PV3D* Nt=Bt->productoVectorial(Tt);
+            PV3D* Bt=primeraderivada->cossProduct(segundaderivada); Bt->normalize();
+            PV3D* Nt=Bt->cossProduct(Tt);
             PV3D* Ct=funcion(toma);
                     Ct->setPv(1);                    
 
@@ -101,7 +101,7 @@ void MontanaRusa::construye(){
                    
                 int numvertice=NP*i+j;
                 PV3D* clon=puntos[j]->clone();
-                PV3D* punto=clon->multiplicaMatriz(Nt,Bt,Tt,Ct);
+                PV3D* punto=clon->matrixProduct(Nt,Bt,Tt,Ct);
 				vertex->at(numvertice)=punto;
                 delete clon;  
             }
@@ -141,7 +141,7 @@ void MontanaRusa::construye(){
                 arrayParcial[3]=new VerticeNormal(d,numcara);
                     
 
-                faces->at(numcara)->addVerticeNormal(arrayParcial);
+                faces->at(numcara)->setIndicesVN(arrayParcial);  // TODO cambiar a vector
             }
 
 
@@ -152,7 +152,7 @@ void MontanaRusa::construye(){
 
     for(int i=0;i<this->numFaces;i++)
     {
-            normals->at(i)= this->CalculoVectorNormalPorNewell(faces->at(i));
+            normals->at(i)= this->doVectorNormalNewell(faces->at(i));
     }
 
 
@@ -210,8 +210,8 @@ void MontanaRusa::dibuja(bool relleno,bool dibujaNormales)
         PV3D* Tt=primeraDerivada(acumCoche); Tt->normalize();
         PV3D* segundaderivada=segundaDerivada(acumCoche);
         PV3D* primeraderivada=primeraDerivada(acumCoche);
-        PV3D* Bt=primeraderivada->productoVectorial(segundaderivada); Bt->normalize();
-        PV3D* Nt=Bt->productoVectorial(Tt);
+        PV3D* Bt=primeraderivada->cossProduct(segundaderivada); Bt->normalize();
+        PV3D* Nt=Bt->cossProduct(Tt);
         PV3D* Ct=funcion(acumCoche);
                 Ct->setPv(1);
       /*

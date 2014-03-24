@@ -45,6 +45,17 @@ void PV3D::setZ(GLdouble z)
 	this->corZ = z;
 }
 
+//--------------------------------------
+int PV3D::getPv()
+{
+     return this->pv;
+}
+void PV3D::setPv(int val)
+{
+        this->pv=val;
+}
+//--------------------------------------
+
 PV3D* PV3D::clone(){
 	return new PV3D(this->corX,this->corY,this->corZ);
 }

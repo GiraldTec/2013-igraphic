@@ -22,6 +22,7 @@ private:
 	GLdouble corX;
 	GLdouble corY;
 	GLdouble corZ;
+	int pv;
 
 public:
 	
@@ -35,11 +36,15 @@ public:
 	GLdouble getZ();
 	void setZ (GLdouble z);
 
+	int getPv();
+	void setPv(int val); // 
+
 	PV3D* clone();
 	PV3D* addition(PV3D* v);
 	PV3D* subtraction(PV3D* v);
 	void normalize();
 	GLdouble magnitude();
-	
+	PV3D* cossProduct(PV3D* v);
+	PV3D* matrixProduct(PV3D* Nt,PV3D* Bt,PV3D* Tt,PV3D* Ct);
 };
 
