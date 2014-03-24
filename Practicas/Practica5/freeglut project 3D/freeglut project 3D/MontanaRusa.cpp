@@ -98,16 +98,16 @@ void MontanaRusa::build(){
 	//construimos un objeto con el lapiz
 
     PV3D* centro = new PV3D();
-	Poligon *poli = new Poligon(centro,tam,NP);
+	Poligon *poli = new Poligon(centro,NP,tam);
     vector<PV3D*>* puntos= poli->getVertex();  
         
     for(int i=0;i<NQ;i++)
     {
             GLfloat toma=intervaloToma*i;
             PV3D* Tt=fDerivate(toma); Tt->normalize();
-            PV3D* segundaderivada=sDerivate(toma);
-            PV3D* primeraderivada=fDerivate(toma);
-            PV3D* Bt=primeraderivada->crossProduct(segundaderivada); Bt->normalize();
+            PV3D* sderivate=sDerivate(toma);
+            PV3D* fderivate=fDerivate(toma);
+            PV3D* Bt=fderivate->crossProduct(sderivate); Bt->normalize();
             PV3D* Nt=Bt->crossProduct(Tt);
             PV3D* Ct=function(toma);
                     Ct->setPv(1);                    
@@ -126,8 +126,8 @@ void MontanaRusa::build(){
             //deletes de los objetos ya no necesarios
             delete Tt;
             delete Bt;
-            delete segundaderivada;
-            delete primeraderivada;
+            delete sderivate;
+            delete fderivate;
             delete Nt;
             delete Ct;
 
@@ -141,24 +141,24 @@ void MontanaRusa::build(){
             //construir las caras
             for(int j=0;j<NP;j++)
             {
-                int numcara= NP*(i)+j ;
-                faces->at(numcara)= new Cara(4);
+                int numFace= NP*(i)+j ;
+                faces->at(numFace)= new Cara(4);
                 vector<VerticeNormal*>* arrayParcial= new vector<VerticeNormal*>(4);
 
-                int verticeBase=numcara;
-                int a= (verticeBase) % (NP*NQ);
-                int b= (sucesor(verticeBase))% (NP*NQ);
-                int c=  (sucesor(verticeBase)+NP)% (NP*NQ);
-                int d=  (verticeBase+NP)% (NP*NQ);
+                int baseVertex=numFace;
+                int a= (baseVertex) % (NP*NQ);
+                int b= (sucesor(baseVertex))% (NP*NQ);
+                int c=  (sucesor(baseVertex)+NP)% (NP*NQ);
+                int d=  (baseVertex+NP)% (NP*NQ);
 
 
-                arrayParcial->at(0)=new VerticeNormal(a,numcara);
-                arrayParcial->at(1)=new VerticeNormal(b,numcara);
-                arrayParcial->at(2)=new VerticeNormal(c,numcara);
-                arrayParcial->at(3)=new VerticeNormal(d,numcara);
+                arrayParcial->at(0)=new VerticeNormal(a,numFace);
+                arrayParcial->at(1)=new VerticeNormal(b,numFace);
+                arrayParcial->at(2)=new VerticeNormal(c,numFace);
+                arrayParcial->at(3)=new VerticeNormal(d,numFace);
                     
 
-                faces->at(numcara)->setIndicesVN(arrayParcial); 
+                faces->at(numFace)->setIndicesVN(arrayParcial); 
             }
 
 

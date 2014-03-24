@@ -30,7 +30,7 @@ PV3D* Malla::doVectorNormalNewell(Cara* c)
 	PV3D* nextV;
 	for (int i=0; i<c->getNumV(); i++){
 		currentV = vertex->at(c->getVertexIndex(i));
-		nextV = vertex->at(c->getVertexIndex(i+1) % c->getNumV());
+		nextV = vertex->at(c->getVertexIndex((i+1) % c->getNumV()) );
 		x += (currentV->getY()-nextV->getY())*(currentV->getZ()+nextV->getZ());
 		y += (currentV->getZ()-nextV->getZ())*(currentV->getX()+nextV->getX());
 		z += (currentV->getX()-nextV->getX())*(currentV->getY()+nextV->getY());

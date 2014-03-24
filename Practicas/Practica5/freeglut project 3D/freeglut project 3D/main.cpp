@@ -96,7 +96,7 @@ void display(void) {
 			glVertex3f(0, 0, 20);	     
 		glEnd();
 		
-		glutSolidCube(3);
+		//glutSolidCube(3);
 
 		montana->dibuja(true,true);
 
@@ -234,7 +234,7 @@ int main(int argc, char *argv[]){
 
 	// Montana
 	cout << "inicializa" << endl;
-	montana = new MontanaRusa(3,1,5,30,40,0.9);
+	montana = new MontanaRusa(3,1,5,4,5,0.9); // NP = 30 NQ = 40
 	cout << "construye" << endl;
 	montana->build();
 
