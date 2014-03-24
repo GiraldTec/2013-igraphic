@@ -21,9 +21,9 @@ public:
 
     void construye();
 
-    GLfloat funcionX(GLfloat val);
-	GLfloat funcionY(GLfloat val);
-    GLfloat funcionZ(GLfloat val);
+    GLfloat functionX(GLfloat val);
+	GLfloat functionY(GLfloat val);
+    GLfloat functionZ(GLfloat val);
 
     GLfloat primeraDerivadaX(GLfloat val);
     GLfloat primeraDerivadaY(GLfloat val);
@@ -33,7 +33,7 @@ public:
     GLfloat segundaDerivadaY(GLfloat val);
     GLfloat segundaDerivadaZ(GLfloat val);
 
-    PV3D* funcion(GLfloat val);
+    PV3D* function(GLfloat val);
 
     PV3D* primeraDerivada(GLfloat val);
     PV3D* segundaDerivada(GLfloat val);

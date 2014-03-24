@@ -52,13 +52,28 @@ GLfloat MontanaRusa::segundaDerivadaZ(GLfloat t)
 }
 
 //-------------------------------------------------------------------------
-
-
-PV3D* MontanaRusa::funcion(GLfloat t)
+GLfloat MontanaRusa::functionX(GLfloat t)
 {
-        GLfloat x= funcionX(degToRad(t));
-		GLfloat y= funcionY(degToRad(t));
-        GLfloat z=funcionZ(degToRad(t));
+	return 3*cos(t);
+}
+
+GLfloat MontanaRusa::functionY(GLfloat t)
+{
+	return 2*cos(t*1.5);
+}
+
+GLfloat MontanaRusa::functionZ(GLfloat t)
+{
+	return 3*sin(t);
+}
+
+//-------------------------------------------------------------------------
+
+PV3D* MontanaRusa::function(GLfloat t)
+{
+        GLfloat x= functionX(degToRad(t));
+		GLfloat y= functionY(degToRad(t));
+        GLfloat z= functionZ(degToRad(t));
         return new PV3D(x,y,z);
 }
 PV3D* MontanaRusa::primeraDerivada(GLfloat val)
@@ -75,7 +90,7 @@ PV3D* MontanaRusa::segundaDerivada(GLfloat val)
 }
 
 void MontanaRusa::construye(){
-     
+ /*    
 	GLfloat intervaloToma =(GLfloat)(360.0*this->nVueltas/NQ);
 	
 	//construimos un objeto con el lapiz
@@ -157,8 +172,8 @@ void MontanaRusa::construye(){
 
 
 
-    delete p;
-
+    delete poli;
+	*/
 }//fin funcion construye
 
 int MontanaRusa::sucesor(int val)
@@ -205,7 +220,7 @@ GLfloat MontanaRusa::calculaVueltas()
 void MontanaRusa::dibuja(bool relleno,bool dibujaNormales)
 {
         Malla::draw(relleno,dibujaNormales);
-
+/*
         //dibujo  del coche
         PV3D* Tt=primeraDerivada(acumCoche); Tt->normalize();
         PV3D* segundaderivada=segundaDerivada(acumCoche);
@@ -219,7 +234,7 @@ void MontanaRusa::dibuja(bool relleno,bool dibujaNormales)
                         Nt->getY(),Bt->getY(),Tt->getY(),Ct->getY(),
                         Nt->getZ(),Bt->getZ(),Tt->getZ(),Ct->getZ(),
                         0,0,0,1};
-       */
+      // *-/
 
        GLfloat m[] ={   Nt->getX(),Nt->getY(),Nt->getZ(),Nt->getPv(),
                         Bt->getX(),1,Bt->getZ(),Bt->getPv(),//el 1 es para que salga hacia arriba
@@ -240,7 +255,7 @@ void MontanaRusa::dibuja(bool relleno,bool dibujaNormales)
         delete primeraderivada;
         delete Nt;
         delete Ct;
-
+		*/
 }
 
 void MontanaRusa::dibujaCoche()
@@ -261,18 +276,4 @@ int MontanaRusa::mcd(int x, int y)
     else
         return mcd(y, x%y);
 
-}
-GLdouble MontanaRusa::functionX(GLdouble t)
-{
-	return 3*cos(t);
-}
-
-GLdouble MontanaRusa::functionY(GLdouble t)
-{
-	return 2*cos(t*1.5);
-}
-
-GLdouble MontanaRusa::functionZ(GLdouble t)
-{
-	return 3*sin(t);
 }

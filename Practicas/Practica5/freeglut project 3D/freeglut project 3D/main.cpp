@@ -23,6 +23,10 @@ GLdouble eyeX=100.0, eyeY=100.0, eyeZ=100.0;
 GLdouble lookX=0.0, lookY=0.0, lookZ=0.0;
 GLdouble upX=0, upY=1, upZ=0;
 
+// Axis angles
+GLfloat angleX=0,angleY=0,angleZ=0;
+
+
 void initGL() {	 		 
 	glClearColor(0.6f,0.7f,0.8f,1.0);
     glEnable(GL_LIGHTING);    
@@ -61,23 +65,32 @@ void initGL() {
 void display(void) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);  
 
-	// Drawing axes
-	glBegin( GL_LINES );
-		glColor3f(1.0,0.0,0.0); 
-		glVertex3f(0, 0, 0);
-		glVertex3f(20, 0, 0);	     
-	 
-		glColor3f(0.0,1.0,0.0); 
-		glVertex3f(0, 0, 0);
-		glVertex3f(0, 20, 0);	 
-	 
-		glColor3f(0.0,0.0,1.0); 
-		glVertex3f(0, 0, 0);
-		glVertex3f(0, 0, 20);	     
-	glEnd();
+	glMatrixMode(GL_MODELVIEW);
+    glPushMatrix();
+        
+        glRotated(angleX,1,0,0);
+        glRotated(angleY,0,1,0);
+        glRotated(angleZ,0,0,1);
 
-	glColor3f(1.0, 1.0, 1.0);
-	glutSolidSphere(3, 30, 30);
+		// Drawing axes
+		glBegin( GL_LINES );
+			glColor3f(1.0,0.0,0.0); 
+			glVertex3f(0, 0, 0);
+			glVertex3f(20, 0, 0);	     
+	 
+			glColor3f(0.0,1.0,0.0); 
+			glVertex3f(0, 0, 0);
+			glVertex3f(0, 20, 0);	 
+	 
+			glColor3f(0.0,0.0,1.0); 
+			glVertex3f(0, 0, 0);
+			glVertex3f(0, 0, 20);	     
+		glEnd();
+
+		glColor3f(1.0, 1.0, 1.0);
+		glutSolidSphere(3, 30, 30);
+
+	glPopMatrix();   
 
 	glFlush();
 	glutSwapBuffers();
@@ -118,9 +131,18 @@ void key(unsigned char key, int x, int y){
 			//continue_in_main_loop = false; // (**)
 			//Freeglut's sentence for stopping glut's main loop (*)
 			glutLeaveMainLoop (); 
-			break;		 			 
+		break;		 			 
+
+		case 'a': angleX=angleX+5;break;
+		case 'z': angleX=angleX-5;break;
+		case 's': angleY=angleY+5;break;
+		case 'x': angleY=angleY-5;break;
+		case 'd': angleZ=angleZ+5;break;
+		case 'c': angleZ=angleZ-5;break;
+
 		default:
 			need_redisplay = false;
+			cout<<key<<endl;
 			break;
 	}
 

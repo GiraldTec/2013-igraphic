@@ -1,52 +1,28 @@
-﻿Compilación iniciada a las 24/03/2014 1:56:31.
+﻿Compilación iniciada a las 24/03/2014 10:58:26.
      1>Proyecto "C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Car.cpp Cube.cpp Malla.cpp MontanaRusa.cpp PV3D.cpp Pencil.cpp Poligon.cpp main.cpp
-         main.cpp
-         PV3D.cpp
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt MontanaRusa.cpp
          MontanaRusa.cpp
      1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(36): warning C4244: 'return' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
      1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(41): warning C4244: 'return' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(84): warning C4244: 'argumento' : conversión de 'GLfloat' a 'int'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(85): error C2440: 'inicializando' : no se puede realizar la conversión de 'std::vector<_Ty> *' a 'PV3D **'
-                 with
-                 [
-                     _Ty=PV3D *
-                 ]
-                 Los tipos señalados no están relacionados; la conversión requiere reinterpret_cast, conversión de estilo de C o conversión de estilo de función
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(144): error C2664: 'Cara::setIndicesVN' : no se puede convertir el parámetro 1 de 'VerticeNormal **' a 'std::vector<_Ty> *'
-                 with
-                 [
-                     _Ty=VerticeNormal *
-                 ]
-                 Los tipos señalados no están relacionados; la conversión requiere reinterpret_cast, conversión de estilo de C o conversión de estilo de función
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(160): error C2065: 'p' : identificador no declarado
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(160): error C2541: 'delete' : no se pueden eliminar objetos que no sean punteros
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(176): warning C4244: 'inicializando' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(201): warning C4244: 'argumento' : conversión de 'GLfloat' a 'int'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(224): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(224): warning C4244: 'inicializando' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(225): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(225): warning C4244: 'inicializando' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(226): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(226): warning C4244: 'inicializando' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(227): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(227): warning C4244: 'inicializando' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-         Generando código...
-         Compilando...
-         Pencil.cpp
-         Malla.cpp
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\malla.cpp(57): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\malla.cpp(60): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\malla.cpp(90): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\malla.cpp(91): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
-         Cube.cpp
-         Generando código...
-         Omitiendo... (no se detectaron cambios relevantes)
-         Poligon.cpp
-         Car.cpp
-     1>Compilación del proyecto terminada "C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos) -- ERROR.
+     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(62): warning C4244: 'return' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(191): warning C4244: 'inicializando' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(216): warning C4244: 'argumento' : conversión de 'GLfloat' a 'int'; posible pérdida de datos
+       Link:
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Camera.obj
+         Debug\Car.obj
+         Debug\Cara.obj
+         Debug\Cube.obj
+         Debug\main.obj
+         Debug\Malla.obj
+         Debug\MontanaRusa.obj
+         Debug\Pencil.obj
+         Debug\Poligon.obj
+         Debug\PV3D.obj
+         Debug\VerticeNormal.obj
+         freeglut project 3D.vcxproj -> C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\Debug\freeglut project 3D.exe
+     1>Compilación del proyecto terminada "C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
 
-ERROR al compilar.
+Compilación correcta.
 
-Tiempo transcurrido 00:00:16.19
+Tiempo transcurrido 00:00:05.01
