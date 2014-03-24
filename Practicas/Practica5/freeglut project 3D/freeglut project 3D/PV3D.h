@@ -44,7 +44,7 @@ public:
 	PV3D* subtraction(PV3D* v);
 	void normalize();
 	GLdouble magnitude();
-	PV3D* cossProduct(PV3D* v);
+	PV3D* crossProduct(PV3D* v);
 	PV3D* matrixProduct(PV3D* Nt,PV3D* Bt,PV3D* Tt,PV3D* Ct);
 };
 

@@ -21,32 +21,32 @@ MontanaRusa::~MontanaRusa()
 }
 //--------------------------------------------------------------------------
 
-GLfloat MontanaRusa::primeraDerivadaX(GLfloat t)
+GLfloat MontanaRusa::fDerivateX(GLfloat t)
 {
 	return -3*sin(degToRad(t));
 }
 
-GLfloat MontanaRusa::segundaDerivadaX(GLfloat t)
+GLfloat MontanaRusa::sDerivateX(GLfloat t)
 {
 	return -3*cos(degToRad(t));
 }
 
-GLfloat MontanaRusa::primeraDerivadaY(GLfloat t)
+GLfloat MontanaRusa::fDerivateY(GLfloat t)
 {
         return -3*sin(1.5*degToRad(t));
 }
 
-GLfloat MontanaRusa::segundaDerivadaY(GLfloat t)
+GLfloat MontanaRusa::sDerivateY(GLfloat t)
 {
         return -4.5*cos(1.5*degToRad(t));
 }
 
-GLfloat MontanaRusa::primeraDerivadaZ(GLfloat t)
+GLfloat MontanaRusa::fDerivateZ(GLfloat t)
 {
         return 3*cos(degToRad(t));
 }
 
-GLfloat MontanaRusa::segundaDerivadaZ(GLfloat t)
+GLfloat MontanaRusa::sDerivateZ(GLfloat t)
 {
         return -3*sin(degToRad(t));
 }
@@ -76,38 +76,40 @@ PV3D* MontanaRusa::function(GLfloat t)
         GLfloat z= functionZ(degToRad(t));
         return new PV3D(x,y,z);
 }
-PV3D* MontanaRusa::primeraDerivada(GLfloat val)
+PV3D* MontanaRusa::fDerivate(GLfloat val)
 {
-        GLfloat x= primeraDerivadaX(degToRad(val));
-        GLfloat z=primeraDerivadaZ(degToRad(val));
-        return new PV3D(x,0,z);
+        GLfloat x= fDerivateX(degToRad(val));
+		GLfloat y= fDerivateY(degToRad(val));
+        GLfloat z= fDerivateZ(degToRad(val));
+        return new PV3D(x,y,z);
 }
-PV3D* MontanaRusa::segundaDerivada(GLfloat val)
+PV3D* MontanaRusa::sDerivate(GLfloat val)
 {
-        GLfloat x= segundaDerivadaX(degToRad(val));
-        GLfloat z=segundaDerivadaZ(degToRad(val));
-        return new PV3D(x,0,z);
+        GLfloat x= sDerivateX(degToRad(val));
+		GLfloat y= sDerivateY(degToRad(val));
+        GLfloat z= sDerivateZ(degToRad(val));
+		return new PV3D(x,y,z);
 }
 
 void MontanaRusa::construye(){
- /*    
+     
 	GLfloat intervaloToma =(GLfloat)(360.0*this->nVueltas/NQ);
 	
 	//construimos un objeto con el lapiz
 
     PV3D* centro = new PV3D();
 	Poligon *poli = new Poligon(centro,tam,NP);
-    PV3D** puntos= poli->getVertex();  // TODO cambiar a vector
+    vector<PV3D*>* puntos= poli->getVertex();  // TODO cambiar a vector
         
     for(int i=0;i<NQ;i++)
     {
             GLfloat toma=intervaloToma*i;
-            PV3D* Tt=primeraDerivada(toma); Tt->normalize();
-            PV3D* segundaderivada=segundaDerivada(toma);
-            PV3D* primeraderivada=primeraDerivada(toma);
-            PV3D* Bt=primeraderivada->cossProduct(segundaderivada); Bt->normalize();
-            PV3D* Nt=Bt->cossProduct(Tt);
-            PV3D* Ct=funcion(toma);
+            PV3D* Tt=fDerivate(toma); Tt->normalize();
+            PV3D* segundaderivada=sDerivate(toma);
+            PV3D* primeraderivada=fDerivate(toma);
+            PV3D* Bt=primeraderivada->crossProduct(segundaderivada); Bt->normalize();
+            PV3D* Nt=Bt->crossProduct(Tt);
+            PV3D* Ct=function(toma);
                     Ct->setPv(1);                    
 
 
@@ -115,7 +117,7 @@ void MontanaRusa::construye(){
             {
                    
                 int numvertice=NP*i+j;
-                PV3D* clon=puntos[j]->clone();
+                PV3D* clon=puntos->at(j)->clone();
                 PV3D* punto=clon->matrixProduct(Nt,Bt,Tt,Ct);
 				vertex->at(numvertice)=punto;
                 delete clon;  
@@ -141,7 +143,7 @@ void MontanaRusa::construye(){
             {
                 int numcara= NP*(i)+j ;
                 faces->at(numcara)= new Cara(4);
-                VerticeNormal** arrayParcial= new VerticeNormal*[4];
+                vector<VerticeNormal*>* arrayParcial= new vector<VerticeNormal*>(4);
 
                 int verticeBase=numcara;
                 int a= (verticeBase) % (NP*NQ);
@@ -150,10 +152,10 @@ void MontanaRusa::construye(){
                 int d=  (verticeBase+NP)% (NP*NQ);
 
 
-                arrayParcial[0]=new VerticeNormal(a,numcara);
-                arrayParcial[1]=new VerticeNormal(b,numcara);
-                arrayParcial[2]=new VerticeNormal(c,numcara);
-                arrayParcial[3]=new VerticeNormal(d,numcara);
+                arrayParcial->at(0)=new VerticeNormal(a,numcara);
+                arrayParcial->at(1)=new VerticeNormal(b,numcara);
+                arrayParcial->at(2)=new VerticeNormal(c,numcara);
+                arrayParcial->at(3)=new VerticeNormal(d,numcara);
                     
 
                 faces->at(numcara)->setIndicesVN(arrayParcial);  // TODO cambiar a vector
@@ -173,7 +175,7 @@ void MontanaRusa::construye(){
 
 
     delete poli;
-	*/
+	
 }//fin funcion construye
 
 int MontanaRusa::sucesor(int val)
@@ -220,21 +222,21 @@ GLfloat MontanaRusa::calculaVueltas()
 void MontanaRusa::dibuja(bool relleno,bool dibujaNormales)
 {
         Malla::draw(relleno,dibujaNormales);
-/*
+
         //dibujo  del coche
-        PV3D* Tt=primeraDerivada(acumCoche); Tt->normalize();
-        PV3D* segundaderivada=segundaDerivada(acumCoche);
-        PV3D* primeraderivada=primeraDerivada(acumCoche);
-        PV3D* Bt=primeraderivada->cossProduct(segundaderivada); Bt->normalize();
-        PV3D* Nt=Bt->cossProduct(Tt);
-        PV3D* Ct=funcion(acumCoche);
+        PV3D* Tt = fDerivate(acumCoche); Tt->normalize();
+        PV3D* segundaderivada = sDerivate(acumCoche);
+        PV3D* primeraderivada = fDerivate(acumCoche);
+        PV3D* Bt=primeraderivada->crossProduct(segundaderivada); Bt->normalize();
+        PV3D* Nt=Bt->crossProduct(Tt);
+        PV3D* Ct=function(acumCoche);
                 Ct->setPv(1);
       /*
         GLfloat m[]={   Nt->getX(),Bt->getX(),Tt->getX(),Ct->getX(),
                         Nt->getY(),Bt->getY(),Tt->getY(),Ct->getY(),
                         Nt->getZ(),Bt->getZ(),Tt->getZ(),Ct->getZ(),
                         0,0,0,1};
-      // *-/
+      // */
 
        GLfloat m[] ={   Nt->getX(),Nt->getY(),Nt->getZ(),Nt->getPv(),
                         Bt->getX(),1,Bt->getZ(),Bt->getPv(),//el 1 es para que salga hacia arriba
@@ -255,7 +257,7 @@ void MontanaRusa::dibuja(bool relleno,bool dibujaNormales)
         delete primeraderivada;
         delete Nt;
         delete Ct;
-		*/
+		
 }
 
 void MontanaRusa::dibujaCoche()

@@ -25,18 +25,18 @@ public:
 	GLfloat functionY(GLfloat val);
     GLfloat functionZ(GLfloat val);
 
-    GLfloat primeraDerivadaX(GLfloat val);
-    GLfloat primeraDerivadaY(GLfloat val);
-	GLfloat primeraDerivadaZ(GLfloat val);
+    GLfloat fDerivateX(GLfloat val);
+    GLfloat fDerivateY(GLfloat val);
+	GLfloat fDerivateZ(GLfloat val);
 
-    GLfloat segundaDerivadaX(GLfloat val);
-    GLfloat segundaDerivadaY(GLfloat val);
-    GLfloat segundaDerivadaZ(GLfloat val);
+    GLfloat sDerivateX(GLfloat val);
+    GLfloat sDerivateY(GLfloat val);
+    GLfloat sDerivateZ(GLfloat val);
 
     PV3D* function(GLfloat val);
 
-    PV3D* primeraDerivada(GLfloat val);
-    PV3D* segundaDerivada(GLfloat val);
+    PV3D* fDerivate(GLfloat val);
+    PV3D* sDerivate(GLfloat val);
 
     int sucesor(int val);
     GLfloat degToRad(GLfloat deg);
