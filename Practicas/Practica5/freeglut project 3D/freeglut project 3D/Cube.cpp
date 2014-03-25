@@ -1,7 +1,7 @@
 #include "Cube.h"
 
 
-Cube::Cube(GLdouble x, GLdouble y, GLdouble z)
+Cube::Cube(GLdouble x, GLdouble y, GLdouble z) : Malla(6,6,6)
 {
 	this->x = x;
 	this->y = y;
