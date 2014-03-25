@@ -1,11 +1,37 @@
-﻿Compilación iniciada a las 25/03/2014 19:27:42.
-     1>Proyecto "C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
+﻿Compilación iniciada a las 25/03/2014 22:40:37.
+     1>Proyecto "C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Car.cpp Cara.cpp main.cpp Malla.cpp MontanaRusa.cpp Pencil.cpp Poligon.cpp PV3D.cpp VerticeNormal.cpp
+         VerticeNormal.cpp
+         PV3D.cpp
+         Poligon.cpp
+         Pencil.cpp
+         MontanaRusa.cpp
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(18): warning C4244: 'return' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(22): warning C4244: 'return' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(26): warning C4244: 'return' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(50): warning C4244: 'inicializando' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(81): warning C4018: '<' : no coinciden signed/unsigned
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(127): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(128): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(129): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(130): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+         Malla.cpp
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\malla.cpp(51): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\malla.cpp(52): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\malla.cpp(53): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\malla.cpp(57): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\malla.cpp(58): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\malla.cpp(59): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\malla.cpp(90): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\malla.cpp(91): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
          main.cpp
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\main.cpp(35): warning C4305: 'inicializando' : truncamiento de 'double' a 'GLfloat'
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica5\freeglut project 3d\freeglut project 3d\main.cpp(35): warning C4305: 'inicializando' : truncamiento de 'double' a 'GLfloat'
+         Cara.cpp
+         Car.cpp
+         Generando código...
        Link:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Car.obj
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Car.obj
          Debug\Cara.obj
          Debug\main.obj
          Debug\Malla.obj
@@ -14,9 +40,9 @@
          Debug\Poligon.obj
          Debug\PV3D.obj
          Debug\VerticeNormal.obj
-         freeglut project 3D.vcxproj -> C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\Debug\freeglut project 3D.exe
-     1>Compilación del proyecto terminada "C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
+         freeglut project 3D.vcxproj -> C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\Debug\freeglut project 3D.exe
+     1>Compilación del proyecto terminada "C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica5\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:03.83
+Tiempo transcurrido 00:01:42.49
