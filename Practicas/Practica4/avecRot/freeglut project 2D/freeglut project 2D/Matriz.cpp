@@ -36,6 +36,7 @@ void Matriz::productoM(Matriz* oM){ // Mi matriz de NxM con otra de Mx—
 	}
 
 	delete data;
+	columnas = auxC;
 	data = auxD;
 }
 void Matriz::producto(double d){ 
