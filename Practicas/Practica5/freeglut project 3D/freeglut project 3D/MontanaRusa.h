@@ -13,7 +13,7 @@ private:
     GLfloat tam;
     GLfloat nVueltas;
     Car* car;
-    GLfloat acumCoche;
+    GLfloat carPos;
 
 public:
 	MontanaRusa(GLfloat R,GLfloat r,GLfloat d,int NP,int NQ,GLfloat tam);
@@ -43,7 +43,7 @@ public:
     GLfloat calculaVueltas();
     void dibuja(bool relleno,bool dibujaNormales);
     void dibujaCoche();
-    void addAcum(GLfloat cantidad);
+    void carStep(GLfloat step);
     int mcd(int a, int b);
 
 	GLdouble functionX(GLdouble t);

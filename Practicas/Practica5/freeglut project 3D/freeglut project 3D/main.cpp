@@ -31,6 +31,7 @@ GLfloat angleX=0,angleY=0,angleZ=0;
 // MontanaRusa
 
 MontanaRusa *montana;
+GLfloat carStep = M_PI/20;
 
 
 void initGL() {	 		 
@@ -163,26 +164,35 @@ void key(unsigned char key, int x, int y){
 			//Freeglut's sentence for stopping glut's main loop (*)
 			glutLeaveMainLoop (); 
 		break;		 			 
-
+		// ----------------
 		case 'a': 
 			angleX=mod360(angleX+5);
 			break;
 		case 'z': 
 			angleX=mod360(angleX-5);
 			break;
+		// ----------------
 		case 's': 
 			angleY=mod360(angleY+5);
 			break;
 		case 'x': 
 			angleY=mod360(angleY-5);
 			break;
+		// ----------------
 		case 'd': 
 			angleZ=mod360(angleZ+5);
 			break;
 		case 'c': 
 			angleZ=mod360(angleZ-5);
 			break;
-
+		// ----------------
+		case 'j': 
+			montana->carStep(-carStep);
+			break;
+		case 'k': 
+			montana->carStep(carStep);
+			break;
+		// ----------------
 		default:
 			need_redisplay = false;
 			cout<<key<<endl;

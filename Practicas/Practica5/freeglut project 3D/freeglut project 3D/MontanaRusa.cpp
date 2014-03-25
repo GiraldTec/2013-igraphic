@@ -12,8 +12,8 @@ MontanaRusa::MontanaRusa(GLfloat R,GLfloat r,GLfloat d,int NP,int NQ,GLfloat tam
     this->NQ=NQ;
     this->tam=tam;
     this->nVueltas=calculaVueltas();
-    car= new Car(tam*0.9,tam*0.9,tam*0.9);
-    acumCoche=0;
+    car= new Car(2*tam*0.8);
+    carPos=0;
 }
 MontanaRusa::~MontanaRusa()
 {
@@ -215,17 +215,17 @@ GLfloat MontanaRusa::calculaVueltas()
 
 void MontanaRusa::dibuja(bool relleno,bool dibujaNormales)
 {
-       // Malla::draw(relleno,dibujaNormales);
+        Malla::draw(relleno,dibujaNormales);
 
         //dibujo  del coche
         
-		PV3D* primeraderivada = fDerivate(acumCoche);
-        PV3D* segundaderivada = sDerivate(acumCoche);
+		PV3D* primeraderivada = fDerivate(carPos);
+        PV3D* segundaderivada = sDerivate(carPos);
 
-		PV3D* Tt = fDerivate(acumCoche); Tt->normalize();
+		PV3D* Tt = fDerivate(carPos); Tt->normalize();
         PV3D* Bt=primeraderivada->crossProduct(segundaderivada); Bt->normalize();
         PV3D* Nt=Bt->crossProduct(Tt);
-        PV3D* Ct=function(acumCoche);
+        PV3D* Ct=function(carPos);
 
       
         GLfloat m[]={   Nt->getX(),Bt->getX(),Tt->getX(),Ct->getX(),
@@ -243,7 +243,8 @@ void MontanaRusa::dibuja(bool relleno,bool dibujaNormales)
         glPushMatrix();
                
                 //glMultMatrixf(m);
-                dibujaCoche();
+			glTranslated(Ct->getX(),Ct->getY(),Ct->getZ());
+            dibujaCoche();
               
         glPopMatrix();
 
@@ -258,13 +259,12 @@ void MontanaRusa::dibuja(bool relleno,bool dibujaNormales)
 
 void MontanaRusa::dibujaCoche()
 {
-      car->draw(acumCoche); 
+      car->draw(); 
 }
 
-void MontanaRusa::addAcum(GLfloat cantidad)
+void MontanaRusa::carStep(GLfloat step)
 {
-        acumCoche=acumCoche+cantidad;
-
+        carPos +=step;
 }
 
 int MontanaRusa::mcd(int x, int y)
