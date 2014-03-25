@@ -1,36 +1,22 @@
+//Carlos Giraldo
+//Raquel Peces
 #include "Poligon.h"
 
 
-Poligon::Poligon(void)
-{
+Poligon::Poligon(void){
 	center = NULL;
 	vertex = NULL;
 }
-
-Poligon::Poligon(PV3D *c, int n, GLdouble radius)
-{
+Poligon::Poligon(PV3D *c, int n, GLdouble radius){
 	this->center = c;
 	this->n_sides = n;
 	this->radius = radius;
 	this->calcula_vertices(this->center);
 }
-
-Poligon::~Poligon(void)
-{
+Poligon::~Poligon(void){
+	delete vertex;
 }
-
-void Poligon::renderX(void){
-	if(vertex!=NULL){
-
-		//glColor3f(red,blue,green);
-		glBegin(GL_POLYGON);
-			for(unsigned i=0;i<vertex->size();i++){
-				glVertex2d( vertex->at(i)->getX(), vertex->at(i)->getY() );
-			}
-		glEnd();
-	}
-}
-
+//------------------------------------------------------------------
 void Poligon::calcula_vertices(PV3D* centroTemp){
 	Pencil *p = new Pencil(centroTemp->clone(),0);
 	
@@ -55,30 +41,25 @@ void Poligon::calcula_vertices(PV3D* centroTemp){
 	}
 	aux_p = NULL;
 }
-
+//------------------------------------------------------------------
 void Poligon::setVertex(vector<PV3D*> *v){
 	delete this->vertex;
 	this->vertex = v;
 }
-
 void Poligon::setCenter(PV3D *p){
 	delete this->center;
 	this->center = p;
 }
-
 void Poligon::setRadius(GLdouble r){
 	this->radius = r;
 }
-
-
+//------------------------------------------------------------------
 vector<PV3D*>* Poligon::getVertex(void){
 	return this->vertex;
 }
-
 PV3D* Poligon::getCenter(void){
 	return this->center;
 }
-
 GLdouble Poligon::getRadius(void){
 	return this->radius;
 }

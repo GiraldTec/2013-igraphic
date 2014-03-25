@@ -1,5 +1,6 @@
+//Carlos Giraldo
+//Raquel Peces
 #include "Car.h"
-
 
 Car::Car(GLdouble s)
 {
@@ -58,6 +59,5 @@ void Car::draw()
 
 	   }
 	   
-
 	glPopMatrix();
 }

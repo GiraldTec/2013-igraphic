@@ -1,3 +1,5 @@
+//Carlos Giraldo
+//Raquel Peces
 #pragma once
 #include "VerticeNormal.h"
 
@@ -10,9 +12,7 @@ class Cara
 {
 private:
 	int numV;// Numero de Vertices de la cara
-
 	std::vector<VerticeNormal*> *indicesVN;
-
 public:
 	Cara(int nV);
 	int getNumV();

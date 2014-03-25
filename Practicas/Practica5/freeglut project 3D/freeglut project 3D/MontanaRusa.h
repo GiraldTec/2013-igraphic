@@ -1,4 +1,5 @@
-#pragma once
+//Carlos Giraldo
+//Raquel Peces#pragma once
 #include "Malla.h"
 #include "Car.h"
 #include "Poligon.h"
@@ -37,7 +38,7 @@ public:
     int nextVertex(int val);
 
 	void draw(bool relleno,bool dibujaNormales);
-    void drawCar();
+
     void carStep(GLfloat step);
 
 };

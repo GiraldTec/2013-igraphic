@@ -1,9 +1,5 @@
-/***********************************
-*	Carlos Gabriel Giraldo García
-*	Raquel Peces Muñoz
-*	Práctica 4
-*
-************************************/
+//Carlos Giraldo
+//Raquel Peces
 #pragma once
 
 #define _USE_MATH_DEFINES

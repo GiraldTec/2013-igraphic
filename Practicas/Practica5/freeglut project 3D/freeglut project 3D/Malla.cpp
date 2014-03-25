@@ -1,11 +1,8 @@
+//Carlos Giraldo
+//Raquel Peces
 #include "Malla.h"
 
-
-Malla::Malla(){
-}
-
-Malla::Malla(int nV, int nF, int nN)
-{
+Malla::Malla(int nV, int nF, int nN){
 	this->numVertex = nV;
 	this->numFaces = nF;
 	this->numNormals = nN;
@@ -14,15 +11,11 @@ Malla::Malla(int nV, int nF, int nN)
 	this->faces = new vector<Cara*>(numFaces);
 	this->normals = new vector<PV3D*>(numNormals);
 }
-
-
-Malla::~Malla(void)
-{
-
+Malla::~Malla(void){
+	delete vertex;	delete faces;	delete normals;
 }
-
-PV3D* Malla::doVectorNormalNewell(Cara* c)
-{
+//--------------------------------------------------------------------------
+PV3D* Malla::doVectorNormalNewell(Cara* c){
 	GLdouble x = 0;
 	GLdouble y = 0;
 	GLdouble z = 0;
@@ -39,9 +32,8 @@ PV3D* Malla::doVectorNormalNewell(Cara* c)
 	aux->normalize();
 	return aux;
 }
-
-void Malla::draw(bool fill, bool drawN)
-{
+//--------------------------------------------------------------------------
+void Malla::draw(bool fill, bool drawN){
 
 	cout << "a dibujar la malla" << endl;
 	for (int i=0; i<this->numFaces; i++){

@@ -1,3 +1,5 @@
+//Carlos Giraldo
+//Raquel Peces
 #pragma once
 #include "PV3D.h"
 #include "Cara.h"
@@ -19,7 +21,6 @@ protected:
 	std::vector<Cara*> *faces;
 	
 public:
-	Malla();
 	Malla(int nV, int nF, int nN);
 	~Malla(void);
 	virtual void draw(bool fill, bool drawN);

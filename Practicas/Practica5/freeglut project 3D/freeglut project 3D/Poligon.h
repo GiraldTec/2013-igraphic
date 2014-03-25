@@ -1,3 +1,5 @@
+//Carlos Giraldo
+//Raquel Peces
 #pragma once
 
 #include "PV3D.h"
@@ -5,8 +7,7 @@
 
 #include <vector>
 
-class Poligon
-{
+class Poligon{
 private:
 	int n_sides;
 	PV3D* center;
@@ -26,8 +27,6 @@ public:
 	void setRadius(GLdouble r);
 
 	void calcula_vertices(PV3D* centroTemp);
-	void renderX(void);
-
 
 };
 

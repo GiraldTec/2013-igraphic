@@ -1,3 +1,5 @@
+//Carlos Giraldo
+//Raquel Peces
 #include <Windows.h>
 #include <gl/GL.h>
 #include <gl/GLU.h>
@@ -29,9 +31,9 @@ GLdouble upX=0, upY=1, upZ=0;
 GLfloat angleX=0,angleY=0,angleZ=0;
 
 // MontanaRusa
-
 MontanaRusa *montana;
 GLfloat carStep = M_PI/20;
+bool drawSurface = false, drawNormals = false; 
 
 
 void initGL() {	 		 
@@ -104,7 +106,7 @@ void display(void) {
 			glVertex3f(0, 0, 0);	glVertex3f(0, 0, 20);	     
 		glEnd();
 
-		montana->draw(false,false);
+		montana->draw(drawSurface,drawNormals);
 	glPopMatrix();
 
 
@@ -158,26 +160,26 @@ void key(unsigned char key, int x, int y){
 		break;		 			 
 		// ----------------
 
-		
+		 // linea de debug::: 	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
 		case 'a': 
-			angleX+=5;	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
+			angleX+=5;
 			break;
 		case 'z': 
-			angleX-=5;	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
+			angleX-=5;
 			break;
 		// ----------------
 		case 's': 
-			angleY+=5;	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
+			angleY+=5;
 			break;
 		case 'x': 
-			angleY-=5;	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
+			angleY-=5;
 			break;
 		// ----------------
 		case 'd': 
-			angleZ+=5;	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
+			angleZ+=5;
 			break;
 		case 'c': 
-			angleZ-=5;	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
+			angleZ-=5;
 			break;
 		// ----------------
 		case 'j': 
@@ -187,29 +189,18 @@ void key(unsigned char key, int x, int y){
 			montana->carStep(carStep);
 			break;
 		// ----------------
+		case 'i': 
+			drawNormals = !drawNormals;
+			break;
+		case 'o': 
+			drawSurface = !drawSurface;
+			break;
+		// ----------------
 		default:
 			need_redisplay = false;
 			cout<<key<<endl;
 			break;
 	}
-
-	/*
-        switch(Key)
-        {
-                case 'a': anguloX=anguloX+10; GLScene();break;
-                case 'z': anguloX=anguloX-10;GLScene();break;
-                case 's': anguloY=anguloY+10;  GLScene();break;
-                case 'x': anguloY=anguloY-10; GLScene();break;
-                case 'd': anguloZ=anguloZ+10;  GLScene();break;
-                case 'c': anguloZ=anguloZ-10;  GLScene();break;
-                case 'r': relleno=!relleno;GLScene();break;
-                case 'q': h3d->addAcum(10);GLScene();break;
-                case 'w': h3d->addAcum(-10);GLScene();break;
-                case 'n': dibujaNormales=!dibujaNormales;GLScene();break;
-
-        }
-	*/
-
 	if (need_redisplay)
 		glutPostRedisplay();
 }
@@ -238,11 +229,9 @@ int main(int argc, char *argv[]){
 
 	// Montana
 	cout << "inicializa" << endl;
-	montana = new MontanaRusa(30,40,1); // NP = 30 NQ = 40
+	montana = new MontanaRusa(10,60,0.5); // NP = 30 NQ = 40
 	cout << "construye" << endl;
 	montana->build();
-
-	cout << "construye" << endl;
 
 	// Freeglut's main loop can be stopped executing (**)
 	// while (continue_in_main_loop) glutMainLoopEvent();
