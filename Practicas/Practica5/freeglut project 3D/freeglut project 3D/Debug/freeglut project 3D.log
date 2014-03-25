@@ -1,4 +1,4 @@
-﻿Compilación iniciada a las 25/03/2014 17:26:22.
+﻿Compilación iniciada a las 25/03/2014 17:30:21.
      1>Proyecto "C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
          C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Camera.cpp Car.cpp Cara.cpp MontanaRusa.cpp Pencil.cpp Poligon.cpp VerticeNormal.cpp main.cpp
@@ -36,4 +36,4 @@
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:05.74
+Tiempo transcurrido 00:00:04.67
