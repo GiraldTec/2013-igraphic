@@ -199,16 +199,16 @@ void MontanaRusa::draw(bool relleno,bool dibujaNormales)
                         0,0,0,1};
       // */
 
-       /*GLfloat m[] ={   Nt->getX(),Nt->getY(),Nt->getZ(),Nt->getPv(),
-                        Bt->getX(),1,Bt->getZ(),Bt->getPv(),//el 1 es para que salga hacia arriba
-                        Tt->getX(),Tt->getY(),Tt->getZ(),Tt->getPv(),
-                        Ct->getX(),Ct->getY(),Ct->getZ(),Ct->getPv()};*/
+       GLfloat m[] ={   Nt->getX(),Nt->getY(),Nt->getZ(),0,  // He cambiado esta parte
+                        Bt->getX(),Bt->getY(),Bt->getZ(),0, 
+                        Tt->getX(),Tt->getY(),Tt->getZ(),0,
+                        Ct->getX(),Ct->getY(),Ct->getZ(),1};
 
         glMatrixMode(GL_MODELVIEW);        
         glPushMatrix();
                
-                //glMultMatrixf(m);
-			glTranslated(Ct->getX(),Ct->getY(),Ct->getZ());  // lo pone en la posición
+            glMultMatrixf(m);
+			//glTranslated(Ct->getX(),Ct->getY(),Ct->getZ());  // lo pone en la posición
             drawCar();
               
         glPopMatrix();
