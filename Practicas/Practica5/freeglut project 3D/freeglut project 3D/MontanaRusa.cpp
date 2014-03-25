@@ -215,7 +215,7 @@ GLfloat MontanaRusa::calculaVueltas()
 
 void MontanaRusa::dibuja(bool relleno,bool dibujaNormales)
 {
-        //Malla::draw(relleno,dibujaNormales);
+       // Malla::draw(relleno,dibujaNormales);
 
         //dibujo  del coche
         
@@ -227,17 +227,17 @@ void MontanaRusa::dibuja(bool relleno,bool dibujaNormales)
         PV3D* Nt=Bt->crossProduct(Tt);
         PV3D* Ct=function(acumCoche);
 
-      /*
+      
         GLfloat m[]={   Nt->getX(),Bt->getX(),Tt->getX(),Ct->getX(),
                         Nt->getY(),Bt->getY(),Tt->getY(),Ct->getY(),
                         Nt->getZ(),Bt->getZ(),Tt->getZ(),Ct->getZ(),
                         0,0,0,1};
       // */
 
-       GLfloat m[] ={   Nt->getX(),Nt->getY(),Nt->getZ(),Nt->getPv(),
+       /*GLfloat m[] ={   Nt->getX(),Nt->getY(),Nt->getZ(),Nt->getPv(),
                         Bt->getX(),1,Bt->getZ(),Bt->getPv(),//el 1 es para que salga hacia arriba
                         Tt->getX(),Tt->getY(),Tt->getZ(),Tt->getPv(),
-                        Ct->getX(),Ct->getY(),Ct->getZ(),Ct->getPv()};
+                        Ct->getX(),Ct->getY(),Ct->getZ(),Ct->getPv()};*/
 
         glMatrixMode(GL_MODELVIEW);        
         glPushMatrix();

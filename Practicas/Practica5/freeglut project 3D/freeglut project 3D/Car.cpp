@@ -76,11 +76,11 @@ void Car::draw(GLdouble acumCoche)
 					break;
 				case 2: 
 					posX = -0.5;
-					posZ = -0.5;
+					posZ = -0.5-anchoRueda;
 					break;
 				case 3: 
 					posX = 0.5;
-					posZ = -0.5;
+					posZ = -0.5-anchoRueda;
 					break;
 		   }
 
@@ -97,10 +97,11 @@ void Car::draw(GLdouble acumCoche)
 
 			//Cover
 			glPushMatrix();
-				glColor3f(0,0,0);//negro
+				glColor3f(1,1,1);//negro
 				gluQuadricDrawStyle(covers->at(i), GLU_LINE);
 				//gluQuadricNormals(covers->at(i), GLU_LINE);
 				glRotated(90,0,1,0);
+				if(i==0||i==1) posZ+=anchoRueda;
 				glTranslated(posX,0,posZ);
 				gluDisk(covers->at(i),0, radioRueda*2, this->aproximacion,this->aproximacion);
 			glPopMatrix();

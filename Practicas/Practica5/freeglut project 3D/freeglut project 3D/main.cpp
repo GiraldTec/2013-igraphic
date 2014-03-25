@@ -98,7 +98,7 @@ void display(void) {
 		
 		//glutSolidCube(3);
 
-		montana->dibuja(false,true);
+		montana->dibuja(false,false);
 
 	glPopMatrix();
 
