@@ -3,15 +3,11 @@
 
 //---------------------------------------------------------------------------
 
-MontanaRusa::MontanaRusa(GLfloat R,GLfloat r,GLfloat d,int NP,int NQ,GLfloat tam) : Malla(NP*NQ,NP*NQ,NP*NQ)
+MontanaRusa::MontanaRusa(int NP,int NQ,GLfloat tam) : Malla(NP*NQ,NP*NQ,NP*NQ)
 {
-    this->R=R;
-    this->r=r;
-    this->d=d;
     this->NP=NP;
     this->NQ=NQ;
     this->tam=tam;
-    this->nVueltas=calculaVueltas();
     car= new Car(2*tam*0.8);
     carPos=0;
 }
@@ -92,7 +88,7 @@ PV3D* MontanaRusa::sDerivate(GLfloat t)
 
 void MontanaRusa::build(){
      
-	GLfloat intervaloToma = 4*M_PI/NQ;
+	GLfloat intervaloToma = 2*2*M_PI/NQ;  // Hay que dar dos vueltas porque hay puntos con 2 valores
 	
 	//construimos un objeto con el lapiz
 
@@ -141,8 +137,8 @@ void MontanaRusa::build(){
 
                 int baseVertex=numFace;
                 int a= (baseVertex) % (NP*NQ);
-                int b= (sucesor(baseVertex))% (NP*NQ);
-                int c=  (sucesor(baseVertex)+NP)% (NP*NQ);
+                int b= (nextVertex(baseVertex))% (NP*NQ);
+                int c=  (nextVertex(baseVertex)+NP)% (NP*NQ);
                 int d=  (baseVertex+NP)% (NP*NQ);
 
 
@@ -172,7 +168,7 @@ void MontanaRusa::build(){
 	
 }//fin funcion construye
 
-int MontanaRusa::sucesor(int val)
+int MontanaRusa::nextVertex(int val)
 {
         int valaux=val+1;
         if(valaux%NP==0)
@@ -182,52 +178,21 @@ int MontanaRusa::sucesor(int val)
         return valaux;
 }
 
-GLfloat MontanaRusa::degToRad(GLfloat deg)
-{
-    GLfloat num=deg*2*M_PI;
-    GLfloat den=360;
-
-    return num/den;
-}
-
-
-GLfloat MontanaRusa::calculaVueltas()
-{
-     /*
-     GLfloat valor=(R-r)/r;
-     GLfloat porcentajeVuelta=valor*360;
-     while(porcentajeVuelta<0)
-     {
-      porcentajeVuelta=porcentajeVuelta+360;
-     }
-
-     while(porcentajeVuelta>360)
-     {
-     porcentajeVuelta=porcentajeVuelta-360;
-     }
-
-     GLfloat devolver=360.0/porcentajeVuelta;
-     return ceil(devolver);
-     */
-     return (r*6)/mcd(R*6,r*6);
-
-}
-
-void MontanaRusa::dibuja(bool relleno,bool dibujaNormales)
+void MontanaRusa::draw(bool relleno,bool dibujaNormales)
 {
         Malla::draw(relleno,dibujaNormales);
 
         //dibujo  del coche
         
-		PV3D* primeraderivada = fDerivate(carPos);
-        PV3D* segundaderivada = sDerivate(carPos);
+		PV3D* fderivate = fDerivate(carPos);
+		PV3D* sderivate = sDerivate(carPos);
 
-		PV3D* Tt = fDerivate(carPos); Tt->normalize();
-        PV3D* Bt=primeraderivada->crossProduct(segundaderivada); Bt->normalize();
+		PV3D* Tt=fDerivate(carPos); Tt->normalize();
+        PV3D* Bt=fderivate->crossProduct(sderivate); Bt->normalize();
         PV3D* Nt=Bt->crossProduct(Tt);
         PV3D* Ct=function(carPos);
 
-      
+      /*
         GLfloat m[]={   Nt->getX(),Bt->getX(),Tt->getX(),Ct->getX(),
                         Nt->getY(),Bt->getY(),Tt->getY(),Ct->getY(),
                         Nt->getZ(),Bt->getZ(),Tt->getZ(),Ct->getZ(),
@@ -243,21 +208,18 @@ void MontanaRusa::dibuja(bool relleno,bool dibujaNormales)
         glPushMatrix();
                
                 //glMultMatrixf(m);
-			glTranslated(Ct->getX(),Ct->getY(),Ct->getZ());
-            dibujaCoche();
+			glTranslated(Ct->getX(),Ct->getY(),Ct->getZ());  // lo pone en la posición
+            drawCar();
               
         glPopMatrix();
 
-        delete Tt;
-        delete Bt;
-        delete segundaderivada;
-        delete primeraderivada;
-        delete Nt;
-        delete Ct;
+		//deletes de los objetos ya no necesarios
+            delete sderivate;	delete fderivate;	delete Tt;
+			delete Bt;			delete Nt;			delete Ct;
 		
 }
 
-void MontanaRusa::dibujaCoche()
+void MontanaRusa::drawCar()
 {
       car->draw(); 
 }
@@ -267,11 +229,3 @@ void MontanaRusa::carStep(GLfloat step)
         carPos +=step;
 }
 
-int MontanaRusa::mcd(int x, int y)
-{
-      if(y==0)
-        return x;
-    else
-        return mcd(y, x%y);
-
-}

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Malla.h"
-#include "Cube.h"
 
 class Car
 {

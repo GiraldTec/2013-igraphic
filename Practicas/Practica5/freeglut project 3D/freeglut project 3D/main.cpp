@@ -73,50 +73,41 @@ void display(void) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);  
 
 	
+		// Drawing axes
+	glBegin( GL_LINES );
+		glColor3f(1.0,0.0,0.0); 
+		glVertex3f(0, 0, 0);	glVertex3f(20, 0, 0);	     
+	 
+		glColor3f(0.0,1.0,0.0); 
+		glVertex3f(0, 0, 0);	glVertex3f(0, 20, 0);	 
+	 
+		glColor3f(0.0,0.0,1.0); 
+		glVertex3f(0, 0, 0);	glVertex3f(0, 0, 20);	     
+	glEnd();
 
-	glMatrixMode(GL_MODELVIEW);
+
+	//glMatrixMode(GL_MODELVIEW);
     glPushMatrix();
-    
 		glRotatef(angleX,1,0,0);
         glRotatef(angleY,0,1,0);
-        glRotatef(angleZ,0,0,1);	
+        glRotatef(angleZ,0,0,1);
 
 		glColor3f(1.0, 1.0, 1.0);
-		
 		glBegin( GL_LINES );
 			glColor3f(1.0,0.0,0.0); 
-			glVertex3f(0, 0, 0);
-			glVertex3f(20, 0, 0);	     
+			glVertex3f(0, 0, 0);	glVertex3f(20, 0, 0);	     
 	 
 			glColor3f(0.0,1.0,0.0); 
-			glVertex3f(0, 0, 0);
-			glVertex3f(0, 20, 0);	 
+			glVertex3f(0, 0, 0);	glVertex3f(0, 20, 0);	 
 	 
-			glColor3f(0.0,0.0,1.0); 
-			glVertex3f(0, 0, 0);
-			glVertex3f(0, 0, 20);	     
+			glColor3f(0.0,0.0,1.0);	
+			glVertex3f(0, 0, 0);	glVertex3f(0, 0, 20);	     
 		glEnd();
-		
-		//glutSolidCube(3);
 
-		montana->dibuja(false,false);
-
+		montana->draw(false,false);
 	glPopMatrix();
 
-			// Drawing axes
-		glBegin( GL_LINES );
-			glColor3f(1.0,0.0,0.0); 
-			glVertex3f(0, 0, 0);
-			glVertex3f(20, 0, 0);	     
-	 
-			glColor3f(0.0,1.0,0.0); 
-			glVertex3f(0, 0, 0);
-			glVertex3f(0, 20, 0);	 
-	 
-			glColor3f(0.0,0.0,1.0); 
-			glVertex3f(0, 0, 0);
-			glVertex3f(0, 0, 20);	     
-		glEnd();
+
 
 
 	glFlush();
@@ -153,6 +144,7 @@ void resize(int newWidth, int newHeight) {
 
 GLfloat mod360(GLfloat a){
 	if(a>=360) return a-360;
+	
 	return a;
 }
 
@@ -165,25 +157,27 @@ void key(unsigned char key, int x, int y){
 			glutLeaveMainLoop (); 
 		break;		 			 
 		// ----------------
+
+		
 		case 'a': 
-			angleX=mod360(angleX+5);
+			angleX+=5;	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
 			break;
 		case 'z': 
-			angleX=mod360(angleX-5);
+			angleX-=5;	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
 			break;
 		// ----------------
 		case 's': 
-			angleY=mod360(angleY+5);
+			angleY+=5;	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
 			break;
 		case 'x': 
-			angleY=mod360(angleY-5);
+			angleY-=5;	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
 			break;
 		// ----------------
 		case 'd': 
-			angleZ=mod360(angleZ+5);
+			angleZ+=5;	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
 			break;
 		case 'c': 
-			angleZ=mod360(angleZ-5);
+			angleZ-=5;	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
 			break;
 		// ----------------
 		case 'j': 
@@ -244,7 +238,7 @@ int main(int argc, char *argv[]){
 
 	// Montana
 	cout << "inicializa" << endl;
-	montana = new MontanaRusa(3,1,5,30,40,0.9); // NP = 30 NQ = 40
+	montana = new MontanaRusa(30,40,1); // NP = 30 NQ = 40
 	cout << "construye" << endl;
 	montana->build();
 

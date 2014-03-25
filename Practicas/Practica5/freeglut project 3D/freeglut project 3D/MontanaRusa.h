@@ -5,18 +5,14 @@
 
 class MontanaRusa : public Malla{
 private:
-    GLfloat R;
-    GLfloat r;
-    GLfloat d;
     int NP;
     int NQ;
     GLfloat tam;
-    GLfloat nVueltas;
     Car* car;
     GLfloat carPos;
 
 public:
-	MontanaRusa(GLfloat R,GLfloat r,GLfloat d,int NP,int NQ,GLfloat tam);
+	MontanaRusa(int NP,int NQ,GLfloat tam);
 	~MontanaRusa(void);
 
     void build();
@@ -38,16 +34,11 @@ public:
     PV3D* fDerivate(GLfloat val);
     PV3D* sDerivate(GLfloat val);
 
-    int sucesor(int val);
-    GLfloat degToRad(GLfloat deg);
-    GLfloat calculaVueltas();
-    void dibuja(bool relleno,bool dibujaNormales);
-    void dibujaCoche();
-    void carStep(GLfloat step);
-    int mcd(int a, int b);
+    int nextVertex(int val);
 
-	GLdouble functionX(GLdouble t);
-	GLdouble functionY(GLdouble t);
-	GLdouble functionZ(GLdouble t);
+	void draw(bool relleno,bool dibujaNormales);
+    void drawCar();
+    void carStep(GLfloat step);
+
 };
 

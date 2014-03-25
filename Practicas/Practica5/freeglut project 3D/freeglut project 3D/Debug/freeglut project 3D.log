@@ -1,17 +1,14 @@
-﻿Compilación iniciada a las 25/03/2014 13:27:40.
+﻿Compilación iniciada a las 25/03/2014 17:05:44.
      1>Proyecto "C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Camera.cpp Cara.cpp MontanaRusa.cpp Pencil.cpp Poligon.cpp VerticeNormal.cpp
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Camera.cpp Cara.cpp MontanaRusa.cpp Pencil.cpp Poligon.cpp VerticeNormal.cpp main.cpp
+         main.cpp
+     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\main.cpp(34): warning C4305: 'inicializando' : truncamiento de 'double' a 'GLfloat'
          MontanaRusa.cpp
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(31): warning C4244: 'return' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(46): warning C4244: 'return' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(61): warning C4244: 'return' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(95): warning C4244: 'inicializando' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(187): warning C4244: 'inicializando' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(212): warning C4244: 'argumento' : conversión de 'GLfloat' a 'int'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(231): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(232): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(233): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(27): warning C4244: 'return' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(42): warning C4244: 'return' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(57): warning C4244: 'return' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\giraldillo\workspace\igr5\freeglut project 3d\freeglut project 3d\montanarusa.cpp(91): warning C4244: 'inicializando' : conversión de 'double' a 'GLfloat'; posible pérdida de datos
          Generando código...
          Omitiendo... (no se detectaron cambios relevantes)
          VerticeNormal.cpp
@@ -23,7 +20,6 @@
          C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Giraldillo\workspace\igr5\freeglut project 3D\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Camera.obj
          Debug\Car.obj
          Debug\Cara.obj
-         Debug\Cube.obj
          Debug\main.obj
          Debug\Malla.obj
          Debug\MontanaRusa.obj
@@ -36,4 +32,4 @@
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:05.34
+Tiempo transcurrido 00:00:08.49
