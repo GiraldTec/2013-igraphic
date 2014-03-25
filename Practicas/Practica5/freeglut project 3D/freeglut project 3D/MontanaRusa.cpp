@@ -199,9 +199,9 @@ void MontanaRusa::draw(bool relleno,bool dibujaNormales)
                         0,0,0,1};
       // */
 
-       GLfloat m[] ={   -Nt->getX(),-Nt->getY(),-Nt->getZ(),0,  // He cambiado esta parte
+       GLfloat m[] ={   Nt->getX(),Nt->getY(),Nt->getZ(),0,  // He cambiado esta parte
                         -Bt->getX(),-Bt->getY(),-Bt->getZ(),0, 
-                        -Tt->getX(),-Tt->getY(),-Tt->getZ(),0,
+                        Tt->getX(),Tt->getY(),Tt->getZ(),0,
                         Ct->getX(),Ct->getY(),Ct->getZ(),1};
 
         glMatrixMode(GL_MODELVIEW);        
