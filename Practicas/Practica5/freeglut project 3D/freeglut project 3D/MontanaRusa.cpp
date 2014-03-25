@@ -23,32 +23,31 @@ MontanaRusa::~MontanaRusa()
 
 GLfloat MontanaRusa::fDerivateX(GLfloat t)
 {
-	return -3*sin(degToRad(t));
-}
-
-GLfloat MontanaRusa::sDerivateX(GLfloat t)
-{
-	return -3*cos(degToRad(t));
+	return -3*sin(t);
 }
 
 GLfloat MontanaRusa::fDerivateY(GLfloat t)
 {
-        return -3*sin(1.5*degToRad(t));
-}
-
-GLfloat MontanaRusa::sDerivateY(GLfloat t)
-{
-        return -4.5*cos(1.5*degToRad(t));
+        return -3*sin(1.5*t);
 }
 
 GLfloat MontanaRusa::fDerivateZ(GLfloat t)
 {
-        return 3*cos(degToRad(t));
+        return 3*cos(t);
+}
+//-----------------------------------------
+GLfloat MontanaRusa::sDerivateX(GLfloat t)
+{
+	return -3*cos(t);
 }
 
+GLfloat MontanaRusa::sDerivateY(GLfloat t)
+{
+        return -4.5*cos(1.5*t);
+}
 GLfloat MontanaRusa::sDerivateZ(GLfloat t)
 {
-        return -3*sin(degToRad(t));
+        return -3*sin(t);
 }
 
 //-------------------------------------------------------------------------
@@ -71,47 +70,46 @@ GLfloat MontanaRusa::functionZ(GLfloat t)
 
 PV3D* MontanaRusa::function(GLfloat t)
 {
-        GLfloat x= functionX(degToRad(t));
-		GLfloat y= functionY(degToRad(t));
-        GLfloat z= functionZ(degToRad(t));
+        GLfloat x= functionX(t);
+		GLfloat y= functionY(t);
+        GLfloat z= functionZ(t);
         return new PV3D(x,y,z);
 }
-PV3D* MontanaRusa::fDerivate(GLfloat val)
+PV3D* MontanaRusa::fDerivate(GLfloat t)
 {
-        GLfloat x= fDerivateX(degToRad(val));
-		GLfloat y= fDerivateY(degToRad(val));
-        GLfloat z= fDerivateZ(degToRad(val));
+        GLfloat x= fDerivateX(t);
+		GLfloat y= fDerivateY(t);
+        GLfloat z= fDerivateZ(t);
         return new PV3D(x,y,z);
 }
-PV3D* MontanaRusa::sDerivate(GLfloat val)
+PV3D* MontanaRusa::sDerivate(GLfloat t)
 {
-        GLfloat x= sDerivateX(degToRad(val));
-		GLfloat y= sDerivateY(degToRad(val));
-        GLfloat z= sDerivateZ(degToRad(val));
+        GLfloat x= sDerivateX(t);
+		GLfloat y= sDerivateY(t);
+        GLfloat z= sDerivateZ(t);
 		return new PV3D(x,y,z);
 }
 
 void MontanaRusa::build(){
      
-	GLfloat intervaloToma =(GLfloat)(360.0*this->nVueltas/NQ);
+	GLfloat intervaloToma = 4*M_PI/NQ;
 	
 	//construimos un objeto con el lapiz
 
-    PV3D* centro = new PV3D();
-	Poligon *poli = new Poligon(centro,NP,tam);
+	Poligon *poli = new Poligon(new PV3D(),NP,tam);  // un polígono del tamaño y con los lados que queremos
     vector<PV3D*>* puntos= poli->getVertex();  
         
     for(int i=0;i<NQ;i++)
     {
             GLfloat toma=intervaloToma*i;
-            PV3D* Tt=fDerivate(toma); Tt->normalize();
-            PV3D* sderivate=sDerivate(toma);
-            PV3D* fderivate=fDerivate(toma);
+            
+            PV3D* fderivate = fDerivate(toma);
+			PV3D* sderivate = sDerivate(toma);
+
+			PV3D* Tt=fDerivate(toma); Tt->normalize();
             PV3D* Bt=fderivate->crossProduct(sderivate); Bt->normalize();
             PV3D* Nt=Bt->crossProduct(Tt);
             PV3D* Ct=function(toma);
-                    Ct->setPv(1);                    
-
 
             for(int j=0;j<NP;j++)
             {
@@ -124,12 +122,8 @@ void MontanaRusa::build(){
             }
 
             //deletes de los objetos ya no necesarios
-            delete Tt;
-            delete Bt;
-            delete sderivate;
-            delete fderivate;
-            delete Nt;
-            delete Ct;
+            delete sderivate;	delete fderivate;	delete Tt;
+			delete Bt;			delete Nt;			delete Ct;
 
     } //fin del for para cada toma
 

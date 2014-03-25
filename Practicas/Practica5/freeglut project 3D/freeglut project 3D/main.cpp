@@ -98,7 +98,7 @@ void display(void) {
 		
 		//glutSolidCube(3);
 
-		montana->dibuja(true,true);
+		montana->dibuja(false,true);
 
 	glPopMatrix();
 
@@ -234,7 +234,7 @@ int main(int argc, char *argv[]){
 
 	// Montana
 	cout << "inicializa" << endl;
-	montana = new MontanaRusa(3,1,5,4,5,0.9); // NP = 30 NQ = 40
+	montana = new MontanaRusa(3,1,5,30,40,0.9); // NP = 30 NQ = 40
 	cout << "construye" << endl;
 	montana->build();
 
