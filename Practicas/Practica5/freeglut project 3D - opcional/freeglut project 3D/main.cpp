@@ -32,8 +32,8 @@ GLfloat angleX=0,angleY=0,angleZ=0;
 
 // MontanaRusa
 MontanaRusa *montana;
-GLfloat carStep = M_PI/20;
-bool drawSurface = false, drawNormals = false; bool skidding = false;
+GLfloat carStep = M_PI/40;
+bool drawSurface = false, drawNormals = false, skidding = false; 
 
 
 void initGL() {	 		 

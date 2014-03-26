@@ -146,5 +146,6 @@ void MontanaRusa::draw(bool relleno,bool dibujaNormales){
 //-------------------------------------------------------------------------
 void MontanaRusa::carStep(GLfloat step){
         carPos +=step;
+		car->stepWheel();
 }
 
