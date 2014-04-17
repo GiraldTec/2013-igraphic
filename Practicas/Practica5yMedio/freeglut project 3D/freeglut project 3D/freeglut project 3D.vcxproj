@@ -66,18 +66,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Car.cpp" />
     <ClCompile Include="Cara.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Malla.cpp" />
+    <ClCompile Include="MontanaRusa.cpp" />
+    <ClCompile Include="Pencil.cpp" />
+    <ClCompile Include="Poligon.cpp" />
     <ClCompile Include="PV3D.cpp" />
-    <ClCompile Include="RusianMountain.cpp" />
     <ClCompile Include="VerticeNormal.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Car.h" />
     <ClInclude Include="Cara.h" />
     <ClInclude Include="Malla.h" />
+    <ClInclude Include="MontanaRusa.h" />
+    <ClInclude Include="Pencil.h" />
+    <ClInclude Include="Poligon.h" />
     <ClInclude Include="PV3D.h" />
-    <ClInclude Include="RusianMountain.h" />
     <ClInclude Include="VerticeNormal.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

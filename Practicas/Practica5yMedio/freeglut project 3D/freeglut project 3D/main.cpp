@@ -1,15 +1,16 @@
-/*#include <Windows.h>
+//Carlos Giraldo
+//Raquel Peces
+#include <Windows.h>
 #include <gl/GL.h>
 #include <gl/GLU.h>
 
 #include <GL/freeglut.h>
 //#include <GL/glut.h>
-*/
-
-#include "RusianMountain.h"
 
 #include <iostream>
 using namespace std;
+
+#include "MontanaRusa.h"
 
 // Freeglut parameters
 // Flag telling us to keep processing events
@@ -26,8 +27,14 @@ GLdouble eyeX=100.0, eyeY=100.0, eyeZ=100.0;
 GLdouble lookX=0.0, lookY=0.0, lookZ=0.0;
 GLdouble upX=0, upY=1, upZ=0;
 
-//Montaña
-RusianMountain *montana;
+// Axis angles
+GLfloat angleX=0,angleY=0,angleZ=0;
+
+// MontanaRusa
+MontanaRusa *montana;
+GLfloat carStep = M_PI/40;
+bool drawSurface = false, drawNormals = false; 
+
 
 void initGL() {	 		 
 	glClearColor(0.6f,0.7f,0.8f,1.0);
@@ -67,25 +74,43 @@ void initGL() {
 void display(void) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);  
 
-	// Drawing axes
+	
+		// Drawing axes
 	glBegin( GL_LINES );
 		glColor3f(1.0,0.0,0.0); 
-		glVertex3f(0, 0, 0);
-		glVertex3f(20, 0, 0);	     
+		glVertex3f(0, 0, 0);	glVertex3f(20, 0, 0);	     
 	 
 		glColor3f(0.0,1.0,0.0); 
-		glVertex3f(0, 0, 0);
-		glVertex3f(0, 20, 0);	 
+		glVertex3f(0, 0, 0);	glVertex3f(0, 20, 0);	 
 	 
 		glColor3f(0.0,0.0,1.0); 
-		glVertex3f(0, 0, 0);
-		glVertex3f(0, 0, 20);	     
+		glVertex3f(0, 0, 0);	glVertex3f(0, 0, 20);	     
 	glEnd();
 
-	montana->dibuja();
 
-//	glColor3f(1.0, 1.0, 1.0);
-//	glutSolidSphere(3, 30, 30);
+	//glMatrixMode(GL_MODELVIEW);
+    glPushMatrix();
+		glRotatef(angleX,1,0,0);
+        glRotatef(angleY,0,1,0);
+        glRotatef(angleZ,0,0,1);
+
+		glColor3f(1.0, 1.0, 1.0);
+		glBegin( GL_LINES );
+			glColor3f(1.0,0.0,0.0); 
+			glVertex3f(0, 0, 0);	glVertex3f(20, 0, 0);	     
+	 
+			glColor3f(0.0,1.0,0.0); 
+			glVertex3f(0, 0, 0);	glVertex3f(0, 20, 0);	 
+	 
+			glColor3f(0.0,0.0,1.0);	
+			glVertex3f(0, 0, 0);	glVertex3f(0, 0, 20);	     
+		glEnd();
+
+		montana->draw(drawSurface,drawNormals);
+	glPopMatrix();
+
+
+
 
 	glFlush();
 	glutSwapBuffers();
@@ -119,6 +144,12 @@ void resize(int newWidth, int newHeight) {
 	glOrtho(xLeft, xRight, yBot, yTop, N, F);
 }
 
+GLfloat mod360(GLfloat a){
+	if(a>=360) return a-360;
+	
+	return a;
+}
+
 void key(unsigned char key, int x, int y){
 	bool need_redisplay = true;
 	switch (key) {
@@ -126,12 +157,50 @@ void key(unsigned char key, int x, int y){
 			//continue_in_main_loop = false; // (**)
 			//Freeglut's sentence for stopping glut's main loop (*)
 			glutLeaveMainLoop (); 
-			break;		 			 
+		break;		 			 
+		// ----------------
+
+		 // linea de debug::: 	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
+		case 'a': 
+			angleX+=5;
+			break;
+		case 'z': 
+			angleX-=5;
+			break;
+		// ----------------
+		case 's': 
+			angleY+=5;
+			break;
+		case 'x': 
+			angleY-=5;
+			break;
+		// ----------------
+		case 'd': 
+			angleZ+=5;
+			break;
+		case 'c': 
+			angleZ-=5;
+			break;
+		// ----------------
+		case 'j': 
+			montana->carStep(-carStep);
+			break;
+		case 'k': 
+			montana->carStep(carStep);
+			break;
+		// ----------------
+		case 'i': 
+			drawNormals = !drawNormals;
+			break;
+		case 'o': 
+			drawSurface = !drawSurface;
+			break;
+		// ----------------
 		default:
 			need_redisplay = false;
+			cout<<key<<endl;
 			break;
 	}
-
 	if (need_redisplay)
 		glutPostRedisplay();
 }
@@ -158,7 +227,11 @@ int main(int argc, char *argv[]){
 	// OpenGL basic setting
 	initGL();
 
-	montana = new RusianMountain();
+	// Montana
+	cout << "inicializa" << endl;
+	montana = new MontanaRusa(10,60,0.5); // NP = 30 NQ = 40
+	cout << "construye" << endl;
+	montana->build();
 
 	// Freeglut's main loop can be stopped executing (**)
 	// while (continue_in_main_loop) glutMainLoopEvent();
