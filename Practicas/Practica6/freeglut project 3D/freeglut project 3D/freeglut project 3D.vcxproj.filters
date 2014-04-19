@@ -60,6 +60,9 @@
     <ClCompile Include="ClasesMaestras\Malla.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Escena.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PV3D.h">
@@ -102,6 +105,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ClasesMaestras\Malla.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Escena.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

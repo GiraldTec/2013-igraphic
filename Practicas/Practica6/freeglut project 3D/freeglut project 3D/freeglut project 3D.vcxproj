@@ -72,6 +72,7 @@
     <ClCompile Include="ClasesMaestras\ObjetoCompuesto.cpp" />
     <ClCompile Include="ClasesMaestras\ObjetoCuadrico.cpp" />
     <ClCompile Include="ClasesMaestras\TAfin.cpp" />
+    <ClCompile Include="Escena.cpp" />
     <ClCompile Include="Figuras\Cilindro.cpp" />
     <ClCompile Include="Figuras\Cubo.cpp" />
     <ClCompile Include="Figuras\Disco.cpp" />
@@ -89,6 +90,7 @@
     <ClInclude Include="ClasesMaestras\ObjetoCompuesto.h" />
     <ClInclude Include="ClasesMaestras\ObjetoCuadrico.h" />
     <ClInclude Include="ClasesMaestras\TAfin.h" />
+    <ClInclude Include="Escena.h" />
     <ClInclude Include="Figuras\Cilindro.h" />
     <ClInclude Include="Figuras\Cubo.h" />
     <ClInclude Include="Figuras\Disco.h" />
