@@ -21,19 +21,10 @@
     <ClCompile Include="PV3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Malla.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="VerticeNormal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Cara.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MontanaRusa.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Car.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Pencil.cpp">
@@ -42,12 +33,36 @@
     <ClCompile Include="Poligon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ClasesMaestras\Objeto3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClasesMaestras\ObjetoCuadrico.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClasesMaestras\ObjetoCompuesto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClasesMaestras\TAfin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Figuras\Cubo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Figuras\Esfera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Figuras\Cilindro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Figuras\Disco.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClasesMaestras\Malla.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PV3D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Malla.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VerticeNormal.h">
@@ -56,16 +71,37 @@
     <ClInclude Include="Cara.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MontanaRusa.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Car.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Pencil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Poligon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClasesMaestras\Objeto3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClasesMaestras\ObjetoCuadrico.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClasesMaestras\ObjetoCompuesto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClasesMaestras\TAfin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Figuras\Cubo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Figuras\Esfera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Figuras\Cilindro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Figuras\Disco.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClasesMaestras\Malla.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

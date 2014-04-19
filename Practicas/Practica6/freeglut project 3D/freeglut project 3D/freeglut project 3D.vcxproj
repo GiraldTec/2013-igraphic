@@ -66,21 +66,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Car.cpp" />
     <ClCompile Include="Cara.cpp" />
+    <ClCompile Include="ClasesMaestras\Malla.cpp" />
+    <ClCompile Include="ClasesMaestras\Objeto3D.cpp" />
+    <ClCompile Include="ClasesMaestras\ObjetoCompuesto.cpp" />
+    <ClCompile Include="ClasesMaestras\ObjetoCuadrico.cpp" />
+    <ClCompile Include="ClasesMaestras\TAfin.cpp" />
+    <ClCompile Include="Figuras\Cilindro.cpp" />
+    <ClCompile Include="Figuras\Cubo.cpp" />
+    <ClCompile Include="Figuras\Disco.cpp" />
+    <ClCompile Include="Figuras\Esfera.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Malla.cpp" />
-    <ClCompile Include="MontanaRusa.cpp" />
     <ClCompile Include="Pencil.cpp" />
     <ClCompile Include="Poligon.cpp" />
     <ClCompile Include="PV3D.cpp" />
     <ClCompile Include="VerticeNormal.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Car.h" />
     <ClInclude Include="Cara.h" />
-    <ClInclude Include="Malla.h" />
-    <ClInclude Include="MontanaRusa.h" />
+    <ClInclude Include="ClasesMaestras\Malla.h" />
+    <ClInclude Include="ClasesMaestras\Objeto3D.h" />
+    <ClInclude Include="ClasesMaestras\ObjetoCompuesto.h" />
+    <ClInclude Include="ClasesMaestras\ObjetoCuadrico.h" />
+    <ClInclude Include="ClasesMaestras\TAfin.h" />
+    <ClInclude Include="Figuras\Cilindro.h" />
+    <ClInclude Include="Figuras\Cubo.h" />
+    <ClInclude Include="Figuras\Disco.h" />
+    <ClInclude Include="Figuras\Esfera.h" />
     <ClInclude Include="Pencil.h" />
     <ClInclude Include="Poligon.h" />
     <ClInclude Include="PV3D.h" />
