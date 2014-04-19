@@ -10,7 +10,7 @@
 #include <iostream>
 using namespace std;
 
-#include "MontanaRusa.h"
+#include "Escena.h";
 
 // Freeglut parameters
 // Flag telling us to keep processing events
@@ -30,11 +30,8 @@ GLdouble upX=0, upY=1, upZ=0;
 // Axis angles
 GLfloat angleX=0,angleY=0,angleZ=0;
 
-// MontanaRusa
-MontanaRusa *montana;
-GLfloat carStep = M_PI/40;
-bool drawSurface = false, drawNormals = false; 
-
+// Escena
+Escena *scene;
 
 void initGL() {	 		 
 	glClearColor(0.6f,0.7f,0.8f,1.0);
@@ -90,6 +87,8 @@ void display(void) {
 
 	//glMatrixMode(GL_MODELVIEW);
     glPushMatrix();
+		// TODO esto se cambiará por la cámara
+
 		glRotatef(angleX,1,0,0);
         glRotatef(angleY,0,1,0);
         glRotatef(angleZ,0,0,1);
@@ -106,7 +105,7 @@ void display(void) {
 			glVertex3f(0, 0, 0);	glVertex3f(0, 0, 20);	     
 		glEnd();
 
-		montana->draw(drawSurface,drawNormals);
+		scene->dibuja();
 	glPopMatrix();
 
 
@@ -182,20 +181,6 @@ void key(unsigned char key, int x, int y){
 			angleZ-=5;
 			break;
 		// ----------------
-		case 'j': 
-			montana->carStep(-carStep);
-			break;
-		case 'k': 
-			montana->carStep(carStep);
-			break;
-		// ----------------
-		case 'i': 
-			drawNormals = !drawNormals;
-			break;
-		case 'o': 
-			drawSurface = !drawSurface;
-			break;
-		// ----------------
 		default:
 			need_redisplay = false;
 			cout<<key<<endl;
@@ -227,11 +212,11 @@ int main(int argc, char *argv[]){
 	// OpenGL basic setting
 	initGL();
 
-	// Montana
+	// Escena
 	cout << "inicializa" << endl;
-	montana = new MontanaRusa(10,60,0.5); // NP = 30 NQ = 40
+	scene = new Escena(); // NP = 30 NQ = 40
 	cout << "construye" << endl;
-	montana->build();
+	scene->init();
 
 	// Freeglut's main loop can be stopped executing (**)
 	// while (continue_in_main_loop) glutMainLoopEvent();
