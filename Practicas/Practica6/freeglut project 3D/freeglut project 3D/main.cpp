@@ -33,6 +33,9 @@ GLfloat angleX=0,angleY=0,angleZ=0;
 // Escena
 Escena *scene;
 
+// Prueba
+Objeto3D *testO;
+
 void initGL() {	 		 
 	glClearColor(0.6f,0.7f,0.8f,1.0);
     glEnable(GL_LIGHTING);    
@@ -105,7 +108,8 @@ void display(void) {
 			glVertex3f(0, 0, 0);	glVertex3f(0, 0, 20);	     
 		glEnd();
 
-		scene->dibuja();
+		testO->dibuja();
+		//scene->dibuja();
 	glPopMatrix();
 
 
@@ -213,10 +217,15 @@ int main(int argc, char *argv[]){
 	initGL();
 
 	// Escena
-	cout << "inicializa" << endl;
+	/*cout << "inicializa" << endl;
 	scene = new Escena(); // NP = 30 NQ = 40
 	cout << "construye" << endl;
-	scene->init();
+	scene->init();*/
+
+	testO = new Esfera();
+	testO->init(1.0,1.0,1.0,
+				0.0,0.0,0.0,
+				0.0,0.0,0.0);
 
 	// Freeglut's main loop can be stopped executing (**)
 	// while (continue_in_main_loop) glutMainLoopEvent();

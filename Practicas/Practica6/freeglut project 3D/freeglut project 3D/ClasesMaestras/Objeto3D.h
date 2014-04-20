@@ -2,15 +2,14 @@
 #include "TAfin.h"
 class Objeto3D
 {
-private:
+public:
 	TAfin *ta;
 
-public:
 	Objeto3D(void);
 	~Objeto3D(void);
 
-	virtual void init()=0;
-
+	void init(GLfloat sX,GLfloat sY,GLfloat sZ,GLfloat pX,GLfloat pY,GLfloat pZ,GLfloat aX,GLfloat aY,GLfloat aZ);  // ScaleXYZ PosXYZ AngXYZ
+	
 	virtual void dibuja()=0;
 };
 

@@ -1,5 +1,7 @@
 #pragma once
 #include "ClasesMaestras\ObjetoCompuesto.h"
+#include "Figuras\Esfera.h"
+
 class Escena : public ObjetoCompuesto
 {
 public:

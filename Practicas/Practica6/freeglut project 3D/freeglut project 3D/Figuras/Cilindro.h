@@ -1,14 +1,18 @@
 #pragma once
-class Cilindro
+#include "../ClasesMaestras/ObjetoCuadrico.h"
+
+class Cilindro : public ObjetoCuadrico
 {
 public:
 	Cilindro(void);
 	~Cilindro(void);
 
 	void dibuja(){
-		// TODO postmultiplicar
-
-		// ...
+		glMatrixMode(GL_MODELVIEW);
+		glPushMatrix();
+			glMultMatrixf(ta->getM());
+			glutSolidCylinder(0.5,1.0,15,15);
+		glPopMatrix();
 	}
 };
 
