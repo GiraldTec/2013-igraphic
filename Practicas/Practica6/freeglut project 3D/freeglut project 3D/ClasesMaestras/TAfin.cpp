@@ -6,7 +6,7 @@ TAfin::TAfin(GLfloat sX,GLfloat sY,GLfloat sZ,GLfloat pX,GLfloat pY,GLfloat pZ,G
 	glPushMatrix();
 		glLoadIdentity();
 		glScalef(sX,sY,sZ);
-		glRotatef(aX,1.0,0.0,0.0);
+		glRotatef(aX,1.0,0.0,0.0); // Esta parte hay que arreglarla de alguna manera
 		glRotatef(aY,0.0,1.0,0.0);
 		glRotatef(aZ,0.0,0.0,1.0);
 		glTranslatef(pX,pY,pZ);

@@ -1,8 +1,13 @@
 #pragma once
-class Cubo
+#include "../ClasesMaestras/Malla.h"
+
+class Cubo : public Malla
 {
+private:
+	int nDiv;
+
 public:
-	Cubo(void);
+	Cubo(int n);
 	~Cubo(void);
 };
 
