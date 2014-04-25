@@ -1,20 +1,26 @@
 #pragma once
 #include "Objeto3D.h"
+#include "../PV3D.h"
+#include "../Cara.h"
+
+#include <vector>
+using namespace std;
 
 class Malla : public Objeto3D
 {
 private:
 	//TODO color
-	//TODO vector con caras
-	//TODO vector con puntos
-	//TODO vector con normales/puntos ??
+	int nCaras, nPuntos, nNormales;
+	std::vector<PV3D*> *puntos;
+	std::vector<PV3D*> *normales;
+	std::vector<Cara*> *caras;
+
 public:
-	int nCaras, nPuntos;
-	Malla(void); 
+	
+	Malla(int nV, int nF, int nN); 
 	~Malla(void);
 
-	virtual void calculaPuntos(void)=0;
-	virtual void calculaCaras(void)=0;
+	virtual void build(void) = 0;
 
 	void dibuja(void){
 		// TODO recorrer vector de caras y pintar

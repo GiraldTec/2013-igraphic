@@ -1,15 +1,22 @@
 #include "Cubo.h"
 
 
-Cubo::Cubo(int n)  //TODO tb el color :Malla(r,g,b);
+Cubo::Cubo(int x,int y,int z):
+		Malla(2*(x+1)*(z+1)+(y-1)*(2*(x+z)),
+				(x*y+x*z+y*z)*2,
+					2*(x+1)*(z+1)+(y-1)*(2*(x+z)))  //TODO tb el color
 {
-	nDiv = n;
-	nCaras = n*n*6;
-	nPuntos = (n-1)*(n-1)*6+n*4*2+(n-1)*4;
+	xDiv=x; 
+	yDiv=y;
+	zDiv=z;  // (Tapas Inf&Sup)+(Anillos interiores)
 
 	// TODO new de los vectores
 }
 
 
 Cubo::~Cubo(void){ // TODO delete de los vectores
+}
+
+void Cubo::build(void){
+
 }

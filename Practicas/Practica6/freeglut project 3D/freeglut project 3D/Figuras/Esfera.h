@@ -1,16 +1,19 @@
 #pragma once
 #include "../ClasesMaestras/ObjetoCuadrico.h"
 
-class Esfera : public ObjetoCuadrico
-{
+class Esfera : public ObjetoCuadrico{
 public:
+	GLdouble rad;
+	GLint slices;
+	GLint stacks;;
 	Esfera(void);
+	Esfera(GLdouble r,GLint sl, GLint st);
 	~Esfera(void);
 	void dibuja(){
 		glMatrixMode(GL_MODELVIEW);
 		glPushMatrix();
 			glMultMatrixf(ta->getM());
-			glutSolidSphere(1.0,15,15); // .. por ejemplo
+			gluSphere(q,rad,slices,stacks);
 		glPopMatrix();
 	}
 };

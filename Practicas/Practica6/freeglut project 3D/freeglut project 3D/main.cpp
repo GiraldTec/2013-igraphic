@@ -222,10 +222,10 @@ int main(int argc, char *argv[]){
 	cout << "construye" << endl;
 	scene->init();*/
 
-	testO = new Esfera();
-	testO->init(1.0,1.0,1.0,
-				0.0,0.0,0.0,
-				0.0,0.0,0.0);
+	testO = new Escena();
+	//testO->obRotate(-90.0,0);
+	//testO->obScale(1.0,5.0,1.0);
+	
 
 	// Freeglut's main loop can be stopped executing (**)
 	// while (continue_in_main_loop) glutMainLoopEvent();

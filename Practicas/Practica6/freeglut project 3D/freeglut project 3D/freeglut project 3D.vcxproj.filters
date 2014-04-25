@@ -63,6 +63,15 @@
     <ClCompile Include="Escena.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Elementos\Tronera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Elementos\Pata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Elementos\Tablero.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PV3D.h">
@@ -108,6 +117,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Escena.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Elementos\Tronera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Elementos\Pata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Elementos\Tablero.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

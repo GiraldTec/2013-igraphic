@@ -4,10 +4,12 @@
 class Cubo : public Malla
 {
 private:
-	int nDiv;
+	int xDiv, yDiv, zDiv;
 
 public:
-	Cubo(int n);
+	Cubo(int x,int y,int z);
 	~Cubo(void);
+
+	void build(void);
 };
 
