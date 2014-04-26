@@ -8,7 +8,7 @@ using namespace std;
 
 class Malla : public Objeto3D
 {
-private:
+protected:
 	//TODO color
 	int nCaras, nPuntos, nNormales;
 	std::vector<PV3D*> *puntos;
