@@ -1,10 +1,10 @@
-﻿Compilación iniciada a las 26/04/2014 3:25:01.
-     1>Proyecto "C:\Users\Giraldillo\workspace\igrblabla\Practica6\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
+﻿Compilación iniciada a las 27/04/2014 22:03:42.
+     1>Proyecto "C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Giraldillo\workspace\igrblabla\Practica6\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ClasesMaestras\Malla.cpp
-         Malla.cpp
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt VerticeNormal.cpp
+         VerticeNormal.cpp
        Link:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Giraldillo\workspace\igrblabla\Practica6\freeglut project 3D\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Giraldillo\workspace\igrblabla\Practica6\freeglut project 3D\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Giraldillo\workspace\igrblabla\Practica6\freeglut project 3D\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Giraldillo\workspace\igrblabla\Practica6\freeglut project 3D\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Cara.obj
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Cara.obj
          Debug\Malla.obj
          Debug\Objeto3D.obj
          Debug\ObjetoCompuesto.obj
@@ -23,9 +23,9 @@
          Debug\Poligon.obj
          Debug\PV3D.obj
          Debug\VerticeNormal.obj
-         freeglut project 3D.vcxproj -> C:\Users\Giraldillo\workspace\igrblabla\Practica6\freeglut project 3D\Debug\freeglut project 3D.exe
-     1>Compilación del proyecto terminada "C:\Users\Giraldillo\workspace\igrblabla\Practica6\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
+         freeglut project 3D.vcxproj -> C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\Debug\freeglut project 3D.exe
+     1>Compilación del proyecto terminada "C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:04.85
+Tiempo transcurrido 00:00:35.24
