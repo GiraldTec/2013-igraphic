@@ -1,11 +1,13 @@
 #include "Camara.h"
 
 
-Camara::Camara(PV3D* eye, PV3D* look, PV3D* up)
+Camara::Camara(){}
+
+Camara::Camara(PV3D eye, PV3D look, PV3D up)
 {
-	this->eye = eye;
-	this->look = look;
-	this->up = up;
+	this->eye = eye.clone();
+	this->look = look.clone();
+	this->up = up.clone();
 	getCoordCam();
 }
 
@@ -28,6 +30,7 @@ void Camara::getCoordCam()
 
 void Camara::getMatriz()
 {
+	/*
 	GLfloat* m= new GLfloat[16];
 	m[0] = this->u->getX();
 	m[1] = this->v->getX();
@@ -48,12 +51,18 @@ void Camara::getMatriz()
 	m[13] = -(this->eye->scalarProduct(this->v));
 	m[14] = -(this->eye->scalarProduct(this->n));
 	m[15] = 0;
-
+	*/
+	
+	GLfloat m[16] = {
+		this->u->getX(), this->v->getX(), this->n->getX(), 0,
+		this->u->getY(), this->v->getY(), this->n->getY(), 0,
+		this->u->getZ(), this->v->getZ(), this->n->getZ(), 0,
+		-(this->eye->scalarProduct(this->u)), -(this->eye->scalarProduct(this->v)), -(this->eye->scalarProduct(this->n)), 0};
 	glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     glLoadMatrixf(m);
 
-	delete[] m;
+	//delete[] m;
 }
 
 void Camara::fijarCam()

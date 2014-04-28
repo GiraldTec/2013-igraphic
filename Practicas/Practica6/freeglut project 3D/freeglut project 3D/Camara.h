@@ -9,7 +9,8 @@ private:
 	PV3D *n, *v, *u;
 
 public:
-	Camara(PV3D* eye, PV3D* look, PV3D* up);
+	Camara(void);
+	Camara(PV3D eye, PV3D look, PV3D up);
 	~Camara(void);
 
 	void roll(GLdouble alfa);

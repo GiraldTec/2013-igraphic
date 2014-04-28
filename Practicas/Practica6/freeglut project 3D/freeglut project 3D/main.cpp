@@ -11,6 +11,7 @@
 using namespace std;
 
 #include "Escena.h";
+#include "Camara.h";
 
 // Freeglut parameters
 // Flag telling us to keep processing events
@@ -33,6 +34,9 @@ GLfloat angleX=0,angleY=0,angleZ=0;
 // Escena
 Escena *scene;
 
+//Camara
+Camara camera;
+
 // Prueba
 Objeto3D *testO;
 
@@ -49,9 +53,14 @@ void initGL() {
 	// buildSceneObjects();
 
 	// Camera set up
-	glMatrixMode(GL_MODELVIEW);
+	/*glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	gluLookAt(eyeX, eyeY, eyeZ, lookX, lookY, lookZ, upX, upY, upZ);
+	*/
+	//PV3D *eye = new PV3D(100.0, 100.0, 100.0);
+	//PV3D *look = new PV3D(0.0, 0.0, 0.0);
+	//PV3D *up = new PV3D(0, 1, 0);
+	camera = Camara(PV3D(100.0, 100.0, 100.0), PV3D(0.0, 0.0, 0.0), PV3D(0, 1, 0));
 
 	// Frustum set up
     glMatrixMode(GL_PROJECTION);
@@ -162,7 +171,7 @@ void key(unsigned char key, int x, int y){
 			glutLeaveMainLoop (); 
 		break;		 			 
 		// ----------------
-
+		/*
 		 // linea de debug::: 	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
 		case 'a': 
 			angleX+=5;
@@ -185,6 +194,28 @@ void key(unsigned char key, int x, int y){
 			angleZ-=5;
 			break;
 		// ----------------
+			*/
+		// ------ Roll
+		case 'u':
+			camera.roll(0.09);
+			break;
+		case 'i':
+			camera.roll(-0.09);
+			break;
+		// ------ Yaw
+		case 'j':
+			camera.yaw(0.01);
+			break;
+		case 'k':
+			camera.yaw(-0.01);
+			break;
+		// ------ Pitch
+		case 'n':
+			camera.pitch(0.01);
+			break;
+		case 'm':
+			camera.pitch(-0.01);
+			break;
 		default:
 			need_redisplay = false;
 			cout<<key<<endl;
