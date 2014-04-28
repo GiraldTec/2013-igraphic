@@ -2,8 +2,9 @@
 
 
 Escena::Escena(void){
-	Tablero *table = new Tablero();
-	addComponente(table);
+	//Tablero *table = new Tablero();
+	Cubo *cuadro = new Cubo(20,50,10);
+	addComponente(cuadro);
 }
 
 

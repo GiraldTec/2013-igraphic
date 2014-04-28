@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Elementos\Tablero.h"
+#include "Figuras\Cubo.h"
 
 class Escena : public ObjetoCompuesto
 {

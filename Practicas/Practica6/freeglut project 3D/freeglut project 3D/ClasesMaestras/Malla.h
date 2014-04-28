@@ -22,9 +22,9 @@ public:
 
 	virtual void build(void) = 0;
 
-	void dibuja(void){
-		// TODO recorrer vector de caras y pintar
-	}
+	void dibuja(void);
+
+	PV3D* doVectorNormalNewell(Cara* c);
 
 };
 
