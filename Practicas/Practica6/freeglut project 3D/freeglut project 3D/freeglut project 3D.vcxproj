@@ -72,6 +72,9 @@
     <ClCompile Include="ClasesMaestras\ObjetoCompuesto.cpp" />
     <ClCompile Include="ClasesMaestras\ObjetoCuadrico.cpp" />
     <ClCompile Include="ClasesMaestras\TAfin.cpp" />
+    <ClCompile Include="Elementos\BordeMesa.cpp" />
+    <ClCompile Include="Elementos\BordeTronera.cpp" />
+    <ClCompile Include="Elementos\EsquinaMesa.cpp" />
     <ClCompile Include="Elementos\Pata.cpp" />
     <ClCompile Include="Elementos\Tablero.cpp" />
     <ClCompile Include="Elementos\Tronera.cpp" />
@@ -80,6 +83,7 @@
     <ClCompile Include="Figuras\Cubo.cpp" />
     <ClCompile Include="Figuras\Disco.cpp" />
     <ClCompile Include="Figuras\Esfera.cpp" />
+    <ClCompile Include="Figuras\Torus.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Pencil.cpp" />
     <ClCompile Include="Poligon.cpp" />
@@ -93,6 +97,9 @@
     <ClInclude Include="ClasesMaestras\ObjetoCompuesto.h" />
     <ClInclude Include="ClasesMaestras\ObjetoCuadrico.h" />
     <ClInclude Include="ClasesMaestras\TAfin.h" />
+    <ClInclude Include="Elementos\BordeMesa.h" />
+    <ClInclude Include="Elementos\BordeTronera.h" />
+    <ClInclude Include="Elementos\EsquinaMesa.h" />
     <ClInclude Include="Elementos\Pata.h" />
     <ClInclude Include="Elementos\Tablero.h" />
     <ClInclude Include="Elementos\Tronera.h" />
@@ -101,6 +108,7 @@
     <ClInclude Include="Figuras\Cubo.h" />
     <ClInclude Include="Figuras\Disco.h" />
     <ClInclude Include="Figuras\Esfera.h" />
+    <ClInclude Include="Figuras\Torus.h" />
     <ClInclude Include="Pencil.h" />
     <ClInclude Include="Poligon.h" />
     <ClInclude Include="PV3D.h" />

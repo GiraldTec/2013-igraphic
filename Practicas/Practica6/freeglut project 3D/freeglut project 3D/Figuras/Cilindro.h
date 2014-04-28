@@ -9,12 +9,8 @@ public:
 	Cilindro(GLdouble b,GLdouble t,GLdouble h,GLint sl,GLint st);
 	~Cilindro(void);
 
-	void dibuja(){
-		glMatrixMode(GL_MODELVIEW);
-		glPushMatrix();
-			glMultMatrixf(ta->getM());
-			gluCylinder(q, baseRadius, topRadius, height, slices, stacks);
-		glPopMatrix();
+	void obQdibuja(){
+		gluCylinder(q, baseRadius, topRadius, height, slices, stacks);
 	}
 };
 

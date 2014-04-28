@@ -19,6 +19,12 @@ Tronera::Tronera(void){
 	Disco *bot = new Disco(0.0,0.5,20,3);
 	bot->obRotate(-90.0,0);
 	addComponente(bot);
+
+	/*Torus *borde = new Torus(0.5,1.1,10,10);
+	borde->obRotate(-90.0,0);
+	borde->obTraslate(0.0,0.0,2.0);
+	borde->obRotate(45.0,0);
+	addComponente(borde);*/
 }
 
 

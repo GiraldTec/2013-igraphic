@@ -72,6 +72,18 @@
     <ClCompile Include="Elementos\Tablero.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Figuras\Torus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Elementos\BordeMesa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Elementos\EsquinaMesa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Elementos\BordeTronera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PV3D.h">
@@ -126,6 +138,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Elementos\Tablero.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Figuras\Torus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Elementos\BordeMesa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Elementos\EsquinaMesa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Elementos\BordeTronera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

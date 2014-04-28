@@ -4,11 +4,11 @@
 #include "../Figuras\Cilindro.h"
 #include "../Figuras\Disco.h"
 #include "../Figuras\Torus.h"
+#include "../Figuras\Cubo.h"
 
-
-class Tronera : public ObjetoCompuesto{
+class BordeMesa: public ObjetoCompuesto{
 public:
-	Tronera(void);
-	~Tronera(void);
+	BordeMesa(GLdouble largo,GLint stacks);
+	~BordeMesa(void);
 };
 

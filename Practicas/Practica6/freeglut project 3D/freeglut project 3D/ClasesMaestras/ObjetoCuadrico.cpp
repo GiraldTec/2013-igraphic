@@ -3,6 +3,7 @@
 
 ObjetoCuadrico::ObjetoCuadrico(void){
 	q=gluNewQuadric();  // TODO mejorar eficiencia
+	red=green=blue=0.5;
 }
 
 

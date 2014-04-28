@@ -9,12 +9,8 @@ public:
 	Esfera(void);
 	Esfera(GLdouble r,GLint sl, GLint st);
 	~Esfera(void);
-	void dibuja(){
-		glMatrixMode(GL_MODELVIEW);
-		glPushMatrix();
-			glMultMatrixf(ta->getM());
-			gluSphere(q,rad,slices,stacks);
-		glPopMatrix();
+	void obQdibuja(){
+		gluSphere(q,rad,slices,stacks);
 	}
 };
 

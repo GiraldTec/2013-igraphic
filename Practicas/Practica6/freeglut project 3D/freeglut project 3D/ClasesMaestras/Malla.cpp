@@ -36,25 +36,29 @@ PV3D* Malla::doVectorNormalNewell(Cara* c){
 }
 
 void Malla::dibuja(void){
-	for (int i=0; i<this->nCaras; i++){
-		glLineWidth(1.0);
-		glColor3f(0,0,0);
-			glBegin(GL_POLYGON);
+	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();
+		glMultMatrixf(ta->getM());
+		for (int i=0; i<this->nCaras; i++){
+			glLineWidth(1.0);
+			glColor3f(0.5,0.5,0.5);
+				glBegin(GL_POLYGON);
                 
-			for (int j=0; j<caras->at(i)->getNumV();j++){
-				int iN=caras->at(i)->getNormalIndex(j);
-				int iV=caras->at(i)->getVertexIndex(j);
-				GLfloat nX = normales->at(iN)->getX();
-				GLfloat nY = normales->at(iN)->getY();
-				GLfloat nZ = normales->at(iN)->getZ();
-				glNormal3f(nX,nY,nZ);
-				//Si hubiera coordenadas de textura, aqui se suministrarian
-				//las coordenadas de textura del vertice j con glTexCoor2f(c);
-				GLfloat vX = puntos->at(iV)->getX();
-				GLfloat vY = puntos->at(iV)->getY();
-				GLfloat vZ = puntos->at(iV)->getZ();
-				glVertex3f(vX,vY,vZ);
-				}
-			glEnd();
-    }
+				for (int j=0; j<caras->at(i)->getNumV();j++){
+					int iN=caras->at(i)->getNormalIndex(j);
+					int iV=caras->at(i)->getVertexIndex(j);
+					GLfloat nX = normales->at(iN)->getX();
+					GLfloat nY = normales->at(iN)->getY();
+					GLfloat nZ = normales->at(iN)->getZ();
+					glNormal3f(nX,nY,nZ);
+					//Si hubiera coordenadas de textura, aqui se suministrarian
+					//las coordenadas de textura del vertice j con glTexCoor2f(c);
+					GLfloat vX = puntos->at(iV)->getX();
+					GLfloat vY = puntos->at(iV)->getY();
+					GLfloat vZ = puntos->at(iV)->getZ();
+					glVertex3f(vX,vY,vZ);
+					}
+				glEnd();
+		}
+	glPopMatrix();
 }
