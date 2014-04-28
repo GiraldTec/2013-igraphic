@@ -1,11 +1,81 @@
-﻿Compilación iniciada a las 28/04/2014 23:15:27.
-     1>Proyecto "C:\Users\Giraldillo\workspace\igr6\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
+﻿Compilación iniciada a las 29/04/2014 0:06:21.
+     1>Proyecto "C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Giraldillo\workspace\igr6\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Elementos\Tablero.cpp
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Camara.cpp Cara.cpp ClasesMaestras\Malla.cpp ClasesMaestras\Objeto3D.cpp ClasesMaestras\ObjetoCompuesto.cpp ClasesMaestras\ObjetoCuadrico.cpp ClasesMaestras\TAfin.cpp Elementos\BordeMesa.cpp Elementos\BordeTronera.cpp Elementos\EsquinaMesa.cpp Elementos\Pata.cpp Elementos\Tablero.cpp Elementos\Tronera.cpp Escena.cpp Figuras\Cilindro.cpp Figuras\Cubo.cpp Figuras\Disco.cpp Figuras\Esfera.cpp Figuras\Torus.cpp main.cpp Pencil.cpp Poligon.cpp PV3D.cpp VerticeNormal.cpp
+         VerticeNormal.cpp
+         PV3D.cpp
+         Poligon.cpp
+         Pencil.cpp
+         main.cpp
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\main.cpp(13): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\clasesmaestras\objetocompuesto.h(23): warning C4018: '<' : no coinciden signed/unsigned
+         Torus.cpp
+         Esfera.cpp
+         Disco.cpp
+         Cubo.cpp
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\figuras\cubo.cpp(40): warning C4018: '<=' : no coinciden signed/unsigned
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\figuras\cubo.cpp(41): warning C4018: '<=' : no coinciden signed/unsigned
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\figuras\cubo.cpp(75): warning C4018: '<=' : no coinciden signed/unsigned
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\figuras\cubo.cpp(76): warning C4018: '<=' : no coinciden signed/unsigned
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\figuras\cubo.cpp(164): warning C4018: '<=' : no coinciden signed/unsigned
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\figuras\cubo.cpp(165): warning C4018: '<=' : no coinciden signed/unsigned
+         Cilindro.cpp
+         Escena.cpp
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\clasesmaestras\objetocompuesto.h(23): warning C4018: '<' : no coinciden signed/unsigned
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\escena.cpp(6): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
+         Tronera.cpp
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\clasesmaestras\objetocompuesto.h(23): warning C4018: '<' : no coinciden signed/unsigned
          Tablero.cpp
-     1>c:\users\giraldillo\workspace\igr6\freeglut project 3d\freeglut project 3d\clasesmaestras\objetocompuesto.h(23): warning C4018: '<' : no coinciden signed/unsigned
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\clasesmaestras\objetocompuesto.h(23): warning C4018: '<' : no coinciden signed/unsigned
+         Pata.cpp
+         EsquinaMesa.cpp
+         BordeTronera.cpp
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\clasesmaestras\objetocompuesto.h(23): warning C4018: '<' : no coinciden signed/unsigned
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\elementos\bordetronera.cpp(6): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\elementos\bordetronera.cpp(12): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\elementos\bordetronera.cpp(17): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+         BordeMesa.cpp
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\clasesmaestras\objetocompuesto.h(23): warning C4018: '<' : no coinciden signed/unsigned
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\elementos\bordemesa.cpp(7): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\elementos\bordemesa.cpp(11): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\elementos\bordemesa.cpp(17): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\elementos\bordemesa.cpp(22): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+         TAfin.cpp
+         ObjetoCuadrico.cpp
+         ObjetoCompuesto.cpp
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\clasesmaestras\objetocompuesto.h(23): warning C4018: '<' : no coinciden signed/unsigned
+         Generando código...
+         Compilando...
+         Objeto3D.cpp
+         Malla.cpp
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\clasesmaestras\malla.cpp(50): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\clasesmaestras\malla.cpp(51): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\clasesmaestras\malla.cpp(52): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\clasesmaestras\malla.cpp(56): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\clasesmaestras\malla.cpp(57): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\clasesmaestras\malla.cpp(58): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+         Cara.cpp
+         Camara.cpp
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\camara.cpp(32): warning C4244: '=' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\camara.cpp(33): warning C4244: '=' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\camara.cpp(34): warning C4244: '=' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\camara.cpp(37): warning C4244: '=' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\camara.cpp(38): warning C4244: '=' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\camara.cpp(39): warning C4244: '=' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\camara.cpp(42): warning C4244: '=' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\camara.cpp(43): warning C4244: '=' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\camara.cpp(44): warning C4244: '=' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\camara.cpp(47): warning C4244: '=' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\camara.cpp(48): warning C4244: '=' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\camara.cpp(49): warning C4244: '=' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\camara.cpp(167): warning C4244: '=' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\camara.cpp(168): warning C4244: '=' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\camara.cpp(169): warning C4244: '=' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\camara.cpp(170): warning C4244: '=' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+         Generando código...
        Link:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Giraldillo\workspace\igr6\freeglut project 3D\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Giraldillo\workspace\igr6\freeglut project 3D\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Giraldillo\workspace\igr6\freeglut project 3D\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Giraldillo\workspace\igr6\freeglut project 3D\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Cara.obj
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Camara.obj
+         Debug\Cara.obj
          Debug\Malla.obj
          Debug\Objeto3D.obj
          Debug\ObjetoCompuesto.obj
@@ -28,9 +98,9 @@
          Debug\Poligon.obj
          Debug\PV3D.obj
          Debug\VerticeNormal.obj
-         freeglut project 3D.vcxproj -> C:\Users\Giraldillo\workspace\igr6\freeglut project 3D\Debug\freeglut project 3D.exe
-     1>Compilación del proyecto terminada "C:\Users\Giraldillo\workspace\igr6\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
+         freeglut project 3D.vcxproj -> C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\Debug\freeglut project 3D.exe
+     1>Compilación del proyecto terminada "C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:02.92
+Tiempo transcurrido 00:02:33.72

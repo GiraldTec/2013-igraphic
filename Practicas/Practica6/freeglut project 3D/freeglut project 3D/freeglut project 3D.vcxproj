@@ -66,6 +66,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Camara.cpp" />
     <ClCompile Include="Cara.cpp" />
     <ClCompile Include="ClasesMaestras\Malla.cpp" />
     <ClCompile Include="ClasesMaestras\Objeto3D.cpp" />
@@ -91,6 +92,7 @@
     <ClCompile Include="VerticeNormal.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camara.h" />
     <ClInclude Include="Cara.h" />
     <ClInclude Include="ClasesMaestras\Malla.h" />
     <ClInclude Include="ClasesMaestras\Objeto3D.h" />

@@ -16,9 +16,9 @@ public:
 	void yaw(GLdouble alfa);
 	void pitch(GLdouble alfa);
 	void desplazar(GLdouble x, GLdouble y, GLdouble z);
-	void ortogonal();
-	void perspectiva();
-	void oblicua();
+	void ortogonal(GLdouble left, GLdouble right, GLdouble botton, GLdouble top, GLdouble near, GLdouble far);
+	void perspectiva(GLdouble left, GLdouble right, GLdouble botton, GLdouble top, GLdouble near, GLdouble far);
+	void oblicua(PV3D* vector, GLdouble left, GLdouble right, GLdouble botton, GLdouble top, GLdouble near, GLdouble far);
 	void recorridoEje(GLdouble x, GLdouble y, GLdouble z);
 	void giraX(GLdouble alfa);
 	void giraY(GLdouble alfa);

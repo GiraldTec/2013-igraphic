@@ -84,6 +84,9 @@
     <ClCompile Include="Elementos\BordeTronera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Camara.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PV3D.h">
@@ -150,6 +153,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Elementos\BordeTronera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camara.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
