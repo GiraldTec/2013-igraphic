@@ -19,7 +19,7 @@ Cubo::Cubo(int x,int y,int z):
 	yDiv=y;
 	zDiv=z;  // (Tapas Inf&Sup)+(Anillos interiores)
 
-	// TODO new de los vectores
+	build();
 }
 
 
@@ -27,26 +27,9 @@ Cubo::~Cubo(void){ // TODO delete de los vectores
 }
 
 void Cubo::build(void){
-	GLdouble wideX,wideY,wideZ;
-	wideX = 1.0/xDiv;	wideY = 1.0/yDiv;	wideZ = 1.0/zDiv;
-	// Empezamos con los puntos de la cara que se encuentra con Z negativa
-	for(unsigned i=0;i<=yDiv;i++){
-		for(unsigned j=0;j<=xDiv;j++){
-			unsigned acum=i*(xDiv+1)+j;
-			puntos->at(acum)=new PV3D(0.5-j*wideX,0.5-i*wideY,-0.5);
-		}
-	}
-
-	/*for(int i=1;i<zDiv;i++){  // los anillos interiores
-
-	}*/
-
-
-	// Acabamos con los puntos de la cara que se encuentra con Z positiva
-	for(unsigned i=0;i<=yDiv;i++){
-		for(unsigned j=0;j<=xDiv;j++){
-			unsigned acum=i*(xDiv+1)+j;
-			puntos->at(acum)=new PV3D(0.5-j*wideX,0.5-i*wideY,-0.5);
-		}
-	}
+	// La idea es : 
+	//	1º se crea la cara de atrás del cubo
+	//	2º se crean las caras que la forman
+	//	se pasa a la malla del cubo los puntos y las caras
+	//	se hace un nuevo panel auxiliar, se hacen las caras que forman el anillo
 }

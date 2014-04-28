@@ -25,6 +25,8 @@ public:
 	PV3D(void);
 	~PV3D(void);
 	PV3D(GLdouble x, GLdouble y, GLdouble z);
+
+	void setXYZ(GLdouble x, GLdouble y, GLdouble z);
 	GLdouble getX();
 	void setX(GLdouble x);
 	GLdouble getY();
@@ -43,5 +45,10 @@ public:
 	PV3D* crossProduct(PV3D* v);
 	GLdouble scalarProduct(PV3D* v);
 	PV3D* matrixProduct(PV3D* Nt,PV3D* Bt,PV3D* Tt,PV3D* Ct);
+
+	void rotateX(GLfloat angle);
+	void rotateY(GLfloat angle);
+	void rotateZ(GLfloat angle);
+
 };
 
