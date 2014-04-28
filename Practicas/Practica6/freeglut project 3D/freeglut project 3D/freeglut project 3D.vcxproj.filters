@@ -72,6 +72,9 @@
     <ClCompile Include="Figuras\PanelAuxiliar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Figuras\Tablero.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PV3D.h">
@@ -126,6 +129,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Figuras\PanelAuxiliar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Figuras\Tablero.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
