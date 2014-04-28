@@ -24,11 +24,6 @@ GLdouble PV3D::getZ(){
 	return corZ;
 }
 //--------------------------------------------------------------
-void PV3D::setXYZ(GLdouble x, GLdouble y, GLdouble z){
-	setX(x);
-	setY(y);
-	setZ(z);
-}
 void PV3D::setX(GLdouble x){
 	this->corX = x;
 }
@@ -90,23 +85,4 @@ PV3D* PV3D::matrixProduct(PV3D* Nt,PV3D* Bt,PV3D* Tt,PV3D* Ct)
         GLdouble valy= Nt->getY() * corX + Bt->getY() * corY + Tt->getY() * corZ + Ct->getY();
         GLdouble valz= Nt->getZ() * corX + Bt->getZ() * corY + Tt->getZ() * corZ + Ct->getZ();
         return new PV3D(valx,valy,valz);
-}
-//-----------------------------------------------------
-void PV3D::rotateX(GLfloat angle){
-	GLdouble newX=getX();
-	GLdouble newY=getY()*cos(angle)-getZ()*sin(angle);
-	GLdouble newZ=getY()*sin(angle)+getZ()*cos(angle);
-	setXYZ(newX,newY,newZ);
-}
-void PV3D::rotateY(GLfloat angle){
-	GLdouble newX=getZ()*sin(angle)+getX()*cos(angle);
-	GLdouble newY=getY();
-	GLdouble newZ=getZ()*cos(angle)-getX()*sin(angle);
-	setXYZ(newX,newY,newZ);
-}
-void PV3D::rotateZ(GLfloat angle){
-	GLdouble newX=getX()*cos(angle)-getY()*sin(angle);
-	GLdouble newY=getX()*sin(angle)+getY()*cos(angle);
-	GLdouble newZ=getZ();
-	setXYZ(newX,newY,newZ);
 }

@@ -1,10 +1,39 @@
-﻿Compilación iniciada a las 27/04/2014 22:03:42.
-     1>Proyecto "C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
+﻿Compilación iniciada a las 28/04/2014 14:11:00.
+     1>Proyecto "C:\Users\Giraldillo\workspace\igr6\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt VerticeNormal.cpp
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Giraldillo\workspace\igr6\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Cara.cpp ClasesMaestras\Malla.cpp ClasesMaestras\Objeto3D.cpp ClasesMaestras\ObjetoCompuesto.cpp ClasesMaestras\ObjetoCuadrico.cpp ClasesMaestras\TAfin.cpp Elementos\Pata.cpp Elementos\Tablero.cpp Elementos\Tronera.cpp Escena.cpp Figuras\Cilindro.cpp Figuras\Cubo.cpp Figuras\Disco.cpp Figuras\Esfera.cpp main.cpp Pencil.cpp Poligon.cpp PV3D.cpp VerticeNormal.cpp
          VerticeNormal.cpp
+         PV3D.cpp
+         Poligon.cpp
+         Pencil.cpp
+         main.cpp
+     1>c:\users\giraldillo\workspace\igr6\freeglut project 3d\freeglut project 3d\main.cpp(13): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+     1>c:\users\giraldillo\workspace\igr6\freeglut project 3d\freeglut project 3d\clasesmaestras\objetocompuesto.h(23): warning C4018: '<' : no coinciden signed/unsigned
+         Esfera.cpp
+         Disco.cpp
+         Cubo.cpp
+     1>c:\users\giraldillo\workspace\igr6\freeglut project 3d\freeglut project 3d\figuras\cubo.cpp(33): warning C4018: '<=' : no coinciden signed/unsigned
+     1>c:\users\giraldillo\workspace\igr6\freeglut project 3d\freeglut project 3d\figuras\cubo.cpp(34): warning C4018: '<=' : no coinciden signed/unsigned
+     1>c:\users\giraldillo\workspace\igr6\freeglut project 3d\freeglut project 3d\figuras\cubo.cpp(46): warning C4018: '<=' : no coinciden signed/unsigned
+     1>c:\users\giraldillo\workspace\igr6\freeglut project 3d\freeglut project 3d\figuras\cubo.cpp(47): warning C4018: '<=' : no coinciden signed/unsigned
+         Cilindro.cpp
+         Escena.cpp
+     1>c:\users\giraldillo\workspace\igr6\freeglut project 3d\freeglut project 3d\clasesmaestras\objetocompuesto.h(23): warning C4018: '<' : no coinciden signed/unsigned
+         Tronera.cpp
+     1>c:\users\giraldillo\workspace\igr6\freeglut project 3d\freeglut project 3d\clasesmaestras\objetocompuesto.h(23): warning C4018: '<' : no coinciden signed/unsigned
+         Tablero.cpp
+     1>c:\users\giraldillo\workspace\igr6\freeglut project 3d\freeglut project 3d\clasesmaestras\objetocompuesto.h(23): warning C4018: '<' : no coinciden signed/unsigned
+         Pata.cpp
+         TAfin.cpp
+         ObjetoCuadrico.cpp
+         ObjetoCompuesto.cpp
+     1>c:\users\giraldillo\workspace\igr6\freeglut project 3d\freeglut project 3d\clasesmaestras\objetocompuesto.h(23): warning C4018: '<' : no coinciden signed/unsigned
+         Objeto3D.cpp
+         Malla.cpp
+         Cara.cpp
+         Generando código...
        Link:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Cara.obj
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Giraldillo\workspace\igr6\freeglut project 3D\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Giraldillo\workspace\igr6\freeglut project 3D\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Giraldillo\workspace\igr6\freeglut project 3D\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Giraldillo\workspace\igr6\freeglut project 3D\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Cara.obj
          Debug\Malla.obj
          Debug\Objeto3D.obj
          Debug\ObjetoCompuesto.obj
@@ -23,9 +52,9 @@
          Debug\Poligon.obj
          Debug\PV3D.obj
          Debug\VerticeNormal.obj
-         freeglut project 3D.vcxproj -> C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\Debug\freeglut project 3D.exe
-     1>Compilación del proyecto terminada "C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
+         freeglut project 3D.vcxproj -> C:\Users\Giraldillo\workspace\igr6\freeglut project 3D\Debug\freeglut project 3D.exe
+     1>Compilación del proyecto terminada "C:\Users\Giraldillo\workspace\igr6\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:35.24
+Tiempo transcurrido 00:00:25.79

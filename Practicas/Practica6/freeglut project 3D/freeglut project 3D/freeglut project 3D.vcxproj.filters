@@ -69,10 +69,7 @@
     <ClCompile Include="Elementos\Pata.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Figuras\PanelAuxiliar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Figuras\Tablero.cpp">
+    <ClCompile Include="Elementos\Tablero.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -128,10 +125,7 @@
     <ClInclude Include="Elementos\Pata.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Figuras\PanelAuxiliar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Figuras\Tablero.h">
+    <ClInclude Include="Elementos\Tablero.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
