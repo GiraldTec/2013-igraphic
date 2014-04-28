@@ -56,6 +56,13 @@ void Camara::getMatriz()
 	delete[] m;
 }
 
+void Camara::fijarCam()
+{
+  glMatrixMode(GL_MODELVIEW);
+  glLoadIdentity();
+  gluLookAt(this->eye->getX(), this->eye->getY(), this->eye->getZ(), this->look->getX(), this->look->getY(), this->look->getZ(), this->up->getX(), this->up->getY(), this->up->getZ());
+}
+
 void Camara::roll(GLdouble alfa)
 {
 	PV3D* aux = u->clone();
@@ -99,4 +106,102 @@ void Camara::pitch(GLdouble alfa)
 	v->setZ(-((aux->getZ())*sin(alfa)) + (v->getZ()*cos(alfa)));
 
 	getMatriz();
+}
+
+void Camara::desplazar(GLdouble x, GLdouble y, GLdouble z)
+{
+	this->eye->setX(this->eye->getX()+x);
+	this->eye->setY(this->eye->getY()+y);
+	this->eye->setZ(this->eye->getZ()+z);
+
+	this->look->setX(this->look->getX()+x);
+	this->look->setY(this->look->getY()+y);
+	this->look->setY(this->look->getZ()+z);
+
+	this->fijarCam();
+}
+
+void Camara::recorridoEje(GLdouble x, GLdouble y, GLdouble z)
+{
+	this->eye->setX(this->eye->getX()+x);
+	this->eye->setY(this->eye->getY()+y);
+	this->eye->setZ(this->eye->getZ()+z);
+	
+	this->fijarCam();
+}
+
+void Camara::giraX(GLdouble alfa)
+{
+	this->eye->setY(cos(alfa)*this->eye->getY()-sin(alfa)*this->eye->getZ());
+	this->eye->setZ(sin(alfa)*this->eye->getY()+cos(alfa)*this->eye->getZ());
+
+	this->fijarCam();
+}
+
+void Camara::giraY(GLdouble alfa)
+{
+	this->eye->setX(cos(alfa)*this->eye->getX()+sin(alfa)*this->eye->getZ());
+	this->eye->setZ(-sin(alfa)*this->eye->getX()+cos(alfa)*this->eye->getZ());
+
+	this->fijarCam();
+}
+
+void Camara::giraZ(GLdouble alfa)
+{
+	this->eye->setX(cos(alfa)*this->eye->getX()-sin(alfa)*this->eye->getY());
+	this->eye->setY(sin(alfa)*this->eye->getX()+cos(alfa)*this->eye->getY());
+
+	this->fijarCam();
+}
+
+void Camara::lateral()
+{
+	this->eye->setX(100);
+	this->eye->setY(0);
+	this->eye->setZ(0);
+
+	this->up->setX(0);
+	this->up->setY(1);
+	this->up->setZ(0);
+
+	this->fijarCam();
+}
+
+void Camara::frontal()
+{
+	this->eye->setX(0);
+	this->eye->setY(0);
+	this->eye->setZ(100);
+
+	this->up->setX(0);
+	this->up->setY(1);
+	this->up->setZ(0);
+
+	this->fijarCam();
+}
+
+void Camara::cenital()
+{
+	this->eye->setX(0);
+	this->eye->setY(100);
+	this->eye->setZ(0);
+
+	this->up->setX(1);
+	this->up->setY(0);
+	this->up->setZ(0);
+
+	this->fijarCam();
+}
+
+void Camara::esquina()
+{
+	this->eye->setX(100);
+	this->eye->setY(100);
+	this->eye->setZ(100);
+
+	this->up->setX(0);
+	this->up->setY(1);
+	this->up->setZ(0);
+
+	this->fijarCam();
 }
