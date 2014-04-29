@@ -98,7 +98,7 @@ void display(void) {
 	glEnd();
 
 	//Our code
-
+	/*
 	glPushMatrix();
 	glMatrixMode(GL_MODELVIEW);
 
@@ -115,7 +115,8 @@ void display(void) {
 
 	glFlush();
 	glutSwapBuffers();
-	/*
+	*/
+	
 	//glMatrixMode(GL_MODELVIEW);
     glPushMatrix();
 		// TODO esto se cambiará por la cámara
@@ -145,7 +146,7 @@ void display(void) {
 
 	glFlush();
 	glutSwapBuffers();
-	*/
+	
 }
 
 
