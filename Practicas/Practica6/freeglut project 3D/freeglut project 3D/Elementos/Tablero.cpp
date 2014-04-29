@@ -191,6 +191,8 @@ Tablero::Tablero(void){
 	bT4->obRotate(90.0,1);
 	addComponente(bT4);
 	//*/
+
+	obTraslate(0.0,25.0,0.0);
 }
 
 

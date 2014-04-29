@@ -2,13 +2,12 @@
 
 
 Escena::Escena(void){
-	Tablero *table = new Tablero();
-	table->obScale(0.06);
-	addComponente(table);
-
-	/*BordeTronera *b = new BordeTronera();
-	b->obScale(0.06);
-	addComponente(b);*/
+	MesaBillar *mesa = new MesaBillar();
+	mesa->obScale(0.06);
+	addComponente(mesa);
+	//Bolas
+	//Taco
+	// CuboPequeño para la tiza
 }
 
 

@@ -76,8 +76,11 @@
     <ClCompile Include="Elementos\BordeMesa.cpp" />
     <ClCompile Include="Elementos\BordeTronera.cpp" />
     <ClCompile Include="Elementos\EsquinaMesa.cpp" />
+    <ClCompile Include="Elementos\MesaBillar.cpp" />
     <ClCompile Include="Elementos\Pata.cpp" />
     <ClCompile Include="Elementos\Tablero.cpp" />
+    <ClCompile Include="Elementos\Taco.cpp" />
+    <ClCompile Include="Elementos\TrianguloBolas.cpp" />
     <ClCompile Include="Elementos\Tronera.cpp" />
     <ClCompile Include="Escena.cpp" />
     <ClCompile Include="Figuras\Cilindro.cpp" />
@@ -103,8 +106,11 @@
     <ClInclude Include="Elementos\BordeMesa.h" />
     <ClInclude Include="Elementos\BordeTronera.h" />
     <ClInclude Include="Elementos\EsquinaMesa.h" />
+    <ClInclude Include="Elementos\MesaBillar.h" />
     <ClInclude Include="Elementos\Pata.h" />
     <ClInclude Include="Elementos\Tablero.h" />
+    <ClInclude Include="Elementos\Taco.h" />
+    <ClInclude Include="Elementos\TrianguloBolas.h" />
     <ClInclude Include="Elementos\Tronera.h" />
     <ClInclude Include="Escena.h" />
     <ClInclude Include="Figuras\Cilindro.h" />

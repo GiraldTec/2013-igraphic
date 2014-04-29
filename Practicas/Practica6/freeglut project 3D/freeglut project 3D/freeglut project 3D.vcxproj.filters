@@ -1,174 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="Camara.cpp" />
+    <ClCompile Include="Cara.cpp" />
+    <ClCompile Include="ClasesMaestras\Malla.cpp" />
+    <ClCompile Include="ClasesMaestras\Objeto3D.cpp" />
+    <ClCompile Include="ClasesMaestras\ObjetoCompuesto.cpp" />
+    <ClCompile Include="ClasesMaestras\ObjetoCuadrico.cpp" />
+    <ClCompile Include="ClasesMaestras\TAfin.cpp" />
+    <ClCompile Include="Elementos\BordeMesa.cpp" />
+    <ClCompile Include="Elementos\BordeTronera.cpp" />
+    <ClCompile Include="Elementos\EsquinaMesa.cpp" />
+    <ClCompile Include="Elementos\Pata.cpp" />
+    <ClCompile Include="Elementos\Tablero.cpp" />
+    <ClCompile Include="Elementos\Tronera.cpp" />
+    <ClCompile Include="Escena.cpp" />
+    <ClCompile Include="Figuras\Cilindro.cpp" />
+    <ClCompile Include="Figuras\Cubo.cpp" />
+    <ClCompile Include="Figuras\Disco.cpp" />
+    <ClCompile Include="Figuras\DiscoParcial.cpp" />
+    <ClCompile Include="Figuras\Esfera.cpp" />
+    <ClCompile Include="Figuras\Torus.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Pencil.cpp" />
+    <ClCompile Include="Poligon.cpp" />
+    <ClCompile Include="PV3D.cpp" />
+    <ClCompile Include="VerticeNormal.cpp" />
+    <ClCompile Include="Elementos\TrianguloBolas.cpp" />
+    <ClCompile Include="Elementos\MesaBillar.cpp" />
+    <ClCompile Include="Elementos\Taco.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PV3D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="VerticeNormal.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Cara.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Pencil.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Poligon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ClasesMaestras\Objeto3D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ClasesMaestras\ObjetoCuadrico.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ClasesMaestras\ObjetoCompuesto.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ClasesMaestras\TAfin.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Figuras\Cubo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Figuras\Esfera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Figuras\Cilindro.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Figuras\Disco.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ClasesMaestras\Malla.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Escena.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Elementos\Tronera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Elementos\Pata.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Elementos\Tablero.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Figuras\Torus.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Elementos\BordeMesa.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Elementos\EsquinaMesa.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Elementos\BordeTronera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-<<<<<<< .mine
-    <ClCompile Include="Figuras\DiscoParcial.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-=======
-    <ClCompile Include="Camara.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
->>>>>>> .r185
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PV3D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VerticeNormal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Cara.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Pencil.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Poligon.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ClasesMaestras\Objeto3D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ClasesMaestras\ObjetoCuadrico.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ClasesMaestras\ObjetoCompuesto.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ClasesMaestras\TAfin.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Figuras\Cubo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Figuras\Esfera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Figuras\Cilindro.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Figuras\Disco.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ClasesMaestras\Malla.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Escena.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Elementos\Tronera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Elementos\Pata.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Elementos\Tablero.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Figuras\Torus.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Elementos\BordeMesa.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Elementos\EsquinaMesa.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Elementos\BordeTronera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-<<<<<<< .mine
-    <ClInclude Include="Figuras\DiscoParcial.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-=======
-    <ClInclude Include="Camara.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
->>>>>>> .r185
+    <ClInclude Include="Camara.h" />
+    <ClInclude Include="Cara.h" />
+    <ClInclude Include="ClasesMaestras\Malla.h" />
+    <ClInclude Include="ClasesMaestras\Objeto3D.h" />
+    <ClInclude Include="ClasesMaestras\ObjetoCompuesto.h" />
+    <ClInclude Include="ClasesMaestras\ObjetoCuadrico.h" />
+    <ClInclude Include="ClasesMaestras\TAfin.h" />
+    <ClInclude Include="Elementos\BordeMesa.h" />
+    <ClInclude Include="Elementos\BordeTronera.h" />
+    <ClInclude Include="Elementos\EsquinaMesa.h" />
+    <ClInclude Include="Elementos\Pata.h" />
+    <ClInclude Include="Elementos\Tablero.h" />
+    <ClInclude Include="Elementos\Tronera.h" />
+    <ClInclude Include="Escena.h" />
+    <ClInclude Include="Figuras\Cilindro.h" />
+    <ClInclude Include="Figuras\Cubo.h" />
+    <ClInclude Include="Figuras\Disco.h" />
+    <ClInclude Include="Figuras\DiscoParcial.h" />
+    <ClInclude Include="Figuras\Esfera.h" />
+    <ClInclude Include="Figuras\Torus.h" />
+    <ClInclude Include="Pencil.h" />
+    <ClInclude Include="Poligon.h" />
+    <ClInclude Include="PV3D.h" />
+    <ClInclude Include="VerticeNormal.h" />
+    <ClInclude Include="Elementos\TrianguloBolas.h" />
+    <ClInclude Include="Elementos\MesaBillar.h" />
+    <ClInclude Include="Elementos\Taco.h" />
   </ItemGroup>
 </Project>
