@@ -3,6 +3,7 @@
 #include "Elementos\MesaBillar.h"
 #include "Elementos\TrianguloBolas.h"
 #include "Elementos\Taco.h"
+#include "Elementos\Tiza.h"
 #include "Figuras\Cubo.h"  //
 
 class Escena : public ObjetoCompuesto

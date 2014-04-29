@@ -13,6 +13,10 @@ Escena::Escena(void){
 	taco->obRotate(45.0,-1);
 	addComponente(taco);
 	// CuboPequeño para la tiza
+	Tiza *tiza = new Tiza();
+	tiza->obScale(0.1);
+	tiza->obTraslate(80.0,60.0,10.0);
+	addComponente(tiza);
 }
 
 

@@ -80,6 +80,7 @@
     <ClCompile Include="Elementos\Pata.cpp" />
     <ClCompile Include="Elementos\Tablero.cpp" />
     <ClCompile Include="Elementos\Taco.cpp" />
+    <ClCompile Include="Elementos\Tiza.cpp" />
     <ClCompile Include="Elementos\TrianguloBolas.cpp" />
     <ClCompile Include="Elementos\Tronera.cpp" />
     <ClCompile Include="Escena.cpp" />
@@ -110,6 +111,7 @@
     <ClInclude Include="Elementos\Pata.h" />
     <ClInclude Include="Elementos\Tablero.h" />
     <ClInclude Include="Elementos\Taco.h" />
+    <ClInclude Include="Elementos\Tiza.h" />
     <ClInclude Include="Elementos\TrianguloBolas.h" />
     <ClInclude Include="Elementos\Tronera.h" />
     <ClInclude Include="Escena.h" />
