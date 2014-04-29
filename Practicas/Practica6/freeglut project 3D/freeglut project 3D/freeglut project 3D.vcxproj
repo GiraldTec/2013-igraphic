@@ -73,6 +73,7 @@
     <ClCompile Include="ClasesMaestras\ObjetoCompuesto.cpp" />
     <ClCompile Include="ClasesMaestras\ObjetoCuadrico.cpp" />
     <ClCompile Include="ClasesMaestras\TAfin.cpp" />
+    <ClCompile Include="Elementos\Bola.cpp" />
     <ClCompile Include="Elementos\BordeMesa.cpp" />
     <ClCompile Include="Elementos\BordeTronera.cpp" />
     <ClCompile Include="Elementos\EsquinaMesa.cpp" />
@@ -104,6 +105,7 @@
     <ClInclude Include="ClasesMaestras\ObjetoCompuesto.h" />
     <ClInclude Include="ClasesMaestras\ObjetoCuadrico.h" />
     <ClInclude Include="ClasesMaestras\TAfin.h" />
+    <ClInclude Include="Elementos\Bola.h" />
     <ClInclude Include="Elementos\BordeMesa.h" />
     <ClInclude Include="Elementos\BordeTronera.h" />
     <ClInclude Include="Elementos\EsquinaMesa.h" />

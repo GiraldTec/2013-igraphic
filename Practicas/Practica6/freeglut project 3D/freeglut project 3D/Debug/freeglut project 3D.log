@@ -1,12 +1,9 @@
-﻿Compilación iniciada a las 29/04/2014 22:40:45.
+﻿Compilación iniciada a las 29/04/2014 23:36:23.
      1>Proyecto "C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Escena.cpp
-         Escena.cpp
-     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\elementos\tiza.h(2): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\escena.cpp(6): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
-     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\escena.cpp(11): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
-     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\escena.cpp(17): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Elementos\Bola.cpp
+         Bola.cpp
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica6\freeglut project 3d\freeglut project 3d\elementos\bola.cpp(10): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
        Link:
          C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica6\freeglut project 3D\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Camara.obj
          Debug\Cara.obj
@@ -15,6 +12,7 @@
          Debug\ObjetoCompuesto.obj
          Debug\ObjetoCuadrico.obj
          Debug\TAfin.obj
+         Debug\Bola.obj
          Debug\BordeMesa.obj
          Debug\BordeTronera.obj
          Debug\EsquinaMesa.obj
@@ -42,4 +40,4 @@
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:14.62
+Tiempo transcurrido 00:00:14.38

@@ -30,6 +30,7 @@
     <ClCompile Include="Elementos\MesaBillar.cpp" />
     <ClCompile Include="Elementos\Taco.cpp" />
     <ClCompile Include="Elementos\Tiza.cpp" />
+    <ClCompile Include="Elementos\Bola.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camara.h" />
@@ -60,5 +61,6 @@
     <ClInclude Include="Elementos\MesaBillar.h" />
     <ClInclude Include="Elementos\Taco.h" />
     <ClInclude Include="Elementos\Tiza.h" />
+    <ClInclude Include="Elementos\Bola.h" />
   </ItemGroup>
 </Project>

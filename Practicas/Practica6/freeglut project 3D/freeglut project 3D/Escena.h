@@ -4,6 +4,7 @@
 #include "Elementos\TrianguloBolas.h"
 #include "Elementos\Taco.h"
 #include "Elementos\Tiza.h"
+#include "Elementos\Bola.h"
 #include "Figuras\Cubo.h"  //
 
 class Escena : public ObjetoCompuesto
