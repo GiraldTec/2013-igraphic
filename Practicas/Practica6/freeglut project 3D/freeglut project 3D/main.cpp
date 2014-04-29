@@ -37,6 +37,7 @@ Escena *scene;
 //Camara
 Camara camera;
 PV3D aux = PV3D(0.01, 0.01, 1);
+GLdouble acumRoll, acumYaw, acumPitch;
 
 // Prueba
 Objeto3D *testO;
@@ -62,7 +63,9 @@ void initGL() {
 	//PV3D *look = new PV3D(0.0, 0.0, 0.0);
 	//PV3D *up = new PV3D(0, 1, 0);
 	camera = Camara(PV3D(100.0, 100.0, 100.0), PV3D(0.0, 0.0, 0.0), PV3D(0, 1, 0));
-
+	acumRoll = 0;
+	acumPitch = 0;
+	acumYaw = 0;
 	// Frustum set up
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();     
@@ -198,105 +201,185 @@ void key(unsigned char key, int x, int y){
 			*/
 		// ------ Roll
 		case 'u':
-			camera.roll(0.09);
+			acumRoll += 0.09;
+			camera.roll(acumRoll);
 			break;
 		case 'i':
-			camera.roll(-0.09);
+			acumRoll += -0.09;
+			camera.roll(acumRoll);
 			break;
 		// ------ Yaw
 		case 'j':
-			camera.yaw(0.01);
+			acumYaw += 0.01;
+			acumRoll = 0;
+			acumPitch = 0;
+			camera.yaw(acumYaw);
 			break;
 		case 'k':
-			camera.yaw(-0.01);
+			acumYaw += -0.01;
+			acumRoll = 0;
+			acumPitch = 0;
+			camera.yaw(acumYaw);
 			break;
 		// ------ Pitch
 		case 'n':
-			camera.pitch(0.01);
+			acumPitch += 0.01;
+			acumRoll = 0;
+			acumYaw = 0;
+			camera.pitch(acumPitch);
 			break;
 		case 'm':
-			camera.pitch(-0.01);
+			acumPitch += -0.01;
+			acumRoll = 0;
+			acumYaw = 0;
+			camera.pitch(acumPitch);
 			break;
 		// ------ Recorrido X
 		case 'e':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.recorridoEje(10.0,0.0,0.0);
 			break;
 		case 'r':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.recorridoEje(-10.0,0.0,0.0);
 			break;
 		// ------ Recorrido Y
 		case 'd':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.recorridoEje(0.0,10.0,0.0);
 			break;
 		case 'f':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.recorridoEje(0.0,-10.0,0.0);
 			break;
 		// ------ Recorrido Z
 		case 'c':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.recorridoEje(0.0,0.0,10.0);
 			break;
 		case 'v':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.recorridoEje(0.0,0.0,-10.0);
 			break;
 		// ------ Desplazar X
 		case 'q':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.desplazar(2.0,0.0,0.0);
 			break;
 		case 'w':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.desplazar(-2.0,0.0,0.0);
 			break;
 		// ------ Desplazar Y
 		case 'a':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.desplazar(0.0,2.0,0.0);
 			break;
 		case 's':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.desplazar(0.0,-2.0,0.0);
 			break;
 		// ------ Desplazar Z
 		case 'z':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.desplazar(0.0,0.0,2.0);
 			break;
 		case 'x':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.desplazar(0.0,0.0,-2.0);
 			break;
 		// ------ Ortogonal
 		case 'o':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.ortogonal(xLeft,xRight,yBot,yTop,N,F);
 			break;
 		// ------ Perspectiva
 		case 'p':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.perspectiva(xLeft,xRight,yBot,yTop,N,F);
 			break;
 		// ------ Oblicua
 		case 'l':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.oblicua(aux.clone(),xLeft,xRight,yBot,yTop,N,F);
 			break;
 		// ------ Gira X
 		case '1':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.giraX(0.1);
 			break;
 		// ------ Gira Y
  		case '2':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.giraY(0.1);
 			break;
 		// ------ Gira Z
 		case '3':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.giraZ(0.1);
 			break;
 		// ------ Vista Lateral
 		case '4':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.lateral();
 			break;
 		// ------ Vista Frontal
 		case '5':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.frontal();
 			break;
 		// ------ Vista Cenital
 		case '6':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.cenital();
 			break;
 		// ------ Vista Esquina
 		case '7':
+			acumRoll = 0;
+			acumPitch = 0;
+			acumYaw = 0;
 			camera.esquina();
 			break;
 		default:

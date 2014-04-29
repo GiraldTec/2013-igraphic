@@ -75,6 +75,8 @@ void Camara::fijarCam()
 
 void Camara::roll(GLdouble alfa)
 {
+	getCoordCam();
+
 	PV3D* aux = u->clone();
 
 	u->setX((aux->getX()*cos(alfa)) - (v->getX()*sin(alfa)));
@@ -90,6 +92,7 @@ void Camara::roll(GLdouble alfa)
 
 void Camara::yaw(GLdouble alfa)
 {
+	getCoordCam();
 	PV3D* aux = u->clone();
 
 	u->setX((aux->getX()*cos(alfa)) + (n->getX()*sin(alfa)));
@@ -105,6 +108,7 @@ void Camara::yaw(GLdouble alfa)
 
 void Camara::pitch(GLdouble alfa)
 {
+	getCoordCam();
 	PV3D* aux = n->clone();
 
 	n->setX((aux->getX()*cos(alfa)) + (v->getX()*sin(alfa)));
@@ -126,9 +130,10 @@ void Camara::desplazar(GLdouble x, GLdouble y, GLdouble z)
 
 	this->look.setX(this->look.getX()+x);
 	this->look.setY(this->look.getY()+y);
-	this->look.setY(this->look.getZ()+z);
+	this->look.setZ(this->look.getZ()+z);
 
 	this->fijarCam();
+	this->ortogonal(-10,10,-10,10,1,1000);
 }
 
 void Camara::ortogonal(GLdouble left, GLdouble right, GLdouble botton, GLdouble top, GLdouble n, GLdouble f)
@@ -179,30 +184,51 @@ void Camara::recorridoEje(GLdouble x, GLdouble y, GLdouble z)
 	this->eye.setZ(this->eye.getZ()+z);
 	
 	this->fijarCam();
+	this->ortogonal(-10,10,-10,10,1,1000);
 }
 
 void Camara::giraX(GLdouble alfa)
 {
-	this->eye.setY(cos(alfa)*this->eye.getY()-sin(alfa)*this->eye.getZ());
-	this->eye.setZ(sin(alfa)*this->eye.getY()+cos(alfa)*this->eye.getZ());
+	GLdouble angle2 = atan2(eye.getZ(), eye.getY()) + alfa;
+	GLdouble dst = sqrt((eye.getY() * eye.getY()) + (eye.getZ() * eye.getZ()));
+
+	eye.setY(dst * cos(angle2));
+	eye.setZ(dst * sin(angle2));
+
+	//this->eye.setY(cos(alfa)*this->eye.getY()-sin(alfa)*this->eye.getZ());
+	//this->eye.setZ(sin(alfa)*this->eye.getY()+cos(alfa)*this->eye.getZ());
 
 	this->fijarCam();
+	this->ortogonal(-10,10,-10,10,1,1000);
 }
 
 void Camara::giraY(GLdouble alfa)
 {
-	this->eye.setX(cos(alfa)*this->eye.getX()+sin(alfa)*this->eye.getZ());
-	this->eye.setZ(-sin(alfa)*this->eye.getX()+cos(alfa)*this->eye.getZ());
+	GLdouble angle2 = atan2(eye.getZ(), eye.getX()) + alfa;
+	GLdouble dst = sqrt((eye.getX() * eye.getX()) + (eye.getZ() * eye.getZ()));
+
+	eye.setX(dst * cos(angle2));
+	eye.setZ(dst * sin(angle2));
+
+	//this->eye.setX(cos(alfa)*this->eye.getX()+sin(alfa)*this->eye.getZ());
+	//this->eye.setZ(-sin(alfa)*this->eye.getX()+cos(alfa)*this->eye.getZ());
 
 	this->fijarCam();
+	this->ortogonal(-10,10,-10,10,1,1000);
 }
 
 void Camara::giraZ(GLdouble alfa)
 {
-	this->eye.setX(cos(alfa)*this->eye.getX()-sin(alfa)*this->eye.getY());
-	this->eye.setY(sin(alfa)*this->eye.getX()+cos(alfa)*this->eye.getY());
+	GLdouble angle2 = atan2(eye.getY(), eye.getX()) + alfa;
+	GLdouble dst = sqrt((eye.getY() * eye.getY()) + (eye.getX() * eye.getX()));
+
+	eye.setX(dst * cos(angle2));
+	eye.setY(dst * sin(angle2));
+	//this->eye.setX(cos(alfa)*this->eye.getX()-sin(alfa)*this->eye.getY());
+	//this->eye.setY(sin(alfa)*this->eye.getX()+cos(alfa)*this->eye.getY());
 
 	this->fijarCam();
+	//this->ortogonal(-10,10,-10,10,1,1000);
 }
 
 void Camara::lateral()
@@ -216,6 +242,7 @@ void Camara::lateral()
 	this->up.setZ(0);
 
 	this->fijarCam();
+	this->ortogonal(-10,10,-10,10,1,1000);
 }
 
 void Camara::frontal()
@@ -229,6 +256,7 @@ void Camara::frontal()
 	this->up.setZ(0);
 
 	this->fijarCam();
+	this->ortogonal(-10,10,-10,10,1,1000);
 }
 
 void Camara::cenital()
@@ -242,6 +270,7 @@ void Camara::cenital()
 	this->up.setZ(0);
 
 	this->fijarCam();
+	this->ortogonal(-10,10,-10,10,1,1000);
 }
 
 void Camara::esquina()
@@ -255,4 +284,5 @@ void Camara::esquina()
 	this->up.setZ(0);
 
 	this->fijarCam();
+	this->ortogonal(-10,10,-10,10,1,1000);
 }
