@@ -52,11 +52,13 @@ PV3D* PV3D::subtraction(PV3D* p){
 	return new PV3D(this->corX-p->getX(),this->corY-p->getY(),this->corZ-p->getZ());
 }
 //--------------------------------------------------------------
-void PV3D::normalize(){
+PV3D* PV3D::normalize(){
+	PV3D* aux = new PV3D();
 	GLdouble magnitude = this->magnitude();
-	this->corX = this->corX/magnitude;
-	this->corY = this->corY/magnitude;
-	this->corZ = this->corZ/magnitude;
+	aux->setX(this->corX/magnitude);
+	aux->setY(this->corY/magnitude);
+	aux->setZ(this->corZ/magnitude);
+	return aux;
 }
 GLdouble PV3D::magnitude(){
 	GLdouble aux = pow(this->corX,2)+pow(this->corY,2)+pow(this->corZ,2);

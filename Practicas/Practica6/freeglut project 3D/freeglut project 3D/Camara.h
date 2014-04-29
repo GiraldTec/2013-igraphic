@@ -5,7 +5,7 @@
 class Camara
 {
 private:
-	PV3D *eye, *look, *up;
+	PV3D eye, look, up;
 	PV3D *n, *v, *u;
 
 public:

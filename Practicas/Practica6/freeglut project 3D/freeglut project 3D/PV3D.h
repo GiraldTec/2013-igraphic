@@ -38,7 +38,7 @@ public:
 	PV3D* clone();
 	PV3D* addition(PV3D* v);
 	PV3D* subtraction(PV3D* v);
-	void normalize();
+	PV3D* normalize();
 	GLdouble magnitude();
 	PV3D* crossProduct(PV3D* v);
 	GLdouble scalarProduct(PV3D* v);

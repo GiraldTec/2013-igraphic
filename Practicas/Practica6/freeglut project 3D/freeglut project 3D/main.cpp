@@ -36,6 +36,7 @@ Escena *scene;
 
 //Camara
 Camara camera;
+PV3D aux = PV3D(0.5, 0, 0.8);
 
 // Prueba
 Objeto3D *testO;
@@ -96,7 +97,25 @@ void display(void) {
 		glVertex3f(0, 0, 0);	glVertex3f(0, 0, 20);	     
 	glEnd();
 
+	//Our code
 
+	glPushMatrix();
+	glMatrixMode(GL_MODELVIEW);
+
+	glRotated(angleX, 1,0,0);
+	glRotated(angleY, 0,1,0);
+	glRotated(angleZ, 0,0,1);
+
+
+	glColor3f(1.0, 0.0, 0.0);
+	//coche.drawCoche(4);
+	glutSolidCube(4);
+
+	glPopMatrix();
+
+	glFlush();
+	glutSwapBuffers();
+	/*
 	//glMatrixMode(GL_MODELVIEW);
     glPushMatrix();
 		// TODO esto se cambiará por la cámara
@@ -126,6 +145,7 @@ void display(void) {
 
 	glFlush();
 	glutSwapBuffers();
+	*/
 }
 
 
@@ -215,6 +235,88 @@ void key(unsigned char key, int x, int y){
 			break;
 		case 'm':
 			camera.pitch(-0.01);
+			break;
+		// ------ Recorrido X
+		case 'e':
+			camera.recorridoEje(10.0,0.0,0.0);
+			break;
+		case 'r':
+			camera.recorridoEje(-10.0,0.0,0.0);
+			break;
+		// ------ Recorrido Y
+		case 'd':
+			camera.recorridoEje(0.0,10.0,0.0);
+			break;
+		case 'f':
+			camera.recorridoEje(0.0,-10.0,0.0);
+			break;
+		// ------ Recorrido Z
+		case 'c':
+			camera.recorridoEje(0.0,0.0,10.0);
+			break;
+		case 'v':
+			camera.recorridoEje(0.0,0.0,-10.0);
+			break;
+		// ------ Desplazar X
+		case 'q':
+			camera.desplazar(2.0,0.0,0.0);
+			break;
+		case 'w':
+			camera.desplazar(-2.0,0.0,0.0);
+			break;
+		// ------ Desplazar Y
+		case 'a':
+			camera.desplazar(0.0,2.0,0.0);
+			break;
+		case 's':
+			camera.desplazar(0.0,-2.0,0.0);
+			break;
+		// ------ Desplazar Z
+		case 'z':
+			camera.desplazar(0.0,0.0,2.0);
+			break;
+		case 'x':
+			camera.desplazar(0.0,0.0,-2.0);
+			break;
+		// ------ Ortogonal
+		case 'o':
+			camera.ortogonal(xLeft,xRight,yBot,yTop,N,F);
+			break;
+		// ------ Perspectiva
+		case 'p':
+			camera.perspectiva(xLeft,xRight,yBot,yTop,N,F);
+			break;
+		// ------ Oblicua
+		case 'l':
+			camera.oblicua(aux.clone(),xLeft,xRight,yBot,yTop,N,F);
+			break;
+		// ------ Gira X
+		case '1':
+			camera.giraX(0.1);
+			break;
+		// ------ Gira Y
+ 		case '2':
+			camera.giraY(0.1);
+			break;
+		// ------ Gira Z
+		case '3':
+			camera.giraZ(0.1);
+			break;
+		// ------ Vista Lateral
+		case '4':
+			camera.lateral();
+			break;
+		// ------ Vista Frontal
+		case '5':
+			camera.frontal();
+			break;
+		// ------ Vista Cenital
+		case '6':
+			camera.cenital();
+			break;
+		// ------ Vista Esquina
+		case '7':
+			camera.esquina();
 			break;
 		default:
 			need_redisplay = false;

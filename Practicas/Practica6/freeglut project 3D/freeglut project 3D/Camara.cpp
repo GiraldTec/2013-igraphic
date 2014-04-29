@@ -5,10 +5,12 @@ Camara::Camara(){}
 
 Camara::Camara(PV3D eye, PV3D look, PV3D up)
 {
-	this->eye = eye.clone();
-	this->look = look.clone();
-	this->up = up.clone();
+	this->eye = eye;
+	this->look = look;
+	this->up = up;
 	getCoordCam();
+	fijarCam();
+	ortogonal(-10,10,-10,10,1,1000);
 }
 
 
@@ -19,11 +21,10 @@ Camara::~Camara(void)
 void Camara::getCoordCam()
 {
 	// n = (eye-look).normalizar()
-	this->n = this->eye->subtraction(this->look);
-	this->n->normalize();
+	PV3D aux = PV3D(this->eye.getX()-this->look.getX(),this->eye.getY()-this->look.getY(),this->eye.getZ()-this->look.getZ());
+	this->n = aux.normalize();
 	// u = (up*n).normalizar() 
-	this->u = this->up->crossProduct(this->n);
-	this->u->normalize();
+	this->u = this->up.crossProduct(this->n)->normalize();
 	// v = n*u
 	this->v = this->n->crossProduct(this->u);
 }
@@ -57,7 +58,7 @@ void Camara::getMatriz()
 		this->u->getX(), this->v->getX(), this->n->getX(), 0,
 		this->u->getY(), this->v->getY(), this->n->getY(), 0,
 		this->u->getZ(), this->v->getZ(), this->n->getZ(), 0,
-		-(this->eye->scalarProduct(this->u)), -(this->eye->scalarProduct(this->v)), -(this->eye->scalarProduct(this->n)), 0};
+		-(this->eye.scalarProduct(this->u)), -(this->eye.scalarProduct(this->v)), -(this->eye.scalarProduct(this->n)), 1};
 	glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     glLoadMatrixf(m);
@@ -69,7 +70,7 @@ void Camara::fijarCam()
 {
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
-  gluLookAt(this->eye->getX(), this->eye->getY(), this->eye->getZ(), this->look->getX(), this->look->getY(), this->look->getZ(), this->up->getX(), this->up->getY(), this->up->getZ());
+  gluLookAt(this->eye.getX(), this->eye.getY(), this->eye.getZ(), this->look.getX(), this->look.getY(), this->look.getZ(), this->up.getX(), this->up.getY(), this->up.getZ());
 }
 
 void Camara::roll(GLdouble alfa)
@@ -119,13 +120,13 @@ void Camara::pitch(GLdouble alfa)
 
 void Camara::desplazar(GLdouble x, GLdouble y, GLdouble z)
 {
-	this->eye->setX(this->eye->getX()+x);
-	this->eye->setY(this->eye->getY()+y);
-	this->eye->setZ(this->eye->getZ()+z);
+	this->eye.setX(this->eye.getX()+x);
+	this->eye.setY(this->eye.getY()+y);
+	this->eye.setZ(this->eye.getZ()+z);
 
-	this->look->setX(this->look->getX()+x);
-	this->look->setY(this->look->getY()+y);
-	this->look->setY(this->look->getZ()+z);
+	this->look.setX(this->look.getX()+x);
+	this->look.setY(this->look.getY()+y);
+	this->look.setY(this->look.getZ()+z);
 
 	this->fijarCam();
 }
@@ -141,7 +142,8 @@ void Camara::perspectiva(GLdouble left, GLdouble right, GLdouble botton, GLdoubl
 {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	glOrtho(left, right, botton, top, n, f);
+	//glFrustum(left,right,bottom,top,nearAux,farAux);
+	gluPerspective(5, 2, n, f);
 }
 
 void Camara::oblicua(PV3D* vector, GLdouble left, GLdouble right, GLdouble botton, GLdouble top, GLdouble n, GLdouble f)
@@ -152,7 +154,7 @@ void Camara::oblicua(PV3D* vector, GLdouble left, GLdouble right, GLdouble botto
 
 	if(vector->getZ() != 0.0 && (vector->getX() != 0 || vector->getY() != 0 || vector->getZ() != 1))
 	{
-		GLfloat* m= new GLfloat[16];
+		/*GLfloat* m= new GLfloat[16];
 		m[0] = 1;
 		m[1] = 0;
 		m[2] = 0;
@@ -176,93 +178,106 @@ void Camara::oblicua(PV3D* vector, GLdouble left, GLdouble right, GLdouble botto
 		m[8] = -(vector->getX()) / vector->getZ();
 		m[9] = -(vector->getY()) / vector->getZ();
 		m[12] = -n * (vector->getX() / vector->getZ());
-		m[13] = -n * (vector->getY() / vector->getZ());		
+		m[13] = -n * (vector->getY() / vector->getZ());	
+		*/
+		GLfloat m[16] = {	
+			1, 0, 0, 0,
+			0, 1, 0, 0,
+			0, 0, 1, 0,
+			0, 0, 0, 1
+		};
+		m[8] = -(vector->getX()) / vector->getZ();
+		m[9] = -(vector->getY()) / vector->getZ();
+		m[12] = -n * (vector->getX() / vector->getZ());
+		m[13] = -n * (vector->getY() / vector->getZ());
 
 		glMultMatrixf(m);
+		
+		//delete[] m;
 	}
 }
 
 void Camara::recorridoEje(GLdouble x, GLdouble y, GLdouble z)
 {
-	this->eye->setX(this->eye->getX()+x);
-	this->eye->setY(this->eye->getY()+y);
-	this->eye->setZ(this->eye->getZ()+z);
+	this->eye.setX(this->eye.getX()+x);
+	this->eye.setY(this->eye.getY()+y);
+	this->eye.setZ(this->eye.getZ()+z);
 	
 	this->fijarCam();
 }
 
 void Camara::giraX(GLdouble alfa)
 {
-	this->eye->setY(cos(alfa)*this->eye->getY()-sin(alfa)*this->eye->getZ());
-	this->eye->setZ(sin(alfa)*this->eye->getY()+cos(alfa)*this->eye->getZ());
+	this->eye.setY(cos(alfa)*this->eye.getY()-sin(alfa)*this->eye.getZ());
+	this->eye.setZ(sin(alfa)*this->eye.getY()+cos(alfa)*this->eye.getZ());
 
 	this->fijarCam();
 }
 
 void Camara::giraY(GLdouble alfa)
 {
-	this->eye->setX(cos(alfa)*this->eye->getX()+sin(alfa)*this->eye->getZ());
-	this->eye->setZ(-sin(alfa)*this->eye->getX()+cos(alfa)*this->eye->getZ());
+	this->eye.setX(cos(alfa)*this->eye.getX()+sin(alfa)*this->eye.getZ());
+	this->eye.setZ(-sin(alfa)*this->eye.getX()+cos(alfa)*this->eye.getZ());
 
 	this->fijarCam();
 }
 
 void Camara::giraZ(GLdouble alfa)
 {
-	this->eye->setX(cos(alfa)*this->eye->getX()-sin(alfa)*this->eye->getY());
-	this->eye->setY(sin(alfa)*this->eye->getX()+cos(alfa)*this->eye->getY());
+	this->eye.setX(cos(alfa)*this->eye.getX()-sin(alfa)*this->eye.getY());
+	this->eye.setY(sin(alfa)*this->eye.getX()+cos(alfa)*this->eye.getY());
 
 	this->fijarCam();
 }
 
 void Camara::lateral()
 {
-	this->eye->setX(100);
-	this->eye->setY(0);
-	this->eye->setZ(0);
+	this->eye.setX(100);
+	this->eye.setY(0);
+	this->eye.setZ(0);
 
-	this->up->setX(0);
-	this->up->setY(1);
-	this->up->setZ(0);
+	this->up.setX(0);
+	this->up.setY(1);
+	this->up.setZ(0);
 
 	this->fijarCam();
 }
 
 void Camara::frontal()
 {
-	this->eye->setX(0);
-	this->eye->setY(0);
-	this->eye->setZ(100);
+	this->eye.setX(0);
+	this->eye.setY(0);
+	this->eye.setZ(100);
 
-	this->up->setX(0);
-	this->up->setY(1);
-	this->up->setZ(0);
+	this->up.setX(0);
+	this->up.setY(1);
+	this->up.setZ(0);
 
 	this->fijarCam();
 }
 
 void Camara::cenital()
 {
-	this->eye->setX(0);
-	this->eye->setY(100);
-	this->eye->setZ(0);
+	this->eye.setX(0);
+	this->eye.setY(100);
+	this->eye.setZ(0);
 
-	this->up->setX(1);
-	this->up->setY(0);
-	this->up->setZ(0);
+	this->up.setX(1);
+	this->up.setY(0);
+	this->up.setZ(0);
 
 	this->fijarCam();
 }
 
 void Camara::esquina()
 {
-	this->eye->setX(100);
-	this->eye->setY(100);
-	this->eye->setZ(100);
+	this->eye.setX(100);
+	this->eye.setY(100);
+	this->eye.setZ(100);
 
-	this->up->setX(0);
-	this->up->setY(1);
-	this->up->setZ(0);
+	this->up.setX(0);
+	this->up.setY(1);
+	this->up.setZ(0);
 
 	this->fijarCam();
 }
