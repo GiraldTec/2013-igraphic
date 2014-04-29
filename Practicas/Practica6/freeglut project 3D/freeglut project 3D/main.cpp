@@ -24,7 +24,7 @@ int WIDTH= 500, HEIGHT= 500;
 GLdouble xRight=10, xLeft=-xRight, yTop=10, yBot=-yTop, N=1, F=1000;
 
 // Camera parameters
-GLdouble eyeX=100.0, eyeY=100.0, eyeZ=100.0;
+GLdouble eyeX=10.0, eyeY=10.0, eyeZ=10.0;
 GLdouble lookX=0.0, lookY=0.0, lookZ=0.0;
 GLdouble upX=0, upY=1, upZ=0;
 
@@ -36,7 +36,7 @@ Escena *scene;
 
 //Camara
 Camara camera;
-PV3D aux = PV3D(0.5, 0, 0.8);
+PV3D aux = PV3D(0.01, 0.01, 1);
 
 // Prueba
 Objeto3D *testO;
@@ -96,26 +96,6 @@ void display(void) {
 		glColor3f(0.0,0.0,1.0); 
 		glVertex3f(0, 0, 0);	glVertex3f(0, 0, 20);	     
 	glEnd();
-
-	//Our code
-	/*
-	glPushMatrix();
-	glMatrixMode(GL_MODELVIEW);
-
-	glRotated(angleX, 1,0,0);
-	glRotated(angleY, 0,1,0);
-	glRotated(angleZ, 0,0,1);
-
-
-	glColor3f(1.0, 0.0, 0.0);
-	//coche.drawCoche(4);
-	glutSolidCube(4);
-
-	glPopMatrix();
-
-	glFlush();
-	glutSwapBuffers();
-	*/
 	
 	//glMatrixMode(GL_MODELVIEW);
     glPushMatrix();

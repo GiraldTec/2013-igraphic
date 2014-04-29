@@ -150,36 +150,11 @@ void Camara::oblicua(PV3D* vector, GLdouble left, GLdouble right, GLdouble botto
 {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	glOrtho(left, right, botton, top, n, f);
+	
+	vector->normalize();
 
 	if(vector->getZ() != 0.0 && (vector->getX() != 0 || vector->getY() != 0 || vector->getZ() != 1))
 	{
-		/*GLfloat* m= new GLfloat[16];
-		m[0] = 1;
-		m[1] = 0;
-		m[2] = 0;
-		m[3] = 0;
-
-		m[4] = 0;
-		m[5] = 1;
-		m[6] = 0;
-		m[7] = 0;
-
-		m[8] = 0;
-		m[9] = 0;
-		m[10] = 1;
-		m[11] = 0;
-
-		m[12] = 0;
-		m[13] = 0;
-		m[14] = 0;
-		m[15] = 1;
-
-		m[8] = -(vector->getX()) / vector->getZ();
-		m[9] = -(vector->getY()) / vector->getZ();
-		m[12] = -n * (vector->getX() / vector->getZ());
-		m[13] = -n * (vector->getY() / vector->getZ());	
-		*/
 		GLfloat m[16] = {	
 			1, 0, 0, 0,
 			0, 1, 0, 0,
@@ -191,9 +166,9 @@ void Camara::oblicua(PV3D* vector, GLdouble left, GLdouble right, GLdouble botto
 		m[12] = -n * (vector->getX() / vector->getZ());
 		m[13] = -n * (vector->getY() / vector->getZ());
 
+		glOrtho(left, right, botton, top, n, f);
 		glMultMatrixf(m);
 		
-		//delete[] m;
 	}
 }
 
