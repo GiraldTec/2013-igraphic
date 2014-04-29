@@ -35,13 +35,20 @@ PV3D* Malla::doVectorNormalNewell(Cara* c){
 	return aux;
 }
 
+
+void Malla::setColor(GLfloat r,GLfloat g, GLfloat b){
+	red = r;
+	green=g;
+	blue =b;
+}
+
 void Malla::dibuja(void){
 	glMatrixMode(GL_MODELVIEW);
 	glPushMatrix();
 		glMultMatrixf(ta->getM());
 		for (int i=0; i<this->nCaras; i++){
 			glLineWidth(1.0);
-			glColor3f(0.5,0.5,0.5);
+			glColor3f(red,green,blue);
 				glBegin(GL_POLYGON);
                 
 				for (int j=0; j<caras->at(i)->getNumV();j++){

@@ -6,7 +6,7 @@ Escena::Escena(void){
 	table->obScale(0.06);
 	addComponente(table);
 
-	/*BordeMesa *b = new BordeMesa(140.0,30);
+	/*BordeTronera *b = new BordeTronera();
 	b->obScale(0.06);
 	addComponente(b);*/
 }

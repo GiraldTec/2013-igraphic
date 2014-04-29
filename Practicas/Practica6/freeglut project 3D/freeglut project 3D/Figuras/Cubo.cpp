@@ -3,7 +3,7 @@
 Cubo::Cubo(int d):
 		Malla(2*(d+1)*(d+1)+(d-1)*(2*(d+d)),
 				(d*d+d*d+d*d)*2,
-					(d*d+d*d+d*d)*2){  //TODO tb el color
+					(d*d+d*d+d*d)*2){ 
 	xDiv=d; 
 	yDiv=d;
 	zDiv=d;  // (Tapas Inf&Sup)+(Anillos interiores)
@@ -14,7 +14,7 @@ Cubo::Cubo(int d):
 Cubo::Cubo(int x,int y,int z):
 		Malla(2*(x+1)*(z+1)+(y-1)*(2*(x+z)),
 				(x*y+x*z+y*z)*2,
-					(x*y+x*z+y*z)*2){  //TODO tb el color
+					(x*y+x*z+y*z)*2){  
 	xDiv=x; 
 	yDiv=y;
 	zDiv=z;  // (Tapas Inf&Sup)+(Anillos interiores)
@@ -26,7 +26,10 @@ Cubo::Cubo(int x,int y,int z):
 Cubo::~Cubo(void){ // TODO delete de los vectores
 }
 
+
 void Cubo::build(void){
+	red=green=blue=0.5;
+
 	GLdouble wideX,wideY,wideZ;
 	wideX = 1.0/xDiv;	wideY = 1.0/yDiv;	wideZ = 1.0/zDiv;
 	int numCara=0; int numPunto=0;

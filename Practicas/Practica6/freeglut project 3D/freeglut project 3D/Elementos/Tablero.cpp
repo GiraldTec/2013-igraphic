@@ -2,39 +2,94 @@
 
 
 Tablero::Tablero(void){
+
+	// Tapete
 	Cubo *field = new Cubo(5);
-	field->obScale(140.0,10.0,270.0);
+	field->obTraslate(0.0,2.5,0.0);
+	field->obScale(140.0,5.0,270.0);
+	field->setColor(0.0,1.0,0.0);
 	addComponente(field);
 
-	Cubo *a= new Cubo(5);
-	a->obTraslate(-75.0,0.0,70.0);
-	a->obScale(10.0,10.0,130.0);
-	addComponente(a);
+	Cubo *aF= new Cubo(5);
+	aF->obTraslate(-75.0,2.5,70.0);
+	aF->obScale(10.0,5.0,130.0);
+	aF->setColor(0.0,1.0,0.0);
+	addComponente(aF);
 
-	Cubo *b= new Cubo(5);
-	b->obTraslate(-75.0,0.0,-70.0);
-	b->obScale(10.0,10.0,130.0);
-	addComponente(b);
+	Cubo *bF= new Cubo(5);
+	bF->obTraslate(-75.0,2.5,-70.0);
+	bF->obScale(10.0,5.0,130.0);
+	bF->setColor(0.0,1.0,0.0);
+	addComponente(bF);
 
-	Cubo *c= new Cubo(5);
-	c->obTraslate(75.0,0.0,70.0);
-	c->obScale(10.0,10.0,130.0);
-	addComponente(c);
+	Cubo *cF= new Cubo(5);
+	cF->obTraslate(75.0,2.5,70.0);
+	cF->obScale(10.0,5.0,130.0);
+	cF->setColor(0.0,1.0,0.0);
+	addComponente(cF);
 
-	Cubo *d= new Cubo(5);
-	d->obTraslate(75.0,0.0,-70.0);
-	d->obScale(10.0,10.0,130.0);
-	addComponente(d);
+	Cubo *dF= new Cubo(5);
+	dF->obTraslate(75.0,2.5,-70.0);
+	dF->obScale(10.0,5.0,130.0);
+	dF->setColor(0.0,1.0,0.0);
+	addComponente(dF);
 
-	Cubo *e= new Cubo(5);
-	e->obTraslate(0.0,0.0,-140.0);
-	e->obScale(140.0,10.0,10.0);
-	addComponente(e);
+	Cubo *eF= new Cubo(5);
+	eF->obTraslate(0.0,2.5,-140.0);
+	eF->obScale(140.0,5.0,10.0);
+	eF->setColor(0.0,1.0,0.0);
+	addComponente(eF);
 	
-	Cubo *f= new Cubo(5);
-	f->obTraslate(0.0,0.0,140.0);
-	f->obScale(140.0,10.0,10.0);
-	addComponente(f);
+	Cubo *fF= new Cubo(5);
+	fF->obTraslate(0.0,2.5,140.0);
+	fF->obScale(140.0,5.0,10.0);
+	fF->setColor(0.0,1.0,0.0);
+	addComponente(fF);
+
+	// Madera
+	Cubo *table = new Cubo(5);
+	table->obTraslate(0.0,-12.5,0.0);
+	table->obScale(140.0,25.0,270.0);
+	table->setColor(0.55,0.42,0.14);
+	addComponente(table);
+
+	Cubo *aT= new Cubo(5);
+	aT->obTraslate(-75.0,-2.5,70.0);
+	aT->obScale(10.0,5.0,130.0);
+	aT->setColor(0.55,0.42,0.14);
+	addComponente(aT);
+
+	Cubo *bT= new Cubo(5);
+	bT->obTraslate(-75.0,-2.5,-70.0);
+	bT->obScale(10.0,5.0,130.0);
+	bT->setColor(0.55,0.42,0.14);
+	addComponente(bT);
+
+	Cubo *cT= new Cubo(5);
+	cT->obTraslate(75.0,-2.5,70.0);
+	cT->obScale(10.0,5.0,130.0);
+	cT->setColor(0.55,0.42,0.14);
+	addComponente(cT);
+
+	Cubo *dT= new Cubo(5);
+	dT->obTraslate(75.0,-2.5,-70.0);
+	dT->obScale(10.0,5.0,130.0);
+	dT->setColor(0.55,0.42,0.14);
+	addComponente(dT);
+
+	Cubo *eT= new Cubo(5);
+	eT->obTraslate(0.0,-2.5,-140.0);
+	eT->obScale(140.0,5.0,10.0);
+	eT->setColor(0.55,0.42,0.14);
+	addComponente(eT);
+	
+	Cubo *fT= new Cubo(5);
+	fT->obTraslate(0.0,-2.5,140.0);
+	fT->obScale(140.0,5.0,10.0);
+	fT->setColor(0.55,0.42,0.14);
+	addComponente(fT);
+
+
 	// TRONERAS
 	Tronera *t1 = new Tronera();
 	t1->obTraslate(-75.0,0.0,140.0);
@@ -95,10 +150,10 @@ Tablero::Tablero(void){
 	bC1->obRotate(180.0,1);
 	addComponente(bC1);
 
-	BordeTronera *bT1 = new BordeTronera(10.0,2);
-	bT1->obTraslate(-80.0,10.0,0.0);
-	bT1->obRotate(180.0,1);
-	addComponente(bT1);
+	BordeMesa *bE1 = new BordeMesa(10.0,2,true);
+	bE1->obTraslate(-80.0,10.0,0.0);
+	bE1->obRotate(180.0,1);
+	addComponente(bE1);
 
 	BordeMesa *bC2 = new BordeMesa(130.0,10);
 	bC2->obTraslate(-80.0,10.0,70);
@@ -109,13 +164,33 @@ Tablero::Tablero(void){
 	bD1->obTraslate(80.0,10.0,-70.0);
 	addComponente(bD1);
 
-	BordeTronera *bT2 = new BordeTronera(10.0,2);
-	bT2->obTraslate(80.0,10.0,0.0);
-	addComponente(bT2);
+	BordeMesa *bE2 = new BordeMesa(10.0,2,true);
+	bE2->obTraslate(80.0,10.0,0.0);
+	addComponente(bE2);
 
 	BordeMesa *bD2 = new BordeMesa(130.0,10);
 	bD2->obTraslate(80.0,10.0,70.0);
 	addComponente(bD2);
+
+	BordeTronera *bT1 = new BordeTronera();
+	bT1->obTraslate(-70.0,10.0,135.0);
+	bT1->obRotate(-90.0,1);
+	addComponente(bT1);
+
+	BordeTronera *bT2 = new BordeTronera();
+	bT2->obTraslate(-70.0,10.0,-135.0);
+	bT2->obRotate(-180.0,1);
+	addComponente(bT2);
+
+	BordeTronera *bT3 = new BordeTronera();
+	bT3->obTraslate(70.0,10.0,135.0);
+	addComponente(bT3);
+	
+	BordeTronera *bT4 = new BordeTronera();
+	bT4->obTraslate(70.0,10.0,-135.0);
+	bT4->obRotate(90.0,1);
+	addComponente(bT4);
+	//*/
 }
 
 

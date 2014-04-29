@@ -84,9 +84,15 @@
     <ClCompile Include="Elementos\BordeTronera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< .mine
+    <ClCompile Include="Figuras\DiscoParcial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+=======
     <ClCompile Include="Camara.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+>>>>>>> .r185
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PV3D.h">
@@ -155,8 +161,14 @@
     <ClInclude Include="Elementos\BordeTronera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< .mine
+    <ClInclude Include="Figuras\DiscoParcial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+=======
     <ClInclude Include="Camara.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+>>>>>>> .r185
   </ItemGroup>
 </Project>

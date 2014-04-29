@@ -7,7 +7,6 @@ class Cubo : public Malla
 {
 private:
 	int xDiv, yDiv, zDiv;
-
 public:
 	Cubo(int d);
 	Cubo(int x,int y,int z);

@@ -20,7 +20,7 @@ public:
 		glMatrixMode(GL_MODELVIEW);
 		glPushMatrix();
 			glMultMatrixf(ta->getM());
-			for(int i=0;i<componentes->size();i++){
+			for(unsigned i=0;i<componentes->size();i++){
 				componentes->at(i)->dibuja();
 			}
 		glPopMatrix();

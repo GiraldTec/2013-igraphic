@@ -14,17 +14,18 @@ Tronera::Tronera(void){
 	Disco *med = new Disco(0.5,0.7,20,3);
 	med->obRotate(-90.0,0);
 	med->obTraslate(0.0,0.0,1.0);
+	med->obRotate(180.0,1);
 	addComponente(med);
 
 	Disco *bot = new Disco(0.0,0.5,20,3);
 	bot->obRotate(-90.0,0);
 	addComponente(bot);
 
-	/*Torus *borde = new Torus(0.5,1.1,10,10);
-	borde->obRotate(-90.0,0);
-	borde->obTraslate(0.0,0.0,2.0);
-	borde->obRotate(45.0,0);
-	addComponente(borde);*/
+	red->setColor(0.0,0.0,0.0);
+	sup->setColor(0.0,1.0,0.0);
+	med->setColor(0.55,0.42,0.14);  // Sienna
+	bot->setColor(0.0,0.0,0.0);
+
 }
 
 

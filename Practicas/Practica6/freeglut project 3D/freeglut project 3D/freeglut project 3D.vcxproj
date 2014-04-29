@@ -83,6 +83,7 @@
     <ClCompile Include="Figuras\Cilindro.cpp" />
     <ClCompile Include="Figuras\Cubo.cpp" />
     <ClCompile Include="Figuras\Disco.cpp" />
+    <ClCompile Include="Figuras\DiscoParcial.cpp" />
     <ClCompile Include="Figuras\Esfera.cpp" />
     <ClCompile Include="Figuras\Torus.cpp" />
     <ClCompile Include="main.cpp" />
@@ -109,6 +110,7 @@
     <ClInclude Include="Figuras\Cilindro.h" />
     <ClInclude Include="Figuras\Cubo.h" />
     <ClInclude Include="Figuras\Disco.h" />
+    <ClInclude Include="Figuras\DiscoParcial.h" />
     <ClInclude Include="Figuras\Esfera.h" />
     <ClInclude Include="Figuras\Torus.h" />
     <ClInclude Include="Pencil.h" />
