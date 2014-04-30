@@ -420,6 +420,7 @@ int main(int argc, char *argv[]){
 	scene->init();*/
 
 	testO = new Escena();
+	testO->obScale(0.06);
 	//testO->obRotate(-90.0,0);
 	//testO->obScale(1.0,5.0,1.0);
 	

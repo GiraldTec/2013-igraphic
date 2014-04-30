@@ -1,67 +1,75 @@
 #include "TrianguloBolas.h"
 
 
-TrianguloBolas::TrianguloBolas(void)
-{
-	Bola *b1 = new Bola(1.0,0.84,0.0);
-	b1->obTraslate(-10.0,0.0,0.0);
-	addComponente(b1);
+TrianguloBolas::TrianguloBolas(void){
 
-	Bola *b2 = new Bola(0.11,0.56,1.0);
-	b2->obTraslate(10.0,0.0,-10.0);
-	addComponente(b2);
+	GLdouble pX,pZ;
+	pX=pZ=0.0;
+	int nBola=1;
 
-	Bola *b3 = new Bola(1.0,0.0,0.0);
-	b3->obTraslate(-5.0,0.0,-5.0);
-	addComponente(b3);
-
-	Bola *b4 = new Bola(0.62,0.12,0.94);
-	b4->obTraslate(-10.0,0.0,-10.0);
-	addComponente(b4);
-
-	Bola *b5 = new Bola(1.0,0.64,0.0);
-	b5->obTraslate(-20.0,0.0,-10.0);
-	addComponente(b5);
-
-	Bola *b6 = new Bola(0.19,0.8,0.19);
-	b6->obTraslate(15.0,0.0,-5.0);
-	addComponente(b6);
-
-	Bola *b7 = new Bola(0.64,0.16,0.16);
-	b7->obTraslate(5.0,0.0,5.0);
-	addComponente(b7);
-
-	Bola *b8 = new Bola(0.0,0.0,0.0);
-	b8->obTraslate(0.0,0.0,0.0);
-	addComponente(b8);
-
-	Bola *b9 = new Bola(0.85,0.64,0.12);
-	b9->obTraslate(0.0,0.0,10.0);
-	addComponente(b9);
-
-	Bola *b10 = new Bola(0.0,0.80,0.81);
-	b10->obTraslate(5.0,0.0,-5.0);
-	addComponente(b10);
-
-	Bola *b11 = new Bola(0.98,0.5,0.44);
-	b11->obTraslate(20.0,0.0,-10.0);
-	addComponente(b11);
-
-	Bola *b12 = new Bola(0.55,0.21,0.55);
-	b1->obTraslate(-5.0,0.0,5.0);
-	addComponente(b12);
-
-	Bola *b13 = new Bola(1.0,0.27,0.0);
-	b13->obTraslate(0.0,0.0,-10.0);
-	addComponente(b13);
-
-	Bola *b14 = new Bola(0.56,0.93,0.56);
-	b14->obTraslate(-15.0,0.0,-5.0);
-	addComponente(b14);
-
-	Bola *b15 = new Bola(0.82,0.41,0.11);
-	b15->obTraslate(10.0,0.0,0.0);
-	addComponente(b15);
+	for(int i=0;i<=4;i++){
+		
+		for(int j=0;j<=4-i;j++){
+			Bola *b;
+			switch(nBola){
+			case 1:	
+				b= new Bola(1.0,0.84,0.0);
+				break;
+			case 2:
+				b= new Bola(0.11,0.56,1.0);
+				break;
+			case 3:
+				b= new Bola(1.0,0.0,0.0);
+				break;
+			case 4:
+				b= new Bola(0.62,0.12,0.94);
+				break;
+			case 5:
+				b= new Bola(1.0,0.64,0.0);
+				break;
+			case 6:
+				b= new Bola(0.19,0.8,0.19);
+				break;
+			case 7:
+				b= new Bola(0.64,0.16,0.16);
+				break;
+			case 8:
+				b= new Bola(0.0,0.0,0.0);
+				break;
+			case 9:
+				b= new Bola(0.85,0.64,0.12);
+				break;
+			case 10:
+				b= new Bola(0.0,0.80,0.81);
+				break;
+			case 11:
+				b= new Bola(0.98,0.5,0.44);
+				break;
+			case 12:
+				b= new Bola(0.55,0.21,0.55);
+				break;
+			case 13:
+				b= new Bola(1.0,0.27,0.0);
+				break;
+			case 14:
+				b= new Bola(0.56,0.93,0.56);
+				break;
+			case 15:
+				b= new Bola(0.82,0.41,0.11);
+				break;
+			}
+			b->obTraslate(pX-j*10*sin(30*M_PI/180),0.0,-(pZ-j*10*cos(30*M_PI/180)));
+			addComponente(b);
+			nBola++;
+		}
+		pX=pX+10*sin(30*M_PI/180);
+		pZ=pZ-10*cos(30*M_PI/180);
+	}
+	obTraslate(0.0,0.0,-20.0);
+	obRotate(60.0,1);
+	obTraslate(0.0,0.0,-10/sin(30*M_PI/180)*cos(30*M_PI/180));
+	obTraslate(5.0,0.0,-5/sin(30*M_PI/180)*cos(30*M_PI/180));
+	
 }
 
 
