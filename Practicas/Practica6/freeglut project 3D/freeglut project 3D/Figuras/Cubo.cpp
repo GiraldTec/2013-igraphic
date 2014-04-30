@@ -1,3 +1,5 @@
+//Carlos Giraldo
+//Raquel Peces
 #include "Cubo.h"
 
 Cubo::Cubo(int d):

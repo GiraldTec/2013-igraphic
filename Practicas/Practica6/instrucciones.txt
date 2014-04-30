@@ -1,0 +1,26 @@
+Leyenda:
+
+u, i => roll
+j, k => yaw
+n, m => pitch
+
+e, r => recorrido X
+d, f => recorrido y
+c, v => recorrido z
+
+q, w => desplazar x
+a, s => desplazar y
+z, x => desplazar z
+
+1 => gira x
+2 => gira y
+3 => gira z
+
+4 => lateral
+5 => frontal
+6 => cenital
+7 => esquina
+
+t, y => rotar objeto x
+g, h => rotar objeto y
+b, , => rotar objeto z

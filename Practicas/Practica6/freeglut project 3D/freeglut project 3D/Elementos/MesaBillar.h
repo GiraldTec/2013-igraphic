@@ -1,3 +1,5 @@
+//Carlos Giraldo
+//Raquel Peces
 #pragma once
 #include "Tablero.h"
 #include "Pata.h"

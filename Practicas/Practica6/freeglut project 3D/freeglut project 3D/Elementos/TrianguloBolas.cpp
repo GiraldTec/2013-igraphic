@@ -1,3 +1,5 @@
+//Carlos Giraldo
+//Raquel Peces
 #include "TrianguloBolas.h"
 
 
@@ -65,7 +67,7 @@ TrianguloBolas::TrianguloBolas(void){
 		pX=pX+10*sin(30*M_PI/180);
 		pZ=pZ-10*cos(30*M_PI/180);
 	}
-	obTraslate(0.0,0.0,-20.0);
+	obTraslate(0.0,0.0,-70.0);
 	obRotate(60.0,1);
 	obTraslate(0.0,0.0,-10/sin(30*M_PI/180)*cos(30*M_PI/180));
 	obTraslate(5.0,0.0,-5/sin(30*M_PI/180)*cos(30*M_PI/180));

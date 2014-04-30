@@ -18,7 +18,7 @@ using namespace std;
 // bool continue_in_main_loop= true; //(**)
 
 // Viewport size
-int WIDTH= 500, HEIGHT= 500;
+int WIDTH= 1000, HEIGHT= 1000;
 
 // Viewing frustum parameters
 GLdouble xRight=10, xLeft=-xRight, yTop=10, yBot=-yTop, N=1, F=1000;
@@ -40,7 +40,7 @@ PV3D aux = PV3D(0.01, 0.01, 1);
 GLdouble acumRoll, acumYaw, acumPitch;
 
 // Prueba
-Objeto3D *testO;
+Objeto3D *escena;
 
 void initGL() {	 		 
 	glClearColor(0.6f,0.7f,0.8f,1.0);
@@ -62,7 +62,7 @@ void initGL() {
 	//PV3D *eye = new PV3D(100.0, 100.0, 100.0);
 	//PV3D *look = new PV3D(0.0, 0.0, 0.0);
 	//PV3D *up = new PV3D(0, 1, 0);
-	camera = Camara(PV3D(100.0, 100.0, 100.0), PV3D(0.0, 0.0, 0.0), PV3D(0, 1, 0));
+	camera = Camara(PV3D(50.0, 50.0, 50.0), PV3D(0.0, 0.0, 0.0), PV3D(0, 1, 0));
 	acumRoll = 0;
 	acumPitch = 0;
 	acumYaw = 0;
@@ -100,32 +100,8 @@ void display(void) {
 		glVertex3f(0, 0, 0);	glVertex3f(0, 0, 20);	     
 	glEnd();
 	
-	//glMatrixMode(GL_MODELVIEW);
-    glPushMatrix();
-		// TODO esto se cambiará por la cámara
 
-		glRotatef(angleX,1,0,0);
-        glRotatef(angleY,0,1,0);
-        glRotatef(angleZ,0,0,1);
-
-		glColor3f(1.0, 1.0, 1.0);
-		glBegin( GL_LINES );
-			glColor3f(1.0,0.0,0.0); 
-			glVertex3f(0, 0, 0);	glVertex3f(20, 0, 0);	     
-	 
-			glColor3f(0.0,1.0,0.0); 
-			glVertex3f(0, 0, 0);	glVertex3f(0, 20, 0);	 
-	 
-			glColor3f(0.0,0.0,1.0);	
-			glVertex3f(0, 0, 0);	glVertex3f(0, 0, 20);	     
-		glEnd();
-
-		testO->dibuja();
-		//scene->dibuja();
-	glPopMatrix();
-
-
-
+	escena->dibuja();
 
 	glFlush();
 	glutSwapBuffers();
@@ -175,30 +151,30 @@ void key(unsigned char key, int x, int y){
 			glutLeaveMainLoop (); 
 		break;		 			 
 		// ----------------
-		/*
+		
 		 // linea de debug::: 	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
-		case 'a': 
-			angleX+=5;
+		case 't': 
+			escena->obRotate(5,0);
 			break;
-		case 'z': 
-			angleX-=5;
-			break;
-		// ----------------
-		case 's': 
-			angleY+=5;
-			break;
-		case 'x': 
-			angleY-=5;
+		case 'y': 
+			escena->obRotate(-5,0);
 			break;
 		// ----------------
-		case 'd': 
-			angleZ+=5;
+		case 'g':
+			escena->obRotate(5,1);
 			break;
-		case 'c': 
-			angleZ-=5;
+		case 'h': 
+			escena->obRotate(-5,1);
 			break;
 		// ----------------
-			*/
+		case 'b': 
+			escena->obRotate(5,-1);
+			break;
+		case ',': 
+			escena->obRotate(-5,-1);
+			break;
+		// ----------------
+			
 		// ------ Roll
 		case 'u':
 			acumRoll += 0.09;
@@ -414,17 +390,9 @@ int main(int argc, char *argv[]){
 	initGL();
 
 	// Escena
-	/*cout << "inicializa" << endl;
-	scene = new Escena(); // NP = 30 NQ = 40
-	cout << "construye" << endl;
-	scene->init();*/
-
-	testO = new Escena();
-	testO->obScale(0.06);
-	//testO->obRotate(-90.0,0);
-	//testO->obScale(1.0,5.0,1.0);
+	escena = new Escena();
+	escena->obScale(0.06);
 	
-
 	// Freeglut's main loop can be stopped executing (**)
 	// while (continue_in_main_loop) glutMainLoopEvent();
 

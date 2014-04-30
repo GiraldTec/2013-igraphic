@@ -1,3 +1,5 @@
+//Carlos Giraldo
+//Raquel Peces
 #pragma once
 #include "../ClasesMaestras/ObjetoCuadrico.h"
 

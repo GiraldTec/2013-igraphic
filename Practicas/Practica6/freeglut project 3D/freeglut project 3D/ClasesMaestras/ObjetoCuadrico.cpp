@@ -1,3 +1,5 @@
+//Carlos Giraldo
+//Raquel Peces
 #include "ObjetoCuadrico.h"
 
 

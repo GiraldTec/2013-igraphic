@@ -1,3 +1,5 @@
+//Carlos Giraldo
+//Raquel Peces
 #include "Escena.h"
 
 
@@ -7,7 +9,7 @@ Escena::Escena(void){
 	
 	//Bola Blanca
 	Bola *bola = new Bola(1.0,1.0,1.0);
-	bola->obTraslate(0.0,60.0,30.0);
+	bola->obTraslate(0.0,55.0,50.0);
 	addComponente(bola);
 	//Taco
 	Taco *taco = new Taco();
@@ -20,7 +22,7 @@ Escena::Escena(void){
 	addComponente(tiza);	
 	//Triangulo bolas
 	TrianguloBolas *triangulo = new TrianguloBolas();
-	triangulo->obTraslate(0.0,60.0,0.0);
+	triangulo->obTraslate(0.0,55.0,0.0);
 	addComponente(triangulo);
 }
 

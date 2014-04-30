@@ -1,3 +1,5 @@
+//Carlos Giraldo
+//Raquel Peces
 #include "Bola.h"
 
 Bola::Bola(GLdouble r, GLdouble g, GLdouble b)

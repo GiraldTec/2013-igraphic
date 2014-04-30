@@ -1,8 +1,14 @@
+//Carlos Giraldo
+//Raquel Peces
 #include "Taco.h"
 
 
 Taco::Taco(void)
 {
+	Disco *dN=new Disco(0.0,3.0,15,2);
+	dN->setColor(0.0,0.0,0.0);
+	addComponente(dN);
+
 	Cilindro *a=new Cilindro(3.0,2.8,20.0,15,4);
 	a->setColor(0.0,0.0,0.0);
 	addComponente(a);
@@ -26,6 +32,12 @@ Taco::Taco(void)
 	e->obTraslate(0.0,0.0,135.0);
 	e->setColor(0.0,0.0,1.0);
 	addComponente(e);
+
+	Disco *dA=new Disco(0.0,1.0,15,1);
+	dA->obTraslate(0.0,0.0,140.0);
+	dA->setColor(0.0,0.0,1.0);
+	addComponente(dA);
+
 }
 
 
