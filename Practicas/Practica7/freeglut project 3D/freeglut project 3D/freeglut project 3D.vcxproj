@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7B0BFFD4-F43D-4F20-B1CE-F95EB35AB0A4}</ProjectGuid>
+    <RootNamespace>freeglutproject3D</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)freeglut\include\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)freeglut\lib\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(SolutionDir)freeglut\include\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)freeglut\lib\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Camara.cpp" />
+    <ClCompile Include="Cara.cpp" />
+    <ClCompile Include="ClasesMaestras\Malla.cpp" />
+    <ClCompile Include="ClasesMaestras\Objeto3D.cpp" />
+    <ClCompile Include="ClasesMaestras\ObjetoCompuesto.cpp" />
+    <ClCompile Include="ClasesMaestras\ObjetoCuadrico.cpp" />
+    <ClCompile Include="ClasesMaestras\TAfin.cpp" />
+    <ClCompile Include="Elementos\Bola.cpp" />
+    <ClCompile Include="Elementos\BordeMesa.cpp" />
+    <ClCompile Include="Elementos\BordeTronera.cpp" />
+    <ClCompile Include="Elementos\EsquinaMesa.cpp" />
+    <ClCompile Include="Elementos\MesaBillar.cpp" />
+    <ClCompile Include="Elementos\Pata.cpp" />
+    <ClCompile Include="Elementos\Tablero.cpp" />
+    <ClCompile Include="Elementos\Taco.cpp" />
+    <ClCompile Include="Elementos\Tiza.cpp" />
+    <ClCompile Include="Elementos\TrianguloBolas.cpp" />
+    <ClCompile Include="Elementos\Tronera.cpp" />
+    <ClCompile Include="Escena.cpp" />
+    <ClCompile Include="Figuras\Cilindro.cpp" />
+    <ClCompile Include="Figuras\Cubo.cpp" />
+    <ClCompile Include="Figuras\Disco.cpp" />
+    <ClCompile Include="Figuras\DiscoParcial.cpp" />
+    <ClCompile Include="Figuras\Esfera.cpp" />
+    <ClCompile Include="Figuras\Torus.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Pencil.cpp" />
+    <ClCompile Include="Poligon.cpp" />
+    <ClCompile Include="PV3D.cpp" />
+    <ClCompile Include="VerticeNormal.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Camara.h" />
+    <ClInclude Include="Cara.h" />
+    <ClInclude Include="ClasesMaestras\Malla.h" />
+    <ClInclude Include="ClasesMaestras\Objeto3D.h" />
+    <ClInclude Include="ClasesMaestras\ObjetoCompuesto.h" />
+    <ClInclude Include="ClasesMaestras\ObjetoCuadrico.h" />
+    <ClInclude Include="ClasesMaestras\TAfin.h" />
+    <ClInclude Include="Elementos\Bola.h" />
+    <ClInclude Include="Elementos\BordeMesa.h" />
+    <ClInclude Include="Elementos\BordeTronera.h" />
+    <ClInclude Include="Elementos\EsquinaMesa.h" />
+    <ClInclude Include="Elementos\MesaBillar.h" />
+    <ClInclude Include="Elementos\Pata.h" />
+    <ClInclude Include="Elementos\Tablero.h" />
+    <ClInclude Include="Elementos\Taco.h" />
+    <ClInclude Include="Elementos\Tiza.h" />
+    <ClInclude Include="Elementos\TrianguloBolas.h" />
+    <ClInclude Include="Elementos\Tronera.h" />
+    <ClInclude Include="Escena.h" />
+    <ClInclude Include="Figuras\Cilindro.h" />
+    <ClInclude Include="Figuras\Cubo.h" />
+    <ClInclude Include="Figuras\Disco.h" />
+    <ClInclude Include="Figuras\DiscoParcial.h" />
+    <ClInclude Include="Figuras\Esfera.h" />
+    <ClInclude Include="Figuras\Torus.h" />
+    <ClInclude Include="Pencil.h" />
+    <ClInclude Include="Poligon.h" />
+    <ClInclude Include="PV3D.h" />
+    <ClInclude Include="VerticeNormal.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

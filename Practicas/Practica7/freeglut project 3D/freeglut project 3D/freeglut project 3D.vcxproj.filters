@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Camara.cpp" />
+    <ClCompile Include="Cara.cpp" />
+    <ClCompile Include="ClasesMaestras\Malla.cpp" />
+    <ClCompile Include="ClasesMaestras\Objeto3D.cpp" />
+    <ClCompile Include="ClasesMaestras\ObjetoCompuesto.cpp" />
+    <ClCompile Include="ClasesMaestras\ObjetoCuadrico.cpp" />
+    <ClCompile Include="ClasesMaestras\TAfin.cpp" />
+    <ClCompile Include="Elementos\BordeMesa.cpp" />
+    <ClCompile Include="Elementos\BordeTronera.cpp" />
+    <ClCompile Include="Elementos\EsquinaMesa.cpp" />
+    <ClCompile Include="Elementos\Pata.cpp" />
+    <ClCompile Include="Elementos\Tablero.cpp" />
+    <ClCompile Include="Elementos\Tronera.cpp" />
+    <ClCompile Include="Escena.cpp" />
+    <ClCompile Include="Figuras\Cilindro.cpp" />
+    <ClCompile Include="Figuras\Cubo.cpp" />
+    <ClCompile Include="Figuras\Disco.cpp" />
+    <ClCompile Include="Figuras\DiscoParcial.cpp" />
+    <ClCompile Include="Figuras\Esfera.cpp" />
+    <ClCompile Include="Figuras\Torus.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Pencil.cpp" />
+    <ClCompile Include="Poligon.cpp" />
+    <ClCompile Include="PV3D.cpp" />
+    <ClCompile Include="VerticeNormal.cpp" />
+    <ClCompile Include="Elementos\TrianguloBolas.cpp" />
+    <ClCompile Include="Elementos\MesaBillar.cpp" />
+    <ClCompile Include="Elementos\Taco.cpp" />
+    <ClCompile Include="Elementos\Tiza.cpp" />
+    <ClCompile Include="Elementos\Bola.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Camara.h" />
+    <ClInclude Include="Cara.h" />
+    <ClInclude Include="ClasesMaestras\Malla.h" />
+    <ClInclude Include="ClasesMaestras\Objeto3D.h" />
+    <ClInclude Include="ClasesMaestras\ObjetoCompuesto.h" />
+    <ClInclude Include="ClasesMaestras\ObjetoCuadrico.h" />
+    <ClInclude Include="ClasesMaestras\TAfin.h" />
+    <ClInclude Include="Elementos\BordeMesa.h" />
+    <ClInclude Include="Elementos\BordeTronera.h" />
+    <ClInclude Include="Elementos\EsquinaMesa.h" />
+    <ClInclude Include="Elementos\Pata.h" />
+    <ClInclude Include="Elementos\Tablero.h" />
+    <ClInclude Include="Elementos\Tronera.h" />
+    <ClInclude Include="Escena.h" />
+    <ClInclude Include="Figuras\Cilindro.h" />
+    <ClInclude Include="Figuras\Cubo.h" />
+    <ClInclude Include="Figuras\Disco.h" />
+    <ClInclude Include="Figuras\DiscoParcial.h" />
+    <ClInclude Include="Figuras\Esfera.h" />
+    <ClInclude Include="Figuras\Torus.h" />
+    <ClInclude Include="Pencil.h" />
+    <ClInclude Include="Poligon.h" />
+    <ClInclude Include="PV3D.h" />
+    <ClInclude Include="VerticeNormal.h" />
+    <ClInclude Include="Elementos\TrianguloBolas.h" />
+    <ClInclude Include="Elementos\MesaBillar.h" />
+    <ClInclude Include="Elementos\Taco.h" />
+    <ClInclude Include="Elementos\Tiza.h" />
+    <ClInclude Include="Elementos\Bola.h" />
+  </ItemGroup>
+</Project>
