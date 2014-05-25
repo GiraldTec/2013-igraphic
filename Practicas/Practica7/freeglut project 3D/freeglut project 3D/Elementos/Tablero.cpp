@@ -6,50 +6,50 @@
 Tablero::Tablero(void){
 
 	// Tapete
-	Cubo *field = new Cubo(5);
+	Cubo *field = new Cubo(80,1,100);
 	field->obTraslate(0.0,2.5,0.0);
 	field->obScale(140.0,5.0,270.0);
 	field->setColor(0.0,1.0,0.0);
 	addComponente(field);
 
-	Cubo *aF= new Cubo(5);
+	Cubo *aF= new Cubo(5,1,50);
 	aF->obTraslate(-75.0,2.5,70.0);
 	aF->obScale(10.0,5.0,130.0);
 	aF->setColor(0.0,1.0,0.0);
 	addComponente(aF);
 
-	Cubo *bF= new Cubo(5);
+	Cubo *bF= new Cubo(5,1,50);
 	bF->obTraslate(-75.0,2.5,-70.0);
 	bF->obScale(10.0,5.0,130.0);
 	bF->setColor(0.0,1.0,0.0);
 	addComponente(bF);
 
-	Cubo *cF= new Cubo(5);
+	Cubo *cF= new Cubo(5,1,50);
 	cF->obTraslate(75.0,2.5,70.0);
 	cF->obScale(10.0,5.0,130.0);
 	cF->setColor(0.0,1.0,0.0);
 	addComponente(cF);
 
-	Cubo *dF= new Cubo(5);
+	Cubo *dF= new Cubo(5,1,50);
 	dF->obTraslate(75.0,2.5,-70.0);
 	dF->obScale(10.0,5.0,130.0);
 	dF->setColor(0.0,1.0,0.0);
 	addComponente(dF);
 
-	Cubo *eF= new Cubo(5);
+	Cubo *eF= new Cubo(50,1,5);
 	eF->obTraslate(0.0,2.5,-140.0);
 	eF->obScale(140.0,5.0,10.0);
 	eF->setColor(0.0,1.0,0.0);
 	addComponente(eF);
 	
-	Cubo *fF= new Cubo(5);
+	Cubo *fF= new Cubo(50,1,5);
 	fF->obTraslate(0.0,2.5,140.0);
 	fF->obScale(140.0,5.0,10.0);
 	fF->setColor(0.0,1.0,0.0);
 	addComponente(fF);
 
 	// Madera
-	Cubo *table = new Cubo(5);
+	Cubo *table = new Cubo(80,10,100);
 	table->obTraslate(0.0,-12.5,0.0);
 	table->obScale(140.0,25.0,270.0);
 	table->setColor(0.55,0.42,0.14);

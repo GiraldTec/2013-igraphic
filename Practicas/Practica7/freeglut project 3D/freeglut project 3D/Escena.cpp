@@ -4,9 +4,14 @@
 
 
 Escena::Escena(void){
+	//Lampara
+	lamp=new Lampara();
+	lamp->obTraslate(0.0,200.0,0.0);
+	lamp->obRotate(90.0,0);
+	addComponente(lamp);
+	//Mesa
 	MesaBillar *mesa = new MesaBillar();
 	addComponente(mesa);
-	
 	//Bola Blanca
 	Bola *bola = new Bola(1.0,1.0,1.0);
 	bola->obTraslate(0.0,55.0,50.0);
@@ -26,6 +31,9 @@ Escena::Escena(void){
 	addComponente(triangulo);
 }
 
+Lampara* Escena::getLamp(void){
+	return lamp;
+}
 
 Escena::~Escena(void)
 {

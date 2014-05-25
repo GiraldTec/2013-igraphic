@@ -11,6 +11,7 @@ public:
 	Cilindro(GLdouble b,GLdouble t,GLdouble h,GLint sl,GLint st);
 	~Cilindro(void);
 
+
 	void obQdibuja(){
 		gluCylinder(q, baseRadius, topRadius, height, slices, stacks);
 	}

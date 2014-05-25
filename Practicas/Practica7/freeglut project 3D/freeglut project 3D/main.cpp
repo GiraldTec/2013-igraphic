@@ -42,26 +42,11 @@ GLdouble acumRoll, acumYaw, acumPitch;
 // Prueba
 Objeto3D *escena;
 
-void initGL() {	 		 
-	glClearColor(0.6f,0.7f,0.8f,1.0);
-    glEnable(GL_LIGHTING);    
+//Componentes de luz
+bool lampOn,eastOn;
 
-	glEnable(GL_COLOR_MATERIAL);
-	glMaterialf(GL_FRONT, GL_SHININESS, 0.1f);
-	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_NORMALIZE);
-	glShadeModel(GL_SMOOTH);
-
-	// buildSceneObjects();
-
-	// Camera set up
-	/*glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-	gluLookAt(eyeX, eyeY, eyeZ, lookX, lookY, lookZ, upX, upY, upZ);
-	*/
-	//PV3D *eye = new PV3D(100.0, 100.0, 100.0);
-	//PV3D *look = new PV3D(0.0, 0.0, 0.0);
-	//PV3D *up = new PV3D(0, 1, 0);
+void initGL() {	 	
+	
 	camera = Camara(PV3D(50.0, 50.0, 50.0), PV3D(0.0, 0.0, 0.0), PV3D(0, 1, 0));
 	acumRoll = 0;
 	acumPitch = 0;
@@ -71,17 +56,58 @@ void initGL() {
     glLoadIdentity();     
 	glOrtho(xLeft, xRight, yBot, yTop, N, F);
 
+	glClearColor(0.0,0.0,0.0,1.0);//0.6f,0.7f,0.8f,1.0);
+    glEnable(GL_LIGHTING);    
+
+	glEnable(GL_COLOR_MATERIAL);
+	glMaterialf(GL_FRONT, GL_SHININESS, 0.1f);
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_NORMALIZE);
+	glShadeModel(GL_SMOOTH);
+
 	// Viewport set up
     glViewport(0, 0, WIDTH, HEIGHT);  
 
-	 // Light0
+	// LUZ AMBIENTE
+	//GLfloat amb[] = {0.2,0.2,0.2,1.0};
+	//glLightModelfv(GL_LIGHT_MODEL_AMBIENT, amb);
+
+	 // Foco de la lámpara
     glEnable(GL_LIGHT0);
+
+	glLightf(GL_LIGHT0, GL_SPOT_CUTOFF, 30.0);
+	glLightf(GL_LIGHT0, GL_SPOT_EXPONENT, 4.0);
+	GLfloat dir[]={0.0,-1.0,0.0};//2.0,1.0,-4.0};
+	glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, dir);
+
     GLfloat d[]={1.0,1.0,1.0,1.0};
     glLightfv(GL_LIGHT0, GL_DIFFUSE, d);
     GLfloat a[]={0.3f,0.3f,0.3f,1.0};
     glLightfv(GL_LIGHT0, GL_AMBIENT, a);
-	GLfloat p[]={25.0, 25.0, 0.0, 1.0};	 
+	GLfloat p[]={0.0, 9.0, 0.0, 1.0};	 //{25.0, 25.0, 0.0, 1.0};	 
 	glLightfv(GL_LIGHT0, GL_POSITION, p);
+
+	lampOn = true;
+	
+	// Luz del Este
+	glEnable(GL_LIGHT1);
+	GLfloat p2[]={1.0, 1.0, 0.0, 0.0};
+	glLightfv(GL_LIGHT1, GL_POSITION, p2);
+	GLfloat d2[]={0.0,0.0,0.0};
+    glLightfv(GL_LIGHT1, GL_DIFFUSE, d2);
+    GLfloat a2[]={1.0,1.0,1.0,1.0};
+    glLightfv(GL_LIGHT1, GL_AMBIENT, a2);
+
+	eastOn = true;
+
+	//Niebla
+	glEnable(GL_FOG);
+	glFogi(GL_FOG_MODE, GL_LINEAR);
+	glFogf(GL_FOG_DENSITY, 0.018f);
+	glHint (GL_FOG_HINT, GL_NICEST);
+	glFogf(GL_FOG_START, 50.0f);
+	glFogf(GL_FOG_END, 100.0f);
+
  }
 
 void display(void) {
@@ -152,8 +178,27 @@ void key(unsigned char key, int x, int y){
 		break;		 			 
 		// ----------------
 		
-		 // linea de debug::: 	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
+
 		case 't': 
+			if(lampOn){
+				glDisable(GL_LIGHT0);
+				lampOn = false;
+			}else{
+				glEnable(GL_LIGHT0);
+				lampOn = true;
+			}
+			break;
+		case 'y': 
+			if(eastOn){
+				glDisable(GL_LIGHT1);
+				eastOn = false;
+			}else{
+				glEnable(GL_LIGHT1);
+				eastOn = true;
+			}
+			break;
+		 // linea de debug::: 	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
+	/*	case 't': 
 			escena->obRotate(5,0);
 			break;
 		case 'y': 
@@ -357,7 +402,7 @@ void key(unsigned char key, int x, int y){
 			acumPitch = 0;
 			acumYaw = 0;
 			camera.esquina();
-			break;
+			break;*/
 		default:
 			need_redisplay = false;
 			cout<<key<<endl;

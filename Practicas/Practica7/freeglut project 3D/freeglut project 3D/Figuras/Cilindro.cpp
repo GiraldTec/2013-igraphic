@@ -19,7 +19,6 @@ Cilindro::Cilindro(GLdouble b,GLdouble t,GLdouble h,GLint sl,GLint st){
 	stacks = st;
 }
 
-
 Cilindro::~Cilindro(void)
 {
 }

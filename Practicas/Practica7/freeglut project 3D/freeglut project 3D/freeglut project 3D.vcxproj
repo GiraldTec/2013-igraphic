@@ -77,6 +77,7 @@
     <ClCompile Include="Elementos\BordeMesa.cpp" />
     <ClCompile Include="Elementos\BordeTronera.cpp" />
     <ClCompile Include="Elementos\EsquinaMesa.cpp" />
+    <ClCompile Include="Elementos\Lampara.cpp" />
     <ClCompile Include="Elementos\MesaBillar.cpp" />
     <ClCompile Include="Elementos\Pata.cpp" />
     <ClCompile Include="Elementos\Tablero.cpp" />
@@ -109,6 +110,7 @@
     <ClInclude Include="Elementos\BordeMesa.h" />
     <ClInclude Include="Elementos\BordeTronera.h" />
     <ClInclude Include="Elementos\EsquinaMesa.h" />
+    <ClInclude Include="Elementos\Lampara.h" />
     <ClInclude Include="Elementos\MesaBillar.h" />
     <ClInclude Include="Elementos\Pata.h" />
     <ClInclude Include="Elementos\Tablero.h" />

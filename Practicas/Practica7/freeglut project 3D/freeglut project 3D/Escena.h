@@ -7,11 +7,13 @@
 #include "Elementos\Taco.h"
 #include "Elementos\Tiza.h"
 #include "Elementos\Bola.h"
-#include "Figuras\Cubo.h"  //
+#include "Elementos\Lampara.h"
 
 class Escena : public ObjetoCompuesto
 {
 public:
+	Lampara *lamp;
+	Lampara* getLamp(void);
 	Escena(void);
 	~Escena(void);
 };

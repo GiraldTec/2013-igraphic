@@ -4,7 +4,8 @@
 
 
 ObjetoCuadrico::ObjetoCuadrico(void){
-	q=gluNewQuadric();  // TODO mejorar eficiencia
+	q=gluNewQuadric();  
+	isInside=false;
 	red=green=blue=0.5;
 }
 
@@ -18,3 +19,8 @@ void ObjetoCuadrico::setColor(GLfloat r,GLfloat g, GLfloat b){
 	green=g;
 	blue =b;
 }
+
+void ObjetoCuadrico::setInside(){
+	isInside=true;
+}
+

@@ -31,6 +31,7 @@
     <ClCompile Include="Elementos\Taco.cpp" />
     <ClCompile Include="Elementos\Tiza.cpp" />
     <ClCompile Include="Elementos\Bola.cpp" />
+    <ClCompile Include="Elementos\Lampara.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camara.h" />
@@ -62,5 +63,6 @@
     <ClInclude Include="Elementos\Taco.h" />
     <ClInclude Include="Elementos\Tiza.h" />
     <ClInclude Include="Elementos\Bola.h" />
+    <ClInclude Include="Elementos\Lampara.h" />
   </ItemGroup>
 </Project>
