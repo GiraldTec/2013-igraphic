@@ -6,8 +6,7 @@
 Escena::Escena(void){
 	//Lampara
 	lamp=new Lampara();
-	lamp->obTraslate(0.0,200.0,0.0);
-	lamp->obRotate(90.0,0);
+	lamp->obTraslate(0.0,150.0,0.0);
 	addComponente(lamp);
 	//Mesa
 	MesaBillar *mesa = new MesaBillar();

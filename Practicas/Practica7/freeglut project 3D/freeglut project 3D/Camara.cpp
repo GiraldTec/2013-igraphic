@@ -141,6 +141,7 @@ void Camara::desplazar(GLdouble x, GLdouble y, GLdouble z)
 void Camara::ortogonal(GLdouble left, GLdouble right, GLdouble botton, GLdouble top, GLdouble n, GLdouble f)
 {
 	glMatrixMode(GL_PROJECTION);
+	//glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	glOrtho(left, right, botton, top, n, f);
 }
@@ -148,6 +149,7 @@ void Camara::ortogonal(GLdouble left, GLdouble right, GLdouble botton, GLdouble 
 void Camara::perspectiva(GLdouble left, GLdouble right, GLdouble botton, GLdouble top, GLdouble n, GLdouble f)
 {
 	glMatrixMode(GL_PROJECTION);
+	//glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	//glFrustum(left,right,bottom,top,nearAux,farAux);
 	gluPerspective(5, 2, n, f);
@@ -156,6 +158,7 @@ void Camara::perspectiva(GLdouble left, GLdouble right, GLdouble botton, GLdoubl
 void Camara::oblicua(PV3D* vector, GLdouble left, GLdouble right, GLdouble botton, GLdouble top, GLdouble n, GLdouble f)
 {
 	glMatrixMode(GL_PROJECTION);
+	//glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	
 	vector->normalize();

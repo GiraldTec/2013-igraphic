@@ -32,19 +32,18 @@ GLdouble upX=0, upY=1, upZ=0;
 // Axis angles
 GLfloat angleX=0,angleY=0,angleZ=0;
 
-// Escena
-Escena *scene;
-
 //Camara
 Camara camera;
 PV3D aux = PV3D(0.01, 0.01, 1);
 GLdouble acumRoll, acumYaw, acumPitch;
 
 // Prueba
-Objeto3D *escena;
+Escena *escena;
 
 //Componentes de luz
 bool lampOn,eastOn;
+GLfloat focoP[4]= {0.0, 9.0, 0.0, 1.0};
+GLfloat focoA = 30.0;
 
 //Texturas
 GLuint texturas[2];
@@ -73,44 +72,23 @@ void initGL() {
     glViewport(0, 0, WIDTH, HEIGHT);  
 
 	// LUZ AMBIENTE
-	//GLfloat amb[] = {0.2,0.2,0.2,1.0};
-	//glLightModelfv(GL_LIGHT_MODEL_AMBIENT, amb);
+	GLfloat amb[] = {1.0,0.2,0.2,1.0};
+	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, amb);
 
 	 // Foco de la lámpara
     glEnable(GL_LIGHT0);
-
-	glLightf(GL_LIGHT0, GL_SPOT_CUTOFF, 30.0);
-	glLightf(GL_LIGHT0, GL_SPOT_EXPONENT, 4.0);
-	GLfloat dir[]={0.0,-1.0,0.0};//2.0,1.0,-4.0};
-	glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, dir);
-
-    GLfloat d[]={1.0,1.0,1.0,1.0};
-    glLightfv(GL_LIGHT0, GL_DIFFUSE, d);
-    GLfloat a[]={0.3f,0.3f,0.3f,1.0};
-    glLightfv(GL_LIGHT0, GL_AMBIENT, a);
-	GLfloat p[]={0.0, 9.0, 0.0, 1.0};	 //{25.0, 25.0, 0.0, 1.0};	 
-	glLightfv(GL_LIGHT0, GL_POSITION, p);
-
+	// Luz del este
+	glEnable(GL_LIGHT1);
+	
+	
 	lampOn = true;
 	
-	// Luz del Este
-	glEnable(GL_LIGHT1);
-	GLfloat p2[]={1.0, 1.0, 0.0, 0.0};
-	glLightfv(GL_LIGHT1, GL_POSITION, p2);
-	GLfloat d2[]={0.0,0.0,0.0};
-    glLightfv(GL_LIGHT1, GL_DIFFUSE, d2);
-    GLfloat a2[]={1.0,1.0,1.0,1.0};
-    glLightfv(GL_LIGHT1, GL_AMBIENT, a2);
 
 	eastOn = true;
 
-	//Niebla
-	glEnable(GL_FOG);
-	glFogi(GL_FOG_MODE, GL_LINEAR);
-	glFogf(GL_FOG_DENSITY, 0.018f);
-	glHint (GL_FOG_HINT, GL_NICEST);
-	glFogf(GL_FOG_START, 50.0f);
-	glFogf(GL_FOG_END, 100.0f);
+		
+
+	//glLightModeli(GL_LIGHT_MODEL_TWO_SIDE, GL_TRUE);
 
 	//Texturas
 	unsigned int width;
@@ -127,7 +105,6 @@ void initGL() {
 	//Leer en la variable textura, el archivo que contiene la imagen 
 	//usando la clase lectora
 	glBindTexture(GL_TEXTURE_2D, 0);
-
 
 	//Textura mesa
 	glBindTexture(GL_TEXTURE_2D, texturas[0]);
@@ -172,7 +149,45 @@ void display(void) {
 	glEnd();
 	
 
+//	glMatrixMode(GL_PROJECTION);
+	// Lámpara
+	glLightf(GL_LIGHT0, GL_SPOT_CUTOFF, focoA);
+	glLightf(GL_LIGHT0, GL_SPOT_EXPONENT, 4.0);
+	GLfloat dir[]={0.0,-1.0,0.0};//2.0,1.0,-4.0};
+	glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, dir);
+
+    GLfloat d[]={1.0,1.0,1.0,1.0};
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, d);
+    GLfloat a[]={0.3f,0.3f,0.3f,1.0};
+    glLightfv(GL_LIGHT0, GL_AMBIENT, a);
+	GLfloat p[]={0.0, 9.0, 0.0, 1.0};	 //{25.0, 25.0, 0.0, 1.0};	 
+	glLightfv(GL_LIGHT0, GL_POSITION, focoP);
+
+	// Luz del Este
+	GLfloat p2[]={0.0,0.0,-100.0,0.0};
+	glLightfv(GL_LIGHT1, GL_POSITION, p2);
+	GLfloat d2[]={0.0,0.0,0.0};
+    glLightfv(GL_LIGHT1, GL_DIFFUSE, d2);
+    GLfloat a2[]={1.0,1.0,1.0,1.0};
+    glLightfv(GL_LIGHT1, GL_AMBIENT, a2);
+
+
+	//Niebla
+	glEnable(GL_FOG);
+	glFogi(GL_FOG_MODE, GL_LINEAR);
+	glFogf(GL_FOG_DENSITY, 0.018f);
+	glHint (GL_FOG_HINT, GL_NICEST);
+	glFogf(GL_FOG_START, 50.0f);
+	glFogf(GL_FOG_END, 100.0f);
+
+	
+	
 	escena->dibuja();
+	//lampi->dibuja();
+
+
+
+
 
 	glFlush();
 	glutSwapBuffers();
@@ -227,6 +242,15 @@ void key(unsigned char key, int x, int y){
 		break;		 			 
 		// ----------------
 		
+
+		case '\'': 
+			focoA += 1.0 ;
+			escena->getLamp()->obScale(1.0,0.8,1.0);
+			break;
+		case '8': 
+			focoA -= 1.0 ;
+			escena->getLamp()->obScale(1.0,1.25,1.0);
+			break;
 
 		case '9': 
 			if(lampOn){
@@ -486,6 +510,9 @@ int main(int argc, char *argv[]){
 	// Escena
 	escena = new Escena();
 	escena->obScale(0.06);
+
+	//lampi = new Lampara();
+	//lampi->obScale(0.06);
 	
 	// Freeglut's main loop can be stopped executing (**)
 	// while (continue_in_main_loop) glutMainLoopEvent();

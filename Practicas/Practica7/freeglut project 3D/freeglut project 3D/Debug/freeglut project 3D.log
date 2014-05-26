@@ -1,13 +1,15 @@
-﻿Compilación iniciada a las 26/05/2014 16:25:46.
+﻿Compilación iniciada a las 26/05/2014 20:50:24.
      1>Proyecto "C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Camara.cpp Cara.cpp ClasesMaestras\Objeto3D.cpp ClasesMaestras\ObjetoCompuesto.cpp ClasesMaestras\TAfin.cpp Elementos\Bola.cpp Elementos\BordeMesa.cpp Elementos\BordeTronera.cpp Elementos\EsquinaMesa.cpp Elementos\Lampara.cpp Elementos\MesaBillar.cpp Elementos\Pata.cpp Elementos\Tablero.cpp Elementos\Taco.cpp Elementos\Tiza.cpp Elementos\TrianguloBolas.cpp Elementos\Tronera.cpp Escena.cpp Figuras\Cubo.cpp PV3D.cpp Pencil.cpp Poligon.cpp VerticeNormal.cpp main.cpp
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Cara.cpp ClasesMaestras\Objeto3D.cpp ClasesMaestras\ObjetoCompuesto.cpp ClasesMaestras\TAfin.cpp Elementos\Bola.cpp Elementos\BordeMesa.cpp Elementos\BordeTronera.cpp Elementos\EsquinaMesa.cpp Elementos\MesaBillar.cpp Elementos\Pata.cpp Elementos\Tablero.cpp Elementos\Taco.cpp Elementos\Tiza.cpp Elementos\TrianguloBolas.cpp Elementos\Tronera.cpp Figuras\Cubo.cpp PV3D.cpp Pencil.cpp Poligon.cpp VerticeNormal.cpp main.cpp
          main.cpp
      1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(13): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
      1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\elementos\tiza.h(4): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
      1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(14): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
      1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(15): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(488): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
+     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(75): warning C4305: 'inicializando' : truncamiento de 'double' a 'GLfloat'
+     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(248): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
+     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(512): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
          Generando código...
          Omitiendo... (no se detectaron cambios relevantes)
          VerticeNormal.cpp
@@ -15,7 +17,6 @@
          Pencil.cpp
          PV3D.cpp
          Cubo.cpp
-         Escena.cpp
          Tronera.cpp
          TrianguloBolas.cpp
          Tiza.cpp
@@ -23,7 +24,6 @@
          Tablero.cpp
          Pata.cpp
          MesaBillar.cpp
-         Lampara.cpp
          EsquinaMesa.cpp
          BordeTronera.cpp
          BordeMesa.cpp
@@ -32,7 +32,6 @@
          ObjetoCompuesto.cpp
          Objeto3D.cpp
          Cara.cpp
-         Camara.cpp
        Link:
          C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Camara.obj
          Debug\Cara.obj
@@ -71,4 +70,4 @@
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:03.99
+Tiempo transcurrido 00:00:03.40
