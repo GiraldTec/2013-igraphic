@@ -228,7 +228,7 @@ void key(unsigned char key, int x, int y){
 		// ----------------
 		
 
-		case 't': 
+		case '9': 
 			if(lampOn){
 				glDisable(GL_LIGHT0);
 				lampOn = false;
@@ -237,7 +237,7 @@ void key(unsigned char key, int x, int y){
 				lampOn = true;
 			}
 			break;
-		case 'y': 
+		case '0': 
 			if(eastOn){
 				glDisable(GL_LIGHT1);
 				eastOn = false;
@@ -247,7 +247,7 @@ void key(unsigned char key, int x, int y){
 			}
 			break;
 		 // linea de debug::: 	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
-	/*	case 't': 
+		case 't': 
 			escena->obRotate(5,0);
 			break;
 		case 'y': 
@@ -451,7 +451,7 @@ void key(unsigned char key, int x, int y){
 			acumPitch = 0;
 			acumYaw = 0;
 			camera.esquina();
-			break;*/
+			break;
 		default:
 			need_redisplay = false;
 			cout<<key<<endl;
