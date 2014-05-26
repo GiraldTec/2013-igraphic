@@ -48,6 +48,7 @@ void Malla::dibuja(void){
 	glMatrixMode(GL_MODELVIEW);
 	glPushMatrix();
 		glMultMatrixf(ta->getM());
+		glEnable(GL_TEXTURE_2D);
 		for (int i=0; i<this->nCaras; i++){
 			glLineWidth(1.0);
 			glColor3f(red,green,blue);
@@ -65,9 +66,11 @@ void Malla::dibuja(void){
 					GLfloat vX = puntos->at(iV)->getX();
 					GLfloat vY = puntos->at(iV)->getY();
 					GLfloat vZ = puntos->at(iV)->getZ();
+					glTexCoord3f(vX,vY,vZ);
 					glVertex3f(vX,vY,vZ);
 					}
 				glEnd();
 		}
+	glDisable(GL_TEXTURE_2D);
 	glPopMatrix();
 }

@@ -96,6 +96,7 @@
     <ClCompile Include="Pencil.cpp" />
     <ClCompile Include="Poligon.cpp" />
     <ClCompile Include="PV3D.cpp" />
+    <ClCompile Include="TextureLoader.cpp" />
     <ClCompile Include="VerticeNormal.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +129,7 @@
     <ClInclude Include="Pencil.h" />
     <ClInclude Include="Poligon.h" />
     <ClInclude Include="PV3D.h" />
+    <ClInclude Include="TextureLoader.h" />
     <ClInclude Include="VerticeNormal.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

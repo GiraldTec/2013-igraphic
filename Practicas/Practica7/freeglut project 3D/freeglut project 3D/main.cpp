@@ -12,6 +12,7 @@ using namespace std;
 
 #include "Escena.h";
 #include "Camara.h";
+#include "TextureLoader.h";
 
 // Freeglut parameters
 // Flag telling us to keep processing events
@@ -44,6 +45,9 @@ Objeto3D *escena;
 
 //Componentes de luz
 bool lampOn,eastOn;
+
+//Texturas
+GLuint texturas[2];
 
 void initGL() {	 	
 	
@@ -108,6 +112,47 @@ void initGL() {
 	glFogf(GL_FOG_START, 50.0f);
 	glFogf(GL_FOG_END, 100.0f);
 
+	//Texturas
+	unsigned int width;
+	unsigned int height;
+	unsigned char * data = loadBMPRaw("bmp/madera.bmp", width, height);
+	unsigned char * data2 = loadBMPRaw("bmp/hierba.bmp", width, height);
+	cout<< width << endl;
+	cout<< height << endl;
+
+	glGenTextures(2, texturas);
+	//glGenTextures(1, &textureID);
+
+	//glEnable(GL_TEXTURE_2D);
+	//Leer en la variable textura, el archivo que contiene la imagen 
+	//usando la clase lectora
+	glBindTexture(GL_TEXTURE_2D, 0);
+
+
+	//Textura mesa
+	glBindTexture(GL_TEXTURE_2D, texturas[0]);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_BLEND);
+
+	//Textura tapete
+	glBindTexture(GL_TEXTURE_2D, texturas[1]);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data2);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_BLEND);
+
  }
 
 void display(void) {
@@ -132,6 +177,10 @@ void display(void) {
 	glFlush();
 	glutSwapBuffers();
 	
+}
+
+void selectTexture(int i){
+	glBindTexture(GL_TEXTURE_2D, texturas[i]);
 }
 
 

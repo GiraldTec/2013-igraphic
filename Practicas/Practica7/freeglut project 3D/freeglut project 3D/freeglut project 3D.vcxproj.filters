@@ -32,6 +32,7 @@
     <ClCompile Include="Elementos\Tiza.cpp" />
     <ClCompile Include="Elementos\Bola.cpp" />
     <ClCompile Include="Elementos\Lampara.cpp" />
+    <ClCompile Include="TextureLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camara.h" />
@@ -64,5 +65,6 @@
     <ClInclude Include="Elementos\Tiza.h" />
     <ClInclude Include="Elementos\Bola.h" />
     <ClInclude Include="Elementos\Lampara.h" />
+    <ClInclude Include="TextureLoader.h" />
   </ItemGroup>
 </Project>

@@ -1,14 +1,16 @@
-﻿Compilación iniciada a las 25/05/2014 23:57:54.
-     1>Proyecto "C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
+﻿Compilación iniciada a las 26/05/2014 15:59:37.
+     1>Proyecto "C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica7\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         main.cpp
-     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(13): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\elementos\tiza.h(4): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(14): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(439): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica7\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ClasesMaestras\Malla.cpp
+         Malla.cpp
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica7\freeglut project 3d\freeglut project 3d\clasesmaestras\malla.cpp(60): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica7\freeglut project 3d\freeglut project 3d\clasesmaestras\malla.cpp(61): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica7\freeglut project 3d\freeglut project 3d\clasesmaestras\malla.cpp(62): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica7\freeglut project 3d\freeglut project 3d\clasesmaestras\malla.cpp(66): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica7\freeglut project 3d\freeglut project 3d\clasesmaestras\malla.cpp(67): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>c:\users\raquel\documents\facultad\igr\practicas\practicas\practica7\freeglut project 3d\freeglut project 3d\clasesmaestras\malla.cpp(68): warning C4244: 'inicializando' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
        Link:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Camara.obj
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica7\freeglut project 3D\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica7\freeglut project 3D\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica7\freeglut project 3D\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica7\freeglut project 3D\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Camara.obj
          Debug\Cara.obj
          Debug\Malla.obj
          Debug\Objeto3D.obj
@@ -38,10 +40,11 @@
          Debug\Pencil.obj
          Debug\Poligon.obj
          Debug\PV3D.obj
+         Debug\TextureLoader.obj
          Debug\VerticeNormal.obj
-         freeglut project 3D.vcxproj -> C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\Debug\freeglut project 3D.exe
-     1>Compilación del proyecto terminada "C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
+         freeglut project 3D.vcxproj -> C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica7\freeglut project 3D\Debug\freeglut project 3D.exe
+     1>Compilación del proyecto terminada "C:\Users\Raquel\Documents\facultad\IGR\practicas\Practicas\Practica7\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:03.07
+Tiempo transcurrido 00:00:19.15
