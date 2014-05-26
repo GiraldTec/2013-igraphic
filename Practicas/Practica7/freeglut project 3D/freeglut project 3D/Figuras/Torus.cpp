@@ -17,6 +17,12 @@ Torus::Torus(GLdouble i,GLdouble o,GLint s,GLint r){
 	rings=r;
 }
 
+void Torus::setColor(GLfloat r,GLfloat g, GLfloat b){
+	red = r;
+	green=g;
+	blue =b;
+}
+
 
 Torus::~Torus(void)
 {

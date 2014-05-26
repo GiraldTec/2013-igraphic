@@ -1,15 +1,17 @@
-﻿Compilación iniciada a las 26/05/2014 20:50:24.
+﻿Compilación iniciada a las 26/05/2014 23:13:02.
      1>Proyecto "C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Cara.cpp ClasesMaestras\Objeto3D.cpp ClasesMaestras\ObjetoCompuesto.cpp ClasesMaestras\TAfin.cpp Elementos\Bola.cpp Elementos\BordeMesa.cpp Elementos\BordeTronera.cpp Elementos\EsquinaMesa.cpp Elementos\MesaBillar.cpp Elementos\Pata.cpp Elementos\Tablero.cpp Elementos\Taco.cpp Elementos\Tiza.cpp Elementos\TrianguloBolas.cpp Elementos\Tronera.cpp Figuras\Cubo.cpp PV3D.cpp Pencil.cpp Poligon.cpp VerticeNormal.cpp main.cpp
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Cara.cpp ClasesMaestras\Objeto3D.cpp ClasesMaestras\ObjetoCompuesto.cpp ClasesMaestras\TAfin.cpp Elementos\Bola.cpp Elementos\EsquinaMesa.cpp Elementos\Pata.cpp Elementos\Taco.cpp Elementos\Tiza.cpp Elementos\TrianguloBolas.cpp Figuras\Cubo.cpp PV3D.cpp Pencil.cpp Poligon.cpp VerticeNormal.cpp main.cpp
          main.cpp
      1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(13): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
      1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\elementos\tiza.h(4): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
      1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(14): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
      1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(15): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
      1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(75): warning C4305: 'inicializando' : truncamiento de 'double' a 'GLfloat'
-     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(248): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
-     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(512): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
+     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(91): warning C4305: 'inicializando' : truncamiento de 'double' a 'GLfloat'
+     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(93): warning C4305: 'inicializando' : truncamiento de 'double' a 'GLfloat'
+     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(235): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
+     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(499): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
          Generando código...
          Omitiendo... (no se detectaron cambios relevantes)
          VerticeNormal.cpp
@@ -17,16 +19,11 @@
          Pencil.cpp
          PV3D.cpp
          Cubo.cpp
-         Tronera.cpp
          TrianguloBolas.cpp
          Tiza.cpp
          Taco.cpp
-         Tablero.cpp
          Pata.cpp
-         MesaBillar.cpp
          EsquinaMesa.cpp
-         BordeTronera.cpp
-         BordeMesa.cpp
          Bola.cpp
          TAfin.cpp
          ObjetoCompuesto.cpp
@@ -70,4 +67,4 @@
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:03.40
+Tiempo transcurrido 00:00:03.39

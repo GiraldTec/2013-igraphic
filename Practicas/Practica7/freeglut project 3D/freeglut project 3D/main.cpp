@@ -66,27 +66,41 @@ void initGL() {
 	glMaterialf(GL_FRONT, GL_SHININESS, 0.1f);
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_NORMALIZE);
-	glShadeModel(GL_SMOOTH);
+	glShadeModel(GL_FLAT);
 
 	// Viewport set up
     glViewport(0, 0, WIDTH, HEIGHT);  
 
 	// LUZ AMBIENTE
-	GLfloat amb[] = {1.0,0.2,0.2,1.0};
+	GLfloat amb[] = {0.1,0.05,0.05,1.0};
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, amb);
 
 	 // Foco de la lámpara
     glEnable(GL_LIGHT0);
+	glLightf(GL_LIGHT0, GL_SPOT_CUTOFF, focoA);
+	glLightf(GL_LIGHT0, GL_SPOT_EXPONENT, 4.0);
+	
+
+    GLfloat d[]={1.0,1.0,1.0,1.0};
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, d);
+    GLfloat a[]={0.3f,0.3f,0.3f,1.0};
+    glLightfv(GL_LIGHT0, GL_AMBIENT, a); 
+
 	// Luz del este
 	glEnable(GL_LIGHT1);
-	
-	
-	lampOn = true;
-	
+	GLfloat d2[]={0.2,0.2,0.2,1.0};
+    glLightfv(GL_LIGHT1, GL_DIFFUSE, d2);
+    GLfloat a2[]={0.2,0.2,0.2,1.0};
+    glLightfv(GL_LIGHT1, GL_AMBIENT, a2);
 
+	lampOn = true;
 	eastOn = true;
 
-		
+	//Niebla
+	glEnable(GL_FOG);
+	glFogi(GL_FOG_MODE, GL_LINEAR);
+	glFogf(GL_FOG_DENSITY, 0.018f);
+	glHint (GL_FOG_HINT, GL_NICEST);
 
 	//glLightModeli(GL_LIGHT_MODEL_TWO_SIDE, GL_TRUE);
 
@@ -135,8 +149,7 @@ void initGL() {
 void display(void) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);  
 
-	
-		// Drawing axes
+	// Drawing axes
 	glBegin( GL_LINES );
 		glColor3f(1.0,0.0,0.0); 
 		glVertex3f(0, 0, 0);	glVertex3f(20, 0, 0);	     
@@ -148,46 +161,20 @@ void display(void) {
 		glVertex3f(0, 0, 0);	glVertex3f(0, 0, 20);	     
 	glEnd();
 	
-
-//	glMatrixMode(GL_PROJECTION);
-	// Lámpara
-	glLightf(GL_LIGHT0, GL_SPOT_CUTOFF, focoA);
-	glLightf(GL_LIGHT0, GL_SPOT_EXPONENT, 4.0);
+	// Modificaciones de la luz
+	// LIGHT0
 	GLfloat dir[]={0.0,-1.0,0.0};//2.0,1.0,-4.0};
 	glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, dir);
-
-    GLfloat d[]={1.0,1.0,1.0,1.0};
-    glLightfv(GL_LIGHT0, GL_DIFFUSE, d);
-    GLfloat a[]={0.3f,0.3f,0.3f,1.0};
-    glLightfv(GL_LIGHT0, GL_AMBIENT, a);
-	GLfloat p[]={0.0, 9.0, 0.0, 1.0};	 //{25.0, 25.0, 0.0, 1.0};	 
+	glLightf(GL_LIGHT0, GL_SPOT_CUTOFF, focoA);
 	glLightfv(GL_LIGHT0, GL_POSITION, focoP);
-
-	// Luz del Este
-	GLfloat p2[]={0.0,0.0,-100.0,0.0};
+	// LIGHT1
+	GLfloat p2[]={1.0,1.0,0.0,1.0};
 	glLightfv(GL_LIGHT1, GL_POSITION, p2);
-	GLfloat d2[]={0.0,0.0,0.0};
-    glLightfv(GL_LIGHT1, GL_DIFFUSE, d2);
-    GLfloat a2[]={1.0,1.0,1.0,1.0};
-    glLightfv(GL_LIGHT1, GL_AMBIENT, a2);
-
-
-	//Niebla
-	glEnable(GL_FOG);
-	glFogi(GL_FOG_MODE, GL_LINEAR);
-	glFogf(GL_FOG_DENSITY, 0.018f);
-	glHint (GL_FOG_HINT, GL_NICEST);
-	glFogf(GL_FOG_START, 50.0f);
-	glFogf(GL_FOG_END, 100.0f);
-
-	
+	//FOG
+	glFogf(GL_FOG_START, 40.0f);
+	glFogf(GL_FOG_END, 95.0f);
 	
 	escena->dibuja();
-	//lampi->dibuja();
-
-
-
-
 
 	glFlush();
 	glutSwapBuffers();
