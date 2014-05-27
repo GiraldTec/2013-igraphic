@@ -227,18 +227,20 @@ void key(unsigned char key, int x, int y){
 		// ----------------
 		
 
-		case '\'': 
-			//focoA += 1.0 ;
-			escena->increaseA();
-			escena->getLamp()->obScale(1.0,0.8,1.0);
+		case '+': 
+			if(lampOn){
+				escena->getLamp()->increaseA();
+				escena->getLamp()->obScale(1.0,0.8,1.0);
+			}
 			break;
-		case '8': 
-			//focoA -= 1.0 ;
-			escena->decreaseA();
-			escena->getLamp()->obScale(1.0,1.25,1.0);
+		case '-': 
+			if(lampOn){
+				escena->getLamp()->decreaseA();
+				escena->getLamp()->obScale(1.0,1.25,1.0);
+			}
 			break;
 
-		case '9': 
+		case '/': 
 			if(lampOn){
 				glDisable(GL_LIGHT0);
 				lampOn = false;
@@ -247,7 +249,7 @@ void key(unsigned char key, int x, int y){
 				lampOn = true;
 			}
 			break;
-		case '0': 
+		case '*': 
 			if(eastOn){
 				glDisable(GL_LIGHT1);
 				eastOn = false;
@@ -256,6 +258,27 @@ void key(unsigned char key, int x, int y){
 				eastOn = true;
 			}
 			break;
+		case 'T': 
+			escena->getLamp()->obRotate(5,0);
+			break;
+		case 'Y': 
+			escena->getLamp()->obRotate(-5,0);
+			break;
+		// ----------------
+		case 'G':
+			escena->getLamp()->obRotate(5,1);
+			break;
+		case 'H': 
+			escena->getLamp()->obRotate(-5,1);
+			break;
+		// ----------------
+		case 'B': 
+			escena->getLamp()->obRotate(5,-1);
+			break;
+		case 'N': 
+			escena->getLamp()->obRotate(-5,-1);
+			break;
+
 		 // linea de debug::: 	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
 		case 't': 
 			escena->obRotate(5,0);

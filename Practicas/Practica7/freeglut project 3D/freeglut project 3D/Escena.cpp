@@ -6,8 +6,6 @@
 Escena::Escena(void){
 			//Lampara
 	
-	///
-	focoA = 30.0;
 	lamp=new Lampara();
 	lamp->obTraslate(0.0,150.0,0.0);
 	addComponente(lamp);

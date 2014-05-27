@@ -5,6 +5,8 @@
 
 Lampara::Lampara(void){
 
+	///
+	focoA = 30.0;
 	// Base
 	Cubo *base = new Cubo(5);
 	base->obRotate(90.0,0);
