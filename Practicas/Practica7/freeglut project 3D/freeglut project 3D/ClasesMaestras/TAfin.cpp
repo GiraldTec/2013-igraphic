@@ -52,6 +52,19 @@ void TAfin::taRotate(GLfloat a,GLfloat x,GLfloat y,GLfloat z){
 	glPopMatrix();
 }
 
+
+GLfloat* TAfin::multV4(GLfloat x,GLfloat y,GLfloat z,GLfloat w){
+	GLfloat *aux;
+	aux = new GLfloat[16];
+	for(int i=0;i<16;i++){aux[i]=m[i];}
+	GLfloat *ret;
+	ret = new GLfloat[4];
+	for(int j=0;j<4;j++){
+		ret[j]= x * aux[j*4] + y * aux[j*4+1] + z * aux[j*4+2] + w * aux[j*4+3];
+	}
+	return ret;
+}
+
 //Deprecated
 TAfin::TAfin(GLfloat sX,GLfloat sY,GLfloat sZ,GLfloat pX,GLfloat pY,GLfloat pZ,GLfloat aX,GLfloat aY,GLfloat aZ){  // ScaleXYZ PosXYZ AngXYZ
 	glMatrixMode(GL_MODELVIEW);

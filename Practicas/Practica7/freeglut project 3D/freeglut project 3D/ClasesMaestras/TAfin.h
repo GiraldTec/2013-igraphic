@@ -19,7 +19,7 @@ public:
 	void taScale(GLfloat sX,GLfloat sY,GLfloat sZ);//TODO
 	void taRotate(GLfloat a,GLfloat x,GLfloat y,GLfloat z); //TODO
 	
-	
+	GLfloat* multV4(GLfloat x,GLfloat y,GLfloat z,GLfloat w);
 
 	GLfloat* getM();
 

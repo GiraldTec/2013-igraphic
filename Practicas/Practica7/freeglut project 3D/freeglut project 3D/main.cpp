@@ -42,8 +42,7 @@ Escena *escena;
 
 //Componentes de luz
 bool lampOn,eastOn;
-GLfloat focoP[4]= {0.0, 9.0, 0.0, 1.0};
-GLfloat focoA = 30.0;
+
 
 //Texturas
 GLuint texturas[2];
@@ -77,21 +76,18 @@ void initGL() {
 
 	 // Foco de la lámpara
     glEnable(GL_LIGHT0);
-	glLightf(GL_LIGHT0, GL_SPOT_CUTOFF, focoA);
+/*	//glLightf(GL_LIGHT0, GL_SPOT_CUTOFF, focoA);
 	glLightf(GL_LIGHT0, GL_SPOT_EXPONENT, 4.0);
 	
 
     GLfloat d[]={1.0,1.0,1.0,1.0};
     glLightfv(GL_LIGHT0, GL_DIFFUSE, d);
     GLfloat a[]={0.3f,0.3f,0.3f,1.0};
-    glLightfv(GL_LIGHT0, GL_AMBIENT, a); 
+    glLightfv(GL_LIGHT0, GL_AMBIENT, a); */
 
 	// Luz del este
 	glEnable(GL_LIGHT1);
-	GLfloat d2[]={0.2,0.2,0.2,1.0};
-    glLightfv(GL_LIGHT1, GL_DIFFUSE, d2);
-    GLfloat a2[]={0.2,0.2,0.2,1.0};
-    glLightfv(GL_LIGHT1, GL_AMBIENT, a2);
+
 
 	lampOn = true;
 	eastOn = true;
@@ -125,7 +121,7 @@ void initGL() {
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
@@ -161,17 +157,18 @@ void display(void) {
 		glVertex3f(0, 0, 0);	glVertex3f(0, 0, 20);	     
 	glEnd();
 	
-	// Modificaciones de la luz
-	// LIGHT0
-	GLfloat dir[]={0.0,-1.0,0.0};//2.0,1.0,-4.0};
-	glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, dir);
-	glLightf(GL_LIGHT0, GL_SPOT_CUTOFF, focoA);
-	glLightfv(GL_LIGHT0, GL_POSITION, focoP);
-	// LIGHT1
-	GLfloat p2[]={1.0,1.0,0.0,1.0};
+	// LUZ DEL ESTE
+	GLfloat d[]={0.8,0.8,0.8,1.0};
+    GLfloat a[]={0.2,0.2,0.2,1.0};
+	GLfloat p2[]={10.0,10.0,0.0,1.0};
 	glLightfv(GL_LIGHT1, GL_POSITION, p2);
+
+    glLightfv(GL_LIGHT1, GL_DIFFUSE, d);
+    glLightfv(GL_LIGHT1, GL_AMBIENT, a);
+
+	
 	//FOG
-	glFogf(GL_FOG_START, 40.0f);
+	glFogf(GL_FOG_START, 60.0f);
 	glFogf(GL_FOG_END, 95.0f);
 	
 	escena->dibuja();
@@ -231,11 +228,13 @@ void key(unsigned char key, int x, int y){
 		
 
 		case '\'': 
-			focoA += 1.0 ;
+			//focoA += 1.0 ;
+			escena->increaseA();
 			escena->getLamp()->obScale(1.0,0.8,1.0);
 			break;
 		case '8': 
-			focoA -= 1.0 ;
+			//focoA -= 1.0 ;
+			escena->decreaseA();
 			escena->getLamp()->obScale(1.0,1.25,1.0);
 			break;
 
@@ -498,9 +497,6 @@ int main(int argc, char *argv[]){
 	escena = new Escena();
 	escena->obScale(0.06);
 
-	//lampi = new Lampara();
-	//lampi->obScale(0.06);
-	
 	// Freeglut's main loop can be stopped executing (**)
 	// while (continue_in_main_loop) glutMainLoopEvent();
 

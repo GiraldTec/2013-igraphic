@@ -4,7 +4,10 @@
 
 
 Escena::Escena(void){
-	//Lampara
+			//Lampara
+	
+	///
+	focoA = 30.0;
 	lamp=new Lampara();
 	lamp->obTraslate(0.0,150.0,0.0);
 	addComponente(lamp);
@@ -28,6 +31,8 @@ Escena::Escena(void){
 	TrianguloBolas *triangulo = new TrianguloBolas();
 	triangulo->obTraslate(0.0,55.0,0.0);
 	addComponente(triangulo);
+
+
 }
 
 Lampara* Escena::getLamp(void){
