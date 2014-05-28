@@ -1,53 +1,9 @@
-﻿Compilación iniciada a las 27/05/2014 18:14:40.
-     1>Proyecto "C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
-     1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         main.cpp
-     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(13): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\elementos\tiza.h(4): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(14): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(15): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(74): warning C4305: 'inicializando' : truncamiento de 'double' a 'GLfloat'
-     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(161): warning C4305: 'inicializando' : truncamiento de 'double' a 'GLfloat'
-     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(162): warning C4305: 'inicializando' : truncamiento de 'double' a 'GLfloat'
-     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(233): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
-     1>c:\users\giraldillo\workspace\gráfica\practicas\practica7\freeglut project 3d\freeglut project 3d\main.cpp(521): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
-       Link:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\Camara.obj
-         Debug\Cara.obj
-         Debug\Malla.obj
-         Debug\Objeto3D.obj
-         Debug\ObjetoCompuesto.obj
-         Debug\ObjetoCuadrico.obj
-         Debug\TAfin.obj
-         Debug\Bola.obj
-         Debug\BordeMesa.obj
-         Debug\BordeTronera.obj
-         Debug\EsquinaMesa.obj
-         Debug\Lampara.obj
-         Debug\MesaBillar.obj
-         Debug\Pata.obj
-         Debug\Tablero.obj
-         Debug\Taco.obj
-         Debug\Tiza.obj
-         Debug\TrianguloBolas.obj
-         Debug\Tronera.obj
-         Debug\Escena.obj
-         Debug\Cilindro.obj
-         Debug\Cubo.obj
-         Debug\Disco.obj
-         Debug\DiscoParcial.obj
-         Debug\Esfera.obj
-         Debug\Torus.obj
-         Debug\main.obj
-         Debug\Pencil.obj
-         Debug\Poligon.obj
-         Debug\PV3D.obj
-         Debug\TextureLoader.obj
-         Debug\VerticeNormal.obj
-         freeglut project 3D.vcxproj -> C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\Debug\freeglut project 3D.exe
-     1>Compilación del proyecto terminada "C:\Users\Giraldillo\workspace\Gráfica\Practicas\Practica7\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
+﻿Compilación iniciada a las 28/05/2014 12:51:48.
+     1>Proyecto "C:\hlocal\graf\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
+     1>Link:
+         freeglut project 3D.vcxproj -> C:\hlocal\graf\freeglut project 3D\Debug\freeglut project 3D.exe
+     1>Compilación del proyecto terminada "C:\hlocal\graf\freeglut project 3D\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:03.68
+Tiempo transcurrido 00:00:00.06
