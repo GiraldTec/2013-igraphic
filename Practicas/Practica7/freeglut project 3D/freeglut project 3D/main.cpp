@@ -41,7 +41,7 @@ GLdouble acumRoll, acumYaw, acumPitch;
 Escena *escena;
 
 //Componentes de luz
-bool lampOn,eastOn;
+bool lampOn,eastOn,ambOn,fogOn;
 
 
 //Texturas
@@ -71,7 +71,7 @@ void initGL() {
     glViewport(0, 0, WIDTH, HEIGHT);  
 
 	// LUZ AMBIENTE
-	GLfloat amb[] = {0.1,0.05,0.05,1.0};
+	GLfloat amb[] = {1.0,0.05,0.05,1.0};
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, amb);
 
 	 // Foco de la lámpara
@@ -88,7 +88,8 @@ void initGL() {
 	// Luz del este
 	glEnable(GL_LIGHT1);
 
-
+	fogOn = true;
+	ambOn = true;
 	lampOn = true;
 	eastOn = true;
 
@@ -239,8 +240,27 @@ void key(unsigned char key, int x, int y){
 				escena->getLamp()->obScale(1.0,1.25,1.0);
 			}
 			break;
-
-		case '/': 
+		case '8': 
+			if(ambOn){
+				GLfloat amb[] = {0.0,0.0,0.0,1.0};
+				glLightModelfv(GL_LIGHT_MODEL_AMBIENT, amb);
+				ambOn = false;
+			}else{
+				GLfloat amb[] = {1.0,0.05,0.05,1.0};
+				glLightModelfv(GL_LIGHT_MODEL_AMBIENT, amb);
+				ambOn = true;
+			}
+			break;
+		case '*': 
+			if(fogOn){
+				glDisable(GL_FOG);
+				fogOn = false;
+			}else{
+				glEnable(GL_FOG);;
+				fogOn = true;
+			}
+			break;
+		case '9': 
 			if(lampOn){
 				glDisable(GL_LIGHT0);
 				lampOn = false;
@@ -249,7 +269,7 @@ void key(unsigned char key, int x, int y){
 				lampOn = true;
 			}
 			break;
-		case '*': 
+		case '0': 
 			if(eastOn){
 				glDisable(GL_LIGHT1);
 				eastOn = false;
@@ -278,6 +298,28 @@ void key(unsigned char key, int x, int y){
 		case 'N': 
 			escena->getLamp()->obRotate(-5,-1);
 			break;
+		// ----------------
+		case 'Q': 
+			escena->getLamp()->obTraslate(1.0,0.0,0.0);
+			break;
+		case 'W': 
+			escena->getLamp()->obTraslate(-1.0,0.0,0.0);
+			break;
+		// ----------------
+		case 'A':
+			escena->getLamp()->obTraslate(0.0,1.0,0.0);
+			break;
+		case 'S': 
+			escena->getLamp()->obTraslate(0.0,-1.0,0.0);
+			break;
+		// ----------------
+		case 'Z': 
+			escena->getLamp()->obTraslate(0.0,0.0,1.0);
+			break;
+		case 'X': 
+			escena->getLamp()->obTraslate(0.0,0.0,-1.0);
+			break;
+		// -----------------
 
 		 // linea de debug::: 	cout<< angleX << " "<< angleY << " " <<angleZ << " ";
 		case 't': 

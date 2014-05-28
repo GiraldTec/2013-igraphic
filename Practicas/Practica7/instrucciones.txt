@@ -27,9 +27,15 @@ b, , => rotar objeto z
 
 + => Escalar lampara +
 - => Escalar lampara -
-/ => Luz lampara enciende/apaga
-* => Luz ambiente enciende/apaga
+8 => Luz ambiente global enciende/apaga
+9 => Luz lampara enciende/apaga
+0 => Luz remota enciende/apaga
+* => Niebla enciende/apaga
 
 T,Y => Mover foco en z
 B,N => Mover foco en x
 G,H => Rotar foco
+
+Q,W => Trasladar lampara X
+A,S => Trasladar lampara Y
+Z,X => Trasladar lampara Z
